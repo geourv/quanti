@@ -1,3 +1,6 @@
+./local/*
+./config/*
+
 /build/
 build_*/
 build-*/
@@ -32,7 +35,7 @@ CMakeLists.txt.user
 .#*
 *.autosave
 *~
-*swp
+*swp1
 .orig
 .vagrant
 tags

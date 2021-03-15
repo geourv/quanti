@@ -1,35 +1,33 @@
-version: "3.6"
+version: '3'
 
 services:
+
   rstudio:
-    image: rocker/rstudio:4.0.3
-    container_name: rstudio
-    restart: on-failure
-    volumes:
-      - type: volume
-        source: rstudio
-        target: /home/rstudio
-        volume:
-          no-copy: true
-      - type: bind
-        source: ./projects
-        target: /home/rstudio/projects
-      - type: volume
-        source: r_libs
-        target: /usr/local/lib/R
-        volume:
-          no-copy: true
-    networks:
-      - net
+    build:
+      context: .
+      dockerfile: rstudio.Dockerfile
     environment:
-      - PASSWORD=rstudio
-    expose:
-      - 8787
+      USER: rstudio
+      PASSWORD: rstudio
+      ROOT: "FALSE"
+    volumes:
+      - .:/home/rstudio
+    ports:
+      - "8787:8787"
+    networks:
+      - R
+
+  rshiny:
+    image: rocker/shiny
+    volumes:
+      - .:/srv/shiny-server
+      - /var/logs/shiny:/var/log/shiny-server
+    ports:
+      - "3838:3838"
+    networks:
+      - R
+    restart: unless-stopped
 
 networks:
-  tki-net:
-    name: net
-
-volumes:
-  r_libs:
-  rstudio:
+  R:
+    driver: bridge

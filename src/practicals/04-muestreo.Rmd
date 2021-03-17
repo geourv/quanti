@@ -1,4 +1,4 @@
-# Applications
+# El muestreo estadístico
 
 Some _significant_ applications are demonstrated in this chapter.
 

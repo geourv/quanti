@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Estadística inferencial | Técnicas cuantitativas</title>
+  <meta name="description" content="Este documento forma parte de los materiales para la asignatura ‘Técnicas cuantitativas’ del Máster universitario en planificación, gobernanza y liderazgo territorial" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Estadística inferencial | Técnicas cuantitativas" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este documento forma parte de los materiales para la asignatura ‘Técnicas cuantitativas’ del Máster universitario en planificación, gobernanza y liderazgo territorial" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Estadística inferencial | Técnicas cuantitativas" />
+  
+  <meta name="twitter:description" content="Este documento forma parte de los materiales para la asignatura ‘Técnicas cuantitativas’ del Máster universitario en planificación, gobernanza y liderazgo territorial" />
+  
+
+<meta name="author" content="Enric Aguilar y Benito Zaragozí" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="estadística-descriptiva.html"/>
+<link rel="next" href="el-muestreo-estadístico.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Técnicas cuantitativas</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Presentación</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#prerrequisitos"><i class="fa fa-check"></i><b>1.1</b> Prerrequisitos</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tipos-de-ficheros"><i class="fa fa-check"></i><b>1.2</b> Tipos de ficheros</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#un-ejemplo-muy-sencillo"><i class="fa fa-check"></i><b>1.3</b> Un ejemplo muy sencillo</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#estructura-básica-de-un-documento-markdown"><i class="fa fa-check"></i><b>1.4</b> Estructura básica de un documento Markdown</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#cabecera"><i class="fa fa-check"></i><b>1.4.1</b> Cabecera</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#insertar-código-r"><i class="fa fa-check"></i><b>1.4.2</b> Insertar código R</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#formatos-de-texto"><i class="fa fa-check"></i><b>1.4.3</b> Formatos de texto</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#generando-el-documento"><i class="fa fa-check"></i><b>1.4.4</b> Generando el documento</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción a R</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#r-como-lenguaje-de-programación"><i class="fa fa-check"></i><b>2.1</b> R como lenguaje de programación</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#utilizando-rstudio"><i class="fa fa-check"></i><b>2.1.1</b> Utilizando RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#interpreting-values"><i class="fa fa-check"></i><b>2.2</b> Interpreting values</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#variables"><i class="fa fa-check"></i><b>2.3</b> Variables</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#basic-types"><i class="fa fa-check"></i><b>2.4</b> Basic types</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#numeric"><i class="fa fa-check"></i><b>2.4.1</b> Numeric</a></li>
+<li class="chapter" data-level="2.4.2" data-path="intro.html"><a href="intro.html#logical"><i class="fa fa-check"></i><b>2.4.2</b> Logical</a></li>
+<li class="chapter" data-level="2.4.3" data-path="intro.html"><a href="intro.html#character"><i class="fa fa-check"></i><b>2.4.3</b> Character</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#tidyverse"><i class="fa fa-check"></i><b>2.5</b> Tidyverse</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#stringr"><i class="fa fa-check"></i><b>2.5.1</b> stringr</a></li>
+<li class="chapter" data-level="2.5.2" data-path="intro.html"><a href="intro.html#the-pipe-operator"><i class="fa fa-check"></i><b>2.5.2</b> The pipe operator</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#coding-style"><i class="fa fa-check"></i><b>2.6</b> Coding style</a></li>
+<li class="chapter" data-level="2.7" data-path="intro.html"><a href="intro.html#exercise-104.1"><i class="fa fa-check"></i><b>2.7</b> Exercise 104.1</a></li>
+<li class="chapter" data-level="2.8" data-path="intro.html"><a href="intro.html#exercise-104.2"><i class="fa fa-check"></i><b>2.8</b> Exercise 104.2</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html"><i class="fa fa-check"></i><b>3</b> Estadística descriptiva</a></li>
+<li class="chapter" data-level="4" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html"><i class="fa fa-check"></i><b>4</b> Estadística inferencial</a><ul>
+<li class="chapter" data-level="4.1" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#ht-activity"><i class="fa fa-check"></i><b>4.1</b> Promotions activity</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#does-gender-affect-promotions-at-a-bank"><i class="fa fa-check"></i><b>4.1.1</b> Does gender affect promotions at a bank?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#shuffling-once"><i class="fa fa-check"></i><b>4.1.2</b> Shuffling once</a></li>
+<li class="chapter" data-level="4.1.3" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#shuffling-16-times"><i class="fa fa-check"></i><b>4.1.3</b> Shuffling 16 times</a></li>
+<li class="chapter" data-level="4.1.4" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#ht-what-did-we-just-do"><i class="fa fa-check"></i><b>4.1.4</b> What did we just do?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#understanding-ht"><i class="fa fa-check"></i><b>4.2</b> Understanding hypothesis tests</a></li>
+<li class="chapter" data-level="4.3" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#ht-infer"><i class="fa fa-check"></i><b>4.3</b> Conducting hypothesis tests</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#infer-workflow-ht"><i class="fa fa-check"></i><b>4.3.1</b> <code>infer</code> package workflow</a></li>
+<li class="chapter" data-level="4.3.2" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#comparing-infer-workflows"><i class="fa fa-check"></i><b>4.3.2</b> Comparison with confidence intervals</a></li>
+<li class="chapter" data-level="4.3.3" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#only-one-test"><i class="fa fa-check"></i><b>4.3.3</b> “There is only one test”</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#ht-interpretation"><i class="fa fa-check"></i><b>4.4</b> Interpreting hypothesis tests</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#trial"><i class="fa fa-check"></i><b>4.4.1</b> Two possible outcomes</a></li>
+<li class="chapter" data-level="4.4.2" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#types-of-errors"><i class="fa fa-check"></i><b>4.4.2</b> Types of errors</a></li>
+<li class="chapter" data-level="4.4.3" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#choosing-alpha"><i class="fa fa-check"></i><b>4.4.3</b> How do we choose alpha?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#conclusions"><i class="fa fa-check"></i><b>4.5</b> Conclusions</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#when-inference-is-not-needed"><i class="fa fa-check"></i><b>4.5.1</b> When inference is not needed</a></li>
+<li class="chapter" data-level="4.5.2" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#problems-with-p-values"><i class="fa fa-check"></i><b>4.5.2</b> Problems with p-values</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="el-muestreo-estadístico.html"><a href="el-muestreo-estadístico.html"><i class="fa fa-check"></i><b>5</b> El muestreo estadístico</a><ul>
+<li class="chapter" data-level="5.1" data-path="el-muestreo-estadístico.html"><a href="el-muestreo-estadístico.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="el-muestreo-estadístico.html"><a href="el-muestreo-estadístico.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="regresiones.html"><a href="regresiones.html"><i class="fa fa-check"></i><b>6</b> Regresiones</a></li>
+<li class="chapter" data-level="7" data-path="estadística-multivariante.html"><a href="estadística-multivariante.html"><i class="fa fa-check"></i><b>7</b> Estadística multivariante</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/geourv/quanti" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Técnicas cuantitativas</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="estadística-inferencial" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> Estadística inferencial</h1>
+<p>Let’s load all the packages needed for this chapter (this assumes you’ve already installed them). Recall from our discussion in Section <a href="#tidyverse-package"><strong>??</strong></a> that loading the <code>tidyverse</code> package by running <code>library(tidyverse)</code> loads the following commonly used data science packages all at once:</p>
+<ul>
+<li><code>ggplot2</code> for data visualization</li>
+<li><code>dplyr</code> for data wrangling</li>
+<li><code>tidyr</code> for converting data to “tidy” format</li>
+<li><code>readr</code> for importing spreadsheet data into R</li>
+<li>As well as the more advanced <code>purrr</code>, <code>tibble</code>, <code>stringr</code>, and <code>forcats</code> packages</li>
+</ul>
+<p>If needed, read Section <a href="#packages"><strong>??</strong></a> for information on how to install and load R packages.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="estadística-inferencial.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## Warning: package &#39;purrr&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.0.3</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="estadística-inferencial.html#cb5-1"></a><span class="kw">library</span>(readr)</span>
+<span id="cb5-2"><a href="estadística-inferencial.html#cb5-2"></a><span class="kw">library</span>(infer)</span>
+<span id="cb5-3"><a href="estadística-inferencial.html#cb5-3"></a><span class="kw">library</span>(moderndive)</span>
+<span id="cb5-4"><a href="estadística-inferencial.html#cb5-4"></a><span class="kw">library</span>(nycflights13)</span>
+<span id="cb5-5"><a href="estadística-inferencial.html#cb5-5"></a><span class="kw">library</span>(ggplot2movies)</span></code></pre></div>
+<pre><code>## Warning: package &#39;scales&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## Warning: package &#39;viridis&#39; was built under R version 4.0.3</code></pre>
+<pre><code>## Warning: package &#39;viridisLite&#39; was built under R version 4.0.3</code></pre>
+<div id="ht-activity" class="section level2">
+<h2><span class="header-section-number">4.1</span> Promotions activity</h2>
+<p>Let’s start with an activity studying the effect of gender on promotions at a bank.</p>
+<div id="does-gender-affect-promotions-at-a-bank" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Does gender affect promotions at a bank?</h3>
+<p>Say you are working at a bank in the 1970s and you are submitting your résumé to apply for a promotion. Will your gender affect your chances of getting promoted? To answer this question, we’ll focus on data from a study published in the <em>Journal of Applied Psychology</em> in 1974. This data is also used in the <a href="https://www.openintro.org/"><em>OpenIntro</em></a> series of statistics textbooks.</p>
+<p>To begin the study, 48 bank supervisors were asked to assume the role of a hypothetical director of a bank with multiple branches. Every one of the bank supervisors was given a résumé and asked whether or not the candidate on the résumé was fit to be promoted to a new position in one of their branches.</p>
+<p>However, each of these 48 résumés were identical in all respects except one: the name of the applicant at the top of the résumé. Of the supervisors, 24 were randomly given résumés with stereotypically “male” names, while 24 of the supervisors were randomly given résumés with stereotypically “female” names. Since only (binary) gender varied from résumé to résumé, researchers could isolate the effect of this variable in promotion rates.</p>
+<p>While many people today (including us, the authors) disagree with such binary views of gender, it is important to remember that this study was conducted at a time where more nuanced views of gender were not as prevalent. Despite this imperfection, we decided to still use this example as we feel it presents ideas still relevant today about how we could study discrimination in the workplace.</p>
+<p>The <code>moderndive</code> package contains the data on the 48 applicants in the <code>promotions</code> data frame. Let’s explore this data by looking at six randomly selected rows:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="estadística-inferencial.html#cb9-1"></a>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-2"><a href="estadística-inferencial.html#cb9-2"></a><span class="st">  </span><span class="kw">sample_n</span>(<span class="dt">size =</span> <span class="dv">6</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb9-3"><a href="estadística-inferencial.html#cb9-3"></a><span class="st">  </span><span class="kw">arrange</span>(id)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##      id decision gender
+##   &lt;int&gt; &lt;fct&gt;    &lt;fct&gt; 
+## 1    11 promoted male  
+## 2    26 promoted female
+## 3    28 promoted female
+## 4    36 not      male  
+## 5    37 not      male  
+## 6    46 not      female</code></pre>
+<p>The variable <code>id</code> acts as an identification variable for all 48 rows, the <code>decision</code> variable indicates whether the applicant was selected for promotion or not, while the <code>gender</code> variable indicates the gender of the name used on the résumé. Recall that this data does not pertain to 24 actual men and 24 actual women, but rather 48 identical résumés of which 24 were assigned stereotypically “male” names and 24 were assigned stereotypically “female” names.</p>
+<p>Let’s perform an exploratory data analysis of the relationship between the two categorical variables <code>decision</code> and <code>gender</code>. Recall that we saw in Subsection <a href="#two-categ-barplot"><strong>??</strong></a> that one way we can visualize such a relationship is by using a stacked barplot.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="estadística-inferencial.html#cb11-1"></a><span class="kw">ggplot</span>(promotions, <span class="kw">aes</span>(<span class="dt">x =</span> gender, <span class="dt">fill =</span> decision)) <span class="op">+</span></span>
+<span id="cb11-2"><a href="estadística-inferencial.html#cb11-2"></a><span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span></span>
+<span id="cb11-3"><a href="estadística-inferencial.html#cb11-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Gender of name on résumé&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:promotions-barplot"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/promotions-barplot-1.png" alt="Barplot relating gender to promotion decision." width="672" />
+<p class="caption">
+Figura 4.1: Barplot relating gender to promotion decision.
+</p>
+</div>
+<p>Observe in Figure <a href="estadística-inferencial.html#fig:promotions-barplot">4.1</a> that it appears that résumés with female names were much less likely to be accepted for promotion. Let’s quantify these promotion rates by computing the proportion of résumés accepted for promotion for each group using the <code>dplyr</code> package for data wrangling. Note the use of the <code>tally()</code> function here which is a shortcut for <code>summarize(n = n())</code> to get counts.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="estadística-inferencial.html#cb12-1"></a>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-2"><a href="estadística-inferencial.html#cb12-2"></a><span class="st">  </span><span class="kw">group_by</span>(gender, decision) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-3"><a href="estadística-inferencial.html#cb12-3"></a><span class="st">  </span><span class="kw">tally</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 3
+## # Groups:   gender [2]
+##   gender decision     n
+##   &lt;fct&gt;  &lt;fct&gt;    &lt;int&gt;
+## 1 male   not          3
+## 2 male   promoted    21
+## 3 female not         10
+## 4 female promoted    14</code></pre>
+<p>So of the 24 résumés with male names, 21 were selected for promotion, for a proportion of 21/24 = 0.875 = 87.5%. On the other hand, of the 24 résumés with female names, 14 were selected for promotion, for a proportion of 14/24 = 0.583 = 58.3%. Comparing these two rates of promotion, it appears that résumés with male names were selected for promotion at a rate 0.875 - 0.583 = 0.292 = 29.2% higher than résumés with female names. This is suggestive of an advantage for résumés with a male name on it.</p>
+<p>The question is, however, does this provide <em>conclusive</em> evidence that there is gender discrimination in promotions at banks? Could a difference in promotion rates of 29.2% still occur by chance, even in a hypothetical world where no gender-based discrimination existed? In other words, what is the role of <em>sampling variation</em> in this hypothesized world? To answer this question, we’ll again rely on a computer to run <em>simulations</em>.</p>
+</div>
+<div id="shuffling-once" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Shuffling once</h3>
+<p>First, try to imagine a hypothetical universe where no gender discrimination in promotions existed. In such a hypothetical universe, the gender of an applicant would have no bearing on their chances of promotion. Bringing things back to our <code>promotions</code> data frame, the <code>gender</code> variable would thus be an irrelevant label. If these <code>gender</code> labels were irrelevant, then we could randomly reassign them by “shuffling” them to no consequence!</p>
+<p>To illustrate this idea, let’s narrow our focus to 6 arbitrarily chosen résumés of the 48 in Table <a href="estadística-inferencial.html#tab:compare-six">4.1</a>. The <code>decision</code> column shows that 3 résumés resulted in promotion while 3 didn’t. The <code>gender</code> column shows what the original gender of the résumé name was.</p>
+<p>However, in our hypothesized universe of no gender discrimination, gender is irrelevant and thus it is of no consequence to randomly “shuffle” the values of <code>gender</code>. The <code>shuffled_gender</code> column shows one such possible random shuffling. Observe in the fourth column how the number of male and female names remains the same at 3 each, but they are now listed in a different order.</p>
+<table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:compare-six">Tabla 4.1: </span>One example of shuffling gender variable
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+résumé number
+</th>
+<th style="text-align:left;">
+decision
+</th>
+<th style="text-align:left;">
+gender
+</th>
+<th style="text-align:left;">
+shuffled gender
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+not
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+male
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+not
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+male
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+not
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+female
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+promoted
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+female
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+promoted
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+female
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+promoted
+</td>
+<td style="text-align:left;">
+female
+</td>
+<td style="text-align:left;">
+male
+</td>
+</tr>
+</tbody>
+</table>
+<p>Again, such random shuffling of the gender label only makes sense in our hypothesized universe of no gender discrimination. How could we extend this shuffling of the gender variable to all 48 résumés by hand? One way would be by using standard deck of 52 playing cards, which we display in Figure <a href="#fig:deck-of-cards"><strong>??</strong></a>.</p>
+<p>Since half the cards are red (diamonds and hearts) and the other half are black (spades and clubs), by removing two red cards and two black cards, we would end up with 24 red cards and 24 black cards. After shuffling these 48 cards as seen in Figure <a href="#fig:shuffling"><strong>??</strong></a>, we can flip the cards over one-by-one, assigning “male” for each red card and “female” for each black card.</p>
+<p>We’ve saved one such shuffling in the <code>promotions_shuffled</code> data frame of the <code>moderndive</code> package. If you compare the original <code>promotions</code> and the shuffled <code>promotions_shuffled</code> data frames, you’ll see that while the <code>decision</code> variable is identical, the <code>gender</code> variable has changed.</p>
+<p>Let’s repeat the same exploratory data analysis we did for the original <code>promotions</code> data on our <code>promotions_shuffled</code> data frame. Let’s create a barplot visualizing the relationship between <code>decision</code> and the new shuffled <code>gender</code> variable and compare this to the original unshuffled version in Figure <a href="estadística-inferencial.html#fig:promotions-barplot-permuted">4.2</a>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="estadística-inferencial.html#cb14-1"></a><span class="kw">ggplot</span>(promotions_shuffled, </span>
+<span id="cb14-2"><a href="estadística-inferencial.html#cb14-2"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> gender, <span class="dt">fill =</span> decision)) <span class="op">+</span></span>
+<span id="cb14-3"><a href="estadística-inferencial.html#cb14-3"></a><span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb14-4"><a href="estadística-inferencial.html#cb14-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Gender of résumé name&quot;</span>)</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;gender&#39; (override with `.groups` argument)
+## `summarise()` regrouping output by &#39;gender&#39; (override with `.groups` argument)</code></pre>
+<div class="figure"><span id="fig:promotions-barplot-permuted"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/promotions-barplot-permuted-1.png" alt="Barplots of relationship of promotion with gender (left) and shuffled gender (right)." width="672" />
+<p class="caption">
+Figura 4.2: Barplots of relationship of promotion with gender (left) and shuffled gender (right).
+</p>
+</div>
+<p>It appears the difference in “male names” versus “female names” promotion rates is now different. Compared to the original data in the left barplot, the new “shuffled” data in the right barplot has promotion rates that are much more similar.</p>
+<p>Let’s also compute the proportion of résumés accepted for promotion for each group:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="estadística-inferencial.html#cb16-1"></a>promotions_shuffled <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-2"><a href="estadística-inferencial.html#cb16-2"></a><span class="st">  </span><span class="kw">group_by</span>(gender, decision) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb16-3"><a href="estadística-inferencial.html#cb16-3"></a><span class="st">  </span><span class="kw">tally</span>() <span class="co"># Same as summarize(n = n())</span></span></code></pre></div>
+<pre><code>## # A tibble: 4 x 3
+## # Groups:   gender [2]
+##   gender decision     n
+##   &lt;fct&gt;  &lt;fct&gt;    &lt;int&gt;
+## 1 male   not          6
+## 2 male   promoted    18
+## 3 female not          7
+## 4 female promoted    17</code></pre>
+<p>So in this hypothetical universe of no discrimination, <span class="math inline">\(18/24 = 0.75 = 75\%\)</span> of “male” résumés were selected for promotion. On the other hand, <span class="math inline">\(17/24 = 0.708 = 70.8\%\)</span> of “female” résumés were selected for promotion.</p>
+<p>Let’s next compare these two values. It appears that résumés with stereotypically male names were selected for promotion at a rate that was <span class="math inline">\(0.75 - 0.708 = 0.042 = 4.2\%\)</span> different than résumés with stereotypically female names.</p>
+<p>Observe how this difference in rates is not the same as the difference in rates of 0.292 = 29.2% we originally observed. This is once again due to <em>sampling variation</em>. How can we better understand the effect of this sampling variation? By repeating this shuffling several times!</p>
+</div>
+<div id="shuffling-16-times" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Shuffling 16 times</h3>
+<p>We recruited 16 groups of our friends to repeat this shuffling exercise. They recorded these values in a <a href="https://docs.google.com/spreadsheets/d/1Q-ENy3o5IrpJshJ7gn3hJ5A0TOWV2AZrKNHMsshQtiE/">shared spreadsheet</a>; we display a snapshot of the first 10 rows and 5 columns in Figure <a href="#fig:tactile-shuffling"><strong>??</strong></a>.</p>
+<p>For each of these 16 columns of <em>shuffles</em>, we computed the difference in promotion rates, and in Figure <a href="estadística-inferencial.html#fig:null-distribution-1">4.3</a> we display their distribution in a histogram. We also mark the observed difference in promotion rate that occurred in real life of 0.292 = 29.2% with a dark line.</p>
+<div class="figure"><span id="fig:null-distribution-1"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/null-distribution-1-1.png" alt="Distribution of shuffled differences in promotions." width="672" />
+<p class="caption">
+Figura 4.3: Distribution of shuffled differences in promotions.
+</p>
+</div>
+<p>Before we discuss the distribution of the histogram, we emphasize the key thing to remember: this histogram represents differences in promotion rates that one would observe in our <em>hypothesized universe</em> of no gender discrimination.</p>
+<p>Observe first that the histogram is roughly centered at 0. Saying that the difference in promotion rates is 0 is equivalent to saying that both genders had the same promotion rate. In other words, the center of these 16 values is consistent with what we would expect in our hypothesized universe of no gender discrimination.</p>
+<p>However, while the values are centered at 0, there is variation about 0. This is because even in a hypothesized universe of no gender discrimination, you will still likely observe small differences in promotion rates because of chance <em>sampling variation</em>. Looking at the histogram in Figure <a href="estadística-inferencial.html#fig:null-distribution-1">4.3</a>, such differences could even be as extreme as -0.292 or 0.208.</p>
+<p>Turning our attention to what we observed in real life: the difference of 0.292 = 29.2% is marked with a vertical dark line. Ask yourself: in a hypothesized world of no gender discrimination, how likely would it be that we observe this difference? While opinions here may differ, in our opinion not often! Now ask yourself: what do these results say about our hypothesized universe of no gender discrimination?</p>
+</div>
+<div id="ht-what-did-we-just-do" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> What did we just do?</h3>
+<p>What we just demonstrated in this activity is the statistical procedure known as <em>hypothesis testing</em> using a <em>permutation test</em>. The term “permutation”  is the mathematical term for “shuffling”: taking a series of values and reordering them randomly, as you did with the playing cards.</p>
+<p>In fact, permutations are another form of <em>resampling</em>, like the bootstrap method you performed in Chapter <a href="#confidence-intervals"><strong>??</strong></a>. While the bootstrap method involves resampling <em>with</em> replacement, permutation methods involve resampling <em>without</em> replacement.</p>
+<p>Think of our exercise involving the slips of paper representing pennies and the hat in Section <a href="#resampling-tactile"><strong>??</strong></a>: after sampling a penny, you put it back in the hat. Now think of our deck of cards. After drawing a card, you laid it out in front of you, recorded the color, and then you <em>did not</em> put it back in the deck.</p>
+<p>In our previous example, we tested the validity of the hypothesized universe of no gender discrimination. The evidence contained in our observed sample of 48 résumés was somewhat inconsistent with our hypothesized universe. Thus, we would be inclined to <em>reject</em> this hypothesized universe and declare that the evidence suggests there is gender discrimination.</p>
+<p>Recall our case study on whether yawning is contagious from Section <a href="#case-study-two-prop-ci"><strong>??</strong></a>. The previous example involves inference about an unknown difference of population proportions as well. This time, it will be <span class="math inline">\(p_{m} - p_{f}\)</span>, where <span class="math inline">\(p_{m}\)</span> is the population proportion of résumés with male names being recommended for promotion and <span class="math inline">\(p_{f}\)</span> is the equivalent for résumés with female names. Recall that this is one of the scenarios for inference we’ve seen so far in Table <a href="estadística-inferencial.html#tab:table-diff-prop">4.2</a>.</p>
+<table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:table-diff-prop">Tabla 4.2: </span>Scenarios of sampling for inference
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Scenario
+</th>
+<th style="text-align:left;">
+Population parameter
+</th>
+<th style="text-align:left;">
+Notation
+</th>
+<th style="text-align:left;">
+Point estimate
+</th>
+<th style="text-align:left;">
+Symbol(s)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;width: 0.5in; ">
+1
+</td>
+<td style="text-align:left;width: 0.7in; ">
+Population proportion
+</td>
+<td style="text-align:left;width: 1in; ">
+<span class="math inline">\(p\)</span>
+</td>
+<td style="text-align:left;width: 1.1in; ">
+Sample proportion
+</td>
+<td style="text-align:left;width: 1in; ">
+<span class="math inline">\(\widehat{p}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 0.5in; ">
+2
+</td>
+<td style="text-align:left;width: 0.7in; ">
+Population mean
+</td>
+<td style="text-align:left;width: 1in; ">
+<span class="math inline">\(\mu\)</span>
+</td>
+<td style="text-align:left;width: 1.1in; ">
+Sample mean
+</td>
+<td style="text-align:left;width: 1in; ">
+<span class="math inline">\(\overline{x}\)</span> or <span class="math inline">\(\widehat{\mu}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;width: 0.5in; ">
+3
+</td>
+<td style="text-align:left;width: 0.7in; ">
+Difference in population proportions
+</td>
+<td style="text-align:left;width: 1in; ">
+<span class="math inline">\(p_1 - p_2\)</span>
+</td>
+<td style="text-align:left;width: 1.1in; ">
+Difference in sample proportions
+</td>
+<td style="text-align:left;width: 1in; ">
+<span class="math inline">\(\widehat{p}_1 - \widehat{p}_2\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>So, based on our sample of <span class="math inline">\(n_m\)</span> = 24 “male” applicants and <span class="math inline">\(n_w\)</span> = 24 “female” applicants, the <em>point estimate</em> for <span class="math inline">\(p_{m} - p_{f}\)</span> is the <em>difference in sample proportions</em> <span class="math inline">\(\widehat{p}_{m} -\widehat{p}_{f}\)</span> = 0.875 - 0.583 = 0.292 = 29.2%. This difference in favor of “male” résumés of 0.292 is greater than 0, suggesting discrimination in favor of men.</p>
+<p>However, the question we asked ourselves was “is this difference meaningfully greater than 0?”. In other words, is that difference indicative of true discrimination, or can we just attribute it to <em>sampling variation</em>? Hypothesis testing allows us to make such distinctions.</p>
+</div>
+</div>
+<div id="understanding-ht" class="section level2">
+<h2><span class="header-section-number">4.2</span> Understanding hypothesis tests</h2>
+<p>Much like the terminology, notation, and definitions relating to sampling you saw in Section <a href="#sampling-framework"><strong>??</strong></a>, there are a lot of terminology, notation, and definitions related to hypothesis testing as well. Learning these may seem like a very daunting task at first. However, with practice, practice, and more practice, anyone can master them.</p>
+<p>First, a <strong>hypothesis</strong>  is a statement about the value of an unknown population parameter. In our résumé activity, our population parameter of interest is the difference in population proportions <span class="math inline">\(p_{m} - p_{f}\)</span>. Hypothesis tests can involve any of the population parameters in Table <a href="#tab:table-ch8"><strong>??</strong></a> of the five inference scenarios we’ll cover in this book and also more advanced types we won’t cover here.</p>
+<p>Second, a <strong>hypothesis test</strong>  consists of a test between two competing hypotheses: (1) a <strong>null hypothesis</strong> <span class="math inline">\(H_0\)</span> (pronounced “H-naught”) versus (2) an <strong>alternative hypothesis</strong> <span class="math inline">\(H_A\)</span> (also denoted <span class="math inline">\(H_1\)</span>).</p>
+<p>Generally the null hypothesis  is a claim that there is “no effect” or “no difference of interest.” In many cases, the null hypothesis represents the status quo or a situation that nothing interesting is happening. Furthermore, generally the alternative hypothesis  is the claim the experimenter or researcher wants to establish or find evidence to support. It is viewed as a “challenger” hypothesis to the null hypothesis <span class="math inline">\(H_0\)</span>. In our résumé activity, an appropriate hypothesis test would be:</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0 &amp;: \text{men and women are promoted at the same rate}\\
+\text{vs } H_A &amp;: \text{men are promoted at a higher rate than women}
+\end{aligned}
+\]</span></p>
+<p>Note some of the choices we have made. First, we set the null hypothesis <span class="math inline">\(H_0\)</span> to be that there is no difference in promotion rate and the “challenger” alternative hypothesis <span class="math inline">\(H_A\)</span> to be that there is a difference. While it would not be wrong in principle to reverse the two, it is a convention in statistical inference that the null hypothesis is set to reflect a “null” situation where “nothing is going on.” As we discussed earlier, in this case, <span class="math inline">\(H_0\)</span> corresponds to there being no difference in promotion rates. Furthermore, we set <span class="math inline">\(H_A\)</span> to be that men are promoted at a <em>higher</em> rate, a subjective choice reflecting a prior suspicion we have that this is the case. We call such alternative hypotheses  <em>one-sided alternatives</em>. If someone else however does not share such suspicions and only wants to investigate that there is a difference, whether higher or lower, they would set what is known as a  <em>two-sided alternative</em>.</p>
+<p>We can re-express the formulation of our hypothesis test using the mathematical notation for our population parameter of interest, the difference in population proportions <span class="math inline">\(p_{m} - p_{f}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0 &amp;: p_{m} - p_{f} = 0\\
+\text{vs } H_A&amp;: p_{m} - p_{f} &gt; 0
+\end{aligned}
+\]</span></p>
+<p>Observe how the alternative hypothesis <span class="math inline">\(H_A\)</span> is one-sided with <span class="math inline">\(p_{m} - p_{f} &gt; 0\)</span>. Had we opted for a two-sided alternative, we would have set <span class="math inline">\(p_{m} - p_{f} \neq 0\)</span>. To keep things simple for now, we’ll stick with the simpler one-sided alternative. We’ll present an example of a two-sided alternative in Section <a href="#ht-case-study"><strong>??</strong></a>.</p>
+<p>Third, a <strong>test statistic</strong>  is a <em>point estimate/sample statistic</em> formula used for hypothesis testing. Note that a sample statistic is merely a summary statistic based on a sample of observations. Recall we saw in Section <a href="#summarize"><strong>??</strong></a> that a summary statistic takes in many values and returns only one. Here, the samples would be the <span class="math inline">\(n_m\)</span> = 24 résumés with male names and the <span class="math inline">\(n_f\)</span> = 24 résumés with female names. Hence, the point estimate of interest is the difference in sample proportions <span class="math inline">\(\widehat{p}_{m} - \widehat{p}_{f}\)</span>.</p>
+<p>Fourth, the <strong>observed test statistic</strong>  is the value of the test statistic that we observed in real life. In our case, we computed this value using the data saved in the <code>promotions</code> data frame. It was the observed difference of <span class="math inline">\(\widehat{p}_{m} -\widehat{p}_{f} = 0.875 - 0.583 = 0.292 = 29.2\%\)</span> in favor of résumés with male names.</p>
+<p>Fifth, the <strong>null distribution</strong>  is the sampling distribution of the test statistic <em>assuming the null hypothesis <span class="math inline">\(H_0\)</span> is true</em>. Ooof! That’s a long one! Let’s unpack it slowly. The key to understanding the null distribution is that the null hypothesis <span class="math inline">\(H_0\)</span> is <em>assumed</em> to be true. We’re not saying that <span class="math inline">\(H_0\)</span> is true at this point, we’re only assuming it to be true for hypothesis testing purposes. In our case, this corresponds to our hypothesized universe of no gender discrimination in promotion rates. Assuming the null hypothesis <span class="math inline">\(H_0\)</span>, also stated as “Under <span class="math inline">\(H_0\)</span>,” how does the test statistic vary due to sampling variation? In our case, how will the difference in sample proportions <span class="math inline">\(\widehat{p}_{m} - \widehat{p}_{f}\)</span> vary due to sampling under <span class="math inline">\(H_0\)</span>? Recall from Subsection <a href="#sampling-definitions"><strong>??</strong></a> that distributions displaying how point estimates vary due to sampling variation are called <em>sampling distributions</em>. The only additional thing to keep in mind about null distributions is that they are sampling distributions <em>assuming the null hypothesis <span class="math inline">\(H_0\)</span> is true</em>.</p>
+<p>In our case, we previously visualized a null distribution in Figure <a href="estadística-inferencial.html#fig:null-distribution-1">4.3</a>, which we re-display in Figure <a href="estadística-inferencial.html#fig:null-distribution-2">4.4</a> using our new notation and terminology. It is the distribution of the 16 differences in sample proportions our friends computed <em>assuming</em> a hypothetical universe of no gender discrimination. We also mark the value of the observed test statistic of 0.292 with a vertical line.</p>
+<div class="figure"><span id="fig:null-distribution-2"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/null-distribution-2-1.png" alt="Null distribution and observed test statistic." width="672" />
+<p class="caption">
+Figura 4.4: Null distribution and observed test statistic.
+</p>
+</div>
+<p>Sixth, the <strong><span class="math inline">\(p\)</span>-value</strong>  is the probability of obtaining a test statistic just as extreme or more extreme than the observed test statistic <em>assuming the null hypothesis <span class="math inline">\(H_0\)</span> is true</em>. Double ooof! Let’s unpack this slowly as well. You can think of the <span class="math inline">\(p\)</span>-value as a quantification of “surprise”: assuming <span class="math inline">\(H_0\)</span> is true, how surprised are we with what we observed? Or in our case, in our hypothesized universe of no gender discrimination, how surprised are we that we observed a difference in promotion rates of 0.292 from our collected samples assuming <span class="math inline">\(H_0\)</span> is true? Very surprised? Somewhat surprised?</p>
+<p>The <span class="math inline">\(p\)</span>-value quantifies this probability, or in the case of our 16 differences in sample proportions in Figure <a href="estadística-inferencial.html#fig:null-distribution-2">4.4</a>, what proportion had a more “extreme” result? Here, extreme is defined in terms of the alternative hypothesis <span class="math inline">\(H_A\)</span> that “male” applicants are promoted at a higher rate than “female” applicants. In other words, how often was the discrimination in favor of men <em>even more</em> pronounced than <span class="math inline">\(0.875 - 0.583 = 0.292 = 29.2\%\)</span>?</p>
+<p>In this case, 0 times out of 16, we obtained a difference in proportion greater than or equal to the observed difference of 0.292 = 29.2%. A very rare (in fact, not occurring) outcome! Given the rarity of such a pronounced difference in promotion rates in our hypothesized universe of no gender discrimination, we’re inclined to <em>reject</em>  our hypothesized universe. Instead, we favor the hypothesis stating there is discrimination in favor of the “male” applicants. In other words, we reject <span class="math inline">\(H_0\)</span> in favor of <span class="math inline">\(H_A\)</span>.</p>
+<!--
+v2 TODO: Including observed test stat in p-value computation
+We'll see later on however, the $p$-value isn't quite 1/16, but
+rather (0 + 1)/(16 + 1) = 1/17 = 0.059 as
+we need to include the observed test statistic in our calculation.
+-->
+<p>Seventh and lastly, in many hypothesis testing procedures, it is commonly recommended to set the <strong>significance level</strong>  of the test beforehand. It is denoted by the Greek letter <span class="math inline">\(\alpha\)</span> (pronounced “alpha”). This value acts as a cutoff on the <span class="math inline">\(p\)</span>-value, where if the <span class="math inline">\(p\)</span>-value falls below <span class="math inline">\(\alpha\)</span>, we would “reject the null hypothesis <span class="math inline">\(H_0\)</span>.”</p>
+<p>Alternatively, if the <span class="math inline">\(p\)</span>-value does not fall below <span class="math inline">\(\alpha\)</span>, we would “fail to reject <span class="math inline">\(H_0\)</span>.” Note the latter statement is not quite the same as saying we “accept <span class="math inline">\(H_0\)</span>.” This distinction is rather subtle and not immediately obvious. So we’ll revisit it later in Section <a href="estadística-inferencial.html#ht-interpretation">4.4</a>.</p>
+<p>While different fields tend to use different values of <span class="math inline">\(\alpha\)</span>, some commonly used values for <span class="math inline">\(\alpha\)</span> are 0.1, 0.01, and 0.05; with 0.05 being the choice people often make without putting much thought into it. We’ll talk more about <span class="math inline">\(\alpha\)</span> significance levels in Section <a href="estadística-inferencial.html#ht-interpretation">4.4</a>, but first let’s fully conduct the hypothesis test corresponding to our promotions activity using the <code>infer</code> package.</p>
+</div>
+<div id="ht-infer" class="section level2">
+<h2><span class="header-section-number">4.3</span> Conducting hypothesis tests</h2>
+<p>In Section <a href="#bootstrap-process"><strong>??</strong></a>, we showed you how to construct confidence intervals. We first illustrated how to do this using <code>dplyr</code> data wrangling verbs and the <code>rep_sample_n()</code> function from Subsection <a href="#shovel-1000-times"><strong>??</strong></a> which we used as a virtual shovel. In particular, we constructed confidence intervals by resampling with replacement by setting the <code>replace = TRUE</code> argument to the <code>rep_sample_n()</code> function.</p>
+<p>We then showed you how to perform the same task using the <code>infer</code> package workflow. While both workflows resulted in the same bootstrap distribution from which we can construct confidence intervals, the <code>infer</code> package workflow emphasizes each of the steps in the overall process in Figure <a href="#fig:infer-ci"><strong>??</strong></a>. It does so using function names that are intuitively named with verbs:</p>
+<ol style="list-style-type: decimal">
+<li><code>specify()</code> the variables of interest in your data frame.</li>
+<li><code>generate()</code> replicates of bootstrap resamples with replacement.</li>
+<li><code>calculate()</code> the summary statistic of interest.</li>
+<li><code>visualize()</code> the resulting bootstrap distribution and confidence interval.</li>
+</ol>
+<p>In this section, we’ll now show you how to seamlessly modify the previously seen <code>infer</code> code for constructing confidence intervals to conduct hypothesis tests. You’ll notice that the basic outline of the workflow is almost identical, except for an additional <code>hypothesize()</code> step between the <code>specify()</code> and <code>generate()</code> steps, as can be seen in Figure <a href="#fig:inferht"><strong>??</strong></a>.</p>
+<p>Furthermore, we’ll use a pre-specified significance level <span class="math inline">\(\alpha\)</span> = 0.05 for this hypothesis test. Let’s leave discussion on the choice of this <span class="math inline">\(\alpha\)</span> value until later on in Section <a href="estadística-inferencial.html#ht-interpretation">4.4</a>.</p>
+<div id="infer-workflow-ht" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> <code>infer</code> package workflow</h3>
+<div id="specify-variables" class="section level4 unnumbered">
+<h4>1. <code>specify</code> variables</h4>
+<p>Recall that we use the <code>specify()</code>  verb to specify the response variable and, if needed, any explanatory variables for our study. In this case, since we are interested in any potential effects of gender on promotion decisions, we set <code>decision</code> as the response variable and <code>gender</code> as the explanatory variable. We do so using <code>formula = response ~ explanatory</code> where <code>response</code> is the name of the response variable in the data frame and <code>explanatory</code> is the name of the explanatory variable. So in our case it is <code>decision ~ gender</code>.</p>
+<p>Furthermore, since we are interested in the proportion of résumés <code>"promoted"</code>, and not the proportion of résumés <code>not</code> promoted, we set the argument <code>success</code> to <code>"promoted"</code>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="estadística-inferencial.html#cb18-1"></a>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-2"><a href="estadística-inferencial.html#cb18-2"></a><span class="st">  </span><span class="kw">specify</span>(<span class="dt">formula =</span> decision <span class="op">~</span><span class="st"> </span>gender, <span class="dt">success =</span> <span class="st">&quot;promoted&quot;</span>) </span></code></pre></div>
+<pre><code>## Response: decision (factor)
+## Explanatory: gender (factor)
+## # A tibble: 48 x 2
+##    decision gender
+##    &lt;fct&gt;    &lt;fct&gt; 
+##  1 promoted male  
+##  2 promoted male  
+##  3 promoted male  
+##  4 promoted male  
+##  5 promoted male  
+##  6 promoted male  
+##  7 promoted male  
+##  8 promoted male  
+##  9 promoted male  
+## 10 promoted male  
+## # … with 38 more rows</code></pre>
+<p>Again, notice how the <code>promotions</code> data itself doesn’t change, but the <code>Response: decision (factor)</code> and <code>Explanatory: gender (factor)</code> <em>meta-data</em> do. This is similar to how the <code>group_by()</code> verb from <code>dplyr</code> doesn’t change the data, but only adds “grouping” meta-data, as we saw in Section <a href="#groupby"><strong>??</strong></a>.</p>
+</div>
+<div id="hypothesize-the-null" class="section level4 unnumbered">
+<h4>2. <code>hypothesize</code> the null</h4>
+<p>In order to conduct hypothesis tests using the <code>infer</code> workflow, we need a new step not present for confidence intervals:  <code>hypothesize()</code>. Recall from Section <a href="estadística-inferencial.html#understanding-ht">4.2</a> that our hypothesis test was</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0 &amp;: p_{m} - p_{f} = 0\\
+\text{vs. } H_A&amp;: p_{m} - p_{f} &gt; 0
+\end{aligned}
+\]</span></p>
+<p>In other words, the null hypothesis <span class="math inline">\(H_0\)</span> corresponding to our “hypothesized universe” stated that there was no difference in gender-based discrimination rates. We set this null hypothesis <span class="math inline">\(H_0\)</span> in our <code>infer</code> workflow using the <code>null</code> argument of the <code>hypothesize()</code> function to either:</p>
+<ul>
+<li><code>"point"</code> for hypotheses involving a single sample or</li>
+<li><code>"independence"</code> for hypotheses involving two samples.</li>
+</ul>
+<p>In our case, since we have two samples (the résumés with “male” and “female” names), we set <code>null = "independence"</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="estadística-inferencial.html#cb20-1"></a>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-2"><a href="estadística-inferencial.html#cb20-2"></a><span class="st">  </span><span class="kw">specify</span>(<span class="dt">formula =</span> decision <span class="op">~</span><span class="st"> </span>gender, <span class="dt">success =</span> <span class="st">&quot;promoted&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-3"><a href="estadística-inferencial.html#cb20-3"></a><span class="st">  </span><span class="kw">hypothesize</span>(<span class="dt">null =</span> <span class="st">&quot;independence&quot;</span>)</span></code></pre></div>
+<pre><code>## Response: decision (factor)
+## Explanatory: gender (factor)
+## Null Hypothesis: independence
+## # A tibble: 48 x 2
+##    decision gender
+##    &lt;fct&gt;    &lt;fct&gt; 
+##  1 promoted male  
+##  2 promoted male  
+##  3 promoted male  
+##  4 promoted male  
+##  5 promoted male  
+##  6 promoted male  
+##  7 promoted male  
+##  8 promoted male  
+##  9 promoted male  
+## 10 promoted male  
+## # … with 38 more rows</code></pre>
+<p>Again, the data has not changed yet. This will occur at the upcoming <code>generate()</code> step; we’re merely setting meta-data for now.</p>
+<p>Where do the terms <code>"point"</code> and <code>"independence"</code> come from? These are two technical statistical terms. The term “point” relates from the fact that for a single group of observations, you will test the value of a single point. Going back to the pennies example from Chapter <a href="#confidence-intervals"><strong>??</strong></a>, say we wanted to test if the mean year of all US pennies was equal to 1993 or not. We would be testing the value of a “point” <span class="math inline">\(\mu\)</span>, the mean year of <em>all</em> US pennies, as follows</p>
+<p><span class="math display">\[
+\begin{aligned}
+H_0 &amp;: \mu = 1993\\
+\text{vs } H_A&amp;: \mu \neq 1993
+\end{aligned}
+\]</span></p>
+<p>The term “independence” relates to the fact that for two groups of observations, you are testing whether or not the response variable is <em>independent</em> of the explanatory variable that assigns the groups. In our case, we are testing whether the <code>decision</code> response variable is “independent” of the explanatory variable <code>gender</code> that assigns each résumé to either of the two groups.</p>
+</div>
+<div id="generate-replicates" class="section level4 unnumbered">
+<h4>3. <code>generate</code> replicates</h4>
+<p>After we <code>hypothesize()</code> the null hypothesis, we <code>generate()</code> replicates of “shuffled” datasets assuming the null hypothesis is true. We do this by repeating the shuffling exercise you performed in Section <a href="estadística-inferencial.html#ht-activity">4.1</a> several times. Instead of merely doing it 16 times as our groups of friends did, let’s use the computer to repeat this 1000 times by setting <code>reps = 1000</code> in the <code>generate()</code>  function. However, unlike for confidence intervals where we generated replicates using <code>type = "bootstrap"</code> resampling with replacement, we’ll now perform shuffles/permutations by setting <code>type = "permute"</code>. Recall that shuffles/permutations are a kind of resampling, but unlike the bootstrap method, they involve resampling <em>without</em> replacement.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="estadística-inferencial.html#cb22-1"></a>promotions_generate &lt;-<span class="st"> </span>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-2"><a href="estadística-inferencial.html#cb22-2"></a><span class="st">  </span><span class="kw">specify</span>(<span class="dt">formula =</span> decision <span class="op">~</span><span class="st"> </span>gender, <span class="dt">success =</span> <span class="st">&quot;promoted&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-3"><a href="estadística-inferencial.html#cb22-3"></a><span class="st">  </span><span class="kw">hypothesize</span>(<span class="dt">null =</span> <span class="st">&quot;independence&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb22-4"><a href="estadística-inferencial.html#cb22-4"></a><span class="st">  </span><span class="kw">generate</span>(<span class="dt">reps =</span> <span class="dv">1000</span>, <span class="dt">type =</span> <span class="st">&quot;permute&quot;</span>)</span>
+<span id="cb22-5"><a href="estadística-inferencial.html#cb22-5"></a><span class="kw">nrow</span>(promotions_generate)</span></code></pre></div>
+<pre><code>## [1] 48000</code></pre>
+<p>Observe that the resulting data frame has 48,000 rows. This is because we performed shuffles/permutations for each of the 48 rows 1000 times and <span class="math inline">\(48,000 = 1000 \cdot 48\)</span>. If you explore the <code>promotions_generate</code> data frame with <code>View()</code>, you’ll notice that the variable <code>replicate</code> indicates which resample each row belongs to. So it has the value <code>1</code> 48 times, the value <code>2</code> 48 times, all the way through to the value <code>1000</code> 48 times.</p>
+</div>
+<div id="calculate-summary-statistics" class="section level4 unnumbered">
+<h4>4. <code>calculate</code> summary statistics</h4>
+<p>Now that we have generated 1000 replicates of “shuffles” assuming the null hypothesis is true, let’s <code>calculate()</code>  the appropriate summary statistic for each of our 1000 shuffles. From Section <a href="estadística-inferencial.html#understanding-ht">4.2</a>, point estimates related to hypothesis testing have a specific name: <em>test statistics</em>. Since the unknown population parameter of interest is the difference in population proportions <span class="math inline">\(p_{m} - p_{f}\)</span>, the test statistic here is the difference in sample proportions <span class="math inline">\(\widehat{p}_{m} - \widehat{p}_{f}\)</span>.</p>
+<p>For each of our 1000 shuffles, we can calculate this test statistic by setting <code>stat = "diff in props"</code>. Furthermore, since we are interested in <span class="math inline">\(\widehat{p}_{m} - \widehat{p}_{f}\)</span> we set <code>order = c("male", "female")</code>. As we stated earlier, the order of the subtraction does not matter, so long as you stay consistent throughout your analysis and tailor your interpretations accordingly.</p>
+<p>Let’s save the result in a data frame called <code>null_distribution</code>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="estadística-inferencial.html#cb24-1"></a>null_distribution &lt;-<span class="st"> </span>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-2"><a href="estadística-inferencial.html#cb24-2"></a><span class="st">  </span><span class="kw">specify</span>(<span class="dt">formula =</span> decision <span class="op">~</span><span class="st"> </span>gender, <span class="dt">success =</span> <span class="st">&quot;promoted&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-3"><a href="estadística-inferencial.html#cb24-3"></a><span class="st">  </span><span class="kw">hypothesize</span>(<span class="dt">null =</span> <span class="st">&quot;independence&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-4"><a href="estadística-inferencial.html#cb24-4"></a><span class="st">  </span><span class="kw">generate</span>(<span class="dt">reps =</span> <span class="dv">1000</span>, <span class="dt">type =</span> <span class="st">&quot;permute&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb24-5"><a href="estadística-inferencial.html#cb24-5"></a><span class="st">  </span><span class="kw">calculate</span>(<span class="dt">stat =</span> <span class="st">&quot;diff in props&quot;</span>, <span class="dt">order =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span>
+<span id="cb24-6"><a href="estadística-inferencial.html#cb24-6"></a>null_distribution</span></code></pre></div>
+<pre><code>## # A tibble: 1,000 x 2
+##    replicate    stat
+##        &lt;int&gt;   &lt;dbl&gt;
+##  1         1 -0.0417
+##  2         2 -0.125 
+##  3         3 -0.125 
+##  4         4 -0.0417
+##  5         5 -0.0417
+##  6         6 -0.125 
+##  7         7 -0.125 
+##  8         8 -0.125 
+##  9         9 -0.0417
+## 10        10 -0.0417
+## # … with 990 more rows</code></pre>
+<p>Observe that we have 1000 values of <code>stat</code>, each representing one instance of <span class="math inline">\(\widehat{p}_{m} - \widehat{p}_{f}\)</span> in a hypothesized world of no gender discrimination. Observe as well that we chose the name of this data frame carefully: <code>null_distribution</code>. Recall once again from Section <a href="estadística-inferencial.html#understanding-ht">4.2</a> that sampling distributions when the null hypothesis <span class="math inline">\(H_0\)</span> is assumed to be true have a special name: the <em>null distribution</em>.</p>
+<p>What was the <em>observed</em> difference in promotion rates? In other words, what was the <em>observed test statistic</em> <span class="math inline">\(\widehat{p}_{m} - \widehat{p}_{f}\)</span>? Recall from Section <a href="estadística-inferencial.html#ht-activity">4.1</a> that we computed this observed difference by hand to be 0.875 - 0.583 = 0.292 = 29.2%. We can also compute this value using the previous <code>infer</code> code but with the <code>hypothesize()</code> and <code>generate()</code> steps removed. Let’s save this in <code>obs_diff_prop</code>:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="estadística-inferencial.html#cb26-1"></a>obs_diff_prop &lt;-<span class="st"> </span>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb26-2"><a href="estadística-inferencial.html#cb26-2"></a><span class="st">  </span><span class="kw">specify</span>(decision <span class="op">~</span><span class="st"> </span>gender, <span class="dt">success =</span> <span class="st">&quot;promoted&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb26-3"><a href="estadística-inferencial.html#cb26-3"></a><span class="st">  </span><span class="kw">calculate</span>(<span class="dt">stat =</span> <span class="st">&quot;diff in props&quot;</span>, <span class="dt">order =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span>
+<span id="cb26-4"><a href="estadística-inferencial.html#cb26-4"></a>obs_diff_prop</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##    stat
+##   &lt;dbl&gt;
+## 1 0.292</code></pre>
+</div>
+<div id="visualize-the-p-value" class="section level4 unnumbered">
+<h4>5. <code>visualize</code> the p-value</h4>
+<p>The final step is to measure how surprised we are by a promotion difference of 29.2% in a hypothesized universe of no gender discrimination. If the observed difference of 0.292 is highly unlikely, then we would be inclined to reject the validity of our hypothesized universe.</p>
+<p>We start by visualizing the <em>null distribution</em> of our 1000 values of <span class="math inline">\(\widehat{p}_{m} - \widehat{p}_{f}\)</span> using <code>visualize()</code>  in Figure <a href="estadística-inferencial.html#fig:null-distribution-infer">4.5</a>. Recall that these are values of the difference in promotion rates assuming <span class="math inline">\(H_0\)</span> is true. This corresponds to being in our hypothesized universe of no gender discrimination.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="estadística-inferencial.html#cb28-1"></a><span class="kw">visualize</span>(null_distribution, <span class="dt">bins =</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:null-distribution-infer"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/null-distribution-infer-1.png" alt="Null distribution." width="672" />
+<p class="caption">
+Figura 4.5: Null distribution.
+</p>
+</div>
+<p>Let’s now add what happened in real life to Figure <a href="estadística-inferencial.html#fig:null-distribution-infer">4.5</a>, the observed difference in promotion rates of 0.875 - 0.583 = 0.292 = 29.2%. However, instead of merely adding a vertical line using <code>geom_vline()</code>, let’s use the  <code>shade_p_value()</code> function with <code>obs_stat</code> set to the observed test statistic value we saved in <code>obs_diff_prop</code>.</p>
+<p>Furthermore, we’ll set the <code>direction = "right"</code> reflecting our alternative hypothesis <span class="math inline">\(H_A: p_{m} - p_{f} &gt; 0\)</span>. Recall our alternative hypothesis <span class="math inline">\(H_A\)</span> is that <span class="math inline">\(p_{m} - p_{f} &gt; 0\)</span>, stating that there is a difference in promotion rates in favor of résumés with male names. “More extreme” here corresponds to differences that are “bigger” or “more positive” or “more to the right.” Hence we set the <code>direction</code> argument of <code>shade_p_value()</code> to be <code>"right"</code>.</p>
+<p>On the other hand, had our alternative hypothesis <span class="math inline">\(H_A\)</span> been the other possible one-sided alternative <span class="math inline">\(p_{m} - p_{f} &lt; 0\)</span>, suggesting discrimination in favor of résumés with female names, we would’ve set <code>direction = "left"</code>. Had our alternative hypothesis <span class="math inline">\(H_A\)</span> been two-sided <span class="math inline">\(p_{m} - p_{f} \neq 0\)</span>, suggesting discrimination in either direction, we would’ve set <code>direction = "both"</code>.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="estadística-inferencial.html#cb29-1"></a><span class="kw">visualize</span>(null_distribution, <span class="dt">bins =</span> <span class="dv">10</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb29-2"><a href="estadística-inferencial.html#cb29-2"></a><span class="st">  </span><span class="kw">shade_p_value</span>(<span class="dt">obs_stat =</span> obs_diff_prop, <span class="dt">direction =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:null-distribution-infer-2"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/null-distribution-infer-2-1.png" alt="Shaded histogram to show $p$-value." width="672" />
+<p class="caption">
+Figura 4.6: Shaded histogram to show <span class="math inline">\(p\)</span>-value.
+</p>
+</div>
+<p>In the resulting Figure <a href="estadística-inferencial.html#fig:null-distribution-infer-2">4.6</a>, the solid dark line marks 0.292 = 29.2%. However, what does the shaded-region correspond to? This is the <em><span class="math inline">\(p\)</span>-value</em>. Recall the definition of the <span class="math inline">\(p\)</span>-value from Section <a href="estadística-inferencial.html#understanding-ht">4.2</a>:</p>
+<blockquote>
+<p>A <span class="math inline">\(p\)</span>-value is the probability of obtaining a test statistic just as or more extreme than the observed test statistic <em>assuming the null hypothesis <span class="math inline">\(H_0\)</span> is true</em>.
+So judging by the shaded region in Figure <a href="estadística-inferencial.html#fig:null-distribution-infer-2">4.6</a>, it seems we would somewhat rarely observe differences in promotion rates of 0.292 = 29.2% or more in a hypothesized universe of no gender discrimination. In other words, the <span class="math inline">\(p\)</span>-value is somewhat small. Hence, we would be inclined to reject this hypothesized universe, or using statistical language we would “reject <span class="math inline">\(H_0\)</span>.”</p>
+</blockquote>
+<p>What fraction of the null distribution is shaded? In other words, what is the exact value of the <span class="math inline">\(p\)</span>-value? We can compute it using the <code>get_p_value()</code>  function with the same arguments as the previous <code>shade_p_value()</code> code:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="estadística-inferencial.html#cb30-1"></a>null_distribution <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb30-2"><a href="estadística-inferencial.html#cb30-2"></a><span class="st">  </span><span class="kw">get_p_value</span>(<span class="dt">obs_stat =</span> obs_diff_prop, <span class="dt">direction =</span> <span class="st">&quot;right&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##   p_value
+##     &lt;dbl&gt;
+## 1   0.027</code></pre>
+<p>Keeping the definition of a <span class="math inline">\(p\)</span>-value in mind, the probability of observing a difference in promotion rates as large as 0.292 = 29.2% due to sampling variation alone in the null distribution is 0.027 = 2.7%. Since this <span class="math inline">\(p\)</span>-value is smaller than our pre-specified significance level <span class="math inline">\(\alpha\)</span> = 0.05, we reject the null hypothesis <span class="math inline">\(H_0: p_{m} - p_{f} = 0\)</span>. In other words, this <span class="math inline">\(p\)</span>-value is sufficiently small to reject our hypothesized universe of no gender discrimination. We instead have enough evidence to change our mind in favor of gender discrimination being a likely culprit here. Observe that whether we reject the null hypothesis <span class="math inline">\(H_0\)</span> or not depends in large part on our choice of significance level <span class="math inline">\(\alpha\)</span>. We’ll discuss this more in Subsection <a href="estadística-inferencial.html#choosing-alpha">4.4.3</a>.</p>
+</div>
+</div>
+<div id="comparing-infer-workflows" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Comparison with confidence intervals</h3>
+<p>One of the great things about the <code>infer</code> package is that we can jump seamlessly between conducting hypothesis tests and constructing confidence intervals with minimal changes! Recall the code from the previous section that creates the null distribution, which in turn is needed to compute the <span class="math inline">\(p\)</span>-value:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="estadística-inferencial.html#cb32-1"></a>null_distribution &lt;-<span class="st"> </span>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb32-2"><a href="estadística-inferencial.html#cb32-2"></a><span class="st">  </span><span class="kw">specify</span>(<span class="dt">formula =</span> decision <span class="op">~</span><span class="st"> </span>gender, <span class="dt">success =</span> <span class="st">&quot;promoted&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb32-3"><a href="estadística-inferencial.html#cb32-3"></a><span class="st">  </span><span class="kw">hypothesize</span>(<span class="dt">null =</span> <span class="st">&quot;independence&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb32-4"><a href="estadística-inferencial.html#cb32-4"></a><span class="st">  </span><span class="kw">generate</span>(<span class="dt">reps =</span> <span class="dv">1000</span>, <span class="dt">type =</span> <span class="st">&quot;permute&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb32-5"><a href="estadística-inferencial.html#cb32-5"></a><span class="st">  </span><span class="kw">calculate</span>(<span class="dt">stat =</span> <span class="st">&quot;diff in props&quot;</span>, <span class="dt">order =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span></code></pre></div>
+<p>To create the corresponding bootstrap distribution needed to construct a 95% confidence interval for <span class="math inline">\(p_{m} - p_{f}\)</span>, we only need to make two changes.  First, we remove the <code>hypothesize()</code> step since we are no longer assuming a null hypothesis <span class="math inline">\(H_0\)</span> is true. We can do this by deleting or commenting out the <code>hypothesize()</code> line of code. Second, we switch the <code>type</code> of resampling in the <code>generate()</code> step to be <code>"bootstrap"</code> instead of <code>"permute"</code>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="estadística-inferencial.html#cb33-1"></a>bootstrap_distribution &lt;-<span class="st"> </span>promotions <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb33-2"><a href="estadística-inferencial.html#cb33-2"></a><span class="st">  </span><span class="kw">specify</span>(<span class="dt">formula =</span> decision <span class="op">~</span><span class="st"> </span>gender, <span class="dt">success =</span> <span class="st">&quot;promoted&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb33-3"><a href="estadística-inferencial.html#cb33-3"></a><span class="st">  </span><span class="co"># Change 1 - Remove hypothesize():</span></span>
+<span id="cb33-4"><a href="estadística-inferencial.html#cb33-4"></a><span class="st">  </span><span class="co"># hypothesize(null = &quot;independence&quot;) %&gt;% </span></span>
+<span id="cb33-5"><a href="estadística-inferencial.html#cb33-5"></a><span class="st">  </span><span class="co"># Change 2 - Switch type from &quot;permute&quot; to &quot;bootstrap&quot;:</span></span>
+<span id="cb33-6"><a href="estadística-inferencial.html#cb33-6"></a><span class="st">  </span><span class="kw">generate</span>(<span class="dt">reps =</span> <span class="dv">1000</span>, <span class="dt">type =</span> <span class="st">&quot;bootstrap&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb33-7"><a href="estadística-inferencial.html#cb33-7"></a><span class="st">  </span><span class="kw">calculate</span>(<span class="dt">stat =</span> <span class="st">&quot;diff in props&quot;</span>, <span class="dt">order =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</span></code></pre></div>
+<p>Using this <code>bootstrap_distribution</code>, let’s first compute the percentile-based confidence intervals, as we did in Section <a href="#bootstrap-process"><strong>??</strong></a>:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="estadística-inferencial.html#cb34-1"></a>percentile_ci &lt;-<span class="st"> </span>bootstrap_distribution <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb34-2"><a href="estadística-inferencial.html#cb34-2"></a><span class="st">  </span><span class="kw">get_confidence_interval</span>(<span class="dt">level =</span> <span class="fl">0.95</span>, <span class="dt">type =</span> <span class="st">&quot;percentile&quot;</span>)</span>
+<span id="cb34-3"><a href="estadística-inferencial.html#cb34-3"></a>percentile_ci</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##   lower_ci upper_ci
+##      &lt;dbl&gt;    &lt;dbl&gt;
+## 1   0.0635    0.525</code></pre>
+<p>Using our shorthand interpretation for 95% confidence intervals from Subsection <a href="#shorthand"><strong>??</strong></a>, we are 95% “confident” that the true difference in population proportions <span class="math inline">\(p_{m} - p_{f}\)</span> is between (0.063, 0.525). Let’s visualize <code>bootstrap_distribution</code> and this percentile-based 95% confidence interval for <span class="math inline">\(p_{m} - p_{f}\)</span> in Figure <a href="estadística-inferencial.html#fig:bootstrap-distribution-two-prop-percentile">4.7</a>.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="estadística-inferencial.html#cb36-1"></a><span class="kw">visualize</span>(bootstrap_distribution) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb36-2"><a href="estadística-inferencial.html#cb36-2"></a><span class="st">  </span><span class="kw">shade_confidence_interval</span>(<span class="dt">endpoints =</span> percentile_ci)</span></code></pre></div>
+<div class="figure"><span id="fig:bootstrap-distribution-two-prop-percentile"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/bootstrap-distribution-two-prop-percentile-1.png" alt="Percentile-based 95\% confidence interval." width="672" />
+<p class="caption">
+Figura 4.7: Percentile-based 95% confidence interval.
+</p>
+</div>
+<p>Notice a key value that is not included in the 95% confidence interval for <span class="math inline">\(p_{m} - p_{f}\)</span>: the value 0. In other words, a difference of 0 is not included in our net, suggesting that <span class="math inline">\(p_{m}\)</span> and <span class="math inline">\(p_{f}\)</span> are truly different! Furthermore, observe how the entirety of the 95% confidence interval for <span class="math inline">\(p_{m} - p_{f}\)</span> lies above 0, suggesting that this difference is in favor of men.</p>
+<p>Since the bootstrap distribution appears to be roughly normally shaped, we can also use the standard error method as we did in Section <a href="#bootstrap-process"><strong>??</strong></a>. In this case, we must specify the <code>point_estimate</code> argument as the observed difference in promotion rates 0.292 = 29.2% saved in <code>obs_diff_prop</code>. This value acts as the center of the confidence interval.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="estadística-inferencial.html#cb37-1"></a>se_ci &lt;-<span class="st"> </span>bootstrap_distribution <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb37-2"><a href="estadística-inferencial.html#cb37-2"></a><span class="st">  </span><span class="kw">get_confidence_interval</span>(<span class="dt">level =</span> <span class="fl">0.95</span>, <span class="dt">type =</span> <span class="st">&quot;se&quot;</span>, </span>
+<span id="cb37-3"><a href="estadística-inferencial.html#cb37-3"></a>                          <span class="dt">point_estimate =</span> obs_diff_prop)</span>
+<span id="cb37-4"><a href="estadística-inferencial.html#cb37-4"></a>se_ci</span></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##   lower_ci upper_ci
+##      &lt;dbl&gt;    &lt;dbl&gt;
+## 1   0.0587    0.525</code></pre>
+<p>Let’s visualize <code>bootstrap_distribution</code> again, but now the standard error based 95% confidence interval for <span class="math inline">\(p_{m} - p_{f}\)</span> in Figure <a href="estadística-inferencial.html#fig:bootstrap-distribution-two-prop-se">4.8</a>. Again, notice how the value 0 is not included in our confidence interval, again suggesting that <span class="math inline">\(p_{m}\)</span> and <span class="math inline">\(p_{f}\)</span> are truly different!</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="estadística-inferencial.html#cb39-1"></a><span class="kw">visualize</span>(bootstrap_distribution) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb39-2"><a href="estadística-inferencial.html#cb39-2"></a><span class="st">  </span><span class="kw">shade_confidence_interval</span>(<span class="dt">endpoints =</span> se_ci)</span></code></pre></div>
+<div class="figure"><span id="fig:bootstrap-distribution-two-prop-se"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/bootstrap-distribution-two-prop-se-1.png" alt="Standard error-based 95\% confidence interval." width="672" />
+<p class="caption">
+Figura 4.8: Standard error-based 95% confidence interval.
+</p>
+</div>
+</div>
+<div id="only-one-test" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> “There is only one test”</h3>
+<p>Let’s recap the steps necessary to conduct a hypothesis test using the terminology, notation, and definitions related to sampling you saw in Section <a href="estadística-inferencial.html#understanding-ht">4.2</a> and the <code>infer</code> workflow from Subsection <a href="estadística-inferencial.html#infer-workflow-ht">4.3.1</a>:</p>
+<ol style="list-style-type: decimal">
+<li><code>specify()</code> the variables of interest in your data frame.</li>
+<li><code>hypothesize()</code> the null hypothesis <span class="math inline">\(H_0\)</span>. In other words, set a “model for the universe” assuming <span class="math inline">\(H_0\)</span> is true.</li>
+<li><code>generate()</code> shuffles assuming <span class="math inline">\(H_0\)</span> is true. In other words, <em>simulate</em> data assuming <span class="math inline">\(H_0\)</span> is true.</li>
+<li><code>calculate()</code> the <em>test statistic</em> of interest, both for the observed data and your <em>simulated</em> data.</li>
+<li><code>visualize()</code> the resulting <em>null distribution</em> and compute the <em><span class="math inline">\(p\)</span>-value</em> by comparing the null distribution to the observed test statistic.</li>
+</ol>
+<p>While this is a lot to digest, especially the first time you encounter hypothesis testing, the nice thing is that once you understand this general framework, then you can understand <em>any</em> hypothesis test. In a famous blog post, computer scientist Allen Downey called this the <a href="http://allendowney.blogspot.com/2016/06/there-is-still-only-one-test.html">“There is only one test”</a> framework, for which he created the flowchart displayed in Figure <a href="#fig:htdowney"><strong>??</strong></a>.</p>
+<p>Notice its similarity with the “hypothesis testing with <code>infer</code>” diagram you saw in Figure <a href="#fig:inferht"><strong>??</strong></a>. That’s because the <code>infer</code> package was explicitly designed to match the “There is only one test” framework. So if you can understand the framework, you can easily generalize these ideas for all hypothesis testing scenarios. Whether for population proportions <span class="math inline">\(p\)</span>, population means <span class="math inline">\(\mu\)</span>, differences in population proportions <span class="math inline">\(p_1 - p_2\)</span>, differences in population means <span class="math inline">\(\mu_1 - \mu_2\)</span>, and as you’ll see in Chapter <a href="#inference-for-regression"><strong>??</strong></a> on inference for regression, population regression slopes <span class="math inline">\(\beta_1\)</span> as well. In fact, it applies more generally even than just these examples to more complicated hypothesis tests and test statistics as well.</p>
+</div>
+</div>
+<div id="ht-interpretation" class="section level2">
+<h2><span class="header-section-number">4.4</span> Interpreting hypothesis tests</h2>
+<p>Interpreting the results of hypothesis tests is one of the more challenging aspects of this method for statistical inference. In this section, we’ll focus on ways to help with deciphering the process and address some common misconceptions.</p>
+<div id="trial" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Two possible outcomes</h3>
+<p>In Section <a href="estadística-inferencial.html#understanding-ht">4.2</a>, we mentioned that given a pre-specified significance level <span class="math inline">\(\alpha\)</span> there are two possible outcomes of a hypothesis test:</p>
+<ul>
+<li>If the <span class="math inline">\(p\)</span>-value is less than <span class="math inline">\(\alpha\)</span>, then we <em>reject</em> the null hypothesis <span class="math inline">\(H_0\)</span> in favor of <span class="math inline">\(H_A\)</span>.</li>
+<li>If the <span class="math inline">\(p\)</span>-value is greater than or equal to <span class="math inline">\(\alpha\)</span>, we <em>fail to reject</em> the null hypothesis <span class="math inline">\(H_0\)</span>.</li>
+</ul>
+<p>Unfortunately, the latter result is often misinterpreted as “accepting the null hypothesis <span class="math inline">\(H_0\)</span>.” While at first glance it may seem that the statements “failing to reject <span class="math inline">\(H_0\)</span>” and “accepting <span class="math inline">\(H_0\)</span>” are equivalent, there actually is a subtle difference. Saying that we “accept the null hypothesis <span class="math inline">\(H_0\)</span>” is equivalent to stating that “we think the null hypothesis <span class="math inline">\(H_0\)</span> is true.” However, saying that we “fail to reject the null hypothesis <span class="math inline">\(H_0\)</span>” is saying something else: “While <span class="math inline">\(H_0\)</span> might still be false, we don’t have enough evidence to say so.” In other words, there is an absence of enough proof. However, the absence of proof is not proof of absence.</p>
+<p>To further shed light on this distinction,  let’s use the United States criminal justice system as an analogy. A criminal trial in the United States is a similar situation to hypothesis tests whereby a choice between two contradictory claims must be made about a defendant who is on trial:</p>
+<ol style="list-style-type: decimal">
+<li>The defendant is truly either “innocent” or “guilty.”</li>
+<li>The defendant is presumed “innocent until proven guilty.”</li>
+<li>The defendant is found guilty only if there is <em>strong evidence</em> that the defendant is guilty. The phrase “beyond a reasonable doubt” is often used as a guideline for determining a cutoff for when enough evidence exists to find the defendant guilty.</li>
+<li>The defendant is found to be either “not guilty” or “guilty” in the ultimate verdict.</li>
+</ol>
+<p>In other words, <em>not guilty</em> verdicts are not suggesting the defendant is <em>innocent</em>, but instead that “while the defendant may still actually be guilty, there wasn’t enough evidence to prove this fact.” Now let’s make the connection with hypothesis tests:</p>
+<ol style="list-style-type: decimal">
+<li>Either the null hypothesis <span class="math inline">\(H_0\)</span> or the alternative hypothesis <span class="math inline">\(H_A\)</span> is true.</li>
+<li>Hypothesis tests are conducted assuming the null hypothesis <span class="math inline">\(H_0\)</span> is true.</li>
+<li>We reject the null hypothesis <span class="math inline">\(H_0\)</span> in favor of <span class="math inline">\(H_A\)</span> only if the evidence found in the sample suggests that <span class="math inline">\(H_A\)</span> is true. The significance level <span class="math inline">\(\alpha\)</span> is used as a guideline to set the threshold on just how strong of evidence we require.</li>
+<li>We ultimately decide to either “fail to reject <span class="math inline">\(H_0\)</span>” or “reject <span class="math inline">\(H_0\)</span>.”</li>
+</ol>
+<p>So while gut instinct may suggest “failing to reject <span class="math inline">\(H_0\)</span>” and “accepting <span class="math inline">\(H_0\)</span>” are equivalent statements, they are not. “Accepting <span class="math inline">\(H_0\)</span>” is equivalent to finding a defendant innocent. However, courts do not find defendants “innocent,” but rather they find them “not guilty.” Putting things differently, defense attorneys do not need to prove that their clients are innocent, rather they only need to prove that clients are not “guilty beyond a reasonable doubt”.</p>
+<p>So going back to our résumés activity in Section <a href="estadística-inferencial.html#ht-infer">4.3</a>, recall that our hypothesis test was <span class="math inline">\(H_0: p_{m} - p_{f} = 0\)</span> versus <span class="math inline">\(H_A: p_{m} - p_{f} &gt; 0\)</span> and that we used a pre-specified significance level of <span class="math inline">\(\alpha\)</span> = 0.05. We found a <span class="math inline">\(p\)</span>-value of 0.027. Since the <span class="math inline">\(p\)</span>-value was smaller than <span class="math inline">\(\alpha\)</span> = 0.05, we rejected <span class="math inline">\(H_0\)</span>. In other words, we found needed levels of evidence in this particular sample to say that <span class="math inline">\(H_0\)</span> is false at the <span class="math inline">\(\alpha\)</span> = 0.05 significance level. We also state this conclusion using non-statistical language: we found enough evidence in this data to suggest that there was gender discrimination at play.</p>
+</div>
+<div id="types-of-errors" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Types of errors</h3>
+<p>Unfortunately, there is some chance a jury or a judge can make an incorrect decision in a criminal trial by reaching the wrong verdict. For example, finding a truly innocent defendant “guilty”. Or on the other hand, finding a truly guilty defendant “not guilty.” This can often stem from the fact that prosecutors don’t have access to all the relevant evidence, but instead are limited to whatever evidence the police can find.</p>
+<p>The same holds for hypothesis tests. We can make incorrect decisions about a population parameter because we only have a sample of data from the population and thus sampling variation can lead us to incorrect conclusions.</p>
+<p>There are two possible erroneous conclusions in a criminal trial: either (1) a truly innocent person is found guilty or (2) a truly guilty person is found not guilty. Similarly, there are two possible errors in a hypothesis test: either (1) rejecting <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is true, called a <strong>Type I error</strong>  or (2) failing to reject <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is false, called a  <strong>Type II error</strong>. Another term used for “Type I error” is “false positive,” while another term for “Type II error” is “false negative.”</p>
+<p>This risk of error is the price researchers pay for basing inference on a sample instead of performing a census on the entire population. But as we’ve seen in our numerous examples and activities so far, censuses are often very expensive and other times impossible, and thus researchers have no choice but to use a sample. Thus in any hypothesis test based on a sample, we have no choice but to tolerate some chance that a Type I error will be made and some chance that a Type II error will occur.</p>
+<p>To help understand the concepts of Type I error and Type II errors, we apply these terms to our criminal justice analogy in Figure <a href="#fig:trial-errors-table"><strong>??</strong></a>.</p>
+<p>Thus a Type I error corresponds to incorrectly putting a truly innocent person in jail, whereas a Type II error corresponds to letting a truly guilty person go free. Let’s show the corresponding table in Figure <a href="#fig:trial-errors-table-ht"><strong>??</strong></a> for hypothesis tests.</p>
+</div>
+<div id="choosing-alpha" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> How do we choose alpha?</h3>
+<p>If we are using a sample to make inferences about a population, we run the risk of making errors. For confidence intervals, a corresponding “error” would be constructing a confidence interval that does not contain the true value of the population parameter. For hypothesis tests, this would be making either a Type I or Type II error. Obviously, we want to minimize the probability of either error; we want a small probability of making an incorrect conclusion:</p>
+<ul>
+<li>The probability of a Type I Error occurring is denoted by <span class="math inline">\(\alpha\)</span>. The value of <span class="math inline">\(\alpha\)</span> is called the <em>significance level</em> of the hypothesis test, which we defined in Section <a href="estadística-inferencial.html#understanding-ht">4.2</a>.</li>
+<li>The probability of a Type II Error is denoted by <span class="math inline">\(\beta\)</span>. The value of <span class="math inline">\(1-\beta\)</span> is known as the <em>power</em> of the hypothesis test.</li>
+</ul>
+<p>In other words, <span class="math inline">\(\alpha\)</span> corresponds to the probability of incorrectly rejecting <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is true. On the other hand, <span class="math inline">\(\beta\)</span> corresponds to the probability of incorrectly failing to reject <span class="math inline">\(H_0\)</span> when in fact <span class="math inline">\(H_0\)</span> is false.</p>
+<p>Ideally, we want <span class="math inline">\(\alpha = 0\)</span> and <span class="math inline">\(\beta = 0\)</span>, meaning that the chance of making either error is 0. However, this can never be the case in any situation where we are sampling for inference. There will always be the possibility of making either error when we use sample data. Furthermore, these two error probabilities are inversely related. As the probability of a Type I error goes down, the probability of a Type II error goes up.</p>
+<p>What is typically done in practice is to fix the probability of a Type I error by pre-specifying a significance level <span class="math inline">\(\alpha\)</span> and then try to minimize <span class="math inline">\(\beta\)</span>. In other words, we will tolerate a certain fraction of incorrect rejections of the null hypothesis <span class="math inline">\(H_0\)</span>, and then try to minimize the fraction of incorrect non-rejections of <span class="math inline">\(H_0\)</span>.</p>
+<p>So for example if we used <span class="math inline">\(\alpha\)</span> = 0.01, we would be using a hypothesis testing procedure that in the long run would incorrectly reject the null hypothesis <span class="math inline">\(H_0\)</span> one percent of the time. This is analogous to setting the confidence level of a confidence interval.</p>
+<p>So what value should you use for <span class="math inline">\(\alpha\)</span>?  Different fields have different conventions, but some commonly used values include 0.10, 0.05, 0.01, and 0.001. However, it is important to keep in mind that if you use a relatively small value of <span class="math inline">\(\alpha\)</span>, then all things being equal, <span class="math inline">\(p\)</span>-values will have a harder time being less than <span class="math inline">\(\alpha\)</span>. Thus we would reject the null hypothesis less often. In other words, we would reject the null hypothesis <span class="math inline">\(H_0\)</span> only if we have <em>very strong</em> evidence to do so. This is known as a “conservative” test.</p>
+<p>On the other hand, if we used a relatively large value of <span class="math inline">\(\alpha\)</span>, then all things being equal, <span class="math inline">\(p\)</span>-values will have an easier time being less than <span class="math inline">\(\alpha\)</span>. Thus we would reject the null hypothesis more often. In other words, we would reject the null hypothesis <span class="math inline">\(H_0\)</span> even if we only have <em>mild</em> evidence to do so. This is known as a “liberal” test.</p>
+</div>
+</div>
+<div id="conclusions" class="section level2">
+<h2><span class="header-section-number">4.5</span> Conclusions</h2>
+<div id="when-inference-is-not-needed" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> When inference is not needed</h3>
+<p>We’ve now walked through several different examples of how to use the <code>infer</code> package to perform statistical inference: constructing confidence intervals and conducting hypothesis tests. For each of these examples, we made it a point to always perform an exploratory data analysis (EDA) first; specifically, by looking at the raw data values, by using data visualization with <code>ggplot2</code>, and by data wrangling with <code>dplyr</code> beforehand. We <em>highly</em> encourage you to always do the same. As a beginner to statistics, EDA helps you develop intuition as to what statistical methods like confidence intervals and hypothesis tests can tell us. Even as a seasoned practitioner of statistics, EDA helps guide your statistical investigations. In particular, is statistical inference even needed?</p>
+<p>Let’s consider an example. Say we’re interested in the following question: Of <em>all</em> flights leaving a New York City airport, are Hawaiian Airlines flights in the air for longer than Alaska Airlines flights? Furthermore, let’s assume that 2013 flights are a representative sample of all such flights. Then we can use the <code>flights</code> data frame in the <code>nycflights13</code>  package we introduced in Section <a href="#nycflights13"><strong>??</strong></a> to answer our question. Let’s filter this data frame to only include Hawaiian and Alaska Airlines using their <code>carrier</code> codes <code>HA</code> and <code>AS</code>:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="estadística-inferencial.html#cb40-1"></a>flights_sample &lt;-<span class="st"> </span>flights <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb40-2"><a href="estadística-inferencial.html#cb40-2"></a><span class="st">  </span><span class="kw">filter</span>(carrier <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;HA&quot;</span>, <span class="st">&quot;AS&quot;</span>))</span></code></pre></div>
+<p>There are two possible statistical inference methods we could use to answer such questions. First, we could construct a 95% confidence interval for the difference in population means <span class="math inline">\(\mu_{HA} - \mu_{AS}\)</span>, where <span class="math inline">\(\mu_{HA}\)</span> is the mean air time of all Hawaiian Airlines flights and <span class="math inline">\(\mu_{AS}\)</span> is the mean air time of all Alaska Airlines flights. We could then check if the entirety of the interval is greater than 0, suggesting that <span class="math inline">\(\mu_{HA} - \mu_{AS} &gt; 0\)</span>, or, in other words suggesting that <span class="math inline">\(\mu_{HA} &gt; \mu_{AS}\)</span>. Second, we could perform a hypothesis test of the null hypothesis <span class="math inline">\(H_0: \mu_{HA} - \mu_{AS} = 0\)</span> versus the alternative hypothesis <span class="math inline">\(H_A: \mu_{HA} - \mu_{AS} &gt; 0\)</span>.</p>
+<p>However, let’s first construct an exploratory visualization as we suggested earlier. Since <code>air_time</code> is numerical and <code>carrier</code> is categorical, a boxplot can display the relationship between these two variables, which we display in Figure <a href="estadística-inferencial.html#fig:ha-as-flights-boxplot">4.9</a>.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="estadística-inferencial.html#cb41-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> flights_sample, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> carrier, <span class="dt">y =</span> air_time)) <span class="op">+</span></span>
+<span id="cb41-2"><a href="estadística-inferencial.html#cb41-2"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb41-3"><a href="estadística-inferencial.html#cb41-3"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Carrier&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Air Time&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Removed 5 rows containing non-finite values (stat_boxplot).</code></pre>
+<div class="figure"><span id="fig:ha-as-flights-boxplot"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/ha-as-flights-boxplot-1.png" alt="Air time for Hawaiian and Alaska Airlines flights departing NYC in 2013." width="672" />
+<p class="caption">
+Figura 4.9: Air time for Hawaiian and Alaska Airlines flights departing NYC in 2013.
+</p>
+</div>
+<p>This is what we like to call “no PhD in Statistics needed” moments. You don’t have to be an expert in statistics to know that Alaska Airlines and Hawaiian Airlines have <em>significantly</em> different air times. The two boxplots don’t even overlap! Constructing a confidence interval or conducting a hypothesis test would frankly not provide much more insight than Figure <a href="estadística-inferencial.html#fig:ha-as-flights-boxplot">4.9</a>.</p>
+<p>Let’s investigate why we observe such a clear cut difference between these two airlines using data wrangling. Let’s first group by the rows of <code>flights_sample</code> not only by <code>carrier</code> but also by destination <code>dest</code>. Subsequently, we’ll compute two summary statistics: the number of observations using <code>n()</code> and the mean airtime:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="estadística-inferencial.html#cb43-1"></a>flights_sample <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb43-2"><a href="estadística-inferencial.html#cb43-2"></a><span class="st">  </span><span class="kw">group_by</span>(carrier, dest) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb43-3"><a href="estadística-inferencial.html#cb43-3"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n =</span> <span class="kw">n</span>(), <span class="dt">mean_time =</span> <span class="kw">mean</span>(air_time, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;carrier&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 2 x 4
+## # Groups:   carrier [2]
+##   carrier dest      n mean_time
+##   &lt;chr&gt;   &lt;chr&gt; &lt;int&gt;     &lt;dbl&gt;
+## 1 AS      SEA     714      326.
+## 2 HA      HNL     342      623.</code></pre>
+<p>It turns out that from New York City in 2013, Alaska only flew to <code>SEA</code> (Seattle) from New York City (NYC) while Hawaiian only flew to <code>HNL</code> (Honolulu) from NYC. Given the clear difference in distance from New York City to Seattle versus New York City to Honolulu, it is not surprising that we observe such different (<em>statistically significantly different</em>, in fact) air times in flights.</p>
+<p>This is a clear example of not needing to do anything more than a simple exploratory data analysis using data visualization and descriptive statistics to get an appropriate conclusion. This is why we highly recommend you perform an EDA of any sample data before running statistical inference methods like confidence intervals and hypothesis tests.</p>
+</div>
+<div id="problems-with-p-values" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Problems with p-values</h3>
+<p>On top of the many common misunderstandings about hypothesis testing and <span class="math inline">\(p\)</span>-values we listed in Section <a href="estadística-inferencial.html#ht-interpretation">4.4</a>, another unfortunate consequence of the expanded use of <span class="math inline">\(p\)</span>-values and hypothesis testing is a phenomenon known as “p-hacking.”  p-hacking is the act of “cherry-picking” only results that are “statistically significant” while dismissing those that aren’t, even if at the expense of the scientific ideas. There are lots of articles written recently about misunderstandings and the problems with <span class="math inline">\(p\)</span>-values. We encourage you to check some of them out:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://en.wikipedia.org/wiki/Misunderstandings_of_p-values">Misunderstandings of <span class="math inline">\(p\)</span>-values</a></li>
+<li><a href="https://www.vox.com/science-and-health/2017/7/31/16021654/p-values-statistical-significance-redefine-0005">What a nerdy debate about <span class="math inline">\(p\)</span>-values shows about science - and how to fix it</a></li>
+<li><a href="https://www.nature.com/news/statisticians-issue-warning-over-misuse-of-p-values-1.19503">Statisticians issue warning over misuse of <span class="math inline">\(P\)</span> values</a></li>
+<li><a href="https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/">You Can’t Trust What You Read About Nutrition</a></li>
+<li><a href="http://www.fharrell.com/post/pval-litany/">A Litany of Problems with p-values</a></li>
+</ol>
+<p>Such issues were getting so problematic that the American Statistical Association (ASA) put out a statement in 2016 titled, <a href="https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf">“The ASA Statement on Statistical Significance and <span class="math inline">\(P\)</span>-Values,”</a> with six principles underlying the proper use and interpretation of <span class="math inline">\(p\)</span>-values. The ASA released this guidance on <span class="math inline">\(p\)</span>-values to improve the conduct and interpretation of quantitative science and to inform the growing emphasis on reproducibility of science research.</p>
+<p>We as authors much prefer the use of confidence intervals for statistical inference, since in our opinion they are much less prone to large misinterpretation. However, many fields still exclusively use <span class="math inline">\(p\)</span>-values for statistical inference and this is one reason for including them in this text. We encourage you to learn more about “p-hacking” as well and its implication for science.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="estadística-descriptiva.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="el-muestreo-estadístico.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["tecnicas-cuantitativas.pdf", "tecnicas-cuantitativas.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

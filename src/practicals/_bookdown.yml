@@ -1,4 +1,4 @@
-book_filename: 'bookdown_intro'
+book_filename: 'tecnicas-cuantitativas'
 output_dir: ../../docs
 new_session: no
 language:

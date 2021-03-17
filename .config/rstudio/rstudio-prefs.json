@@ -1,3 +1,4 @@
 {
-    "default_project_location": "~/src"
+    "default_project_location": "~/src",
+    "jobs_tab_visibility": "shown"
 }

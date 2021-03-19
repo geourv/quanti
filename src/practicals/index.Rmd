@@ -12,7 +12,7 @@ always_allow_html: true
 ---
 
 # Antes de empezar
-En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de **programación literaria**.
+En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de ***programación literaria*** que en los últimos años está siendo cada vez más utilizada en el análisis de datos [@knuth1984literate; @xie2015knitr].
 
 ## Prerrequisitos
 Para preparar cualquier tarea en este formato es necesario instalar primero R y RStudio con los paquetes `knitr` y `rmarkdown`.

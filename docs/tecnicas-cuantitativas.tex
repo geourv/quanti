@@ -135,7 +135,7 @@
 \hypertarget{antes-de-empezar}{%
 \chapter{Antes de empezar}\label{antes-de-empezar}}
 
-En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de \textbf{programación literaria}.
+En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de \textbf{\emph{programación literaria}} que en los últimos años está siendo cada vez más utilizada en el análisis de datos \citep{knuth1984literate, xie2015knitr}.
 
 \hypertarget{prerrequisitos}{%
 \section{Prerrequisitos}\label{prerrequisitos}}
@@ -264,21 +264,21 @@ el intérprete de R entiende eso como una instrucción para sumar uno más uno, 
 ## [1] 2
 \end{verbatim}
 
-Fijaos cómo el valor de salida \texttt{2} está precedido por \texttt{{[}1{]}}, lo que indica que la salida está constituida por un solo elemento. Si la salida está constituida por más de un elemento, como la lista de números a continuación, cada fila de la salida está precedida por el índice del primer elemento de la salida.
+Fíjate cómo el valor de salida \texttt{2} está precedido por \texttt{{[}1{]}}, lo que indica que la salida está constituida por un solo elemento. Si la salida está constituida por más de un elemento, como la lista de números a continuación, cada fila de la salida está precedida por el índice del primer elemento de la salida.
 
 \begin{verbatim}
 ##  [1]   1   4   9  16  25  36  49  64  81 100 121 144 169 196 225 256 289 324 361
 ## [20] 400
 \end{verbatim}
 
-On the right side, you find two groups of panels. On the top-right, the main element is the \emph{Environment} panel, which is a representation of the current state of the interpreter's memory, and as such, it shows all the stored variables, datasets, and functions. On the bottom-right, you find the \emph{Files} panel, which shows file system (file and folders on your computer or the server), as well as the \emph{Help} panel, which shows you the help pages when required. We will discuss the other panels later on in the practical sessions.
+En el lado derecho, encontrarás dos grupos de paneles. En la parte superior derecha, el elemento principal es el panel \emph{Entorno}, que es una representación del estado actual de la memoria del intérprete y, como tal, muestra todas las variables, conjuntos de datos y funciones almacenados. En la parte inferior derecha, encontrarás el panel \emph{Archivos}, que muestra el sistema de archivos (archivos y carpetas del ordenador), así como el panel \emph{Ayuda}, que le muestra las páginas de ayuda cuando sea necesario. Discutiremos los otros paneles más adelante.
 
-\hypertarget{interpreting-values}{%
-\section{Interpreting values}\label{interpreting-values}}
+\hypertarget{interpretaciuxf3n-de-valores}{%
+\section{Interpretación de valores}\label{interpretaciuxf3n-de-valores}}
 
-When a value is typed in the \emph{Console}, the interpreter simply returns the same value. In the examples below, \texttt{2} is a simple numeric value, while \texttt{"String\ value"} is a textual value, which in R is referred to as a \emph{character} value and in programming is also commonly referred to as a \emph{string} (short for \emph{a string of characters}).
+Cuando se escribe un valor en la \emph{Consola}, el intérprete simplemente devuelve el mismo valor. En los ejemplos siguientes, \texttt{2} es un valor numérico simple, mientras que \texttt{"Valor\ de\ cadena"} es un valor textual, que en R se conoce como un valor de \emph{carácter} y en programación también se conoce comúnmente como una \emph{cadena} (abreviatura de \emph{una cadena de caracteres}).
 
-Numeric example:
+Ejemplo númerico
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -290,7 +290,7 @@ Numeric example:
 ## [1] 2
 \end{verbatim}
 
-Character example:
+Ejemplo de cadena
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -302,17 +302,17 @@ Character example:
 ## [1] "String value"
 \end{verbatim}
 
-Note how character values need to start and end with a single or double quote (\texttt{\textquotesingle{}} or \texttt{"}), which are not part of the information themselves. The \href{https://style.tidyverse.org/syntax.html}{Tidyverse Style Guide} suggests always to use the double quote (\texttt{"}), so we will use those in this module.
+Tened en cuenta que los valores de los caracteres deben comenzar y terminar con comillas simples o dobles (\texttt{\textquotesingle{}}o\texttt{"}), que no forman parte de la información en sí. La \href{https://style.tidyverse.org\%20/syntax.html}{Guía de estilo de Tidyverse} sugiere usar siempre comillas dobles (\texttt{"}), así que serán las que usaremos en este curso.
 
-Anything that follows a \texttt{\#} symbol is considered a \emph{comment} and the interpreter ignores it.
+Todo lo que sigue a un símbolo \texttt{\#} se considera un \emph{comentario} y el intérprete lo ignora. Cada lenguaje de programación puede usar sus propios símbolos para identificar los comentarios. Por ejemplo cabe destacar la diferencia entre \texttt{\#} en Markdown que identifica un título de primer nivel, mientras que los comentarios en un fichero de Rmarkdown se identifican entre \texttt{\textless{}} y \texttt{\textgreater{}}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# hi, I am a comment, please ignore me}
+\CommentTok{# Este comentario es ignorado por R. Solo sirve para documentar el código.}
 \end{Highlighting}
 \end{Shaded}
 
-As mentioned above, the interpreter understands \href{https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html}{simple operations on numeric values}.
+Como se ha mencionado anteriormente, el intérprete también comprende \href{https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html}{operaciones aritméticas simples sobre valores numéricos}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -324,7 +324,7 @@ As mentioned above, the interpreter understands \href{https://stat.ethz.ch/R-man
 ## [1] 2
 \end{verbatim}
 
-There are also a large number of pre-defined functions, e.g., square-root: \texttt{sqrt}.
+Además, también hay una gran cantidad de funciones predefinidas, por ejemplo, raíz cuadrada: \texttt{sqrt}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -336,17 +336,17 @@ There are also a large number of pre-defined functions, e.g., square-root: \text
 ## [1] 1.414214
 \end{verbatim}
 
-Functions are collected and stored in \emph{libraries} (sometimes referred to as \emph{packages}), which contains related functions. Libraries can range anywhere from the \texttt{base} library, which includes the \texttt{sqrt} function above, to the \texttt{rgdal} library, which contains implementations of the \href{https://gdal.org/}{GDAL (Geospatial Data Abstraction Library)} functionalities for R.
+Las funciones se recopilan y almacenan en \emph{bibliotecas} (a veces denominadas \emph{paquetes}), que contienen funciones relacionadas. Las bibliotecas pueden variar desde la biblioteca \texttt{base}, que incluye la función \texttt{sqrt} anterior, hasta la biblioteca \texttt{rgdal}, que funciona como un puente hacia las funciones de la \href{https://gdal.org/}{GDAL (Biblioteca de abstracción de datos geoespaciales)}, que es una importante librería en el mundo de los Sistemas de Información Geográfica. Por lo tanto, es mediante la creación de librerías que podemos extender las capacidades de R.
 
 \hypertarget{variables}{%
 \section{Variables}\label{variables}}
 
-A variable can be defined using an \textbf{identifier} (e.g., \texttt{a\_variable}) on the left of an \textbf{assignment operator} \texttt{\textless{}-}, followed by the object to be linked to the identifier, such as a \textbf{value} (e.g., \texttt{1}) to be assigned on the right. The value of the variable can be tested/invoked by simply specifying the \textbf{identifier}.
+Una variable se puede definir usando un \textbf{identificador} (por ejemplo, \texttt{una\_variable}) a la izquierda de un \textbf{operador de asignación} \texttt{\textless{}-}, seguido del \emph{objeto} que se vinculará al identificador, como un \textbf{valor} (por ejemplo, \texttt{1}) que se asignará a la derecha. Una vez realizada la asignación, el valor de la variable se puede probar/invocar simplemente especificando el \textbf{identificador}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a_variable <-}\StringTok{ }\DecValTok{1}
-\NormalTok{a_variable}
+\NormalTok{una_variable <-}\StringTok{ }\DecValTok{1}
+\NormalTok{una_variable}
 \end{Highlighting}
 \end{Shaded}
 
@@ -354,14 +354,14 @@ A variable can be defined using an \textbf{identifier} (e.g., \texttt{a\_variabl
 ## [1] 1
 \end{verbatim}
 
-If you type \texttt{a\_variable\ \textless{}-\ 1} in the \emph{Console} in RStudio, a new element appears in the \emph{Environment} panel, representing the new variable in the memory. The left part of the entry contains the identifier \texttt{a\_variable}, and the right part contains the value assigned to the variable \texttt{a\_variable}, that is \texttt{1}.
+Si escribes \texttt{una\_variable\ \textless{}-\ 1} en la \emph{Consola} de RStudio, aparece un nuevo elemento en el panel \emph{Environment} (derecha-arriba), que representa la nueva variable en la memoria. La parte izquierda de la entrada contiene el identificador \texttt{una\_variable}, y la parte derecha contiene el valor asignado a la variable\texttt{una\_variable}, es decir, \texttt{1}.
 
-It is not necessary to provide a value directly. The right part of the assignment can be a \textbf{call to a function}. In that case, the function is \textbf{executed} on the provided input and \textbf{the result is assigned to the variable}.
+No es necesario aportar un valor directamente. La parte derecha de la tarea puede ser una \textbf{llamada a una función}. En ese caso, la función se \textbf{ejecuta} en la entrada proporcionada y \textbf{el resultado se asigna a la variable}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a_variable <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(}\DecValTok{4}\NormalTok{)}
-\NormalTok{a_variable}
+\NormalTok{una_variable <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(}\DecValTok{4}\NormalTok{)}
+\NormalTok{una_variable}
 \end{Highlighting}
 \end{Shaded}
 
@@ -369,14 +369,14 @@ It is not necessary to provide a value directly. The right part of the assignmen
 ## [1] 2
 \end{verbatim}
 
-Note how if you type \texttt{a\_variable\ \textless{}-\ sqrt(4)} in the \emph{Console} in RStudio, the element in the \emph{Environment} panel changes to reflect the new value assigned to the variable \texttt{a\_variable}, which is now the result of \texttt{sqrt(4)}, that is 2.
+Observa cómo, al escribir \texttt{una\_variable\ \textless{}-\ sqrt\ (4)} en la \emph{Consola} de RStudio, el elemento en el panel \emph{Environment} cambia para reflejar el nuevo valor asignado a \texttt{una\_variable}, que ahora es el resultado de \texttt{sqrt\ (4)}, es decir 2.
 
-In the example below, another variable named \texttt{another\_variable} is created and summed to \texttt{a\_variable}, saving the result in \texttt{sum\_of\_two\_variables}. The square root of that sum is then stored in the variable \texttt{square\_root\_of\_sum}.
+En el siguiente ejemplo, se crea otra variable llamada \texttt{otra\_variable} y se suma a \texttt{una\_variable}, guardando el resultado en \texttt{suma\_de\_dos\_variables}. La raíz cuadrada de esa suma se almacena en la variable \texttt{raiz\_cuadrada\_de\_suma}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{another_variable <-}\StringTok{ }\DecValTok{4}
-\NormalTok{another_variable}
+\NormalTok{otra_variable <-}\StringTok{ }\DecValTok{4}
+\NormalTok{otra_variable}
 \end{Highlighting}
 \end{Shaded}
 
@@ -386,10 +386,10 @@ In the example below, another variable named \texttt{another\_variable} is creat
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{sum_of_two_variables <-}\StringTok{ }\NormalTok{a_variable }\OperatorTok{+}\StringTok{ }\NormalTok{another_variable}
+\NormalTok{suma_de_dos_variables <-}\StringTok{ }\NormalTok{una_variable }\OperatorTok{+}\StringTok{ }\NormalTok{otra_variable}
 
-\NormalTok{square_root_of_sum <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(sum_of_two_variables)}
-\NormalTok{square_root_of_sum}
+\NormalTok{raiz_cuadrada_de_suma <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(suma_de_dos_variables)}
+\NormalTok{raiz_cuadrada_de_suma}
 \end{Highlighting}
 \end{Shaded}
 
@@ -397,18 +397,18 @@ In the example below, another variable named \texttt{another\_variable} is creat
 ## [1] 2.44949
 \end{verbatim}
 
-\hypertarget{basic-types}{%
-\section{Basic types}\label{basic-types}}
+\hypertarget{tipos-basicos}{%
+\section{Tipos basicos}\label{tipos-basicos}}
 
-\hypertarget{numeric}{%
-\subsection{Numeric}\label{numeric}}
+\hypertarget{nuxfameros}{%
+\subsection{Números}\label{nuxfameros}}
 
-The \emph{numeric} type represents numbers (both integers and reals).
+El tipo \emph{numeric} representa números en general (tanto enteros como reales), pero R es capaz de distinguirlos utilizando funciones.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a_number <-}\StringTok{ }\FloatTok{1.41}
-\KeywordTok{is.numeric}\NormalTok{(a_number)}
+\NormalTok{un_numero <-}\StringTok{ }\FloatTok{1.41}
+\KeywordTok{is.numeric}\NormalTok{(un_numero)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -418,7 +418,7 @@ The \emph{numeric} type represents numbers (both integers and reals).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{is.integer}\NormalTok{(a_number)}
+\KeywordTok{is.integer}\NormalTok{(un_numero)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -428,7 +428,7 @@ The \emph{numeric} type represents numbers (both integers and reals).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{is.double}\NormalTok{(a_number) }\CommentTok{# i.e., is real}
+\KeywordTok{is.double}\NormalTok{(un_numero) }\CommentTok{# i.e., es real}
 \end{Highlighting}
 \end{Shaded}
 
@@ -436,28 +436,28 @@ The \emph{numeric} type represents numbers (both integers and reals).
 ## [1] TRUE
 \end{verbatim}
 
-Base numeric operators.
+Operadores numéricos básicos.
 
 \begin{longtable}[]{@{}llll@{}}
 \toprule
-Operator & Meaning & Example & Output\tabularnewline
+Operador & Significado & Ejemplo & Resultado\tabularnewline
 \midrule
 \endhead
-+ & Plus & \texttt{5+2} & 7\tabularnewline
-- & Minus & \texttt{5-2} & 3\tabularnewline
-\texttt{*} & Product & \texttt{5*2} & 10\tabularnewline
-/ & Division & \texttt{5/2} & 2.5\tabularnewline
-\%/\% & Integer division & \texttt{5\%/\%2} & 2\tabularnewline
-\%\% & Module & \texttt{5\%\%2} & 1\tabularnewline
-\^{} & Power & \texttt{5\^{}2} & 25\tabularnewline
++ & Suma & \texttt{5+2} & 7\tabularnewline
+- & Resta & \texttt{5-2} & 3\tabularnewline
+\texttt{*} & Multiplicación & \texttt{5*2} & 10\tabularnewline
+/ & División & \texttt{5/2} & 2.5\tabularnewline
+\%/\% & Div. de enteros & \texttt{5\%/\%2} & 2\tabularnewline
+\%\% & Módulo & \texttt{5\%\%2} & 1\tabularnewline
+\^{} & Potencia & \texttt{5\^{}2} & 25\tabularnewline
 \bottomrule
 \end{longtable}
 
-Some pre-defined functions in R:
+Algunas funciones predefinidas en R son:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{abs}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{) }\CommentTok{# Absolute value}
+\KeywordTok{abs}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{) }\CommentTok{# Valor absoluto}
 \end{Highlighting}
 \end{Shaded}
 
@@ -467,7 +467,7 @@ Some pre-defined functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{ceiling}\NormalTok{(}\FloatTok{3.475}\NormalTok{) }\CommentTok{# Upper round}
+\KeywordTok{ceiling}\NormalTok{(}\FloatTok{3.475}\NormalTok{) }\CommentTok{# Redondeo al alza}
 \end{Highlighting}
 \end{Shaded}
 
@@ -477,7 +477,7 @@ Some pre-defined functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{floor}\NormalTok{(}\FloatTok{3.475}\NormalTok{) }\CommentTok{# Lower round}
+\KeywordTok{floor}\NormalTok{(}\FloatTok{3.475}\NormalTok{) }\CommentTok{# Redondeo a la baja}
 \end{Highlighting}
 \end{Shaded}
 
@@ -487,7 +487,7 @@ Some pre-defined functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{trunc}\NormalTok{(}\FloatTok{5.99}\NormalTok{) }\CommentTok{# Truncate}
+\KeywordTok{trunc}\NormalTok{(}\FloatTok{5.99}\NormalTok{) }\CommentTok{# Truncar}
 \end{Highlighting}
 \end{Shaded}
 
@@ -497,7 +497,7 @@ Some pre-defined functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{log10}\NormalTok{(}\DecValTok{100}\NormalTok{) }\CommentTok{# Logarithm 10}
+\KeywordTok{log10}\NormalTok{(}\DecValTok{100}\NormalTok{) }\CommentTok{# Logaritmo en base 10}
 \end{Highlighting}
 \end{Shaded}
 
@@ -507,7 +507,7 @@ Some pre-defined functions in R:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{log}\NormalTok{(}\KeywordTok{exp}\NormalTok{(}\DecValTok{2}\NormalTok{)) }\CommentTok{# Natural logarithm and e}
+\KeywordTok{log}\NormalTok{(}\KeywordTok{exp}\NormalTok{(}\DecValTok{2}\NormalTok{)) }\CommentTok{# Logaritmo natural y exponencial}
 \end{Highlighting}
 \end{Shaded}
 
@@ -515,12 +515,12 @@ Some pre-defined functions in R:
 ## [1] 2
 \end{verbatim}
 
-Use simple brackets to specify the order of execution. If not specified the default order is: rise to power first, then multiplication and division, sum and subtraction last.
+Como en cualquier otro entorno, podéis utilizar paréntesis simples para especificar el orden de ejecución. Si no se especifica, el orden predeterminado es: potencia, multiplicación y división, suma y resta al final.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a_number <-}\StringTok{ }\DecValTok{1}
-\NormalTok{(a_number }\OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{*}\StringTok{ }\DecValTok{3}
+\NormalTok{un_numero <-}\StringTok{ }\DecValTok{1}
+\NormalTok{(un_numero }\OperatorTok{+}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{*}\StringTok{ }\DecValTok{3}
 \end{Highlighting}
 \end{Shaded}
 
@@ -530,7 +530,7 @@ Use simple brackets to specify the order of execution. If not specified the defa
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a_number }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }\DecValTok{3}\NormalTok{)}
+\NormalTok{un_numero }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -540,7 +540,7 @@ Use simple brackets to specify the order of execution. If not specified the defa
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a_number }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\DecValTok{3}
+\NormalTok{un_numero }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\DecValTok{3}
 \end{Highlighting}
 \end{Shaded}
 
@@ -548,11 +548,11 @@ Use simple brackets to specify the order of execution. If not specified the defa
 ## [1] 7
 \end{verbatim}
 
-The object \texttt{NaN} (\emph{Not a Number}) is returned by R when the result of an operation is not a number.
+R devuelve el resultado \texttt{NaN} (\emph{Not a number})cuando el resultado de una operación no es un número.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\DecValTok{0} \OperatorTok{/}\StringTok{ }\DecValTok{0}
+\DecValTok{0}\OperatorTok{/}\DecValTok{0}
 \end{Highlighting}
 \end{Shaded}
 
@@ -562,7 +562,7 @@ The object \texttt{NaN} (\emph{Not a Number}) is returned by R when the result o
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{is.nan}\NormalTok{(}\DecValTok{0} \OperatorTok{/}\StringTok{ }\DecValTok{0}\NormalTok{)}
+\KeywordTok{is.nan}\NormalTok{(}\DecValTok{0}\OperatorTok{/}\DecValTok{0}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -570,27 +570,17 @@ The object \texttt{NaN} (\emph{Not a Number}) is returned by R when the result o
 ## [1] TRUE
 \end{verbatim}
 
-That is not to be confused with the object \texttt{NA} (\emph{Not Available}), which is returned for missing data.
+No hay que confundir \texttt{NaN}con \texttt{NA} (\emph{No Available}), que sirve para identificar datos faltantes.
 
-\hypertarget{logical}{%
-\subsection{Logical}\label{logical}}
+\hypertarget{luxf3gicos-o-booleanos}{%
+\subsection{Lógicos o booleanos}\label{luxf3gicos-o-booleanos}}
 
-The \emph{logical} type encodes two truth values: True and False.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{logical_var <-}\StringTok{ }\OtherTok{TRUE}
-\KeywordTok{is.logical}\NormalTok{(logical_var)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] TRUE
-\end{verbatim}
+El tipo \emph{lógico} codifica dos valores dicotómicos: Verdadero y Falso.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{isTRUE}\NormalTok{(logical_var)}
+\NormalTok{valor_logico <-}\StringTok{ }\OtherTok{TRUE}
+\KeywordTok{is.logical}\NormalTok{(valor_logico)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -600,7 +590,17 @@ The \emph{logical} type encodes two truth values: True and False.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{as.logical}\NormalTok{(}\DecValTok{0}\NormalTok{) }\CommentTok{# TRUE if not zero}
+\KeywordTok{isTRUE}\NormalTok{(valor_logico)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{as.logical}\NormalTok{(}\DecValTok{0}\NormalTok{) }\CommentTok{# se pueden convertir 1/0 a TRUE/FALSE}
 \end{Highlighting}
 \end{Shaded}
 
@@ -608,34 +608,34 @@ The \emph{logical} type encodes two truth values: True and False.
 ## [1] FALSE
 \end{verbatim}
 
-Basic logic operators
+Operadores lógicos básicos
 
 \begin{longtable}[]{@{}llll@{}}
 \toprule
-Operator & Meaning & Example & Output\tabularnewline
+Operador & Significado & Ejemplo & Resultado\tabularnewline
 \midrule
 \endhead
-== & Equal & \texttt{5==2} & FALSE\tabularnewline
-!= & Not equal & \texttt{5!=2} & TRUE\tabularnewline
-\textgreater{} & Greater than & \texttt{5\textgreater{}2} & TRUE\tabularnewline
-\textless{} & Less than & \texttt{5\textless{}2} & FALSE\tabularnewline
-\textgreater= & Greater or equal & \texttt{5\textgreater{}=2} & TRUE\tabularnewline
-\textless= & Less or equal & \texttt{5\textless{}=2} & FALSE\tabularnewline
-! & Not & \texttt{!TRUE} & FALSE\tabularnewline
-\& & And & \texttt{TRUE\ \&\ FALSE} & FALSE\tabularnewline
-\textbar{} & Or & \texttt{TRUE\ \textbar{}\ FALSE} & TRUE\tabularnewline
+== & Igual & \texttt{5==2} & FALSE\tabularnewline
+!= & No igual & \texttt{5!=2} & TRUE\tabularnewline
+\textgreater{} & Mayor que & \texttt{5\textgreater{}2} & TRUE\tabularnewline
+\textless{} & Menor que & \texttt{5\textless{}2} & FALSE\tabularnewline
+\textgreater= & Mayor o igual & \texttt{5\textgreater{}=2} & TRUE\tabularnewline
+\textless= & Menor o igual & \texttt{5\textless{}=2} & FALSE\tabularnewline
+! & No & \texttt{!TRUE} & FALSE\tabularnewline
+\& & Y & \texttt{TRUE\ \&\ FALSE} & FALSE\tabularnewline
+\textbar{} & O & \texttt{TRUE\ \textbar{}\ FALSE} & TRUE\tabularnewline
 \bottomrule
 \end{longtable}
 
-\hypertarget{character}{%
-\subsection{Character}\label{character}}
+\hypertarget{cuxe1denas-de-caracteres}{%
+\subsection{Cádenas de caracteres}\label{cuxe1denas-de-caracteres}}
 
-The \emph{character} type represents text objects, including single characters and character strings (that is text objects longer than one character, commonly referred to simply as \emph{strings} in computer science).
+El tipo \emph{character} representa objetos de texto, incluidos caracteres individuales y cadenas de caracteres (es decir, objetos de texto de más de un carácter, comúnmente denominados simplemente \emph{cadenas} o \emph{strings} en informática).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a_string <-}\StringTok{ "Hello world!"}
-\KeywordTok{is.character}\NormalTok{(a_string)}
+\NormalTok{una_cadena <-}\StringTok{ "¡Hola!"}
+\KeywordTok{is.character}\NormalTok{(una_cadena)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -645,7 +645,7 @@ The \emph{character} type represents text objects, including single characters a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{is.numeric}\NormalTok{(a_string)}
+\KeywordTok{is.numeric}\NormalTok{(una_cadena)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -655,7 +655,7 @@ The \emph{character} type represents text objects, including single characters a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{as.character}\NormalTok{(}\DecValTok{2}\NormalTok{) }\CommentTok{# type conversion  (a.k.a. casting)}
+\KeywordTok{as.character}\NormalTok{(}\DecValTok{2}\NormalTok{) }\CommentTok{# Conversión de número a cadena (en inglés, hacer un 'cast')}
 \end{Highlighting}
 \end{Shaded}
 
@@ -675,7 +675,7 @@ The \emph{character} type represents text objects, including single characters a
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{as.numeric}\NormalTok{(}\StringTok{"Ciao"}\NormalTok{)}
+\KeywordTok{as.numeric}\NormalTok{(}\StringTok{"¡Hasta luego!"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -690,33 +690,30 @@ The \emph{character} type represents text objects, including single characters a
 \hypertarget{tidyverse}{%
 \section{Tidyverse}\label{tidyverse}}
 
-As mentioned in the lecture, libraries are collections of functions and/or datasets. Libraries can be installed in R using the function \texttt{install.packages} or using \texttt{Tool\ \textgreater{}\ Install\ Packages...} in RStudio.
-
-The meta-library \href{https://www.tidyverse.org/}{Tidyverse} contains the following libraries:
+Como se ha mencionado anteriormente, las librerias o \emph{paquetes} son colecciones de funciones y/o conjuntos de datos. Las librerias se pueden instalar en R usando la función \texttt{install.packages()} o usando el menú \texttt{Herramientas\textgreater{}\ Instalar\ Librerias\ ...}en RStudio.
+Algunas librerias de R están relacionadas entre sí o forman parte de flujos de trabajo mayores. A dia de hoy la meta-librería \href{https://www.tidyverse.org/}{Tidyverse} contiene algunas de las librerías más utilizadas en el análisis de datos \citep{wickham2019tidyverse}. Solo por mencionar algunas:
 
 \begin{itemize}
 \tightlist
 \item
-  \href{https://ggplot2.tidyverse.org/}{\texttt{ggplot2}} is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
+  \href{https://ggplot2.tidyverse.org/}{\texttt{ggplot2}} para crear gráficos.
 \item
-  \href{https://dplyr.tidyverse.org/}{\texttt{dplyr}} provides a grammar of data manipulation, providing a consistent set of verbs that solve the most common data manipulation challenges.
+  \href{https://dplyr.tidyverse.org/}{\texttt{dplyr}} para manipular datos (filtrar, seleccionar, agregar, sumarizar, etc).
 \item
-  \href{https://tidyr.tidyverse.org/}{\texttt{tidyr}} provides a set of functions that help you get to tidy data. Tidy data is data with a consistent form: in brief, every variable goes in a column, and every column is a variable.
+  \href{https://tidyr.tidyverse.org/}{\texttt{tidyr}} para organizar los datos de un modo que las otras librerias del \textbf{Tidyverse} puedan trabajar mejor.
 \item
-  \href{https://readr.tidyverse.org/}{\texttt{readr}} provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes.
+  \href{https://readr.tidyverse.org/}{\texttt{readr}} para importar tablas de datos a partir de formatos habituales (csv, tsv, o fwf). Permite minimizar la introducción de errores en la importación.
 \item
-  \href{https://purrr.tidyverse.org/}{\texttt{purrr}} enhances R's functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive.
+  \href{https://purrr.tidyverse.org/}{\texttt{purrr}} se utiliza para facilitar la automatización de tareas en R, mientras se escribe menos código.
 \item
-  \href{https://tibble.tidyverse.org/}{\texttt{tibble}} is a modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not. Tibbles are data.frames that are lazy and surly: they do less and complain more forcing you to confront problems earlier, typically leading to cleaner, more expressive code.
+  \href{https://stringr.tidyverse.org/}{\texttt{stringr}} facilita la manipulación de cadenas de texto (unir, separar, filtrar palabras en un documento, etc).
 \item
-  \href{https://stringr.tidyverse.org/}{\texttt{stringr}} provides a cohesive set of functions designed to make working with strings as easy as possible. It is built on top of stringi, which uses the ICU C library to provide fast, correct implementations of common string manipulations.
+  \href{https://forcats.tidyverse.org/}{\texttt{forcats}} para trabajar con factores.
 \item
-  \href{https://forcats.tidyverse.org/}{\texttt{forcats}} provides a suite of useful tools that solve common problems with factors. R uses factors to handle categorical variables, variables that have a fixed and known set of possible values.
+  \href{https://tibble.tidyverse.org/}{\texttt{tibble}}\ldots{}
 \end{itemize}
 
-A library can be loaded using the function \texttt{library}, as shown below (note the name of the library is not quoted). Once a library is installed on a computer, you don't need to install it again, but every script needs to load all the library that it uses. Once a library is loaded, all its functions can be used.
-
-\textbf{Important}: it is always necessary to load the \texttt{tidyverse} meta-library if you want to use the \texttt{stringr} functions or the pipe operator \texttt{\%\textgreater{}\%}.
+Se puede cargar una librería usando la función \texttt{library()}, como se muestra a continuación (tened en cuenta que el nombre de la biblioteca no está entrecomillado). Una vez que una librería está instalada en un ordenador, no es necesario que la instale nuevamente, pero cada secuencia de comandos o \emph{script} debe cargar todas las librerías que utiliza. Una vez que se carga una librería, se pueden utilizar todas sus funciones.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -727,11 +724,11 @@ A library can be loaded using the function \texttt{library}, as shown below (not
 \hypertarget{stringr}{%
 \subsection{stringr}\label{stringr}}
 
-The code below presents the same examples used in the lecture session to demonstrate the use of \texttt{stringr} functions.
+El siguiente código presenta un mínimo ejemplo del uso de las funciones de la librería \texttt{stringr}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{str_length}\NormalTok{(}\StringTok{"Leicester"}\NormalTok{)}
+\KeywordTok{str_length}\NormalTok{(}\StringTok{"Tarragona"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -741,7 +738,7 @@ The code below presents the same examples used in the lecture session to demonst
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{str_detect}\NormalTok{(}\StringTok{"Leicester"}\NormalTok{, }\StringTok{"e"}\NormalTok{)}
+\KeywordTok{str_detect}\NormalTok{(}\StringTok{"Tarragona"}\NormalTok{, }\StringTok{"a"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -751,32 +748,20 @@ The code below presents the same examples used in the lecture session to demonst
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{str_replace_all}\NormalTok{(}\StringTok{"Leicester"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"x"}\NormalTok{)}
+\KeywordTok{str_replace_all}\NormalTok{(}\StringTok{"Tarragona"}\NormalTok{, }\StringTok{"r"}\NormalTok{, }\StringTok{"R"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "Lxicxstxr"
+## [1] "TaRRagona"
 \end{verbatim}
 
-\hypertarget{the-pipe-operator}{%
-\subsection{The pipe operator}\label{the-pipe-operator}}
+\hypertarget{el-operador-pipe}{%
+\subsection{\texorpdfstring{El operador \texttt{pipe}}{El operador pipe}}\label{el-operador-pipe}}
 
-The pipe operator is useful to outline more complex operations, step by step (see also \href{https://r4ds.had.co.nz/pipes.html}{R for Data Science, Chapter 18}). The pipe operator \texttt{\%\textgreater{}\%}
+El operador \texttt{pipe} (tuberia) es útil para reducir el número de asignaciones en operaciones más complejas. Un \emph{pipe} (\texttt{\%\textgreater{}\%}) toma el resultado de una función y lo pasa a la siguiente función como \textbf{primer argumento}, de este modo ya no hace falta repetir el resultado de la primera función en el código.
 
-\begin{itemize}
-\tightlist
-\item
-  takes the result from one function
-\item
-  and passes it to the next function
-\item
-  as the \textbf{first argument}
-\item
-  that doesn't need to be included in the code anymore
-\end{itemize}
-
-The code below shows a simple example. The number \texttt{2} is taken as input for the first pipe that passes it on as the first argument to the function \texttt{sqrt}. The output value \texttt{1.41} is then taken as input for the second pipe, that passes it on as the first argument to the function \texttt{trunc}. The final output \texttt{1} is finally returned.
+El siguiente código muestra un ejemplo sencillo. El número \texttt{2} se toma como entrada para el primer \texttt{pipe} que lo pasa como primer argumento a la función \texttt{sqrt}. El valor de salida 1.4142136 se toma como entrada para el segundo \texttt{pipe}, que lo pasa como primer argumento a la función \texttt{trunc}. Finalmente se devuelve la salida final ``1''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -797,73 +782,130 @@ The code below shows a simple example. The number \texttt{2} is taken as input f
 \end{Highlighting}
 \end{Shaded}
 
-The first step of a sequence of pipes can be a value, a variable, or a function including arguments. The code below shows a series of examples of different ways of achieving the same result. The examples use the function \texttt{round}, which also allows for a second argument \texttt{digits\ =\ 2}. Note that, when using the pipe operator, only the nominally second argument is provided to the function \texttt{round} -- that is \texttt{round(digits\ =\ 2)}
+El primer paso de una secuencia de \emph{pipes} puede ser un valor, una variable o una función que incluya argumentos. El siguiente código muestra una serie de ejemplos de diferentes formas de lograr el mismo resultado. Los ejemplos usan la función \texttt{round}, que también permite un segundo argumento \texttt{digits\ =\ 2}. Tened en cuenta que, cuando se utiliza el operador \texttt{\%\textgreater{}\%}, solo se proporciona el segundo argumento nominalmente a la función \texttt{round}, es decir, \texttt{round(digits\ =\ 2)}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# No pipe, using variables}
-\NormalTok{tmp_variable_A <-}\StringTok{ }\DecValTok{2}
-\NormalTok{tmp_variable_B <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(tmp_variable_A)}
-\KeywordTok{round}\NormalTok{(tmp_variable_B, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
+\CommentTok{# R básico, sin utilizar '%>%', pero en varios pasos}
+\NormalTok{variable_temporal_a <-}\StringTok{ }\DecValTok{2}
+\NormalTok{variable_temporal_b <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(variable_temporal_a)}
+\KeywordTok{round}\NormalTok{(variable_temporal_b, }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
 
-\CommentTok{# No pipe, using functions only}
+\CommentTok{# R básico, sin utilizar '%>%', pero sin asignaciones}
 \KeywordTok{round}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(}\DecValTok{2}\NormalTok{), }\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
 
-\CommentTok{# Pipe starting from a value}
+\CommentTok{# Pipe a partir de un valor}
 \DecValTok{2} \OperatorTok{%>%}
 \StringTok{  }\KeywordTok{sqrt}\NormalTok{() }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{round}\NormalTok{(}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
 
-\CommentTok{# Pipe starting from a variable}
-\NormalTok{the_value_two <-}\StringTok{ }\DecValTok{2}
-\NormalTok{the_value_two }\OperatorTok{%>%}
+\CommentTok{# Pipe a partir de una variable}
+\NormalTok{el_numero_dos <-}\StringTok{ }\DecValTok{2}
+\NormalTok{el_numero_dos }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{sqrt}\NormalTok{() }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{round}\NormalTok{(}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
 
-\CommentTok{# Pipe starting from a function}
+\CommentTok{# Pipe empezando por una función}
 \KeywordTok{sqrt}\NormalTok{(}\DecValTok{2}\NormalTok{) }\OperatorTok{%>%}
 \StringTok{ }\KeywordTok{round}\NormalTok{(}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-A complex operation created through the use of \texttt{\%\textgreater{}\%} can be used on the right side of \texttt{\textless{}-}, to assign the outcome of the operation to a variable.
+Una operación compleja creada mediante el uso de \texttt{\%\textgreater{}\%} se puede usar en el lado derecho de una asignación \texttt{\textless{}-}, de modo que se guarda resultado de toda la operación de la derecha.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{sqrt_of_two <-}\StringTok{ }\DecValTok{2} \OperatorTok{%>%}
+\NormalTok{raiz_cuadrada_de_dos <-}\StringTok{ }\DecValTok{2} \OperatorTok{%>%}
 \StringTok{  }\KeywordTok{sqrt}\NormalTok{() }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{round}\NormalTok{(}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{coding-style}{%
-\section{Coding style}\label{coding-style}}
+\hypertarget{ejercicios}{%
+\section{Ejercicios}\label{ejercicios}}
 
-Study the \href{http://style.tidyverse.org/}{Tidyverse Style Guide (style.tidyverse.org)} and use it consistently!
+Crea un \emph{script} para responder a cada pregunta. En las preguntas de la 4 a la 8 es posible que tengas que consultar la referencia de la librería \href{https://stringr.tidyverse.org/reference/index.html}{\texttt{stringr} (stringr.tidyverse.org/reference)} o a otras funciones de \texttt{R\ base}.
 
-\hypertarget{exercise-104.1}{%
-\section{Exercise 104.1}\label{exercise-104.1}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Escribe un fragmento de código utilizando el operador \texttt{\%\textgreater{}\%} que haga lo siguiente:
 
-\textbf{Question 104.1.1:} Write a piece of code using the pipe operator that takes as input the number \texttt{1632}, calculates the logarithm to the base 10, takes the highest integer number lower than the calculated value (lower round), and verifies whether it is an integer.
+  \begin{itemize}
+  \tightlist
+  \item
+    tomar como entrada el número \texttt{1632}
+  \item
+    calcular el logaritmo en base 10
+  \item
+    redondear el número a la baja
+  \item
+    truncar la parte entera y
+  \item
+    verificar si se trata de un número entero.
+  \end{itemize}
+\item
+  Escribe un fragmento de código utilizando el operador \texttt{\%\textgreater{}\%} que haga lo siguiente:
 
-\textbf{Question 104.1.2:} Write a piece of code using the pipe operator that takes as input the number \texttt{1632}, calculates the square root, takes the lowest integer number higher than the calculated value (higher round), and verifies whether it is an integer.
+  \begin{itemize}
+  \tightlist
+  \item
+    tomar como entrada el número \texttt{1632}
+  \item
+    calcular la raíz cuadrada,
+  \item
+    redondear al alza y quedarse con la parte entera, y
+  \item
+    verificar que se trata de un entero.
+  \end{itemize}
+\item
+  Escribe un fragmento de código utilizando el operador \texttt{\%\textgreater{}\%} que haga lo siguiente:
 
-\textbf{Question 104.1.3:} Write a piece of code using the pipe operator that takes as input the string \texttt{"1632"}, transforms it into a number, and checks whether the result is \emph{Not a Number}.
+  \begin{itemize}
+  \tightlist
+  \item
+    tomar como entrada la cadena \texttt{1632}
+  \item
+    convertirla a número
+  \item
+    comprobar si el resultado es o no un número.
+  \end{itemize}
+\item
+  Escribe un fragmento de código utilizando el operador \texttt{\%\textgreater{}\%} que haga lo siguiente:
 
-\textbf{Question 104.1.4:} Write a piece of code using the pipe operator that takes as input the string \texttt{"-16.32"}, transforms it into a number, takes the absolute value and truncates it, and finally checks whether the result is \emph{Not Available}.
+  \begin{itemize}
+  \tightlist
+  \item
+    tomar como entrada la cadena \texttt{"-16.32"}
+  \item
+    transformarla en un número
+  \item
+    calcular el valor absoluto y truncarlo
+  \item
+    comprobar si el resultado es o no un número.
+  \end{itemize}
+\item
+  Escribe un fragmento de código utilizando el operador \texttt{\%\textgreater{}\%} y la librería and the \texttt{stringr} que haga lo siguiente:
 
-\hypertarget{exercise-104.2}{%
-\section{Exercise 104.2}\label{exercise-104.2}}
+  \begin{itemize}
+  \tightlist
+  \item
+    tomar la cadena \texttt{"Siempre\ r\ que\ r"} como entrada
+  \item
+    transformar la cadena a mayúsculas.
+  \end{itemize}
+\item
+  Escribe un fragmento de código utilizando el operador \texttt{\%\textgreater{}\%} y la librería and the \texttt{stringr} que haga lo siguiente:
 
-Answer the question below, consulting the \href{https://stringr.tidyverse.org/reference/index.html}{\texttt{stringr} library reference (stringr.tidyverse.org/reference)} as necessary
-
-\textbf{Question 104.2.1:} Write a piece of code using the pipe operator and the \texttt{stringr} library that takes as input the string \texttt{"I\ like\ programming\ in\ R"}, and transforms it all in uppercase.
-
-\textbf{Question 104.2.2:} Write a piece of code using the pipe operator and the \texttt{stringr} library that takes as input the string \texttt{"I\ like\ programming\ in\ R"}, and truncates it, leaving only 10 characters.
-
-\textbf{Question 104.2.3:} Write a piece of code using the pipe operator and the \texttt{stringr} library that takes as input the string \texttt{"I\ like\ programming\ in\ R"}, and truncates it, leaving only 10 characters and using no ellipsis.
-
-\textbf{Question 104.2.4:} Write a piece of code using the pipe operator and the \texttt{stringr} library that takes as input the string \texttt{"I\ like\ programming\ in\ R"}, and manipulates to leave only the string \texttt{"I\ like\ R"}.
+  \begin{itemize}
+  \tightlist
+  \item
+    tomar la cadena \texttt{"Siempre\ r\ que\ r"} como entrada
+  \item
+    truncarla para dejar solamente `Siempre R'.
+  \end{itemize}
+\end{enumerate}
 
 \hypertarget{estaduxedstica-descriptiva}{%
 \chapter{Estadística descriptiva}\label{estaduxedstica-descriptiva}}

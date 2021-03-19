@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.3)  19 MAR 2021 16:20
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.3)  19 MAR 2021 18:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -862,12 +862,12 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 ]
 Capítulo 1.
-
+[5]
 Overfull \hbox (14.7263pt too wide) in paragraph at lines 172--172
 []\TU/lmr/bx/n/14.4 Estructura básica de un documento Markdown 
  []
 
-[5] [6] [7] [8
+[6] [7] [8
 
 ]
 Capítulo 2.
@@ -880,13 +880,34 @@ Overfull \hbox (90.75pt too wide) in paragraph at lines 272--272
 96 225 256 289 324 361[] 
  []
 
-[10] [11] [12] [13] [14] [15] [16] [17]
-Underfull \hbox (badness 3815) in paragraph at lines 858--859
-[]\TU/lmr/m/n/10 Answer the question below, consulting the []\TU/lmtt/m/n/10 st
-ringr \TU/lmr/m/n/10 library reference
+[10]
+Underfull \hbox (badness 2150) in paragraph at lines 344--345
+[]\TU/lmr/m/n/10 Una variable se puede definir usando un \TU/lmr/bx/n/10 identi
+ficador \TU/lmr/m/n/10 (por ejemplo,
  []
 
-[18]
+[11]
+Underfull \hbox (badness 1708) in paragraph at lines 357--358
+[]\TU/lmr/m/n/10 Si escribes \TU/lmtt/m/n/10 una_variable <- 1 \TU/lmr/m/n/10 e
+n la \TU/lmr/m/it/10 Consola \TU/lmr/m/n/10 de RStudio, aparece un
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 372--373
+[]\TU/lmr/m/n/10 Observa cómo, al escribir \TU/lmtt/m/n/10 una_variable <- sqrt
+ (4) \TU/lmr/m/n/10 en la \TU/lmr/m/it/10 Consola \TU/lmr/m/n/10 de
+ []
+
+[12]
+Underfull \hbox (badness 1028) in paragraph at lines 518--519
+[]\TU/lmr/m/n/10 Como en cualquier otro entorno, podéis utilizar paréntesis sim
+ples para
+ []
+
+[13] [14] [15]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 760.
+[16] [17] [18]
 Capítulo 3.
 [19
 
@@ -896,21 +917,21 @@ Capítulo 3.
 Capítulo 4.
 
 LaTeX Warning: Reference `tidyverse-package' on page 21 undefined on input line
- 876.
+ 918.
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 876--877
+Underfull \hbox (badness 1097) in paragraph at lines 918--919
 \TU/lmtt/m/n/10 tidyverse \TU/lmr/m/n/10 package by running \TU/lmtt/m/n/10 lib
 rary(tidyverse) \TU/lmr/m/n/10 loads the following
  []
 
 
-LaTeX Warning: Reference `packages' on page 21 undefined on input line 892.
+LaTeX Warning: Reference `packages' on page 21 undefined on input line 934.
 
 [21]
 
 LaTeX Warning: Reference `two-categ-barplot' on page 22 undefined on input line
- 945.
+ 987.
 
 [22]
 File: tecnicas-cuantitativas_files/figure-latex/promotions-barplot-1.pdf Graphi
@@ -919,20 +940,20 @@ c file (type pdf)
 [23] [24]
 
 LaTeX Warning: Reference `fig:deck-of-cards' on page 25 undefined on input line
- 1053.
+ 1095.
 
 
-LaTeX Warning: Reference `fig:shuffling' on page 25 undefined on input line 105
-5.
+LaTeX Warning: Reference `fig:shuffling' on page 25 undefined on input line 109
+7.
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1073--1073
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1115--1115
 []\TU/lmtt/m/n/10 ## `summarise()` regrouping output by 'gender' (override with
  `.groups` argument)[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1073--1073
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1115--1115
 []\TU/lmtt/m/n/10 ## `summarise()` regrouping output by 'gender' (override with
  `.groups` argument)[] 
  []
@@ -942,20 +963,20 @@ df Graphic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/promotions-barplot-permuted-1.pd
 f>
 [25] [26]
-Underfull \hbox (badness 3386) in paragraph at lines 1106--1107
+Underfull \hbox (badness 3386) in paragraph at lines 1148--1149
 []\TU/lmr/m/n/10 Let’s next compare these two values. It appears that résumés w
 ith
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 1106--1107
+Underfull \hbox (badness 1442) in paragraph at lines 1148--1149
 \TU/lmr/m/n/10 stereotypically male names were selected for promotion at a rate
  that
  []
 
 
 LaTeX Warning: Reference `fig:tactile-shuffling' on page 27 undefined on input 
-line 1113.
+line 1155.
 
 File: tecnicas-cuantitativas_files/figure-latex/null-distribution-1-1.pdf Graph
 ic file (type pdf)
@@ -963,41 +984,41 @@ ic file (type pdf)
 [27] [28]
 
 LaTeX Warning: Reference `confidence-intervals' on page 29 undefined on input l
-ine 1136.
+ine 1178.
 
 
 LaTeX Warning: Reference `resampling-tactile' on page 29 undefined on input lin
-e 1138.
+e 1180.
 
 
 LaTeX Warning: Reference `case-study-two-prop-ci' on page 29 undefined on input
- line 1142.
+ line 1184.
 
 [29]
-Underfull \hbox (badness 1708) in paragraph at lines 1188--1189
+Underfull \hbox (badness 1708) in paragraph at lines 1230--1231
 \TU/lmr/m/n/10 greater than 0?”. In other words, is that difference indicative 
 of true
  []
 
 
 LaTeX Warning: Reference `sampling-framework' on page 30 undefined on input lin
-e 1193.
+e 1235.
 
 
-LaTeX Warning: Reference `tab:table-ch8' on page 30 undefined on input line 119
-5.
+LaTeX Warning: Reference `tab:table-ch8' on page 30 undefined on input line 123
+7.
 
 [30]
 
-LaTeX Warning: Reference `ht-case-study' on page 31 undefined on input line 121
-9.
+LaTeX Warning: Reference `ht-case-study' on page 31 undefined on input line 126
+1.
 
 
-LaTeX Warning: Reference `summarize' on page 31 undefined on input line 1221.
+LaTeX Warning: Reference `summarize' on page 31 undefined on input line 1263.
 
 
 LaTeX Warning: Reference `sampling-definitions' on page 31 undefined on input l
-ine 1225.
+ine 1267.
 
 [31]
 File: tecnicas-cuantitativas_files/figure-latex/null-distribution-2-1.pdf Graph
@@ -1006,25 +1027,23 @@ ic file (type pdf)
 [32]
 
 LaTeX Warning: Reference `bootstrap-process' on page 33 undefined on input line
- 1250.
+ 1292.
 
 
 LaTeX Warning: Reference `shovel-1000-times' on page 33 undefined on input line
- 1250.
+ 1292.
 
 
-LaTeX Warning: Reference `fig:infer-ci' on page 33 undefined on input line 1252
+LaTeX Warning: Reference `fig:infer-ci' on page 33 undefined on input line 1294
 .
 
 
-LaTeX Warning: Reference `fig:inferht' on page 33 undefined on input line 1267.
+LaTeX Warning: Reference `fig:inferht' on page 33 undefined on input line 1309.
 
 
 [33]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1272.
 
-LaTeX Warning: Reference `groupby' on page 34 undefined on input line 1308.
+LaTeX Warning: Reference `groupby' on page 34 undefined on input line 1350.
 
 
 Underfull \vbox (badness 7981) has occurred while \output is active []
@@ -1032,10 +1051,10 @@ Underfull \vbox (badness 7981) has occurred while \output is active []
 [34]
 
 LaTeX Warning: Reference `confidence-intervals' on page 35 undefined on input l
-ine 1365.
+ine 1407.
 
 [35]
-Underfull \hbox (badness 1215) in paragraph at lines 1380--1381
+Underfull \hbox (badness 1215) in paragraph at lines 1422--1423
 \TU/lmtt/m/n/10 generate() \TU/lmr/m/n/10 function. However, unlike for confide
 nce intervals where we
  []
@@ -1052,11 +1071,11 @@ File: tecnicas-cuantitativas_files/figure-latex/null-distribution-infer-2-1.pdf
 [39]
 
 LaTeX Warning: Reference `bootstrap-process' on page 40 undefined on input line
- 1549.
+ 1591.
 
 [40]
 
-LaTeX Warning: Reference `shorthand' on page 41 undefined on input line 1566.
+LaTeX Warning: Reference `shorthand' on page 41 undefined on input line 1608.
 
 File: tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop
 -percentile-1.pdf Graphic file (type pdf)
@@ -1064,7 +1083,7 @@ File: tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop
 percentile-1.pdf>
 
 LaTeX Warning: Reference `bootstrap-process' on page 41 undefined on input line
- 1583.
+ 1625.
 
 [41]
 File: tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop
@@ -1072,40 +1091,40 @@ File: tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop
 <use tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop-
 se-1.pdf>
 
-Underfull \hbox (badness 1033) in paragraph at lines 1619--1620
+Underfull \hbox (badness 1033) in paragraph at lines 1661--1662
 []\TU/lmr/m/n/10 Let’s recap the steps necessary to conduct a hypothesis test u
 sing the
  []
 
 [42]
 
-LaTeX Warning: Reference `fig:htdowney' on page 43 undefined on input line 1636
+LaTeX Warning: Reference `fig:htdowney' on page 43 undefined on input line 1678
 .
 
 
-LaTeX Warning: Reference `fig:inferht' on page 43 undefined on input line 1638.
+LaTeX Warning: Reference `fig:inferht' on page 43 undefined on input line 1680.
 
 
 
 LaTeX Warning: Reference `inference-for-regression' on page 43 undefined on inp
-ut line 1638.
+ut line 1680.
 
 [43] [44]
 
 LaTeX Warning: Reference `fig:trial-errors-table' on page 45 undefined on input
- line 1705.
+ line 1747.
 
 
 LaTeX Warning: Reference `fig:trial-errors-table-ht' on page 45 undefined on in
-put line 1707.
+put line 1749.
 
 [45]
 
-LaTeX Warning: Reference `nycflights13' on page 46 undefined on input line 1742
+LaTeX Warning: Reference `nycflights13' on page 46 undefined on input line 1784
 .
 
 [46]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1765--1765
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1807--1807
 []\TU/lmtt/m/n/10 ## Warning: Removed 5 rows containing non-finite values (stat
 _boxplot).[] 
  []
@@ -1114,13 +1133,13 @@ File: tecnicas-cuantitativas_files/figure-latex/ha-as-flights-boxplot-1.pdf Gra
 phic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/ha-as-flights-boxplot-1.pdf>
 [47]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 1787--1787
+Overfull \hbox (85.5pt too wide) in paragraph at lines 1829--1829
 []\TU/lmtt/m/n/10 ## `summarise()` regrouping output by 'carrier' (override wit
 h `.groups` argument)[] 
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 1822--1823
+Underfull \hbox (badness 1968) in paragraph at lines 1864--1865
 []\TU/lmr/m/n/10 Such issues were getting so problematic that the American Stat
 istical
  []
@@ -1137,7 +1156,9 @@ Capítulo 6.
 
 ]
 Capítulo 7.
-No file tecnicas-cuantitativas.bbl.
+(./tecnicas-cuantitativas.bbl [55] [56
+
+])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1173,7 +1194,7 @@ braces):
 >  {spanish/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/totalhyphenmin}  =>  {5}.
-[55] (./tecnicas-cuantitativas.aux
+[57] (./tecnicas-cuantitativas.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
@@ -1183,15 +1204,15 @@ LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `tecnicas-cuantitativas.out' has not changed.
 
-(rerunfilecheck)             Checksum: F20D01AF16C20ED2CA14F5B98A185676;4074.
+(rerunfilecheck)             Checksum: 5019FD7B6FBF9952F349AE1EDC3D0756;3851.
  ) 
 Here is how much of TeX's memory you used:
- 17541 strings out of 478931
- 314199 string characters out of 5867171
- 800650 words of memory out of 5000000
- 37112 multiletter control sequences out of 15000+600000
- 409929 words of font info for 86 fonts, out of 8000000 for 9000
+ 17553 strings out of 478931
+ 314576 string characters out of 5867171
+ 800698 words of memory out of 5000000
+ 37120 multiletter control sequences out of 15000+600000
+ 409937 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,9n,122p,1230b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,9n,122p,1230b,443s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tecnicas-cuantitativas.pdf (55 pages).
+Output written on tecnicas-cuantitativas.pdf (57 pages).

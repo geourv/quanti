@@ -27,199 +27,198 @@ el intérprete de R entiende eso como una instrucción para sumar uno más uno, 
 1 + 1
 ```
 
-Fijaos cómo el valor de salida `2` está precedido por `[1]`, lo que indica que la salida está constituida por un solo elemento. Si la salida está constituida por más de un elemento, como la lista de números a continuación, cada fila de la salida está precedida por el índice del primer elemento de la salida. 
+Fíjate cómo el valor de salida `2` está precedido por `[1]`, lo que indica que la salida está constituida por un solo elemento. Si la salida está constituida por más de un elemento, como la lista de números a continuación, cada fila de la salida está precedida por el índice del primer elemento de la salida. 
 
 ```{r, echo=FALSE, eval=TRUE}
 (1:20)**2
 ```
 
-On the right side, you find two groups of panels. On the top-right, the main element is the *Environment* panel, which is a representation of the current state of the interpreter's memory, and as such, it shows all the stored variables, datasets, and functions. On the bottom-right, you find the *Files* panel, which shows file system (file and folders on your computer or the server), as well as the *Help* panel, which shows you the help pages when required. We will discuss the other panels later on in the practical sessions.
+En el lado derecho, encontrarás dos grupos de paneles. En la parte superior derecha, el elemento principal es el panel *Entorno*, que es una representación del estado actual de la memoria del intérprete y, como tal, muestra todas las variables, conjuntos de datos y funciones almacenados. En la parte inferior derecha, encontrarás el panel *Archivos*, que muestra el sistema de archivos (archivos y carpetas del ordenador), así como el panel *Ayuda*, que le muestra las páginas de ayuda cuando sea necesario. Discutiremos los otros paneles más adelante.
 
 
-## Interpreting values
+## Interpretación de valores 
 
-When a value is typed in the *Console*, the interpreter simply returns the same value. In the examples below, `2` is a simple numeric value, while `"String value"` is a textual value, which in R is referred to as a *character* value and in programming is also commonly referred to as a *string* (short for *a string of characters*). 
+Cuando se escribe un valor en la *Consola*, el intérprete simplemente devuelve el mismo valor. En los ejemplos siguientes, `2` es un valor numérico simple, mientras que `"Valor de cadena"` es un valor textual, que en R se conoce como un valor de *carácter* y en programación también se conoce comúnmente como una *cadena* (abreviatura de *una cadena de caracteres*). 
 
-Numeric example:
+Ejemplo númerico
 
 ```{r, echo=TRUE}
 2
 ```
 
-Character example:
+Ejemplo de cadena
 
 ```{r, echo=TRUE}
 "String value"
 ```
 
-Note how character values need to start and end with a single or double quote (`'` or `"`), which are not part of the information themselves. The [Tidyverse Style Guide](https://style.tidyverse.org/syntax.html) suggests always to use the double quote (`"`), so we will use those in this module.
+Tened en cuenta que los valores de los caracteres deben comenzar y terminar con comillas simples o dobles (`'`o`"`), que no forman parte de la información en sí. La [Guía de estilo de Tidyverse](https://style.tidyverse.org /syntax.html) sugiere usar siempre comillas dobles (`"`), así que serán las que usaremos en este curso. 
 
-Anything that follows a `#` symbol is considered a *comment* and the interpreter ignores it.
+Todo lo que sigue a un símbolo `#` se considera un *comentario* y el intérprete lo ignora. Cada lenguaje de programación puede usar sus propios símbolos para identificar los comentarios. Por ejemplo cabe destacar la diferencia entre `#` en Markdown que identifica un título de primer nivel, mientras que los comentarios en un fichero de Rmarkdown se identifican entre `<` y `>`. 
 
 ```{r, echo=TRUE}
-# hi, I am a comment, please ignore me
+# Este comentario es ignorado por R. Solo sirve para documentar el código.
 ```
 
-As mentioned above, the interpreter understands [simple operations on numeric values](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html).
+Como se ha mencionado anteriormente, el intérprete también comprende [operaciones aritméticas simples sobre valores numéricos](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html). 
 
 ```{r, echo=TRUE}
 1 + 1
 ```
 
-There are also a large number of pre-defined functions, e.g., square-root: `sqrt`.
+Además, también hay una gran cantidad de funciones predefinidas, por ejemplo, raíz cuadrada: `sqrt`. 
 
 ```{r, echo=TRUE}
 sqrt(2)
 ```
 
-Functions are collected and stored in *libraries* (sometimes referred to as *packages*), which contains related functions. Libraries can range anywhere from the `base` library, which includes the `sqrt` function above, to the `rgdal` library, which contains implementations of the [GDAL (Geospatial Data Abstraction Library)](https://gdal.org/) functionalities for R.
+Las funciones se recopilan y almacenan en *bibliotecas* (a veces denominadas *paquetes*), que contienen funciones relacionadas. Las bibliotecas pueden variar desde la biblioteca `base`, que incluye la función `sqrt` anterior, hasta la biblioteca `rgdal`, que funciona como un puente hacia las funciones de la [GDAL (Biblioteca de abstracción de datos geoespaciales)](https://gdal.org/ ), que es una importante librería en el mundo de los Sistemas de Información Geográfica. Por lo tanto, es mediante la creación de librerías que podemos extender las capacidades de R.
+
 
 ## Variables
 
-A variable can be defined using an **identifier** (e.g., `a_variable`) on the left of an **assignment operator** `<-`, followed by the object to be linked to the identifier, such as a **value** (e.g., `1`) to be assigned on the right. The value of the variable can be tested/invoked by simply specifying the **identifier**.
+Una variable se puede definir usando un **identificador** (por ejemplo, `una_variable`) a la izquierda de un **operador de asignación** `<-`, seguido del *objeto* que se vinculará al identificador, como un **valor** (por ejemplo, `1`) que se asignará a la derecha. Una vez realizada la asignación, el valor de la variable se puede probar/invocar simplemente especificando el **identificador**. 
 
 ```{r, echo=TRUE}
-a_variable <- 1
-a_variable
+una_variable <- 1
+una_variable
 ```
 
-If you type `a_variable <- 1` in the *Console* in RStudio, a new element appears in the *Environment* panel, representing the new variable in the memory. The left part of the entry contains the identifier `a_variable`, and the right part contains the value assigned to the variable `a_variable`, that is `1`.
+Si escribes `una_variable <- 1` en la *Consola* de RStudio, aparece un nuevo elemento en el panel *Environment* (derecha-arriba), que representa la nueva variable en la memoria. La parte izquierda de la entrada contiene el identificador `una_variable`, y la parte derecha contiene el valor asignado a la variable` una_variable`, es decir, `1`.
 
-It is not necessary to provide a value directly. The right part of the assignment can be a **call to a function**. In that case, the function is **executed** on the provided input and **the result is assigned to the variable**.
+No es necesario aportar un valor directamente. La parte derecha de la tarea puede ser una **llamada a una función**. En ese caso, la función se **ejecuta** en la entrada proporcionada y **el resultado se asigna a la variable**.
 
 ```{r, echo=TRUE}
-a_variable <- sqrt(4)
-a_variable
+una_variable <- sqrt(4)
+una_variable
 ```
 
-Note how if you type `a_variable <- sqrt(4)` in the *Console* in RStudio, the element in the *Environment* panel changes to reflect the new value assigned to the variable `a_variable`, which is now the result of `sqrt(4)`, that is `r sqrt(4)`.
+Observa cómo, al escribir `una_variable <- sqrt (4)` en la *Consola* de RStudio, el elemento en el panel *Environment* cambia para reflejar el nuevo valor asignado a `una_variable`, que ahora es el resultado de `sqrt (4)`, es decir `r sqrt (4)`.
 
-In the example below, another variable named `another_variable` is created and summed to `a_variable`, saving the result in `sum_of_two_variables`. The square root of that sum is then stored in the variable `square_root_of_sum`.
+En el siguiente ejemplo, se crea otra variable llamada `otra_variable` y se suma a `una_variable`, guardando el resultado en `suma_de_dos_variables`. La raíz cuadrada de esa suma se almacena en la variable `raiz_cuadrada_de_suma`. 
 
 ```{r, echo=TRUE}
-another_variable <- 4
-another_variable
+otra_variable <- 4
+otra_variable
 
-sum_of_two_variables <- a_variable + another_variable
+suma_de_dos_variables <- una_variable + otra_variable
 
-square_root_of_sum <- sqrt(sum_of_two_variables)
-square_root_of_sum
+raiz_cuadrada_de_suma <- sqrt(suma_de_dos_variables)
+raiz_cuadrada_de_suma
 ```
 
-## Basic types
 
-### Numeric
+## Tipos basicos
 
-The *numeric* type represents numbers (both integers and reals).
+### Números
+
+El tipo *numeric* representa números en general (tanto enteros como reales), pero R es capaz de distinguirlos utilizando funciones.
 
 ```{r, echo=TRUE}
-a_number <- 1.41
-is.numeric(a_number)
-is.integer(a_number)
-is.double(a_number) # i.e., is real
+un_numero <- 1.41
+is.numeric(un_numero)
+is.integer(un_numero)
+is.double(un_numero) # i.e., es real
 ```
 
-Base numeric operators.
+Operadores numéricos básicos.
 
-|Operator|Meaning         |Example|Output   |
+|Operador|Significado     |Ejemplo|Resultado|
 |--------|----------------|-------|---------|
-|+       |Plus            |`5+2`  |`r 5+2`  |
-|-       |Minus           |`5-2`  |`r 5-2`  |
-|`*`     |Product         |`5*2`  |`r 5*2`  |
-|/       |Division        |`5/2`  |`r 5/2`  |
-|%/%     |Integer division|`5%/%2`|`r 5%/%2`|
-|%%      |Module          |`5%%2` |`r 5%%2` |
-|^       |Power           |`5^2`  |`r 5^2`  |
+|+       |Suma            |`5+2`  |`r 5+2`  |
+|-       |Resta           |`5-2`  |`r 5-2`  |
+|`*`     |Multiplicación  |`5*2`  |`r 5*2`  |
+|/       |División        |`5/2`  |`r 5/2`  |
+|%/%     |Div. de enteros |`5%/%2`|`r 5%/%2`|
+|%%      |Módulo          |`5%%2` |`r 5%%2` |
+|^       |Potencia        |`5^2`  |`r 5^2`  |
 
 
-Some pre-defined functions in R:
-
-```{r, echo=TRUE}
-abs(-2) # Absolute value
-ceiling(3.475) # Upper round
-floor(3.475) # Lower round
-trunc(5.99) # Truncate
-log10(100) # Logarithm 10
-log(exp(2)) # Natural logarithm and e
-```
-
-Use simple brackets to specify the order of execution. If not specified the default order is: rise to power first, then multiplication and division, sum and subtraction last.
+Algunas funciones predefinidas en R son: 
 
 ```{r, echo=TRUE}
-a_number <- 1
-(a_number + 2) * 3
-a_number + (2 * 3)
-a_number + 2 * 3
+abs(-2) # Valor absoluto
+ceiling(3.475) # Redondeo al alza
+floor(3.475) # Redondeo a la baja
+trunc(5.99) # Truncar
+log10(100) # Logaritmo en base 10
+log(exp(2)) # Logaritmo natural y exponencial
 ```
 
-The object `NaN` (*Not a Number*) is returned by R when the result of an operation is not a number.
+Como en cualquier otro entorno, podéis utilizar paréntesis simples para especificar el orden de ejecución. Si no se especifica, el orden predeterminado es: potencia, multiplicación y división, suma y resta al final. 
 
 ```{r, echo=TRUE}
-0 / 0
-is.nan(0 / 0)
+un_numero <- 1
+(un_numero + 2) * 3
+un_numero + (2 * 3)
+un_numero + 2 * 3
 ```
 
-That is not to be confused with the object `NA` (*Not Available*), which is returned for missing data.
-
-### Logical
-
-The *logical* type encodes two truth values: True and False.
+R devuelve el resultado `NaN` (*Not a number*)cuando el resultado de una operación no es un número. 
 
 ```{r, echo=TRUE}
-logical_var <- TRUE
-is.logical(logical_var)
-isTRUE(logical_var)
-as.logical(0) # TRUE if not zero
+0/0
+is.nan(0/0)
 ```
 
-Basic logic operators
+No hay que confundir `NaN`con `NA` (*No Available*), que sirve para identificar datos faltantes.
 
-|Operator|Meaning          |Example         |Output            |
+### Lógicos o booleanos
+
+El tipo *lógico* codifica dos valores dicotómicos: Verdadero y Falso. 
+
+```{r, echo=TRUE}
+valor_logico <- TRUE
+is.logical(valor_logico)
+isTRUE(valor_logico)
+as.logical(0) # se pueden convertir 1/0 a TRUE/FALSE
+```
+
+Operadores lógicos básicos 
+
+|Operador|Significado      |Ejemplo         |Resultado         |
 |--------|-----------------|----------------|------------------|
-|==      |Equal            |`5==2`          |`r 5==2`          |
-|!=      |Not equal        |`5!=2`          |`r 5!=2`          |
-|>       |Greater than     |`5>2`           |`r 5>2`           |
-|<       |Less than        |`5<2`           |`r 5<2`           |
-|>=      |Greater or equal |`5>=2`          |`r 5>=2`          |
-|<=      |Less or equal    |`5<=2`          |`r 5<=2`          |
-|!       |Not              |`!TRUE`         |`r !TRUE`         |
-|&       |And              |`TRUE & FALSE`  |`r TRUE & FALSE`  |
-|\|      |Or               |`TRUE | FALSE`  |`r TRUE | FALSE`  |
+|==      |Igual            |`5==2`          |`r 5==2`          |
+|!=      |No igual         |`5!=2`          |`r 5!=2`          |
+|>       |Mayor que        |`5>2`           |`r 5>2`           |
+|<       |Menor que        |`5<2`           |`r 5<2`           |
+|>=      |Mayor o igual    |`5>=2`          |`r 5>=2`          |
+|<=      |Menor o igual    |`5<=2`          |`r 5<=2`          |
+|!       |No               |`!TRUE`         |`r !TRUE`         |
+|&       |Y                |`TRUE & FALSE`  |`r TRUE & FALSE`  |
+|\|      |O                |`TRUE | FALSE`  |`r TRUE | FALSE`  |
 
 
 
-### Character
+### Cádenas de caracteres
 
-The *character* type represents text objects, including single characters and character strings (that is text objects longer than one character, commonly referred to simply as *strings* in computer science).
+El tipo *character* representa objetos de texto, incluidos caracteres individuales y cadenas de caracteres (es decir, objetos de texto de más de un carácter, comúnmente denominados simplemente *cadenas* o *strings* en informática). 
 
 ```{r, echo=TRUE}
-a_string <- "Hello world!"
-is.character(a_string)
-is.numeric(a_string)
-as.character(2) # type conversion  (a.k.a. casting)
+una_cadena <- "¡Hola!"
+is.character(una_cadena)
+is.numeric(una_cadena)
+as.character(2) # Conversión de número a cadena (en inglés, hacer un 'cast')
 as.numeric("2")
-as.numeric("Ciao")
+as.numeric("¡Hasta luego!")
 ```
 
 
 ## Tidyverse
 
-As mentioned in the lecture, libraries are collections of functions and/or datasets. Libraries can be installed in R using the function `install.packages` or using `Tool > Install Packages...` in RStudio. 
+Como se ha mencionado anteriormente, las librerias o *paquetes* son colecciones de funciones y/o conjuntos de datos. Las librerias se pueden instalar en R usando la función `install.packages()` o usando el menú `Herramientas> Instalar Librerias ... `en RStudio. 
+Algunas librerias de R están relacionadas entre sí o forman parte de flujos de trabajo mayores. A dia de hoy la meta-librería [Tidyverse](https://www.tidyverse.org/) contiene algunas de las librerías más utilizadas en el análisis de datos [@wickham2019tidyverse]. Solo por mencionar algunas:
 
-The meta-library [Tidyverse](https://www.tidyverse.org/) contains the following libraries:
+- [`ggplot2`](https://ggplot2.tidyverse.org/) para crear gráficos.
+- [`dplyr`](https://dplyr.tidyverse.org/) para manipular datos (filtrar, seleccionar, agregar, sumarizar, etc). 
+- [`tidyr`](https://tidyr.tidyverse.org/) para organizar los datos de un modo que las otras librerias del **Tidyverse** puedan trabajar mejor.
+- [`readr`](https://readr.tidyverse.org/) para importar tablas de datos a partir de formatos habituales (csv, tsv, o fwf). Permite minimizar la introducción de errores en la importación. 
+- [`purrr`](https://purrr.tidyverse.org/) se utiliza para facilitar la automatización de tareas en R, mientras se escribe menos código.
+- [`stringr`](https://stringr.tidyverse.org/) facilita la manipulación de cadenas de texto (unir, separar, filtrar palabras en un documento, etc).
+- [`forcats`](https://forcats.tidyverse.org/) para trabajar con factores.
+- [`tibble`](https://tibble.tidyverse.org/)...
 
-- [`ggplot2`](https://ggplot2.tidyverse.org/) is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
-- [`dplyr`](https://dplyr.tidyverse.org/) provides a grammar of data manipulation, providing a consistent set of verbs that solve the most common data manipulation challenges. 
-- [`tidyr`](https://tidyr.tidyverse.org/) provides a set of functions that help you get to tidy data. Tidy data is data with a consistent form: in brief, every variable goes in a column, and every column is a variable.
-- [`readr`](https://readr.tidyverse.org/) provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild, while still cleanly failing when data unexpectedly changes. 
-- [`purrr`](https://purrr.tidyverse.org/) enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive. 
-- [`tibble`](https://tibble.tidyverse.org/) is a modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not. Tibbles are data.frames that are lazy and surly: they do less and complain more forcing you to confront problems earlier, typically leading to cleaner, more expressive code. 
-- [`stringr`](https://stringr.tidyverse.org/) provides a cohesive set of functions designed to make working with strings as easy as possible. It is built on top of stringi, which uses the ICU C library to provide fast, correct implementations of common string manipulations. 
-- [`forcats`](https://forcats.tidyverse.org/) provides a suite of useful tools that solve common problems with factors. R uses factors to handle categorical variables, variables that have a fixed and known set of possible values.
-
-A library can be loaded using the function `library`, as shown below (note the name of the library is not quoted). Once a library is installed on a computer, you don't need to install it again, but every script needs to load all the library that it uses. Once a library is loaded, all its functions can be used.
-
-**Important**: it is always necessary to load the `tidyverse` meta-library if you want to use the `stringr` functions or the pipe operator `%>%`.
+Se puede cargar una librería usando la función `library()`, como se muestra a continuación (tened en cuenta que el nombre de la biblioteca no está entrecomillado). Una vez que una librería está instalada en un ordenador, no es necesario que la instale nuevamente, pero cada secuencia de comandos o *script* debe cargar todas las librerías que utiliza. Una vez que se carga una librería, se pueden utilizar todas sus funciones. 
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -228,25 +227,20 @@ library(tidyverse)
 
 ### stringr
 
-The code below presents the same examples used in the lecture session to demonstrate the use of `stringr` functions.
+El siguiente código presenta un mínimo ejemplo del uso de las funciones de la librería `stringr`.
 
 ```{r, echo=TRUE}
-str_length("Leicester")
-str_detect("Leicester", "e")
-str_replace_all("Leicester", "e", "x")
+str_length("Tarragona")
+str_detect("Tarragona", "a")
+str_replace_all("Tarragona", "r", "R")
 ```
 
 
-### The pipe operator
+### El operador `pipe`
 
-The pipe operator is useful to outline more complex operations, step by step (see also [R for Data Science, Chapter 18](https://r4ds.had.co.nz/pipes.html)). The pipe operator `%>%`
+El operador `pipe` (tuberia) es útil para reducir el número de asignaciones en operaciones más complejas. Un *pipe* (`%>%`) toma el resultado de una función y lo pasa a la siguiente función como **primer argumento**, de este modo ya no hace falta repetir el resultado de la primera función en el código.
 
-- takes the result from one function
-- and passes it to the next function
-- as the **first argument**
-- that doesn't need to be included in the code anymore
-
-The code below shows a simple example. The number `2` is taken as input for the first pipe that passes it on as the first argument to the function `sqrt`. The output value `1.41` is then taken as input for the second pipe, that passes it on as the first argument to the function `trunc`. The final output `1` is finally returned.
+El siguiente código muestra un ejemplo sencillo. El número `2` se toma como entrada para el primer `pipe` que lo pasa como primer argumento a la función `sqrt`. El valor de salida `r sqrt(2)` se toma como entrada para el segundo `pipe`, que lo pasa como primer argumento a la función `trunc`. Finalmente se devuelve la salida final "1". 
 
 ```{r, echo=TRUE}
 2 %>%
@@ -260,73 +254,80 @@ sqrt(2) %>%
  round(digits = 2)
 ```
 
-The first step of a sequence of pipes can be a value, a variable, or a function including arguments. The code below shows a series of examples of different ways of achieving the same result. The examples use the function `round`, which also allows for a second argument `digits = 2`. Note that, when using the pipe operator, only the nominally second argument is provided to the function `round` -- that is `round(digits = 2)`
+El primer paso de una secuencia de *pipes* puede ser un valor, una variable o una función que incluya argumentos. El siguiente código muestra una serie de ejemplos de diferentes formas de lograr el mismo resultado. Los ejemplos usan la función `round`, que también permite un segundo argumento `digits = 2`. Tened en cuenta que, cuando se utiliza el operador `%>%`, solo se proporciona el segundo argumento nominalmente a la función `round`, es decir, `round(digits = 2)` 
 
 ```{r, echo=TRUE, eval=FALSE}
-# No pipe, using variables
-tmp_variable_A <- 2
-tmp_variable_B <- sqrt(tmp_variable_A)
-round(tmp_variable_B, digits = 2)
+# R básico, sin utilizar '%>%', pero en varios pasos
+variable_temporal_a <- 2
+variable_temporal_b <- sqrt(variable_temporal_a)
+round(variable_temporal_b, digits = 2)
 
-# No pipe, using functions only
+# R básico, sin utilizar '%>%', pero sin asignaciones
 round(sqrt(2), digits = 2)
 
-# Pipe starting from a value
+# Pipe a partir de un valor
 2 %>%
   sqrt() %>%
   round(digits = 2)
 
-# Pipe starting from a variable
-the_value_two <- 2
-the_value_two %>%
+# Pipe a partir de una variable
+el_numero_dos <- 2
+el_numero_dos %>%
   sqrt() %>%
   round(digits = 2)
 
-# Pipe starting from a function
+# Pipe empezando por una función
 sqrt(2) %>%
  round(digits = 2)
 ```
 
-A complex operation created through the use of `%>%` can be used on the right side of `<-`, to assign the outcome of the operation to a variable.
+Una operación compleja creada mediante el uso de `%>%` se puede usar en el lado derecho de una asignación `<-`, de modo que se guarda resultado de toda la operación de la derecha. 
 
 ```{r, echo=TRUE, eval=FALSE}
-sqrt_of_two <- 2 %>%
+raiz_cuadrada_de_dos <- 2 %>%
   sqrt() %>%
   round(digits = 2)
 ```
 
 
 
-## Coding style
+## Ejercicios
 
-Study the [Tidyverse Style Guide (style.tidyverse.org)](http://style.tidyverse.org/) and use it consistently!
+Crea un *script* para responder a cada pregunta. En las preguntas de la 4 a la 8 es posible que tengas que consultar la referencia de la librería [`stringr` (stringr.tidyverse.org/reference)](https://stringr.tidyverse.org/reference/index.html) o a otras funciones de `R base`.
 
+1. Escribe un fragmento de código utilizando el operador `%>%` que haga lo siguiente: 
+    - tomar como entrada el número `1632`
+    - calcular el logaritmo en base 10
+    - redondear el número a la baja
+    - truncar la parte entera y 
+    - verificar si se trata de un número entero. 
 
+2. Escribe un fragmento de código utilizando el operador `%>%` que haga lo siguiente:
+    - tomar como entrada el número `1632`
+    - calcular la raíz cuadrada,
+    - redondear al alza y quedarse con la parte entera, y
+    - verificar que se trata de un entero.
 
-## Exercise 104.1
+3. Escribe un fragmento de código utilizando el operador `%>%` que haga lo siguiente:
+    - tomar como entrada la cadena `1632`
+    - convertirla a número
+    - comprobar si el resultado es o no un número.
 
-**Question 104.1.1:** Write a piece of code using the pipe operator that takes as input the number `1632`, calculates the logarithm to the base 10, takes the highest integer number lower than the calculated value (lower round), and verifies whether it is an integer.
+4. Escribe un fragmento de código utilizando el operador `%>%` que haga lo siguiente:
+    - tomar como entrada la cadena `"-16.32"`
+    - transformarla en un número
+    - calcular el valor absoluto y truncarlo
+    - comprobar si el resultado es o no un número.
 
-**Question 104.1.2:** Write a piece of code using the pipe operator that takes as input the number `1632`, calculates the square root, takes the lowest integer number higher than the calculated value (higher round), and verifies whether it is an integer.
+5. Escribe un fragmento de código utilizando el operador `%>%` y la librería and the `stringr` que haga lo siguiente:
+    - tomar la cadena `"Siempre r que r"` como entrada
+    - transformar la cadena a mayúsculas.
 
-**Question 104.1.3:** Write a piece of code using the pipe operator that takes as input the string `"1632"`, transforms it into a number, and checks whether the result is *Not a Number*.
-
-**Question 104.1.4:** Write a piece of code using the pipe operator that takes as input the string `"-16.32"`, transforms it into a number, takes the absolute value and truncates it, and finally checks whether the result is *Not Available*.
-
-
-
-## Exercise 104.2
-
-Answer the question below, consulting the [`stringr` library reference (stringr.tidyverse.org/reference)](https://stringr.tidyverse.org/reference/index.html) as necessary
-
-**Question 104.2.1:** Write a piece of code using the pipe operator and the `stringr` library that takes as input the string `"I like programming in R"`, and transforms it all in uppercase.
-
-**Question 104.2.2:** Write a piece of code using the pipe operator and the `stringr` library that takes as input the string `"I like programming in R"`, and truncates it, leaving only 10 characters.
-
-**Question 104.2.3:** Write a piece of code using the pipe operator and the `stringr` library that takes as input the string `"I like programming in R"`, and truncates it, leaving only 10 characters and using no ellipsis.
-
-**Question 104.2.4:** Write a piece of code using the pipe operator and the `stringr` library that takes as input the string `"I like programming in R"`, and manipulates to leave only the string `"I like R"`.
+6. Escribe un fragmento de código utilizando el operador `%>%` y la librería and the `stringr` que haga lo siguiente:
+    - tomar la cadena `"Siempre r que r"` como entrada
+    - truncarla para dejar solamente 'Siempre R'.
 
 ```{r cleanup, include=FALSE}
+# Before next chapter
 rm(list = ls())
 ```

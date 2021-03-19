@@ -8,5 +8,4 @@ install.packages("moderndive")
 install.packages("kableExtra")
 install.packages("patchwork")
 install.packages("ggrepel")
-
-
+install.packages("ggplot2movies")

@@ -8,13 +8,14 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "Este documento forma parte de los materiales para la asignatura 'Técnicas cuantitativas' del Máster universitario en planificación, gobernanza y liderazgo territorial"
+always_allow_html: true
 ---
 
-# Presentación
-Esta guía de inicio rápido está diseñada para ayudarlo a entregar sus pruebas de monitoreo con Markdown y R-studio. Contiene los conceptos básicos para preparar un documento que incluye el código y la salida R. El documento final incluirá el contenido de la prueba de seguimiento en un estilo adecuado e inteligente. 
+# Antes de empezar
+En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de **programación literaria**.
 
 ## Prerrequisitos
-Para preparar las pruebas de seguimiento o cualquier otra tarea en este formato es necesario instalar primero R y RStudio con los paquetes knitr y rmarkdown.
+Para preparar cualquier tarea en este formato es necesario instalar primero R y RStudio con los paquetes `knitr` y `rmarkdown`.
 
 ## Tipos de ficheros
 
@@ -32,19 +33,14 @@ Hola, soy **R Markdown**
 Aprende más sobre mi [aquí](http://rmarkdown.rstudio.com/).
 ```
 
-al hacer clic en `knitr a HTML` se crea un archivo .html con este contenido.
+al hacer clic en el botón `knitr a HTML` de Rstudio se crea un archivo `.html` con este contenido.
 
-```html
-Hola, soy **R Markdown**
-
-Aprende más sobre mi [aquí](http://rmarkdown.rstudio.com/).
-```
 
 ## Estructura básica de un documento Markdown
 Revisemos las partes más importantes del documento `Rmd`.
 
 ### Cabecera
-Está en la parte superior del documento dentro de estas dos líneas `---`
+La cabecera está en la parte superior del documento dentro de estas dos líneas `---`
 
 ```
 ---

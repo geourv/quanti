@@ -11,7 +11,7 @@ Como tal, R se puede usar para programar creando secuencias de **instrucciones**
 R es **interpretado**, no compilado. Lo que significa que un intérprete de R (si está utilizando R Studio, el intérprete de R simplemente está oculto en el backend y R Studio es el frontend que le permite interactuar con el intérprete) recibe una instrucción que escribe en R, la interpreta y la ejecuta . Otros lenguajes de programación requieren que su código sea compilado en un ejecutable para ser ejecutado en un ordenador. 
 
 
-### Utilizando RStudio
+## Utilizando RStudio
 
 La interfaz de RStudio se divide en dos secciones principales. En el lado izquierdo, encontrará la *Consola*, así como el editor de secuencias de comandos R, cuando se está editando una secuencia de comandos. La *Consola* en una ventana de entrada/salida en el intérprete de R, donde se pueden escribir instrucciones y se muestra la salida calculada.
 
@@ -27,7 +27,7 @@ el intérprete de R entiende eso como una instrucción para sumar uno más uno, 
 1 + 1
 ```
 
-Note how the output value `2` is preceded by `[1]`, which indicates that the output is constituted by only one element. If the output is constituted by more than one element, as the list of numbers below, each row of the output is preceded by the index of the first element of the output.
+Fijaos cómo el valor de salida `2` está precedido por `[1]`, lo que indica que la salida está constituida por un solo elemento. Si la salida está constituida por más de un elemento, como la lista de números a continuación, cada fila de la salida está precedida por el índice del primer elemento de la salida. 
 
 ```{r, echo=FALSE, eval=TRUE}
 (1:20)**2
@@ -254,12 +254,6 @@ The code below shows a simple example. The number `2` is taken as input for the 
   trunc()
 ```
 
-The image below graphically illustrates how the pipe operator works, compared to the same procedure executed using two temporary variables that are used to store temporary values.
-
-<center>
-![Illustration of how the pipe operator works](images/PipeOperator.png){width=80%}
-
-</center>
 
 ```{r, echo=TRUE, eval=FALSE}
 sqrt(2) %>%

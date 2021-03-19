@@ -50,6 +50,14 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.6.1/DiagrammeR.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -220,10 +228,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="antes-de-empezar" class="section level1">
 <h1><span class="header-section-number">Capítulo 1</span> Antes de empezar</h1>
-<p>En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de <strong><em>programación literaria</em></strong> que en los últimos años está siendo cada vez más utilizada en el análisis de datos <span class="citation">(Knuth <a href="#ref-knuth1984literate" role="doc-biblioref">1984</a>; Xie <a href="#ref-xie2015knitr" role="doc-biblioref">2015</a>)</span>.</p>
+<p>En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando R, Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de <strong><em>programación literaria</em></strong> que en los últimos años está siendo cada vez más utilizada en el análisis de datos <span class="citation">(Knuth <a href="#ref-knuth1984literate" role="doc-biblioref">1984</a>; Xie <a href="#ref-xie2015knitr" role="doc-biblioref">2015</a>)</span>.</p>
 <div id="prerrequisitos" class="section level2">
 <h2><span class="header-section-number">1.1</span> Prerrequisitos</h2>
-<p>Para preparar cualquier tarea en este formato es necesario instalar primero R y RStudio con los paquetes <code>knitr</code> y <code>rmarkdown</code>.</p>
+<p>Para seguir las explicaciones de este curso será necesario instalar primero R y RStudio con los paquetes <code>knitr</code> y <code>rmarkdown</code>. A continuación mostramos la configuración general del sistema R utilizado.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.0.2 (2020-06-22)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04 LTS
+## 
+## Matrix products: default
+## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
+## 
+## locale:
+##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C         
+##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## loaded via a namespace (and not attached):
+##  [1] compiler_4.0.2  magrittr_1.5    bookdown_0.20   tools_4.0.2    
+##  [5] htmltools_0.5.0 rstudioapi_0.11 yaml_2.2.1      stringi_1.5.3  
+##  [9] rmarkdown_2.4   knitr_1.30      stringr_1.4.0   xfun_0.18      
+## [13] digest_0.6.25   rlang_0.4.7     evaluate_0.14</code></pre>
 </div>
 <div id="tipos-de-ficheros" class="section level2">
 <h2><span class="header-section-number">1.2</span> Tipos de ficheros</h2>

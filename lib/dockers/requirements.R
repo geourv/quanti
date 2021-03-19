@@ -9,3 +9,10 @@ install.packages("kableExtra")
 install.packages("patchwork")
 install.packages("ggrepel")
 install.packages("ggplot2movies")
+
+
+# Plot diagrams
+install.packages("DiagrammeR")
+install.packages("webshot")
+library(webshot)
+webshot::install_phantomjs()

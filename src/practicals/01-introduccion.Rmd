@@ -281,6 +281,53 @@ sqrt(2) %>%
  round(digits = 2)
 ```
 
+
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Ejecución del código sin `%>%`"}
+library(DiagrammeR)
+mermaid("
+graph LR
+  %% Set edges to be curved (try monotoneX for a nice alternative)
+  linkStyle default interpolate basis
+  classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;
+  classDef style_temp_node fill:gray,stroke:#333,stroke-width:0px;
+  classDef style_func_node fill:lightgray,stroke:#333,stroke-width:0px;
+
+  2(2) --> sqrt
+  sqrt --> temp_variable[tmp_variable=1,41]
+  temp_variable --> trunc
+  trunc --> 1(1)
+ 
+  class 2,1 style_main_node;
+  class temp_variable style_temp_node;
+  class sqrt,trunc style_func_node;
+", height = '100%', width = '100%')
+```
+
+
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Ejecución del código con `%>%`"}
+library(DiagrammeR)
+mermaid("
+graph LR
+  %% Set edges to be curved (try monotoneX for a nice alternative)
+  linkStyle default interpolate basis
+  classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;
+  classDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;
+
+  A[2]
+  B(sqrt)
+  C(trunc)
+  D[1]
+
+  A -->|%>%| B(sqrt)
+  B -->|%>%| C
+  C -->|%>%| D
+
+  class A,D style_main_node;
+  class B,C style_sub_node;
+", height = '100%', width = '100%')
+```
+
+
 Una operación compleja creada mediante el uso de `%>%` se puede usar en el lado derecho de una asignación `<-`, de modo que se guarda resultado de toda la operación de la derecha. 
 
 ```{r, echo=TRUE, eval=FALSE}
@@ -288,7 +335,6 @@ raiz_cuadrada_de_dos <- 2 %>%
   sqrt() %>%
   round(digits = 2)
 ```
-
 
 
 ## Ejercicios

@@ -50,6 +50,14 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.6.1/DiagrammeR.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -226,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.2</span> Utilizando RStudio</h2>
 <p>La interfaz de RStudio se divide en dos secciones principales. En el lado izquierdo, encontrará la <em>Consola</em>, así como el editor de secuencias de comandos R, cuando se está editando una secuencia de comandos. La <em>Consola</em> en una ventana de entrada/salida en el intérprete de R, donde se pueden escribir instrucciones y se muestra la salida calculada.</p>
 <p>Por ejemplo, si escribís en la <em>Consola</em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="intro.html#cb4-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="intro.html#cb6-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
 <p>el intérprete de R entiende eso como una instrucción para sumar uno más uno, y produce el resultado (dado que los materiales para este módulo se crean en RMarkdown, la salida del cálculo siempre está precedida por ‘##’).</p>
 <pre><code>## [1] 2</code></pre>
 <p>Fíjate cómo el valor de salida <code>2</code> está precedido por <code>[1]</code>, lo que indica que la salida está constituida por un solo elemento. Si la salida está constituida por más de un elemento, como la lista de números a continuación, cada fila de la salida está precedida por el índice del primer elemento de la salida.</p>
@@ -238,42 +246,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.3</span> Interpretación de valores</h2>
 <p>Cuando se escribe un valor en la <em>Consola</em>, el intérprete simplemente devuelve el mismo valor. En los ejemplos siguientes, <code>2</code> es un valor numérico simple, mientras que <code>"Valor de cadena"</code> es un valor textual, que en R se conoce como un valor de <em>carácter</em> y en programación también se conoce comúnmente como una <em>cadena</em> (abreviatura de <em>una cadena de caracteres</em>).</p>
 <p>Ejemplo númerico</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="intro.html#cb7-1"></a><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro.html#cb9-1"></a><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Ejemplo de cadena</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro.html#cb9-1"></a><span class="st">&quot;String value&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="intro.html#cb11-1"></a><span class="st">&quot;String value&quot;</span></span></code></pre></div>
 <pre><code>## [1] &quot;String value&quot;</code></pre>
 <p>Tened en cuenta que los valores de los caracteres deben comenzar y terminar con comillas simples o dobles (<code>'</code>o<code>"</code>), que no forman parte de la información en sí. La <a href="https://style.tidyverse.org%20/syntax.html">Guía de estilo de Tidyverse</a> sugiere usar siempre comillas dobles (<code>"</code>), así que serán las que usaremos en este curso.</p>
 <p>Todo lo que sigue a un símbolo <code>#</code> se considera un <em>comentario</em> y el intérprete lo ignora. Cada lenguaje de programación puede usar sus propios símbolos para identificar los comentarios. Por ejemplo cabe destacar la diferencia entre <code>#</code> en Markdown que identifica un título de primer nivel, mientras que los comentarios en un fichero de Rmarkdown se identifican entre <code>&lt;</code> y <code>&gt;</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="intro.html#cb11-1"></a><span class="co"># Este comentario es ignorado por R. Solo sirve para documentar el código.</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="intro.html#cb13-1"></a><span class="co"># Este comentario es ignorado por R. Solo sirve para documentar el código.</span></span></code></pre></div>
 <p>Como se ha mencionado anteriormente, el intérprete también comprende <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Arithmetic.html">operaciones aritméticas simples sobre valores numéricos</a>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro.html#cb12-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro.html#cb14-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Además, también hay una gran cantidad de funciones predefinidas, por ejemplo, raíz cuadrada: <code>sqrt</code>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro.html#cb14-1"></a><span class="kw">sqrt</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro.html#cb16-1"></a><span class="kw">sqrt</span>(<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1.414214</code></pre>
 <p>Las funciones se recopilan y almacenan en <em>bibliotecas</em> (a veces denominadas <em>paquetes</em>), que contienen funciones relacionadas. Las bibliotecas pueden variar desde la biblioteca <code>base</code>, que incluye la función <code>sqrt</code> anterior, hasta la biblioteca <code>rgdal</code>, que funciona como un puente hacia las funciones de la <a href="https://gdal.org/">GDAL (Biblioteca de abstracción de datos geoespaciales)</a>, que es una importante librería en el mundo de los Sistemas de Información Geográfica. Por lo tanto, es mediante la creación de librerías que podemos extender las capacidades de R.</p>
 </div>
 <div id="variables" class="section level2">
 <h2><span class="header-section-number">2.4</span> Variables</h2>
 <p>Una variable se puede definir usando un <strong>identificador</strong> (por ejemplo, <code>una_variable</code>) a la izquierda de un <strong>operador de asignación</strong> <code>&lt;-</code>, seguido del <em>objeto</em> que se vinculará al identificador, como un <strong>valor</strong> (por ejemplo, <code>1</code>) que se asignará a la derecha. Una vez realizada la asignación, el valor de la variable se puede probar/invocar simplemente especificando el <strong>identificador</strong>.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro.html#cb16-1"></a>una_variable &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb16-2"><a href="intro.html#cb16-2"></a>una_variable</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro.html#cb18-1"></a>una_variable &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb18-2"><a href="intro.html#cb18-2"></a>una_variable</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Si escribes <code>una_variable &lt;- 1</code> en la <em>Consola</em> de RStudio, aparece un nuevo elemento en el panel <em>Environment</em> (derecha-arriba), que representa la nueva variable en la memoria. La parte izquierda de la entrada contiene el identificador <code>una_variable</code>, y la parte derecha contiene el valor asignado a la variable<code>una_variable</code>, es decir, <code>1</code>.</p>
 <p>No es necesario aportar un valor directamente. La parte derecha de la tarea puede ser una <strong>llamada a una función</strong>. En ese caso, la función se <strong>ejecuta</strong> en la entrada proporcionada y <strong>el resultado se asigna a la variable</strong>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro.html#cb18-1"></a>una_variable &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">4</span>)</span>
-<span id="cb18-2"><a href="intro.html#cb18-2"></a>una_variable</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro.html#cb20-1"></a>una_variable &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">4</span>)</span>
+<span id="cb20-2"><a href="intro.html#cb20-2"></a>una_variable</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Observa cómo, al escribir <code>una_variable &lt;- sqrt (4)</code> en la <em>Consola</em> de RStudio, el elemento en el panel <em>Environment</em> cambia para reflejar el nuevo valor asignado a <code>una_variable</code>, que ahora es el resultado de <code>sqrt (4)</code>, es decir 2.</p>
 <p>En el siguiente ejemplo, se crea otra variable llamada <code>otra_variable</code> y se suma a <code>una_variable</code>, guardando el resultado en <code>suma_de_dos_variables</code>. La raíz cuadrada de esa suma se almacena en la variable <code>raiz_cuadrada_de_suma</code>.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro.html#cb20-1"></a>otra_variable &lt;-<span class="st"> </span><span class="dv">4</span></span>
-<span id="cb20-2"><a href="intro.html#cb20-2"></a>otra_variable</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="intro.html#cb22-1"></a>otra_variable &lt;-<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb22-2"><a href="intro.html#cb22-2"></a>otra_variable</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="intro.html#cb22-1"></a>suma_de_dos_variables &lt;-<span class="st"> </span>una_variable <span class="op">+</span><span class="st"> </span>otra_variable</span>
-<span id="cb22-2"><a href="intro.html#cb22-2"></a></span>
-<span id="cb22-3"><a href="intro.html#cb22-3"></a>raiz_cuadrada_de_suma &lt;-<span class="st"> </span><span class="kw">sqrt</span>(suma_de_dos_variables)</span>
-<span id="cb22-4"><a href="intro.html#cb22-4"></a>raiz_cuadrada_de_suma</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="intro.html#cb24-1"></a>suma_de_dos_variables &lt;-<span class="st"> </span>una_variable <span class="op">+</span><span class="st"> </span>otra_variable</span>
+<span id="cb24-2"><a href="intro.html#cb24-2"></a></span>
+<span id="cb24-3"><a href="intro.html#cb24-3"></a>raiz_cuadrada_de_suma &lt;-<span class="st"> </span><span class="kw">sqrt</span>(suma_de_dos_variables)</span>
+<span id="cb24-4"><a href="intro.html#cb24-4"></a>raiz_cuadrada_de_suma</span></code></pre></div>
 <pre><code>## [1] 2.44949</code></pre>
 </div>
 <div id="tipos-basicos" class="section level2">
@@ -281,12 +289,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="números" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> Números</h3>
 <p>El tipo <em>numeric</em> representa números en general (tanto enteros como reales), pero R es capaz de distinguirlos utilizando funciones.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="intro.html#cb24-1"></a>un_numero &lt;-<span class="st"> </span><span class="fl">1.41</span></span>
-<span id="cb24-2"><a href="intro.html#cb24-2"></a><span class="kw">is.numeric</span>(un_numero)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="intro.html#cb26-1"></a>un_numero &lt;-<span class="st"> </span><span class="fl">1.41</span></span>
+<span id="cb26-2"><a href="intro.html#cb26-2"></a><span class="kw">is.numeric</span>(un_numero)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="intro.html#cb26-1"></a><span class="kw">is.integer</span>(un_numero)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="intro.html#cb28-1"></a><span class="kw">is.integer</span>(un_numero)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="intro.html#cb28-1"></a><span class="kw">is.double</span>(un_numero) <span class="co"># i.e., es real</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="intro.html#cb30-1"></a><span class="kw">is.double</span>(un_numero) <span class="co"># i.e., es real</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Operadores numéricos básicos.</p>
 <table>
@@ -344,42 +352,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Algunas funciones predefinidas en R son:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="intro.html#cb30-1"></a><span class="kw">abs</span>(<span class="op">-</span><span class="dv">2</span>) <span class="co"># Valor absoluto</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="intro.html#cb32-1"></a><span class="kw">abs</span>(<span class="op">-</span><span class="dv">2</span>) <span class="co"># Valor absoluto</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="intro.html#cb32-1"></a><span class="kw">ceiling</span>(<span class="fl">3.475</span>) <span class="co"># Redondeo al alza</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="intro.html#cb34-1"></a><span class="kw">ceiling</span>(<span class="fl">3.475</span>) <span class="co"># Redondeo al alza</span></span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="intro.html#cb34-1"></a><span class="kw">floor</span>(<span class="fl">3.475</span>) <span class="co"># Redondeo a la baja</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="intro.html#cb36-1"></a><span class="kw">floor</span>(<span class="fl">3.475</span>) <span class="co"># Redondeo a la baja</span></span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="intro.html#cb36-1"></a><span class="kw">trunc</span>(<span class="fl">5.99</span>) <span class="co"># Truncar</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="intro.html#cb38-1"></a><span class="kw">trunc</span>(<span class="fl">5.99</span>) <span class="co"># Truncar</span></span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="intro.html#cb38-1"></a><span class="kw">log10</span>(<span class="dv">100</span>) <span class="co"># Logaritmo en base 10</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="intro.html#cb40-1"></a><span class="kw">log10</span>(<span class="dv">100</span>) <span class="co"># Logaritmo en base 10</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="intro.html#cb40-1"></a><span class="kw">log</span>(<span class="kw">exp</span>(<span class="dv">2</span>)) <span class="co"># Logaritmo natural y exponencial</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="intro.html#cb42-1"></a><span class="kw">log</span>(<span class="kw">exp</span>(<span class="dv">2</span>)) <span class="co"># Logaritmo natural y exponencial</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Como en cualquier otro entorno, podéis utilizar paréntesis simples para especificar el orden de ejecución. Si no se especifica, el orden predeterminado es: potencia, multiplicación y división, suma y resta al final.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="intro.html#cb42-1"></a>un_numero &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb42-2"><a href="intro.html#cb42-2"></a>(un_numero <span class="op">+</span><span class="st"> </span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="intro.html#cb44-1"></a>un_numero &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb44-2"><a href="intro.html#cb44-2"></a>(un_numero <span class="op">+</span><span class="st"> </span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="intro.html#cb44-1"></a>un_numero <span class="op">+</span><span class="st"> </span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="intro.html#cb46-1"></a>un_numero <span class="op">+</span><span class="st"> </span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="intro.html#cb46-1"></a>un_numero <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="intro.html#cb48-1"></a>un_numero <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <p>R devuelve el resultado <code>NaN</code> (<em>Not a number</em>)cuando el resultado de una operación no es un número.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="intro.html#cb48-1"></a><span class="dv">0</span><span class="op">/</span><span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="intro.html#cb50-1"></a><span class="dv">0</span><span class="op">/</span><span class="dv">0</span></span></code></pre></div>
 <pre><code>## [1] NaN</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="intro.html#cb50-1"></a><span class="kw">is.nan</span>(<span class="dv">0</span><span class="op">/</span><span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="intro.html#cb52-1"></a><span class="kw">is.nan</span>(<span class="dv">0</span><span class="op">/</span><span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>No hay que confundir <code>NaN</code>con <code>NA</code> (<em>No Available</em>), que sirve para identificar datos faltantes.</p>
 </div>
 <div id="lógicos-o-booleanos" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> Lógicos o booleanos</h3>
 <p>El tipo <em>lógico</em> codifica dos valores dicotómicos: Verdadero y Falso.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="intro.html#cb52-1"></a>valor_logico &lt;-<span class="st"> </span><span class="ot">TRUE</span></span>
-<span id="cb52-2"><a href="intro.html#cb52-2"></a><span class="kw">is.logical</span>(valor_logico)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="intro.html#cb54-1"></a>valor_logico &lt;-<span class="st"> </span><span class="ot">TRUE</span></span>
+<span id="cb54-2"><a href="intro.html#cb54-2"></a><span class="kw">is.logical</span>(valor_logico)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="intro.html#cb54-1"></a><span class="kw">isTRUE</span>(valor_logico)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="intro.html#cb56-1"></a><span class="kw">isTRUE</span>(valor_logico)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="intro.html#cb56-1"></a><span class="kw">as.logical</span>(<span class="dv">0</span>) <span class="co"># se pueden convertir 1/0 a TRUE/FALSE</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="intro.html#cb58-1"></a><span class="kw">as.logical</span>(<span class="dv">0</span>) <span class="co"># se pueden convertir 1/0 a TRUE/FALSE</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Operadores lógicos básicos</p>
 <table>
@@ -452,16 +460,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="cádenas-de-caracteres" class="section level3">
 <h3><span class="header-section-number">2.5.3</span> Cádenas de caracteres</h3>
 <p>El tipo <em>character</em> representa objetos de texto, incluidos caracteres individuales y cadenas de caracteres (es decir, objetos de texto de más de un carácter, comúnmente denominados simplemente <em>cadenas</em> o <em>strings</em> en informática).</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="intro.html#cb58-1"></a>una_cadena &lt;-<span class="st"> &quot;¡Hola!&quot;</span></span>
-<span id="cb58-2"><a href="intro.html#cb58-2"></a><span class="kw">is.character</span>(una_cadena)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="intro.html#cb60-1"></a>una_cadena &lt;-<span class="st"> &quot;¡Hola!&quot;</span></span>
+<span id="cb60-2"><a href="intro.html#cb60-2"></a><span class="kw">is.character</span>(una_cadena)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="intro.html#cb60-1"></a><span class="kw">is.numeric</span>(una_cadena)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="intro.html#cb62-1"></a><span class="kw">is.numeric</span>(una_cadena)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="intro.html#cb62-1"></a><span class="kw">as.character</span>(<span class="dv">2</span>) <span class="co"># Conversión de número a cadena (en inglés, hacer un &#39;cast&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="intro.html#cb64-1"></a><span class="kw">as.character</span>(<span class="dv">2</span>) <span class="co"># Conversión de número a cadena (en inglés, hacer un &#39;cast&#39;)</span></span></code></pre></div>
 <pre><code>## [1] &quot;2&quot;</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="intro.html#cb64-1"></a><span class="kw">as.numeric</span>(<span class="st">&quot;2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="intro.html#cb66-1"></a><span class="kw">as.numeric</span>(<span class="st">&quot;2&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="intro.html#cb66-1"></a><span class="kw">as.numeric</span>(<span class="st">&quot;¡Hasta luego!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="intro.html#cb68-1"></a><span class="kw">as.numeric</span>(<span class="st">&quot;¡Hasta luego!&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
 <pre><code>## [1] NA</code></pre>
 </div>
@@ -481,54 +489,68 @@ Algunas librerias de R están relacionadas entre sí o forman parte de flujos de
 <li><a href="https://tibble.tidyverse.org/"><code>tibble</code></a>…</li>
 </ul>
 <p>Se puede cargar una librería usando la función <code>library()</code>, como se muestra a continuación (tened en cuenta que el nombre de la biblioteca no está entrecomillado). Una vez que una librería está instalada en un ordenador, no es necesario que la instale nuevamente, pero cada secuencia de comandos o <em>script</em> debe cargar todas las librerías que utiliza. Una vez que se carga una librería, se pueden utilizar todas sus funciones.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="intro.html#cb69-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="intro.html#cb71-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
 <div id="stringr" class="section level3">
 <h3><span class="header-section-number">2.6.1</span> stringr</h3>
 <p>El siguiente código presenta un mínimo ejemplo del uso de las funciones de la librería <code>stringr</code>.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="intro.html#cb70-1"></a><span class="kw">str_length</span>(<span class="st">&quot;Tarragona&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="intro.html#cb72-1"></a><span class="kw">str_length</span>(<span class="st">&quot;Tarragona&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="intro.html#cb72-1"></a><span class="kw">str_detect</span>(<span class="st">&quot;Tarragona&quot;</span>, <span class="st">&quot;a&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="intro.html#cb74-1"></a><span class="kw">str_detect</span>(<span class="st">&quot;Tarragona&quot;</span>, <span class="st">&quot;a&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="intro.html#cb74-1"></a><span class="kw">str_replace_all</span>(<span class="st">&quot;Tarragona&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="intro.html#cb76-1"></a><span class="kw">str_replace_all</span>(<span class="st">&quot;Tarragona&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;R&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;TaRRagona&quot;</code></pre>
 </div>
 <div id="el-operador-pipe" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> El operador <code>pipe</code></h3>
 <p>El operador <code>pipe</code> (tuberia) es útil para reducir el número de asignaciones en operaciones más complejas. Un <em>pipe</em> (<code>%&gt;%</code>) toma el resultado de una función y lo pasa a la siguiente función como <strong>primer argumento</strong>, de este modo ya no hace falta repetir el resultado de la primera función en el código.</p>
 <p>El siguiente código muestra un ejemplo sencillo. El número <code>2</code> se toma como entrada para el primer <code>pipe</code> que lo pasa como primer argumento a la función <code>sqrt</code>. El valor de salida 1.4142136 se toma como entrada para el segundo <code>pipe</code>, que lo pasa como primer argumento a la función <code>trunc</code>. Finalmente se devuelve la salida final “1”.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="intro.html#cb76-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb76-2"><a href="intro.html#cb76-2"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
-<span id="cb76-3"><a href="intro.html#cb76-3"></a><span class="st">  </span><span class="kw">trunc</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="intro.html#cb78-1"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb78-2"><a href="intro.html#cb78-2"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
+<span id="cb78-3"><a href="intro.html#cb78-3"></a><span class="st">  </span><span class="kw">trunc</span>()</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="intro.html#cb78-1"></a><span class="kw">sqrt</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb78-2"><a href="intro.html#cb78-2"></a><span class="st"> </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="intro.html#cb80-1"></a><span class="kw">sqrt</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb80-2"><a href="intro.html#cb80-2"></a><span class="st"> </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p>El primer paso de una secuencia de <em>pipes</em> puede ser un valor, una variable o una función que incluya argumentos. El siguiente código muestra una serie de ejemplos de diferentes formas de lograr el mismo resultado. Los ejemplos usan la función <code>round</code>, que también permite un segundo argumento <code>digits = 2</code>. Tened en cuenta que, cuando se utiliza el operador <code>%&gt;%</code>, solo se proporciona el segundo argumento nominalmente a la función <code>round</code>, es decir, <code>round(digits = 2)</code></p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="intro.html#cb79-1"></a><span class="co"># R básico, sin utilizar &#39;%&gt;%&#39;, pero en varios pasos</span></span>
-<span id="cb79-2"><a href="intro.html#cb79-2"></a>variable_temporal_a &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb79-3"><a href="intro.html#cb79-3"></a>variable_temporal_b &lt;-<span class="st"> </span><span class="kw">sqrt</span>(variable_temporal_a)</span>
-<span id="cb79-4"><a href="intro.html#cb79-4"></a><span class="kw">round</span>(variable_temporal_b, <span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb79-5"><a href="intro.html#cb79-5"></a></span>
-<span id="cb79-6"><a href="intro.html#cb79-6"></a><span class="co"># R básico, sin utilizar &#39;%&gt;%&#39;, pero sin asignaciones</span></span>
-<span id="cb79-7"><a href="intro.html#cb79-7"></a><span class="kw">round</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb79-8"><a href="intro.html#cb79-8"></a></span>
-<span id="cb79-9"><a href="intro.html#cb79-9"></a><span class="co"># Pipe a partir de un valor</span></span>
-<span id="cb79-10"><a href="intro.html#cb79-10"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb79-11"><a href="intro.html#cb79-11"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
-<span id="cb79-12"><a href="intro.html#cb79-12"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb79-13"><a href="intro.html#cb79-13"></a></span>
-<span id="cb79-14"><a href="intro.html#cb79-14"></a><span class="co"># Pipe a partir de una variable</span></span>
-<span id="cb79-15"><a href="intro.html#cb79-15"></a>el_numero_dos &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb79-16"><a href="intro.html#cb79-16"></a>el_numero_dos <span class="op">%&gt;%</span></span>
-<span id="cb79-17"><a href="intro.html#cb79-17"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
-<span id="cb79-18"><a href="intro.html#cb79-18"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb79-19"><a href="intro.html#cb79-19"></a></span>
-<span id="cb79-20"><a href="intro.html#cb79-20"></a><span class="co"># Pipe empezando por una función</span></span>
-<span id="cb79-21"><a href="intro.html#cb79-21"></a><span class="kw">sqrt</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
-<span id="cb79-22"><a href="intro.html#cb79-22"></a><span class="st"> </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="intro.html#cb81-1"></a><span class="co"># R básico, sin utilizar &#39;%&gt;%&#39;, pero en varios pasos</span></span>
+<span id="cb81-2"><a href="intro.html#cb81-2"></a>variable_temporal_a &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb81-3"><a href="intro.html#cb81-3"></a>variable_temporal_b &lt;-<span class="st"> </span><span class="kw">sqrt</span>(variable_temporal_a)</span>
+<span id="cb81-4"><a href="intro.html#cb81-4"></a><span class="kw">round</span>(variable_temporal_b, <span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb81-5"><a href="intro.html#cb81-5"></a></span>
+<span id="cb81-6"><a href="intro.html#cb81-6"></a><span class="co"># R básico, sin utilizar &#39;%&gt;%&#39;, pero sin asignaciones</span></span>
+<span id="cb81-7"><a href="intro.html#cb81-7"></a><span class="kw">round</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb81-8"><a href="intro.html#cb81-8"></a></span>
+<span id="cb81-9"><a href="intro.html#cb81-9"></a><span class="co"># Pipe a partir de un valor</span></span>
+<span id="cb81-10"><a href="intro.html#cb81-10"></a><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb81-11"><a href="intro.html#cb81-11"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
+<span id="cb81-12"><a href="intro.html#cb81-12"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb81-13"><a href="intro.html#cb81-13"></a></span>
+<span id="cb81-14"><a href="intro.html#cb81-14"></a><span class="co"># Pipe a partir de una variable</span></span>
+<span id="cb81-15"><a href="intro.html#cb81-15"></a>el_numero_dos &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb81-16"><a href="intro.html#cb81-16"></a>el_numero_dos <span class="op">%&gt;%</span></span>
+<span id="cb81-17"><a href="intro.html#cb81-17"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
+<span id="cb81-18"><a href="intro.html#cb81-18"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb81-19"><a href="intro.html#cb81-19"></a></span>
+<span id="cb81-20"><a href="intro.html#cb81-20"></a><span class="co"># Pipe empezando por una función</span></span>
+<span id="cb81-21"><a href="intro.html#cb81-21"></a><span class="kw">sqrt</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
+<span id="cb81-22"><a href="intro.html#cb81-22"></a><span class="st"> </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-24"></span>
+<div id="htmlwidget-b97fb82c55ef6c1e7cda" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b97fb82c55ef6c1e7cda">{"x":{"diagram":"\ngraph LR\n  %% Set edges to be curved (try monotoneX for a nice alternative)\n  linkStyle default interpolate basis\n  classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\n  classDef style_temp_node fill:gray,stroke:#333,stroke-width:0px;\n  classDef style_func_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n  2(2) --> sqrt\n  sqrt --> temp_variable[tmp_variable=1,41]\n  temp_variable --> trunc\n  trunc --> 1(1)\n \n  class 2,1 style_main_node;\n  class temp_variable style_temp_node;\n  class sqrt,trunc style_func_node;\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figura 2.1: Ejecución del código sin <code>%&gt;%</code>
+</p>
+</div>
+<div class="figure"><span id="fig:unnamed-chunk-25"></span>
+<div id="htmlwidget-f43384d6653c26e80bd5" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f43384d6653c26e80bd5">{"x":{"diagram":"\ngraph LR\n  %% Set edges to be curved (try monotoneX for a nice alternative)\n  linkStyle default interpolate basis\n  classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\n  classDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n  A[2]\n  B(sqrt)\n  C(trunc)\n  D[1]\n\n  A -->|%>%| B(sqrt)\n  B -->|%>%| C\n  C -->|%>%| D\n\n  class A,D style_main_node;\n  class B,C style_sub_node;\n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figura 2.2: Ejecución del código con <code>%&gt;%</code>
+</p>
+</div>
 <p>Una operación compleja creada mediante el uso de <code>%&gt;%</code> se puede usar en el lado derecho de una asignación <code>&lt;-</code>, de modo que se guarda resultado de toda la operación de la derecha.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="intro.html#cb80-1"></a>raiz_cuadrada_de_dos &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">%&gt;%</span></span>
-<span id="cb80-2"><a href="intro.html#cb80-2"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
-<span id="cb80-3"><a href="intro.html#cb80-3"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="intro.html#cb82-1"></a>raiz_cuadrada_de_dos &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">%&gt;%</span></span>
+<span id="cb82-2"><a href="intro.html#cb82-2"></a><span class="st">  </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span></span>
+<span id="cb82-3"><a href="intro.html#cb82-3"></a><span class="st">  </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="ejercicios" class="section level2">

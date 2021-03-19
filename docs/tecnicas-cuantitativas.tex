@@ -135,12 +135,68 @@
 \hypertarget{antes-de-empezar}{%
 \chapter{Antes de empezar}\label{antes-de-empezar}}
 
-En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de \textbf{\emph{programación literaria}} que en los últimos años está siendo cada vez más utilizada en el análisis de datos \citep{knuth1984literate, xie2015knitr}.
+En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando R, Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de \textbf{\emph{programación literaria}} que en los últimos años está siendo cada vez más utilizada en el análisis de datos \citep{knuth1984literate, xie2015knitr}.
 
 \hypertarget{prerrequisitos}{%
 \section{Prerrequisitos}\label{prerrequisitos}}
 
-Para preparar cualquier tarea en este formato es necesario instalar primero R y RStudio con los paquetes \texttt{knitr} y \texttt{rmarkdown}.
+Para seguir las explicaciones de este curso será necesario instalar primero R y RStudio con los paquetes \texttt{knitr} y \texttt{rmarkdown}. A continuación mostramos la configuración general del sistema R utilizado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sessionInfo}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## R version 4.0.2 (2020-06-22)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04 LTS
+## 
+## Matrix products: default
+## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
+## 
+## locale:
+##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C         
+##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] ggrepel_0.8.2       viridis_0.5.1       viridisLite_0.3.0  
+##  [4] scales_1.1.1        patchwork_1.0.1     kableExtra_1.2.1   
+##  [7] ggplot2movies_0.0.1 nycflights13_1.0.1  moderndive_0.5.0   
+## [10] infer_0.5.3         DiagrammeR_1.0.6.1  forcats_0.5.0      
+## [13] stringr_1.4.0       dplyr_1.0.2         purrr_0.3.4        
+## [16] readr_1.4.0         tidyr_1.1.2         tibble_3.0.3       
+## [19] ggplot2_3.3.2       tidyverse_1.3.0    
+## 
+## loaded via a namespace (and not attached):
+##  [1] httr_1.4.2           jsonlite_1.7.1       modelr_0.1.8        
+##  [4] assertthat_0.2.1     highr_0.8            blob_1.2.1          
+##  [7] cellranger_1.1.0     yaml_2.2.1           pillar_1.4.6        
+## [10] backports_1.1.10     glue_1.4.2           digest_0.6.25       
+## [13] RColorBrewer_1.1-2   rvest_0.3.6          snakecase_0.11.0    
+## [16] colorspace_1.4-1     htmltools_0.5.0      pkgconfig_2.0.3     
+## [19] broom_0.7.1          haven_2.3.1          bookdown_0.20       
+## [22] webshot_0.5.2        farver_2.0.3         generics_0.0.2      
+## [25] ellipsis_0.3.1       withr_2.3.0          janitor_2.0.1       
+## [28] formula.tools_1.7.1  cli_2.0.2            magrittr_1.5        
+## [31] crayon_1.3.4         readxl_1.3.1         evaluate_0.14       
+## [34] fs_1.5.0             fansi_0.4.1          operator.tools_1.6.3
+## [37] xml2_1.3.2           tools_4.0.2          hms_0.5.3           
+## [40] lifecycle_0.2.0      munsell_0.5.0        reprex_0.3.0        
+## [43] compiler_4.0.2       rlang_0.4.7          grid_4.0.2          
+## [46] rstudioapi_0.11      htmlwidgets_1.5.2    visNetwork_2.0.9    
+## [49] labeling_0.3         rmarkdown_2.4        gtable_0.3.0        
+## [52] DBI_1.1.0            R6_2.4.1             gridExtra_2.3       
+## [55] lubridate_1.7.9      knitr_1.30           utf8_1.1.4          
+## [58] stringi_1.5.3        Rcpp_1.0.5           vctrs_0.3.4         
+## [61] dbplyr_1.4.4         tidyselect_1.1.0     xfun_0.18
+\end{verbatim}
 
 \hypertarget{tipos-de-ficheros}{%
 \section{Tipos de ficheros}\label{tipos-de-ficheros}}
@@ -810,6 +866,18 @@ El primer paso de una secuencia de \emph{pipes} puede ser un valor, una variable
 \StringTok{ }\KeywordTok{round}\NormalTok{(}\DataTypeTok{digits =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-24-1.pdf}
+\caption{\label{fig:unnamed-chunk-24}Ejecución del código sin \texttt{\%\textgreater{}\%}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-25-1.pdf}
+\caption{\label{fig:unnamed-chunk-25}Ejecución del código con \texttt{\%\textgreater{}\%}}
+\end{figure}
 
 Una operación compleja creada mediante el uso de \texttt{\%\textgreater{}\%} se puede usar en el lado derecho de una asignación \texttt{\textless{}-}, de modo que se guarda resultado de toda la operación de la derecha.
 

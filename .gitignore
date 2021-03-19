@@ -1,5 +1,7 @@
-./local/*
-./config/*
+./local/
+./rstudio/
+./config/
+
 
 /build/
 build_*/

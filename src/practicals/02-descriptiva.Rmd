@@ -1,3 +1,280 @@
 # Estadística descriptiva
 
-Here is a review of existing methods.
+La estadística descriptiva es una rama de la estadística cuyo objetivo es resumir, describir y presentar una serie de valores o un conjunto de datos. Estas estadísticas pueden ser realmente útiles al analizar largas series de datos en las que resulte difícil reconocer algún patrón. En éste capítulo utilizaremos una muestra de datos sobre la altura (en metros) de una población de 100 picos de montañas:
+
+```{r, echo = FALSE, message = FALSE}
+library(pander)
+set.seed(42)
+alturas <- round(rnorm(1000, mean = 1750, sd = 100), 1)
+pander(alturas)
+```
+
+De un primer vistazo es difícil (por no decir imposible) que podamos comprender los datos y tener una visión clara de las altitudes de este conjunto de cumbres. Las estadísticas descriptivas permiten resumir y así tener una mejor visión general de los datos. Por supuesto, al resumir los datos a través de una o varias medidas, inevitablemente se perderá parte de la información. Sin embargo, en muchos casos es mejor perder algo de información pero, a cambio, obtener una visión general. Podriamos decir que se trata de *ganar perspectiva*.
+
+La estadística descriptiva es a menudo el primer paso y una parte importante en cualquier análisis estadístico. Permite comprobar la calidad de los datos detectando posibles valores atípicos (*outliers*), es decir, datos que parecen ser significativamente distintos del resto. También se puede utilizar estadística descriptiva para detectar errores de recopilación o codificación, determinar si están bien presentados, entre otras posibles aplicaciones.
+
+Podemos distinguir dos típos básicos de estadísticos para describir un conjunto de datos: de centralidad y de dispersión. Habitualmente, ambos tipos de medidas se utilizan juntos para resumir los datos de la forma más concisa.
+
+
+## Tendencia central
+Las medidas de tendencia central permiten ver "dónde" se ubican los datos, alrededor de qué valores. En otras palabras, las medidas de ubicación permiten comprender cuál es la tendencia central o la "posición" de los datos en su conjunto. Entre las estadísticas más habituales de este tipo podemos distinguir:
+
+- Mínimo y máximo
+- Media
+- Mediana
+- Primer cuartil
+- Tercer cuartil
+- Moda 
+
+### Mínimo y máximo
+Mínimo ($min$) y máximo ($max$) son simplemente los valores más bajo y más alto de la muestra. Dada la altitud (en metros) de una muestra de 6 cumbres:
+
+```{r, echo = FALSE, message = FALSE}
+altitudes_sel <- head(alturas)
+pander(altitudes_sel)
+```
+
+El mínimo es `r round(min(altitudes_sel), 1)` m y el máximo es `r round(max(altitudes_sel), 1)` m. Estas dos estadísticas básicas dan una idea clara sobre el los extremos de la muestra y su cálculo con R es bastante sencillo:
+
+```{r, message = FALSE}
+min(altitudes_sel)
+max(altitudes_sel)
+```
+
+### Media
+
+La media o promedio, es probablemente la estadística más habitual. Da una idea de cuál es el valor medio, es decir, el valor central de los datos o, en otras palabras, su centro de gravedad. La media se encuentra sumando todos los valores y dividiendo esta suma por el número de observaciones ($n$):
+
+$$Media =\overline{x}=\frac{\text{suma de todos los valores}}{\text{número de valores}} = \frac{1}{n}\sum^{n}_{i=1}x_i$$
+Dada nuestra muestra de 6 cumbres presentada anteriormente, la media es:
+
+$$\overline{x} = \frac{1887 + 1694 + 1786 + 1813 + 1790 + 1739}{6}= 1784,833$$
+
+En conclusión, el tamaño medio de nuestra muestra de 6 cumbres es `r round(mean(altitudes_sel), 2)` m (redondeado a 2 decimales). El cálculo con R también resulta bastante sencillo:
+
+```{r, message = FALSE}
+mean(altitudes_sel)
+```
+
+
+### Mediana
+
+La mediana es otra medida de centralidad. La interpretación de la mediana es que hay tantas observaciones por debajo como por encima de la mediana. En otras palabras, el 50% de las observaciones se encuentran por debajo de la mediana y el 50% de las observaciones están por encima de la mediana.
+
+La forma más fácil de calcular la mediana es primero ordenar los datos de menor a mayor (es decir, en orden ascendente) y luego tomar el punto medio como la mediana. A partir de los valores ordenados, para un número impar de observaciones, el punto medio es fácil de encontrar: es el valor con tantas observaciones abajo como arriba. Aún a partir de los valores ordenados, para un número par de observaciones, el punto medio está exactamente entre los dos valores medios. Formalmente, después de ordenar, la mediana es:
+
+- si $n$ (número de observaciones) es impar: $$mediana(x) = x_{\frac{n + 1}{2}}$$
+- si $n$ es par: $$mediana(x) = \frac{1}{2}\big(x_{\frac{n}{2}} + x_{\frac{n}{2} + 1} \big)$$
+
+donde el subíndice de $ x $ denota la numeración de los datos ordenados. El cálculo en R es de nuevo bastante sencillo:
+
+```{r, message = FALSE}
+median(altitudes_sel)
+```
+
+## Primer y tercer cuartil
+
+
+
+
+### Moda
+
+La moda de una serie es el valor que aparece con mayor frecuencia. En otras palabras, es el valor que tiene el mayor número de ocurrencias. Dada la altitud de 9 cimas: 
+
+```{r message=FALSE}
+pander(c(1700, 1680, 1710, 1700, 1820, 1650, 1700, 1890, 1670))
+```
+
+La moda es 1700 porque es el valor más común con 3 apariciones. Todos los demás valores aparecen solo una vez. En conclusión, la mayoría de los adultos de esta muestra miden exactamente 1700 m de altitud. 
+
+Hay que tener en cuenta que es posible que una serie no tenga moda (p. Ej., `r pander(c(4,7,2,10))`) o más de una moda (p. Ej., `r pander(c(4,2,2,8,11,11))`). Los datos con dos modas a menudo se denominan bimodales y los datos con más de dos modos a menudo se denominan multimodales, a diferencia de las series con una moda, que se denominan unimodales. 
+
+A diferencia de las anteriores estadísticas (mínimo, máximo, media, mediana, primer y tercer cuartil) que solo se pueden calcular para variables cuantitativas, **la moda se puede calcular para variables cuantitativas y cualitativas**. Dado el uso del suelo de los 9 lugares presentados anteriormente: 
+
+```{r}
+set.seed(42)
+pander(sample(c("forestal", "agrícola", "urbano"), size = 9, replace = TRUE))
+```
+
+La moda es "forestal", por lo que la mayoría de las lugares de esta muestra son de uso forestal (como es común a partir de ciertas altitudes). 
+
+## Dispersión
+
+### Rango
+
+El rango es la diferencia entre el máximo y el mínimo:
+
+$$rango = max - min$$
+
+Dada nuestra muestra de altitudes de seis cumbres:
+
+```{r, echo = FALSE, message = FALSE}
+pander(altitudes_sel)
+```
+
+El rango es `r max(altitudes_sel)` $-$ `r min(altitudes_sel)` $=$ `r max(altitudes_sel) - min(altitudes_sel)` cm. El rango es muy sencillo de calcular y en algunos casos puede dar una buena idea de lo que podemos esperar de un conjunto de datos. En R se puede utilizar la función `range`
+
+```{r, message = FALSE}
+range(altitudes_sel)
+```
+
+No obstante, esta métrica no da ninguna información de la distribución interna del resto de medidas.
+
+
+
+### Desviación estándard
+
+
+### Varianza
+
+### Coeficiente de variación
+
+
+
+## Correlación
+
+Las correlaciones entre variables juegan un papel importante en un **análisis descriptivo**. Una correlación mide la **relación entre dos variables**, es decir, cómo están vinculadas entre sí. En este sentido, una correlación permite saber si dos variables evolucionan en la misma dirección, en sentido contrario y si son independientes.
+
+En este artículo, muestro cómo calcular **coeficientes de correlación**, cómo realizar **pruebas de correlación** y cómo **visualizar** correlaciones entre variables usando R.
+
+La correlación generalmente se calcula en dos variables *cuantitativas*, pero también se puede calcular en dos variables *cualitativas ordinales* (ver prueba de independencia de chi-cuadrado).
+
+
+### Datos
+
+En este artículo, usaremos el conjunto de datos `mtcars`. Este conjunto de datos viene cargado por defecto en R, de modo que se utiliza en numerosas demostraciones. 
+
+```{r}
+# mostrar las primeras cinco filas
+head(mtcars, 5)
+```
+
+Las variables `vs` y` am` son variables categóricas, por lo que se eliminan para este artículo: 
+
+```{r}
+# Eliminar las variables vs y am
+library(tidyverse)
+dat <- mtcars %>%
+select(-vs, -am)
+
+# mostrar las primeras cinco filas
+head(dat, 5)
+```
+
+### Coeficiente de correlación
+
+La correlación entre 2 variables se calcula con la función `cor()`. Supón que queremos calcular la correlación entre caballos de potencia (`hp`) y millas por galón (` mpg`): 
+
+```{r}
+# Correlación de Pearson entre 2 variables 
+cor(dat$hp, dat$mpg)
+```
+
+Hay que fijarse en que la correlación entre las variables *X* e *Y* es igual a la correlación entre las variables *Y* y *X*, por lo que el orden de las variables en la función `cor()` no importa.
+
+La función `cor()` calcula por defecto la correlación de Pearson, por lo que si se quiere calcular la correlación por otro método, se puede agregar el argumento `method =" spearman "` a la función `cor()`: 
+
+```{r}
+# Correlación de Sperman entre 2 variables 
+cor(dat$hp, dat$mpg,
+    method = "spearman")
+```
+
+Hay varios métodos de correlación (se puede consultar la ayuda de la la función para saber más `?cor`):
+
+- **Pearson** se usa a menudo para variables *cuantitativas continuas* que tienen una relación lineal.
+- **Spearman** (es similar a Pearson pero se basa en los valores ordenados para cada variable en lugar de en los datos brutos) se usa a menudo para evaluar relaciones que involucran variables cualitativas ordinales en las que la relación sea parcialmente lineal.
+-  **Kendall** se calcula a partir del número de pares concordantes y discordantes, se utiliza a menudo para variables ordinales cualitativas.
+
+La función `cor ()` también permite calcular correlaciones para varios pares de variables a la vez: 
+
+```{r}
+# Correlaciones entre todas las variables
+round(cor(dat),
+      digits = 2 # redondeo a dos decimales
+      ) 
+```
+
+La correlación varía de **-1 a 1**, de modo que el signo nos indica la dirección de la relación (aumentan a la vez o son opuestas) y el valor nos indica la fuerza de la relación (más fuerte cuanto más alejado de 0).
+
+Una **correlación negativa** implica que las dos variables consideradas varían en **direcciones opuestas**, es decir, si una variable aumenta la otra disminuye y viceversa. Por otro lado, una **correlación positiva** implica que las dos variables consideradas varían en la **misma dirección**, es decir, si una variable aumenta, la otra aumenta y si una disminuye, la otra también disminuye.
+
+En cuanto a la fuerza de la relación: cuanto **más extremo** es el coeficiente de correlación (cuanto más cerca de -1 o 1), **más fuerte es la relación**. Esto también significa que una **correlación cercana a 0** indica que las dos variables son **independientes**, es decir, a medida que una variable aumenta, no hay tendencia en la otra variable a disminuir o aumentar.
+
+Por ejemplo, la correlación de Pearson entre caballos de potencia (`hp`) y millas por galón (`mpg`) encontrada es `r round(cor(dat$hp, dat$mpg), 2)`, lo que significa que las 2 variables varían en dirección opuesta. Esto tiene sentido, los automoviles con más caballos de potencia suelen a consumir más combustible (hacen menos millas con el mismo combustible que los automóviles más potentes). Por el contrario, de la matriz de correlación vemos que la correlación entre millas por galón (`mpg`) y el tiempo para conducir un cuarto de milla (`qsec`) es `r round(cor(dat$mpg, dat$qsec), 2)`, lo que significa que los automóviles rápidos (con un menor `qsec`) tienden a tener un peor rendimiento por galón (bajo `mpg`). De nuevo, esto tiene sentido, ya que los coches rápidos tienden a consumir más combustible.
+
+### Test de correlación
+
+> Volver una vez leída la sección sobre test de hipótesis.
+
+Hay que tener en cuenta que el valor *p* se basa en el coeficiente de correlación y en el tamaño de la muestra. Cuanto mayor sea el tamaño de la muestra y más extrema será la correlación (más cercana a -1 o 1). Con un tamaño de muestra pequeño, es posible obtener una correlación *relativamente* grande en la muestra (según el coeficiente de correlación), pero aún así encontrar una correlación no significativamente diferente de 0 en la población (según la prueba de correlación). Por este motivo, se recomienda realizar siempre un test de correlación antes de interpretar un coeficiente de correlación para evitar conclusiones erróneas. 
+
+A diferencia de una matriz de correlación que indica los coeficientes de correlación entre algunos pares de variables en la muestra, se utiliza un test de correlación para probar si la correlación ($\rho$) entre dos variables es significativamente diferente de 0 o no en la *población*.
+
+En realidad, un coeficiente de correlación diferente de 0 en la muestra no significa que la correlación sea **significativamente** diferente de 0 en la población. Esto debe probarse con un **test de hipótesis**.
+
+Las hipótesis (nula y alternativa) para el test de correlación son las siguientes:
+
+- $H_0$: $\rho = 0$ (si no existe una relación lineal entre las dos variables)
+- $H_1$: $\rho\ne 0$ (si existe una relación lineal entre las dos variables)
+
+A través de esta prueba de correlación, lo que realmente estamos probando es si:
+
+- La muestra contiene evidencia suficiente para rechazar la hipótesis nula y concluir que el coeficiente de correlación no es igual a 0, por lo que la relación existe en la población.
+- La muestra no contiene suficiente evidencia de que el coeficiente de correlación no sea igual a 0, por lo que en este caso no rechazamos la hipótesis nula de no-relación entre las variables de la población.
+
+Supongamos que queremos probar si el ratio del eje trasero (`drat`) está correlacionado con el tiempo necesario para conducir 1/4 de milla (`qsec`):
+
+```{r}
+# Test de correlación de Pearson
+test <- cor.test(dat$drat, dat$qsec)
+test
+```
+
+El *p*-valor de la prueba de correlación entre estas 2 variables es `r round(test$p.value, 3)`. Al nivel de significancia del 5%, no se rechaza la hipótesis nula de no correlación. Por lo tanto, concluimos que no rechazamos la hipótesis de que no existe una relación lineal entre las 2 variables. ^[Es importante recordar que probamos una relación *lineal* entre las dos variables ya que usamos la correlación de Pearson. Puede darse el caso de que exista una relación entre las dos variables en la población, pero esta relación puede no ser lineal.]
+
+Esta prueba demuestra que incluso si el coeficiente de correlación es diferente de 0 (la correlación es `r round(test$estimate, 2)` en la muestra), en realidad no es significativamente diferente de 0 en la población.
+
+
+
+### Visualizando correlaciones
+
+Una buena forma de visualizar una correlación entre 2 variables es mediante un diagrama de dispersión. Por ejemplo: 
+
+```{r}
+# Diagrama de dispersión con R base
+plot(dat$hp, dat$mpg)
+```
+
+Para visualizar la relación entre más de 2 variablesse puede usar la función `pair ()`. En este caso limitamos el ejemplo a tres variables: 
+```{r}
+# Multiples diagramas de dispersión
+pairs(dat[, c(1, 4, 6)])
+```
+
+
+Por otra parte, existen numerosas librerías de R que permiten generar este tipo de gráficos con distintas opciones. Por ejemplo con `ggplot2`:
+```{r}
+# Diagrama de dispersión con ggplot2
+library(ggplot2)
+
+ggplot(dat) +
+ aes(x = hp, y = mpg) +
+ geom_point(colour = "#0c4c8a") +
+ theme_minimal()
+```
+
+O representaciones más modernas como con la librería `corrplot`:
+```{r message=FALSE,warning=FALSE}
+# improved correlation matrix
+library(corrplot)
+
+corrplot(cor(dat),
+         method = "number",
+         type = "upper" # show only upper side
+         )
+```
+
+## Ejercicios
+
+1. Estableced en clase un debate sobre variables de carácter territorial que consideréis que pueden estar correlacionadas y en qué medida.

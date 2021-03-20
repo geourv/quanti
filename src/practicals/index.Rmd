@@ -11,7 +11,7 @@ description: "Este documento forma parte de los materiales para la asignatura 'T
 always_allow_html: true
 ---
 
-# Antes de empezar
+# Antes de empezar {-}
 En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando R, Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de ***programación literaria*** que en los últimos años está siendo cada vez más utilizada en el análisis de datos [@knuth1984literate; @xie2015knitr].
 
 ## Prerrequisitos
@@ -91,3 +91,8 @@ Puede encontrar más información sobre cómo escribir en el siguiente [archivo]
 ### Generando el documento
 
 Para compilar el archivo `.Rmd` y obtener su documento final, simplemente haga clic en el botón `Knit` y seleccione `Knit a PDF` para producir un archivo `.pdf`.
+
+## Ejercicio
+
+- Utilizando Rstudio, crea tu primer documento con Rmarkdown. El documento debe mostrar los metadatos básicos (título, autor y fecha), un título de primer nivel (por ejemplo, 'Información de la sesión') y un recuadro con la información básica de vuestra sesión de R.
+

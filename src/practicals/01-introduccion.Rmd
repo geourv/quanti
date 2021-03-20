@@ -1,10 +1,29 @@
-# Introducción a R {#intro}
+# Introducción {#intro}
+
+Para cuando llega el momento de analizar los datos, la mayor parte del trabajo ya está hecho. Antes de tener un conjunto de datos se ha tenido que definir el problema de investigación, desarrollar e implementar un plan de muestreo, decidir las escalas de medidas y desarrollar un diseño de investigación. Si se ha hecho bien este trabajo, el análisis de los datos puele ser bastante sencillo.
+
+En la mayoría de las investigaciones de ciencias sociales, el análisis de datos implica tres pasos principales, realizados aproximadamente en este orden:
+
+1. Limpieza y organización de los datos para su análisis (preparación de datos)
+2. Describir los datos (estadística descriptiva)
+3. Prueba de hipótesis y modelos (estadística inferencial)
+
+La **preparación de datos** implica verificar o registrar los datos, comprobar su exactitud, cargar los datos en el software de análisis, transformar los datos y crear una base de datos adecuada para el análisis que se vaya a realizar.
+
+Las **estadísticas descriptivas** se utilizan para describir las características básicas de los datos en un estudio. Proporcionan resúmenes sencillos sobre la muestra y las medidas. Junto con el análisis gráfico simple, forman la base de prácticamente todos los análisis cuantitativos de datos. Las estadísticas descriptivas simplemente se *describen los datos*.
+
+La **estadística inferencial** investiga preguntas, modelos e hipótesis. En muchos casos, las conclusiones de las estadística inferencial se extienden más allá de los datos inmediatos por sí solos. Por ejemplo, usamos estadísticas inferenciales para tratar de inferir de los datos de la muestra lo que piensa la población total. También utilizamos estadística inferencial para hacer juicios sobre la probabilidad de que una diferencia observada entre grupos sea confiable o si podría haber ocurrido por casualidad en este estudio. Por lo tanto, usamos estadísticas inferenciales para *inferir lo que sucede más allà de nuestros datos*.
+
+En la mayoría de los estudios de investigación, la sección de análisis sigue estas tres fases de análisis. Las descripciones de cómo se prepararon los datos tienden a ser breves y a centrarse solo en los aspectos más exclusivos de su estudio, como las transformaciones de datos específicas que se realizan. Las estadísticas descriptivas que observa en realidad pueden ser voluminosas. En la mayoría de los estudios, las estadísticas descriptivas se seleccionan cuidadosamente y se organizan en tablas de resumen y gráficos que solo muestran la información más relevante o importante. Por lo general, el investigador vincula cada uno de los análisis inferenciales con preguntas o hipótesis de investigación específicas que se plantearon en la introducción, o toma nota de los modelos que se probaron y que surgieron como parte del análisis. En la mayoría de los informes de análisis, es especialmente importante ***"no dejar que los arboles nos impidan ver el bosque"***. Si se presentan demasiados detalles sobre el análisis, es posible que se pierda de vista el problema de la realidad que estemos estudiando.
+
+Todos estos pasos del análisis se pueden realizar habitualmente en todos los paquetes estadísticos. En este curso nos centraremos en el uso de R, por lo que a continuación haremos una breve introducción.
+
 
 ## R como lenguaje de programación
 
 **[R](https://www.r-project.org/)** fue creado en 1992 por Ross Ihaka y Robert Gentleman en la Universidad de Auckland, Nueva Zelanda. R es una implementación gratuita de código abierto del lenguaje de programación estadística **S** creado inicialmente en Bell Labs. En esencia, R es un lenguaje de programación funcional (sus principales funcionalidades giran en torno a la definición y ejecución de funciones). Sin embargo, ahora es compatible, y se usa comúnmente como un lenguaje de programación imperativo (enfocado en instrucciones sobre variables y estructuras de control de programación) y orientado a objetos (que involucra estructuras de objetos complejas).
 
-En términos simples, hoy en día, la programación en R se enfoca principalmente en diseñar una serie de instrucciones para ejecutar una tarea, más comúnmente, cargar y analizar un conjunto de datos.
+En términos simples, hoy en día, la programación en R se enfoca principalmente en diseñar una serie de instrucciones para ejecutar una tarea, más comúnmente, cargar y analizar un conjunto de datos [@wickham2017datascience].
 
 Como tal, R se puede usar para programar creando secuencias de **instrucciones** que involucren **variables**, que son entidades con nombre que pueden almacenar valores. Ese será el tema principal de esta sesión práctica. Las instrucciones pueden incluir estructuras de flujo de control, como puntos de decisión (*if/else*) y bucles, que serán el tema de la próxima sesión práctica. Las instrucciones también se pueden agrupar en **funciones**, que también veremos en la próxima sesión práctica.
 
@@ -203,6 +222,25 @@ as.numeric("2")
 as.numeric("¡Hasta luego!")
 ```
 
+## Estructuras de datos
+Estos tipos de datos más básicos se gestiónan habitualmente dentro de estructuras de datos más complejas. R tiene muchas otras estructuras de datos pero las más básicas comprenden:
+
+- Vectores
+- Listas
+- Matrices
+- *data frames* (se usa el término en inglés por comodidad).
+- Factores
+
+### Vectores
+
+### Listas
+
+### Matrices
+
+### Data frames
+
+### Factores
+
 
 ## Tidyverse
 
@@ -282,7 +320,7 @@ sqrt(2) %>%
 ```
 
 
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Ejecución del código sin `%>%`"}
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Ejecución del código sin o con `%>%`. Sin *pipes* los resultados intermedios tienen que guardarse en una variable en memoria."}
 library(DiagrammeR)
 mermaid("
 graph LR
@@ -292,38 +330,18 @@ graph LR
   classDef style_temp_node fill:gray,stroke:#333,stroke-width:0px;
   classDef style_func_node fill:lightgray,stroke:#333,stroke-width:0px;
 
-  2(2) --> sqrt
-  sqrt --> temp_variable[tmp_variable=1,41]
-  temp_variable --> trunc
-  trunc --> 1(1)
+  input_1(2) --> sqrt_1[sqrt]
+  sqrt_1 --> tmp_1[tmp_variable=1,41]
+  tmp_1 --> trunc_1[trunc]
+  trunc_1 --> output_1(1)
+
+  input_2(2) -->|%>%| sqrt_2[sqrt]
+  sqrt_2 -->|%>%| trunc_2[trunc]
+  trunc_2 -->|%>%| output_2(1)
  
-  class 2,1 style_main_node;
-  class temp_variable style_temp_node;
-  class sqrt,trunc style_func_node;
-", height = '100%', width = '100%')
-```
-
-
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Ejecución del código con `%>%`"}
-library(DiagrammeR)
-mermaid("
-graph LR
-  %% Set edges to be curved (try monotoneX for a nice alternative)
-  linkStyle default interpolate basis
-  classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;
-  classDef style_sub_node fill:lightgray,stroke:#333,stroke-width:0px;
-
-  A[2]
-  B(sqrt)
-  C(trunc)
-  D[1]
-
-  A -->|%>%| B(sqrt)
-  B -->|%>%| C
-  C -->|%>%| D
-
-  class A,D style_main_node;
-  class B,C style_sub_node;
+  class input_1,output_1,input_2,output_2 style_main_node;
+  class tmp_1 style_temp_node;
+  class sqrt_1,trunc_1,sqrt_2,trunc_2 style_func_node;
 ", height = '100%', width = '100%')
 ```
 

@@ -123,7 +123,7 @@
 
 \title{Técnicas cuantitativas}
 \author{Enric Aguilar y Benito Zaragozí}
-\date{19-Mar-2021}
+\date{20-Mar-2021}
 
 \begin{document}
 \maketitle
@@ -133,7 +133,8 @@
 \tableofcontents
 }
 \hypertarget{antes-de-empezar}{%
-\chapter{Antes de empezar}\label{antes-de-empezar}}
+\chapter*{Antes de empezar}\label{antes-de-empezar}}
+\addcontentsline{toc}{chapter}{Antes de empezar}
 
 En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando R, Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de \textbf{\emph{programación literaria}} que en los últimos años está siendo cada vez más utilizada en el análisis de datos \citep{knuth1984literate, xie2015knitr}.
 
@@ -169,10 +170,11 @@ Para seguir las explicaciones de este curso será necesario instalar primero R y
 ##  [1] ggrepel_0.8.2       viridis_0.5.1       viridisLite_0.3.0  
 ##  [4] scales_1.1.1        patchwork_1.0.1     kableExtra_1.2.1   
 ##  [7] ggplot2movies_0.0.1 nycflights13_1.0.1  moderndive_0.5.0   
-## [10] infer_0.5.3         DiagrammeR_1.0.6.1  forcats_0.5.0      
-## [13] stringr_1.4.0       dplyr_1.0.2         purrr_0.3.4        
-## [16] readr_1.4.0         tidyr_1.1.2         tibble_3.0.3       
-## [19] ggplot2_3.3.2       tidyverse_1.3.0    
+## [10] infer_0.5.3         corrplot_0.84       pander_0.6.3       
+## [13] DiagrammeR_1.0.6.1  forcats_0.5.0       stringr_1.4.0      
+## [16] dplyr_1.0.2         purrr_0.3.4         readr_1.4.0        
+## [19] tidyr_1.1.2         tibble_3.0.3        ggplot2_3.3.2      
+## [22] tidyverse_1.3.0    
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] httr_1.4.2           jsonlite_1.7.1       modelr_0.1.8        
@@ -182,7 +184,7 @@ Para seguir las explicaciones de este curso será necesario instalar primero R y
 ## [13] RColorBrewer_1.1-2   rvest_0.3.6          snakecase_0.11.0    
 ## [16] colorspace_1.4-1     htmltools_0.5.0      pkgconfig_2.0.3     
 ## [19] broom_0.7.1          haven_2.3.1          bookdown_0.20       
-## [22] webshot_0.5.2        farver_2.0.3         generics_0.0.2      
+## [22] webshot_0.5.2        generics_0.0.2       farver_2.0.3        
 ## [25] ellipsis_0.3.1       withr_2.3.0          janitor_2.0.1       
 ## [28] formula.tools_1.7.1  cli_2.0.2            magrittr_1.5        
 ## [31] crayon_1.3.4         readxl_1.3.1         evaluate_0.14       
@@ -287,15 +289,49 @@ Puede encontrar más información sobre cómo escribir en el siguiente \href{htt
 
 Para compilar el archivo \texttt{.Rmd} y obtener su documento final, simplemente haga clic en el botón \texttt{Knit} y seleccione \texttt{Knit\ a\ PDF} para producir un archivo \texttt{.pdf}.
 
+\hypertarget{ejercicio}{%
+\section{Ejercicio}\label{ejercicio}}
+
+\begin{itemize}
+\tightlist
+\item
+  Utilizando Rstudio, crea tu primer documento con Rmarkdown. El documento debe mostrar los metadatos básicos (título, autor y fecha), un título de primer nivel (por ejemplo, `Información de la sesión') y un recuadro con la información básica de vuestra sesión de R.
+\end{itemize}
+
 \hypertarget{intro}{%
-\chapter{Introducción a R}\label{intro}}
+\chapter{Introducción}\label{intro}}
+
+Para cuando llega el momento de analizar los datos, la mayor parte del trabajo ya está hecho. Antes de tener un conjunto de datos se ha tenido que definir el problema de investigación, desarrollar e implementar un plan de muestreo, decidir las escalas de medidas y desarrollar un diseño de investigación. Si se ha hecho bien este trabajo, el análisis de los datos puele ser bastante sencillo.
+
+En la mayoría de las investigaciones de ciencias sociales, el análisis de datos implica tres pasos principales, realizados aproximadamente en este orden:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Limpieza y organización de los datos para su análisis (preparación de datos)
+\item
+  Describir los datos (estadística descriptiva)
+\item
+  Prueba de hipótesis y modelos (estadística inferencial)
+\end{enumerate}
+
+La \textbf{preparación de datos} implica verificar o registrar los datos, comprobar su exactitud, cargar los datos en el software de análisis, transformar los datos y crear una base de datos adecuada para el análisis que se vaya a realizar.
+
+Las \textbf{estadísticas descriptivas} se utilizan para describir las características básicas de los datos en un estudio. Proporcionan resúmenes sencillos sobre la muestra y las medidas. Junto con el análisis gráfico simple, forman la base de prácticamente todos los análisis cuantitativos de datos. Las estadísticas descriptivas simplemente se \emph{describen los datos}.
+
+La \textbf{estadística inferencial} investiga preguntas, modelos e hipótesis. En muchos casos, las conclusiones de las estadística inferencial se extienden más allá de los datos inmediatos por sí solos. Por ejemplo, usamos estadísticas inferenciales para tratar de inferir de los datos de la muestra lo que piensa la población total. También utilizamos estadística inferencial para hacer juicios sobre la probabilidad de que una diferencia observada entre grupos sea confiable o si podría haber ocurrido por casualidad en este estudio. Por lo tanto, usamos estadísticas inferenciales para \emph{inferir lo que sucede más allà de nuestros datos}.
+
+En la mayoría de los estudios de investigación, la sección de análisis sigue estas tres fases de análisis. Las descripciones de cómo se prepararon los datos tienden a ser breves y a centrarse solo en los aspectos más exclusivos de su estudio, como las transformaciones de datos específicas que se realizan. Las estadísticas descriptivas que observa en realidad pueden ser voluminosas. En la mayoría de los estudios, las estadísticas descriptivas se seleccionan cuidadosamente y se organizan en tablas de resumen y gráficos que solo muestran la información más relevante o importante. Por lo general, el investigador vincula cada uno de los análisis inferenciales con preguntas o hipótesis de investigación específicas que se plantearon en la introducción, o toma nota de los modelos que se probaron y que surgieron como parte del análisis. En la mayoría de los informes de análisis, es especialmente importante \textbf{\emph{``no dejar que los arboles nos impidan ver el bosque''}}. Si se presentan demasiados detalles sobre el análisis, es posible que se pierda de vista el problema de la realidad que estemos estudiando.
+
+Todos estos pasos del análisis se pueden realizar habitualmente en todos los paquetes estadísticos. En este curso nos centraremos en el uso de R, por lo que a continuación haremos una breve introducción.
 
 \hypertarget{r-como-lenguaje-de-programaciuxf3n}{%
 \section{R como lenguaje de programación}\label{r-como-lenguaje-de-programaciuxf3n}}
 
 \textbf{\href{https://www.r-project.org/}{R}} fue creado en 1992 por Ross Ihaka y Robert Gentleman en la Universidad de Auckland, Nueva Zelanda. R es una implementación gratuita de código abierto del lenguaje de programación estadística \textbf{S} creado inicialmente en Bell Labs. En esencia, R es un lenguaje de programación funcional (sus principales funcionalidades giran en torno a la definición y ejecución de funciones). Sin embargo, ahora es compatible, y se usa comúnmente como un lenguaje de programación imperativo (enfocado en instrucciones sobre variables y estructuras de control de programación) y orientado a objetos (que involucra estructuras de objetos complejas).
 
-En términos simples, hoy en día, la programación en R se enfoca principalmente en diseñar una serie de instrucciones para ejecutar una tarea, más comúnmente, cargar y analizar un conjunto de datos.
+En términos simples, hoy en día, la programación en R se enfoca principalmente en diseñar una serie de instrucciones para ejecutar una tarea, más comúnmente, cargar y analizar un conjunto de datos \citep{wickham2017datascience}.
 
 Como tal, R se puede usar para programar creando secuencias de \textbf{instrucciones} que involucren \textbf{variables}, que son entidades con nombre que pueden almacenar valores. Ese será el tema principal de esta sesión práctica. Las instrucciones pueden incluir estructuras de flujo de control, como puntos de decisión (\emph{if/else}) y bucles, que serán el tema de la próxima sesión práctica. Las instrucciones también se pueden agrupar en \textbf{funciones}, que también veremos en la próxima sesión práctica.
 
@@ -743,6 +779,40 @@ El tipo \emph{character} representa objetos de texto, incluidos caracteres indiv
 ## [1] NA
 \end{verbatim}
 
+\hypertarget{estructuras-de-datos}{%
+\section{Estructuras de datos}\label{estructuras-de-datos}}
+
+Estos tipos de datos más básicos se gestiónan habitualmente dentro de estructuras de datos más complejas. R tiene muchas otras estructuras de datos pero las más básicas comprenden:
+
+\begin{itemize}
+\tightlist
+\item
+  Vectores
+\item
+  Listas
+\item
+  Matrices
+\item
+  \emph{data frames} (se usa el término en inglés por comodidad).
+\item
+  Factores
+\end{itemize}
+
+\hypertarget{vectores}{%
+\subsection{Vectores}\label{vectores}}
+
+\hypertarget{listas}{%
+\subsection{Listas}\label{listas}}
+
+\hypertarget{matrices}{%
+\subsection{Matrices}\label{matrices}}
+
+\hypertarget{data-frames}{%
+\subsection{Data frames}\label{data-frames}}
+
+\hypertarget{factores}{%
+\subsection{Factores}\label{factores}}
+
 \hypertarget{tidyverse}{%
 \section{Tidyverse}\label{tidyverse}}
 
@@ -870,13 +940,7 @@ El primer paso de una secuencia de \emph{pipes} puede ser un valor, una variable
 \begin{figure}
 \centering
 \includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-24-1.pdf}
-\caption{\label{fig:unnamed-chunk-24}Ejecución del código sin \texttt{\%\textgreater{}\%}}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-25-1.pdf}
-\caption{\label{fig:unnamed-chunk-25}Ejecución del código con \texttt{\%\textgreater{}\%}}
+\caption{\label{fig:unnamed-chunk-24}Ejecución del código sin o con \texttt{\%\textgreater{}\%}. Sin \emph{pipes} los resultados intermedios tienen que guardarse en una variable en memoria.}
 \end{figure}
 
 Una operación compleja creada mediante el uso de \texttt{\%\textgreater{}\%} se puede usar en el lado derecho de una asignación \texttt{\textless{}-}, de modo que se guarda resultado de toda la operación de la derecha.
@@ -978,7 +1042,441 @@ Crea un \emph{script} para responder a cada pregunta. En las preguntas de la 4 a
 \hypertarget{estaduxedstica-descriptiva}{%
 \chapter{Estadística descriptiva}\label{estaduxedstica-descriptiva}}
 
-Here is a review of existing methods.
+La estadística descriptiva es una rama de la estadística cuyo objetivo es resumir, describir y presentar una serie de valores o un conjunto de datos. Estas estadísticas pueden ser realmente útiles al analizar largas series de datos en las que resulte difícil reconocer algún patrón. En éste capítulo utilizaremos una muestra de datos sobre la altura (en metros) de una población de 100 picos de montañas:
+
+\emph{1887}, \emph{1694}, \emph{1786}, \emph{1813}, \emph{1790}, \emph{1739}, \emph{1901}, \emph{1740}, \emph{1952}, \emph{1744}, \emph{1880}, \emph{1979}, \emph{1611}, \emph{1722}, \emph{1737}, \emph{1814}, \emph{1722}, \emph{1484}, \emph{1506}, \emph{1882}, \emph{1719}, \emph{1572}, \emph{1733}, \emph{1872}, \emph{1940}, \emph{1707}, \emph{1724}, \emph{1574}, \emph{1796}, \emph{1686}, \emph{1796}, \emph{1820}, \emph{1854}, \emph{1689}, \emph{1800}, \emph{1578}, \emph{1672}, \emph{1665}, \emph{1509}, \emph{1754}, \emph{1771}, \emph{1714}, \emph{1826}, \emph{1677}, \emph{1613}, \emph{1793}, \emph{1669}, \emph{1894}, \emph{1707}, \emph{1816}, \emph{1782}, \emph{1672}, \emph{1908}, \emph{1814}, \emph{1759}, \emph{1778}, \emph{1818}, \emph{1759}, \emph{1451}, \emph{1778}, \emph{1713}, \emph{1768}, \emph{1808}, \emph{1890}, \emph{1677}, \emph{1880}, \emph{1784}, \emph{1854}, \emph{1842}, \emph{1822}, \emph{1646}, \emph{1741}, \emph{1812}, \emph{1655}, \emph{1696}, \emph{1808}, \emph{1827}, \emph{1796}, \emph{1661}, \emph{1640}, \emph{1901}, \emph{1776}, \emph{1759}, \emph{1738}, \emph{1631}, \emph{1811}, \emph{1728}, \emph{1732}, \emph{1843}, \emph{1832}, \emph{1889}, \emph{1702}, \emph{1815}, \emph{1889}, \emph{1639}, \emph{1664}, \emph{1637}, \emph{1604}, \emph{1758}, \emph{1815}, \emph{1870}, \emph{1854}, \emph{1650}, \emph{1935}, \emph{1683}, \emph{1761}, \emph{1708}, \emph{1738}, \emph{1769}, \emph{1762}, \emph{1748}, \emph{1761}, \emph{1702}, \emph{1700}, \emph{1584}, \emph{1712}, \emph{1699}, \emph{2020}, \emph{1614}, \emph{1764}, \emph{1601}, \emph{1603}, \emph{1762}, \emph{1650}, \emph{1750}, \emph{1707}, \emph{1689}, \emph{1548}, \emph{1628}, \emph{1768}, \emph{1807}, \emph{1701}, \emph{1750}, \emph{1862}, \emph{1894}, \emph{1640}, \emph{1738}, \emph{1870}, \emph{1703}, \emph{1745}, \emph{1741}, \emph{1661}, \emph{1706}, \emph{1747}, \emph{1709}, \emph{1861}, \emph{1702}, \emph{1707}, \emph{1820}, \emph{1644}, \emph{1746}, \emph{1595}, \emph{1867}, \emph{1723}, \emph{1703}, \emph{1626}, \emph{1749}, \emph{1670}, \emph{1697}, \emph{1879}, \emph{1732}, \emph{1643}, \emph{1766}, \emph{1714}, \emph{1809}, \emph{1893}, \emph{1651}, \emph{1796}, \emph{1758}, \emph{1840}, \emph{1727}, \emph{1834}, \emph{1576}, \emph{1919}, \emph{1836}, \emph{1735}, \emph{1605}, \emph{1814}, \emph{1798}, \emph{1749}, \emph{1765}, \emph{1692}, \emph{1787}, \emph{1780}, \emph{1722}, \emph{1616}, \emph{1820}, \emph{1805}, \emph{1666}, \emph{1590}, \emph{1770}, \emph{1716}, \emph{1775}, \emph{1621}, \emph{1654}, \emph{1859}, \emph{1790}, \emph{1809}, \emph{1932}, \emph{1763}, \emph{1550}, \emph{1783}, \emph{1867}, \emph{1956}, \emph{1612}, \emph{1635}, \emph{1679}, \emph{1645}, \emph{1685}, \emph{1732}, \emph{1630}, \emph{1954}, \emph{1761}, \emph{1742}, \emph{1800}, \emph{1754}, \emph{1737}, \emph{1898}, \emph{1728}, \emph{1622}, \emph{1789}, \emph{1715}, \emph{1698}, \emph{1643}, \emph{1793}, \emph{1733}, \emph{1802}, \emph{1727}, \emph{1684}, \emph{1875}, \emph{1723}, \emph{1845}, \emph{1630}, \emph{1703}, \emph{1723}, \emph{1711}, \emph{1885}, \emph{1748}, \emph{1774}, \emph{1656}, \emph{1677}, \emph{1850}, \emph{1876}, \emph{1875}, \emph{1612}, \emph{1955}, \emph{1852}, \emph{1747}, \emph{1820}, \emph{1653}, \emph{1640}, \emph{1755}, \emph{1630}, \emph{1769}, \emph{1880}, \emph{1647}, \emph{1676}, \emph{1755}, \emph{1648}, \emph{1712}, \emph{1837}, \emph{1847}, \emph{1788}, \emph{1565}, \emph{1745}, \emph{1856}, \emph{1831}, \emph{1731}, \emph{1480}, \emph{1756}, \emph{1807}, \emph{1755}, \emph{1766}, \emph{1793}, \emph{1710}, \emph{1881}, \emph{1797}, \emph{1626}, \emph{1888}, \emph{1870}, \emph{1832}, \emph{1584}, \emph{1693}, \emph{1814}, \emph{1754}, \emph{1785}, \emph{1996}, \emph{1668}, \emph{1539}, \emph{1777}, \emph{1681}, \emph{1795}, \emph{1669}, \emph{1971}, \emph{1738}, \emph{1702}, \emph{1733}, \emph{1836}, \emph{1760}, \emph{1587}, \emph{1750}, \emph{1826}, \emph{1754}, \emph{1824}, \emph{1735}, \emph{1744}, \emph{1798}, \emph{1849}, \emph{1625}, \emph{1747}, \emph{1743}, \emph{1674}, \emph{1647}, \emph{1687}, \emph{1809}, \emph{1708}, \emph{1672}, \emph{1766}, \emph{1626}, \emph{1855}, \emph{1702}, \emph{1769}, \emph{1755}, \emph{1750}, \emph{1931}, \emph{1668}, \emph{1864}, \emph{1753}, \emph{1666}, \emph{1743}, \emph{1825}, \emph{1707}, \emph{1673}, \emph{1765}, \emph{1849}, \emph{1743}, \emph{1611}, \emph{1619}, \emph{1673}, \emph{1697}, \emph{1748}, \emph{1817}, \emph{1706}, \emph{1639}, \emph{1811}, \emph{1778}, \emph{1866}, \emph{1582}, \emph{1759}, \emph{1885}, \emph{1822}, \emph{1667}, \emph{1823}, \emph{1663}, \emph{1705}, \emph{1869}, \emph{1721}, \emph{1833}, \emph{1721}, \emph{1592}, \emph{1665}, \emph{1641}, \emph{1702}, \emph{1716}, \emph{1735}, \emph{1726}, \emph{1939}, \emph{1611}, \emph{1708}, \emph{1785}, \emph{1913}, \emph{1759}, \emph{1874}, \emph{1586}, \emph{1895}, \emph{1681}, \emph{1722}, \emph{1639}, \emph{1763}, \emph{1928}, \emph{1992}, \emph{1642}, \emph{1799}, \emph{1889}, \emph{1730}, \emph{1728}, \emph{1720}, \emph{1810}, \emph{1890}, \emph{1819}, \emph{1782}, \emph{1720}, \emph{1800}, \emph{1695}, \emph{1722}, \emph{1860}, \emph{1794}, \emph{1774}, \emph{1724}, \emph{1843}, \emph{1884}, \emph{1663}, \emph{1756}, \emph{1755}, \emph{1692}, \emph{1650}, \emph{1750}, \emph{1816}, \emph{1898}, \emph{1559}, \emph{1680}, \emph{1719}, \emph{1584}, \emph{1675}, \emph{1672}, \emph{1678}, \emph{1531}, \emph{1771}, \emph{1687}, \emph{1902}, \emph{1830}, \emph{1605}, \emph{1760}, \emph{1691}, \emph{1839}, \emph{1755}, \emph{1694}, \emph{1794}, \emph{1765}, \emph{1734}, \emph{1952}, \emph{1697}, \emph{1703}, \emph{1595}, \emph{1746}, \emph{1839}, \emph{1543}, \emph{1725}, \emph{1632}, \emph{1894}, \emph{1886}, \emph{1784}, \emph{1893}, \emph{1663}, \emph{1845}, \emph{1692}, \emph{1782}, \emph{1720}, \emph{1722}, \emph{1805}, \emph{1620}, \emph{1725}, \emph{1767}, \emph{1710}, \emph{1760}, \emph{1718}, \emph{1912}, \emph{1821}, \emph{2047}, \emph{1670}, \emph{1831}, \emph{1960}, \emph{1780}, \emph{1642}, \emph{1649}, \emph{1746}, \emph{1881}, \emph{1825}, \emph{1536}, \emph{1680}, \emph{1749}, \emph{1604}, \emph{1820}, \emph{1504}, \emph{1764}, \emph{1711}, \emph{1701}, \emph{1722}, \emph{1782}, \emph{1790}, \emph{1727}, \emph{1558}, \emph{1606}, \emph{1603}, \emph{1826}, \emph{1726}, \emph{1777}, \emph{1594}, \emph{1696}, \emph{1806}, \emph{1732}, \emph{1738}, \emph{1743}, \emph{1871}, \emph{1688}, \emph{1818}, \emph{1840}, \emph{1631}, \emph{1762}, \emph{1749}, \emph{1853}, \emph{1842}, \emph{1750}, \emph{1764}, \emph{1678}, \emph{1730}, \emph{1647}, \emph{1653}, \emph{1628}, \emph{1834}, \emph{1862}, \emph{1709}, \emph{1637}, \emph{1741}, \emph{1974}, \emph{1954}, \emph{1578}, \emph{1714}, \emph{1903}, \emph{1746}, \emph{1910}, \emph{1717}, \emph{1810}, \emph{1772}, \emph{2073}, \emph{1842}, \emph{1629}, \emph{1690}, \emph{1787}, \emph{1560}, \emph{1570}, \emph{1638}, \emph{1715}, \emph{1874}, \emph{1723}, \emph{1766}, \emph{1744}, \emph{1680}, \emph{1886}, \emph{1640}, \emph{1727}, \emph{1715}, \emph{1803}, \emph{1911}, \emph{1801}, \emph{1888}, \emph{1826}, \emph{1688}, \emph{1758}, \emph{1888}, \emph{1594}, \emph{1782}, \emph{1734}, \emph{1838}, \emph{1825}, \emph{1780}, \emph{1899}, \emph{1598}, \emph{1841}, \emph{1592}, \emph{1809}, \emph{1759}, \emph{1847}, \emph{1758}, \emph{1593}, \emph{1549}, \emph{1804}, \emph{1743}, \emph{1693}, \emph{1719}, \emph{1683}, \emph{1734}, \emph{1657}, \emph{1552}, \emph{1728}, \emph{1854}, \emph{1938}, \emph{1750}, \emph{1742}, \emph{1846}, \emph{1755}, \emph{1706}, \emph{1576}, \emph{1624}, \emph{1791}, \emph{1604}, \emph{1855}, \emph{1615}, \emph{1731}, \emph{1750}, \emph{1749}, \emph{1765}, \emph{1810}, \emph{1737}, \emph{1725}, \emph{1766}, \emph{1707}, \emph{1904}, \emph{1533}, \emph{1853}, \emph{1725}, \emph{1792}, \emph{1849}, \emph{1834}, \emph{1684}, \emph{1906}, \emph{1588}, \emph{1836}, \emph{1699}, \emph{1558}, \emph{1563}, \emph{1774}, \emph{1972}, \emph{1777}, \emph{1863}, \emph{1834}, \emph{1684}, \emph{1845}, \emph{1785}, \emph{1771}, \emph{1850}, \emph{1825}, \emph{1687}, \emph{1790}, \emph{1661}, \emph{1813}, \emph{1707}, \emph{1795}, \emph{1787}, \emph{1723}, \emph{1797}, \emph{1807}, \emph{1727}, \emph{1867}, \emph{1889}, \emph{1684}, \emph{1672}, \emph{1801}, \emph{1659}, \emph{1705}, \emph{1830}, \emph{1693}, \emph{1557}, \emph{1816}, \emph{1590}, \emph{1614}, \emph{1448}, \emph{1833}, \emph{1775}, \emph{1796}, \emph{1834}, \emph{1746}, \emph{1639}, \emph{1806}, \emph{1880}, \emph{1600}, \emph{1689}, \emph{1721}, \emph{1621}, \emph{1819}, \emph{1690}, \emph{1876}, \emph{1755}, \emph{1823}, \emph{1906}, \emph{1777}, \emph{1858}, \emph{1771}, \emph{1599}, \emph{1752}, \emph{1822}, \emph{1799}, \emph{1733}, \emph{1628}, \emph{1815}, \emph{1658}, \emph{1625}, \emph{1810}, \emph{1627}, \emph{1774}, \emph{1750}, \emph{1617}, \emph{1868}, \emph{1691}, \emph{1870}, \emph{1702}, \emph{1692}, \emph{1747}, \emph{1714}, \emph{1714}, \emph{1662}, \emph{1629}, \emph{1811}, \emph{1669}, \emph{1612}, \emph{1699}, \emph{1670}, \emph{1531}, \emph{1721}, \emph{1767}, \emph{1780}, \emph{1789}, \emph{1650}, \emph{1717}, \emph{1649}, \emph{1686}, \emph{1629}, \emph{1638}, \emph{1813}, \emph{1723}, \emph{1724}, \emph{1923}, \emph{1744}, \emph{1696}, \emph{1825}, \emph{1701}, \emph{1887}, \emph{1712}, \emph{1688}, \emph{1633}, \emph{1783}, \emph{1897}, \emph{1714}, \emph{1776}, \emph{1783}, \emph{1892}, \emph{1816}, \emph{1643}, \emph{1680}, \emph{1675}, \emph{1764}, \emph{1750}, \emph{1787}, \emph{1684}, \emph{1712}, \emph{1824}, \emph{1740}, \emph{1685}, \emph{1847}, \emph{1751}, \emph{1658}, \emph{1921}, \emph{1633}, \emph{1572}, \emph{1525}, \emph{1815}, \emph{1697}, \emph{1722}, \emph{1779}, \emph{1703}, \emph{1589}, \emph{1555}, \emph{1716}, \emph{1768}, \emph{1522}, \emph{1779}, \emph{1792}, \emph{1880}, \emph{1766}, \emph{1770}, \emph{1810}, \emph{1748}, \emph{1742}, \emph{1762}, \emph{1824}, \emph{1707}, \emph{1700}, \emph{1664}, \emph{1654}, \emph{1783}, \emph{1905}, \emph{1653}, \emph{1731}, \emph{1647}, \emph{1841}, \emph{1718}, \emph{1768}, \emph{1785}, \emph{1645}, \emph{1740}, \emph{1727}, \emph{1818}, \emph{1627}, \emph{1630}, \emph{1827}, \emph{1691}, \emph{1684}, \emph{1761}, \emph{1718}, \emph{1937}, \emph{1776}, \emph{1766}, \emph{1843}, \emph{1744}, \emph{1755}, \emph{1643}, \emph{1521}, \emph{1629}, \emph{1761}, \emph{1647}, \emph{1819}, \emph{1822}, \emph{1772}, \emph{1730}, \emph{1613}, \emph{1719}, \emph{1705}, \emph{1816}, \emph{1881}, \emph{1800}, \emph{1637}, \emph{1917}, \emph{1851}, \emph{1772}, \emph{1529}, \emph{1654}, \emph{1743}, \emph{1826}, \emph{1632}, \emph{2071}, \emph{1495}, \emph{1726}, \emph{1724}, \emph{1684}, \emph{1718}, \emph{1824}, \emph{1663}, \emph{1542}, \emph{1759}, \emph{1750}, \emph{1749}, \emph{1817}, \emph{1749}, \emph{1828}, \emph{1549}, \emph{1637}, \emph{1785}, \emph{1715}, \emph{1844}, \emph{1650}, \emph{1822}, \emph{1683}, \emph{1639}, \emph{1716}, \emph{1755}, \emph{1627}, \emph{1674}, \emph{1625}, \emph{1852}, \emph{1822}, \emph{1647}, \emph{1806}, \emph{1724}, \emph{1639}, \emph{1792}, \emph{1718}, \emph{1838}, \emph{1730}, \emph{1869}, \emph{1699}, \emph{1772}, \emph{1787}, \emph{1778}, \emph{1770}, \emph{1749}, \emph{1741}, \emph{1886}, \emph{1841}, \emph{1689}, \emph{1890}, \emph{1764}, \emph{1686}, \emph{1767}, \emph{1734}, \emph{1760}, \emph{1653}, \emph{1668}, \emph{1886}, \emph{1846}, \emph{1662}, \emph{1660}, \emph{1922}, \emph{1941}, \emph{1672}, \emph{1620}, \emph{2012}, \emph{1773}, \emph{1769}, \emph{1758}, \emph{1890}, \emph{1731}, \emph{1896}, \emph{1728}, \emph{1800}, \emph{1647}, \emph{1767}, \emph{1870}, \emph{1734}, \emph{1878}, \emph{2023}, \emph{1844}, \emph{1725}, \emph{1760}, \emph{1707}, \emph{1968}, \emph{1454}, \emph{1758}, \emph{1761}, \emph{1771}, \emph{1594}, \emph{1772}, \emph{1769}, \emph{1876}, \emph{1802}, \emph{1862}, \emph{1654}, \emph{1738}, \emph{1769}, \emph{1777}, \emph{1681}, \emph{1898}, \emph{1689}, \emph{1589}, \emph{1790}, \emph{1816}, \emph{1844}, \emph{1655}, \emph{1725}, \emph{1617}, \emph{1834}, \emph{1785}, \emph{1841}, \emph{1811}, \emph{1689}, \emph{1768}, \emph{1559}, \emph{1800}, \emph{1847}, \emph{1662}, \emph{1536}, \emph{1598}, \emph{1639}, \emph{1874}, \emph{1750}, \emph{1626}, \emph{1806}, \emph{1532}, \emph{1725}, \emph{1861}, \emph{1716}, \emph{1880}, \emph{1930}, \emph{1633}, \emph{1635}, \emph{1659}, \emph{1803}, \emph{1834}, \emph{1871}, \emph{1880}, \emph{1858}, \emph{1844}, \emph{1766}, \emph{1661}, \emph{1677}, \emph{1791}, \emph{1918}, \emph{1921}, \emph{1557}, \emph{1667}, \emph{1892}, \emph{1644}, \emph{1589}, \emph{1810}, \emph{1923}, \emph{1944}, \emph{1803}, \emph{1822}, \emph{1806}, \emph{1748}, \emph{1413}, \emph{1826}, \emph{1711}, \emph{1851}, \emph{1687}, \emph{1586}, \emph{1874}, \emph{1768}, \emph{2100}, \emph{1842}, \emph{1855}, \emph{1826}, \emph{1690}, \emph{1713}, \emph{1856}, \emph{1856}, \emph{1808}, \emph{1651}, \emph{1918}, \emph{1613} and \emph{1707}
+
+De un primer vistazo es difícil (por no decir imposible) que podamos comprender los datos y tener una visión clara de las altitudes de este conjunto de cumbres. Las estadísticas descriptivas permiten resumir y así tener una mejor visión general de los datos. Por supuesto, al resumir los datos a través de una o varias medidas, inevitablemente se perderá parte de la información. Sin embargo, en muchos casos es mejor perder algo de información pero, a cambio, obtener una visión general. Podriamos decir que se trata de \emph{ganar perspectiva}.
+
+La estadística descriptiva es a menudo el primer paso y una parte importante en cualquier análisis estadístico. Permite comprobar la calidad de los datos detectando posibles valores atípicos (\emph{outliers}), es decir, datos que parecen ser significativamente distintos del resto. También se puede utilizar estadística descriptiva para detectar errores de recopilación o codificación, determinar si están bien presentados, entre otras posibles aplicaciones.
+
+Podemos distinguir dos típos básicos de estadísticos para describir un conjunto de datos: de centralidad y de dispersión. Habitualmente, ambos tipos de medidas se utilizan juntos para resumir los datos de la forma más concisa.
+
+\hypertarget{tendencia-central}{%
+\section{Tendencia central}\label{tendencia-central}}
+
+Las medidas de tendencia central permiten ver ``dónde'' se ubican los datos, alrededor de qué valores. En otras palabras, las medidas de ubicación permiten comprender cuál es la tendencia central o la ``posición'' de los datos en su conjunto. Entre las estadísticas más habituales de este tipo podemos distinguir:
+
+\begin{itemize}
+\tightlist
+\item
+  Mínimo y máximo
+\item
+  Media
+\item
+  Mediana
+\item
+  Primer cuartil
+\item
+  Tercer cuartil
+\item
+  Moda
+\end{itemize}
+
+\hypertarget{muxednimo-y-muxe1ximo}{%
+\subsection{Mínimo y máximo}\label{muxednimo-y-muxe1ximo}}
+
+Mínimo (\(min\)) y máximo (\(max\)) son simplemente los valores más bajo y más alto de la muestra. Dada la altitud (en metros) de una muestra de 6 cumbres:
+
+\emph{1887}, \emph{1694}, \emph{1786}, \emph{1813}, \emph{1790} and \emph{1739}
+
+El mínimo es 1693.5 m y el máximo es 1887.1 m. Estas dos estadísticas básicas dan una idea clara sobre el los extremos de la muestra y su cálculo con R es bastante sencillo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{min}\NormalTok{(altitudes_sel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1693.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{max}\NormalTok{(altitudes_sel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1887.1
+\end{verbatim}
+
+\hypertarget{media}{%
+\subsection{Media}\label{media}}
+
+La media o promedio, es probablemente la estadística más habitual. Da una idea de cuál es el valor medio, es decir, el valor central de los datos o, en otras palabras, su centro de gravedad. La media se encuentra sumando todos los valores y dividiendo esta suma por el número de observaciones (\(n\)):
+
+\[Media =\overline{x}=\frac{\text{suma de todos los valores}}{\text{número de valores}} = \frac{1}{n}\sum^{n}_{i=1}x_i\]
+Dada nuestra muestra de 6 cumbres presentada anteriormente, la media es:
+
+\[\overline{x} = \frac{1887 + 1694 + 1786 + 1813 + 1790 + 1739}{6}= 1784,833\]
+
+En conclusión, el tamaño medio de nuestra muestra de 6 cumbres es 1785 m (redondeado a 2 decimales). El cálculo con R también resulta bastante sencillo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(altitudes_sel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1785
+\end{verbatim}
+
+\hypertarget{mediana}{%
+\subsection{Mediana}\label{mediana}}
+
+La mediana es otra medida de centralidad. La interpretación de la mediana es que hay tantas observaciones por debajo como por encima de la mediana. En otras palabras, el 50\% de las observaciones se encuentran por debajo de la mediana y el 50\% de las observaciones están por encima de la mediana.
+
+La forma más fácil de calcular la mediana es primero ordenar los datos de menor a mayor (es decir, en orden ascendente) y luego tomar el punto medio como la mediana. A partir de los valores ordenados, para un número impar de observaciones, el punto medio es fácil de encontrar: es el valor con tantas observaciones abajo como arriba. Aún a partir de los valores ordenados, para un número par de observaciones, el punto medio está exactamente entre los dos valores medios. Formalmente, después de ordenar, la mediana es:
+
+\begin{itemize}
+\tightlist
+\item
+  si \(n\) (número de observaciones) es impar: \[mediana(x) = x_{\frac{n + 1}{2}}\]
+\item
+  si \(n\) es par: \[mediana(x) = \frac{1}{2}\big(x_{\frac{n}{2}} + x_{\frac{n}{2} + 1} \big)\]
+\end{itemize}
+
+donde el subíndice de \$ x \$ denota la numeración de los datos ordenados. El cálculo en R es de nuevo bastante sencillo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{median}\NormalTok{(altitudes_sel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1788.35
+\end{verbatim}
+
+\hypertarget{primer-y-tercer-cuartil}{%
+\section{Primer y tercer cuartil}\label{primer-y-tercer-cuartil}}
+
+\hypertarget{moda}{%
+\subsection{Moda}\label{moda}}
+
+La moda de una serie es el valor que aparece con mayor frecuencia. En otras palabras, es el valor que tiene el mayor número de ocurrencias. Dada la altitud de 9 cimas:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{pander}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1700}\NormalTok{, }\DecValTok{1680}\NormalTok{, }\DecValTok{1710}\NormalTok{, }\DecValTok{1700}\NormalTok{, }\DecValTok{1820}\NormalTok{, }\DecValTok{1650}\NormalTok{, }\DecValTok{1700}\NormalTok{, }\DecValTok{1890}\NormalTok{, }\DecValTok{1670}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\emph{1700}, \emph{1680}, \emph{1710}, \emph{1700}, \emph{1820}, \emph{1650}, \emph{1700}, \emph{1890} and \emph{1670}
+
+La moda es 1700 porque es el valor más común con 3 apariciones. Todos los demás valores aparecen solo una vez. En conclusión, la mayoría de los adultos de esta muestra miden exactamente 1700 m de altitud.
+
+Hay que tener en cuenta que es posible que una serie no tenga moda (p.~Ej., \emph{4}, \emph{7}, \emph{2} and \emph{10}) o más de una moda (p.~Ej., \emph{4}, \emph{2}, \emph{2}, \emph{8}, \emph{11} and \emph{11}). Los datos con dos modas a menudo se denominan bimodales y los datos con más de dos modos a menudo se denominan multimodales, a diferencia de las series con una moda, que se denominan unimodales.
+
+A diferencia de las anteriores estadísticas (mínimo, máximo, media, mediana, primer y tercer cuartil) que solo se pueden calcular para variables cuantitativas, \textbf{la moda se puede calcular para variables cuantitativas y cualitativas}. Dado el uso del suelo de los 9 lugares presentados anteriormente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{)}
+\KeywordTok{pander}\NormalTok{(}\KeywordTok{sample}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"forestal"}\NormalTok{, }\StringTok{"agrícola"}\NormalTok{, }\StringTok{"urbano"}\NormalTok{), }\DataTypeTok{size =} \DecValTok{9}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\emph{forestal}, \emph{forestal}, \emph{forestal}, \emph{forestal}, \emph{agrícola}, \emph{agrícola}, \emph{agrícola}, \emph{forestal} and \emph{urbano}
+
+La moda es ``forestal'', por lo que la mayoría de las lugares de esta muestra son de uso forestal (como es común a partir de ciertas altitudes).
+
+\hypertarget{dispersiuxf3n}{%
+\section{Dispersión}\label{dispersiuxf3n}}
+
+\hypertarget{rango}{%
+\subsection{Rango}\label{rango}}
+
+El rango es la diferencia entre el máximo y el mínimo:
+
+\[rango = max - min\]
+
+Dada nuestra muestra de altitudes de seis cumbres:
+
+\emph{1887}, \emph{1694}, \emph{1786}, \emph{1813}, \emph{1790} and \emph{1739}
+
+El rango es 1887.1 \(-\) 1693.5 \(=\) 193.6 cm. El rango es muy sencillo de calcular y en algunos casos puede dar una buena idea de lo que podemos esperar de un conjunto de datos. En R se puede utilizar la función \texttt{range}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{range}\NormalTok{(altitudes_sel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1693.5 1887.1
+\end{verbatim}
+
+No obstante, esta métrica no da ninguna información de la distribución interna del resto de medidas.
+
+\hypertarget{desviaciuxf3n-estuxe1ndard}{%
+\subsection{Desviación estándard}\label{desviaciuxf3n-estuxe1ndard}}
+
+\hypertarget{varianza}{%
+\subsection{Varianza}\label{varianza}}
+
+\hypertarget{coeficiente-de-variaciuxf3n}{%
+\subsection{Coeficiente de variación}\label{coeficiente-de-variaciuxf3n}}
+
+\hypertarget{correlaciuxf3n}{%
+\section{Correlación}\label{correlaciuxf3n}}
+
+Las correlaciones entre variables juegan un papel importante en un \textbf{análisis descriptivo}. Una correlación mide la \textbf{relación entre dos variables}, es decir, cómo están vinculadas entre sí. En este sentido, una correlación permite saber si dos variables evolucionan en la misma dirección, en sentido contrario y si son independientes.
+
+En este artículo, muestro cómo calcular \textbf{coeficientes de correlación}, cómo realizar \textbf{pruebas de correlación} y cómo \textbf{visualizar} correlaciones entre variables usando R.
+
+La correlación generalmente se calcula en dos variables \emph{cuantitativas}, pero también se puede calcular en dos variables \emph{cualitativas ordinales} (ver prueba de independencia de chi-cuadrado).
+
+\hypertarget{datos}{%
+\subsection{Datos}\label{datos}}
+
+En este artículo, usaremos el conjunto de datos \texttt{mtcars}. Este conjunto de datos viene cargado por defecto en R, de modo que se utiliza en numerosas demostraciones.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# mostrar las primeras cinco filas}
+\KeywordTok{head}\NormalTok{(mtcars, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+\end{verbatim}
+
+Las variables \texttt{vs} y\texttt{am} son variables categóricas, por lo que se eliminan para este artículo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Eliminar las variables vs y am}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\NormalTok{dat <-}\StringTok{ }\NormalTok{mtcars }\OperatorTok{%>%}
+\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\NormalTok{vs, }\OperatorTok{-}\NormalTok{am)}
+
+\CommentTok{# mostrar las primeras cinco filas}
+\KeywordTok{head}\NormalTok{(dat, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    mpg cyl disp  hp drat    wt  qsec gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02    3    2
+\end{verbatim}
+
+\hypertarget{coeficiente-de-correlaciuxf3n}{%
+\subsection{Coeficiente de correlación}\label{coeficiente-de-correlaciuxf3n}}
+
+La correlación entre 2 variables se calcula con la función \texttt{cor()}. Supón que queremos calcular la correlación entre caballos de potencia (\texttt{hp}) y millas por galón (\texttt{mpg}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Correlación de Pearson entre 2 variables }
+\KeywordTok{cor}\NormalTok{(dat}\OperatorTok{$}\NormalTok{hp, dat}\OperatorTok{$}\NormalTok{mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.7761684
+\end{verbatim}
+
+Hay que fijarse en que la correlación entre las variables \emph{X} e \emph{Y} es igual a la correlación entre las variables \emph{Y} y \emph{X}, por lo que el orden de las variables en la función \texttt{cor()} no importa.
+
+La función \texttt{cor()} calcula por defecto la correlación de Pearson, por lo que si se quiere calcular la correlación por otro método, se puede agregar el argumento \texttt{method\ ="\ spearman\ "} a la función \texttt{cor()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Correlación de Sperman entre 2 variables }
+\KeywordTok{cor}\NormalTok{(dat}\OperatorTok{$}\NormalTok{hp, dat}\OperatorTok{$}\NormalTok{mpg,}
+    \DataTypeTok{method =} \StringTok{"spearman"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.8946646
+\end{verbatim}
+
+Hay varios métodos de correlación (se puede consultar la ayuda de la la función para saber más \texttt{?cor}):
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Pearson} se usa a menudo para variables \emph{cuantitativas continuas} que tienen una relación lineal.
+\item
+  \textbf{Spearman} (es similar a Pearson pero se basa en los valores ordenados para cada variable en lugar de en los datos brutos) se usa a menudo para evaluar relaciones que involucran variables cualitativas ordinales en las que la relación sea parcialmente lineal.
+\item
+  \textbf{Kendall} se calcula a partir del número de pares concordantes y discordantes, se utiliza a menudo para variables ordinales cualitativas.
+\end{itemize}
+
+La función \texttt{cor\ ()} también permite calcular correlaciones para varios pares de variables a la vez:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Correlaciones entre todas las variables}
+\KeywordTok{round}\NormalTok{(}\KeywordTok{cor}\NormalTok{(dat),}
+      \DataTypeTok{digits =} \DecValTok{2} \CommentTok{# redondeo a dos decimales}
+\NormalTok{      ) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        mpg   cyl  disp    hp  drat    wt  qsec  gear  carb
+## mpg   1.00 -0.85 -0.85 -0.78  0.68 -0.87  0.42  0.48 -0.55
+## cyl  -0.85  1.00  0.90  0.83 -0.70  0.78 -0.59 -0.49  0.53
+## disp -0.85  0.90  1.00  0.79 -0.71  0.89 -0.43 -0.56  0.39
+## hp   -0.78  0.83  0.79  1.00 -0.45  0.66 -0.71 -0.13  0.75
+## drat  0.68 -0.70 -0.71 -0.45  1.00 -0.71  0.09  0.70 -0.09
+## wt   -0.87  0.78  0.89  0.66 -0.71  1.00 -0.17 -0.58  0.43
+## qsec  0.42 -0.59 -0.43 -0.71  0.09 -0.17  1.00 -0.21 -0.66
+## gear  0.48 -0.49 -0.56 -0.13  0.70 -0.58 -0.21  1.00  0.27
+## carb -0.55  0.53  0.39  0.75 -0.09  0.43 -0.66  0.27  1.00
+\end{verbatim}
+
+La correlación varía de \textbf{-1 a 1}, de modo que el signo nos indica la dirección de la relación (aumentan a la vez o son opuestas) y el valor nos indica la fuerza de la relación (más fuerte cuanto más alejado de 0).
+
+Una \textbf{correlación negativa} implica que las dos variables consideradas varían en \textbf{direcciones opuestas}, es decir, si una variable aumenta la otra disminuye y viceversa. Por otro lado, una \textbf{correlación positiva} implica que las dos variables consideradas varían en la \textbf{misma dirección}, es decir, si una variable aumenta, la otra aumenta y si una disminuye, la otra también disminuye.
+
+En cuanto a la fuerza de la relación: cuanto \textbf{más extremo} es el coeficiente de correlación (cuanto más cerca de -1 o 1), \textbf{más fuerte es la relación}. Esto también significa que una \textbf{correlación cercana a 0} indica que las dos variables son \textbf{independientes}, es decir, a medida que una variable aumenta, no hay tendencia en la otra variable a disminuir o aumentar.
+
+Por ejemplo, la correlación de Pearson entre caballos de potencia (\texttt{hp}) y millas por galón (\texttt{mpg}) encontrada es -0.78, lo que significa que las 2 variables varían en dirección opuesta. Esto tiene sentido, los automoviles con más caballos de potencia suelen a consumir más combustible (hacen menos millas con el mismo combustible que los automóviles más potentes). Por el contrario, de la matriz de correlación vemos que la correlación entre millas por galón (\texttt{mpg}) y el tiempo para conducir un cuarto de milla (\texttt{qsec}) es 0.42, lo que significa que los automóviles rápidos (con un menor \texttt{qsec}) tienden a tener un peor rendimiento por galón (bajo \texttt{mpg}). De nuevo, esto tiene sentido, ya que los coches rápidos tienden a consumir más combustible.
+
+\hypertarget{test-de-correlaciuxf3n}{%
+\subsection{Test de correlación}\label{test-de-correlaciuxf3n}}
+
+\begin{quote}
+Volver una vez leída la sección sobre test de hipótesis.
+\end{quote}
+
+Hay que tener en cuenta que el valor \emph{p} se basa en el coeficiente de correlación y en el tamaño de la muestra. Cuanto mayor sea el tamaño de la muestra y más extrema será la correlación (más cercana a -1 o 1). Con un tamaño de muestra pequeño, es posible obtener una correlación \emph{relativamente} grande en la muestra (según el coeficiente de correlación), pero aún así encontrar una correlación no significativamente diferente de 0 en la población (según la prueba de correlación). Por este motivo, se recomienda realizar siempre un test de correlación antes de interpretar un coeficiente de correlación para evitar conclusiones erróneas.
+
+A diferencia de una matriz de correlación que indica los coeficientes de correlación entre algunos pares de variables en la muestra, se utiliza un test de correlación para probar si la correlación (\(\rho\)) entre dos variables es significativamente diferente de 0 o no en la \emph{población}.
+
+En realidad, un coeficiente de correlación diferente de 0 en la muestra no significa que la correlación sea \textbf{significativamente} diferente de 0 en la población. Esto debe probarse con un \textbf{test de hipótesis}.
+
+Las hipótesis (nula y alternativa) para el test de correlación son las siguientes:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_0\): \(\rho = 0\) (si no existe una relación lineal entre las dos variables)
+\item
+  \(H_1\): \(\rho\ne 0\) (si existe una relación lineal entre las dos variables)
+\end{itemize}
+
+A través de esta prueba de correlación, lo que realmente estamos probando es si:
+
+\begin{itemize}
+\tightlist
+\item
+  La muestra contiene evidencia suficiente para rechazar la hipótesis nula y concluir que el coeficiente de correlación no es igual a 0, por lo que la relación existe en la población.
+\item
+  La muestra no contiene suficiente evidencia de que el coeficiente de correlación no sea igual a 0, por lo que en este caso no rechazamos la hipótesis nula de no-relación entre las variables de la población.
+\end{itemize}
+
+Supongamos que queremos probar si el ratio del eje trasero (\texttt{drat}) está correlacionado con el tiempo necesario para conducir 1/4 de milla (\texttt{qsec}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Test de correlación de Pearson}
+\NormalTok{test <-}\StringTok{ }\KeywordTok{cor.test}\NormalTok{(dat}\OperatorTok{$}\NormalTok{drat, dat}\OperatorTok{$}\NormalTok{qsec)}
+\NormalTok{test}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 	Pearson's product-moment correlation
+## 
+## data:  dat$drat and dat$qsec
+## t = 0.50164, df = 30, p-value = 0.6196
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.265947  0.426340
+## sample estimates:
+##        cor 
+## 0.09120476
+\end{verbatim}
+
+El \emph{p}-valor de la prueba de correlación entre estas 2 variables es 0.62. Al nivel de significancia del 5\%, no se rechaza la hipótesis nula de no correlación. Por lo tanto, concluimos que no rechazamos la hipótesis de que no existe una relación lineal entre las 2 variables. \footnote{Es importante recordar que probamos una relación \emph{lineal} entre las dos variables ya que usamos la correlación de Pearson. Puede darse el caso de que exista una relación entre las dos variables en la población, pero esta relación puede no ser lineal.}
+
+Esta prueba demuestra que incluso si el coeficiente de correlación es diferente de 0 (la correlación es 0.09 en la muestra), en realidad no es significativamente diferente de 0 en la población.
+
+\hypertarget{visualizando-correlaciones}{%
+\subsection{Visualizando correlaciones}\label{visualizando-correlaciones}}
+
+Una buena forma de visualizar una correlación entre 2 variables es mediante un diagrama de dispersión. Por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Diagrama de dispersión con R base}
+\KeywordTok{plot}\NormalTok{(dat}\OperatorTok{$}\NormalTok{hp, dat}\OperatorTok{$}\NormalTok{mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-41-1.pdf}
+
+Para visualizar la relación entre más de 2 variablesse puede usar la función \texttt{pair\ ()}. En este caso limitamos el ejemplo a tres variables:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Multiples diagramas de dispersión}
+\KeywordTok{pairs}\NormalTok{(dat[, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-42-1.pdf}
+
+Por otra parte, existen numerosas librerías de R que permiten generar este tipo de gráficos con distintas opciones. Por ejemplo con \texttt{ggplot2}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Diagrama de dispersión con ggplot2}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+
+\KeywordTok{ggplot}\NormalTok{(dat) }\OperatorTok{+}
+\StringTok{ }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ hp, }\DataTypeTok{y =}\NormalTok{ mpg) }\OperatorTok{+}
+\StringTok{ }\KeywordTok{geom_point}\NormalTok{(}\DataTypeTok{colour =} \StringTok{"#0c4c8a"}\NormalTok{) }\OperatorTok{+}
+\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-43-1.pdf}
+
+O representaciones más modernas como con la librería \texttt{corrplot}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# improved correlation matrix}
+\KeywordTok{library}\NormalTok{(corrplot)}
+
+\KeywordTok{corrplot}\NormalTok{(}\KeywordTok{cor}\NormalTok{(dat),}
+         \DataTypeTok{method =} \StringTok{"number"}\NormalTok{,}
+         \DataTypeTok{type =} \StringTok{"upper"} \CommentTok{# show only upper side}
+\NormalTok{         )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf}
+
+\hypertarget{ejercicios}{%
+\section{Ejercicios}\label{ejercicios}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Estableced en clase un debate sobre variables de carácter territorial que consideréis que pueden estar correlacionadas y en qué medida.
+\end{enumerate}
 
 \hypertarget{estaduxedstica-inferencial}{%
 \chapter{Estadística inferencial}\label{estaduxedstica-inferencial}}

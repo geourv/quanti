@@ -11,6 +11,10 @@ install.packages("ggrepel")
 install.packages("ggplot2movies")
 
 
+install.packages("corrplot")
+install.packages("pander")
+
+
 # Plot diagrams
 install.packages("DiagrammeR")
 install.packages("webshot")

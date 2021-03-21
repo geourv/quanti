@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.3)  20 MAR 2021 21:19
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.21)  21 MAR 2021 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -130,7 +130,7 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 local/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2021-02-18 L3 programming layer (loader) 
 (/usr/local/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2021-03-02 L3 backend support: XeTeX
+File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 (|extractbb --version)
 \c__kernel_sys_dvipdfmx_version_int=\count196
 \l__color_backend_stack_int=\count197
@@ -148,7 +148,7 @@ TeX
 (/usr/local/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-01.st
 y (/usr/local/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex
 ))) (/usr/local/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2021-02-02 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 ) (/usr/local/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/usr/local/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
@@ -183,7 +183,7 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 \g__um_primekern_muskip=\muskip17
 (/usr/local/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
 (/usr/local/texlive/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2021-03-02 v2.0g non-zero parskip adjustments
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 (/usr/local/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 (/usr/local/texlive/texmf-dist/tex/latex/graphics/keyval.sty
@@ -900,6 +900,12 @@ Overfull \hbox (27.75pt too wide) in paragraph at lines 201--201
 ods   base[] 
  []
 
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 201--201
+[]\TU/lmtt/m/n/10 ##  [4] scales_1.1.1        patchwork_1.0.1     ggplot2movies
+_0.0.1[] 
+ []
+
 [5
 
 ]
@@ -974,66 +980,74 @@ file (type pdf)
 Capítulo 2.
 [21
 
-] [22] [23] [24] [25] [26]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1252--1252
+] [22] [23]
+Underfull \hbox (badness 3302) in paragraph at lines 1198--1199
+[]\TU/lmr/m/it/10 ingeniero\TU/lmr/m/n/10 , \TU/lmr/m/it/10 ingeniero\TU/lmr/m/
+n/10 , \TU/lmr/m/it/10 ingeniero\TU/lmr/m/n/10 , \TU/lmr/m/it/10 ingeniero\TU/l
+mr/m/n/10 , \TU/lmr/m/it/10 asistente\TU/lmr/m/n/10 , \TU/lmr/m/it/10 asistente
+\TU/lmr/m/n/10 , \TU/lmr/m/it/10 asistente\TU/lmr/m/n/10 ,
+ []
+
+[24] [25]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1289--1289
 []\TU/lmtt/m/n/10 ##                    mpg cyl disp  hp drat    wt  qsec vs am
  gear carb[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1252--1252
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1289--1289
 []\TU/lmtt/m/n/10 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1
     4    4[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1252--1252
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1289--1289
 []\TU/lmtt/m/n/10 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1
     4    4[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1252--1252
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1289--1289
 []\TU/lmtt/m/n/10 ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1
     4    1[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1252--1252
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1289--1289
 []\TU/lmtt/m/n/10 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0
     3    1[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1252--1252
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1289--1289
 []\TU/lmtt/m/n/10 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0
     3    2[] 
  []
 
-[27]
-Underfull \hbox (badness 1314) in paragraph at lines 1318--1319
+[26] [27]
+Underfull \hbox (badness 1314) in paragraph at lines 1355--1356
 []\TU/lmr/bx/n/10 Kendall \TU/lmr/m/n/10 se calcula a partir del número de pare
 s concordantes y
  []
 
 [28] [29]
-File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-41-1.pdf Graphic 
-file (type pdf)
-<use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-41-1.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[30]
-File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-42-1.pdf Graphic 
-file (type pdf)
-<use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-42-1.pdf>
-[31]
 File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-43-1.pdf Graphic 
 file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-43-1.pdf>
+[30]
 File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf Graphic 
 file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf>
+File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-45-1.pdf Graphic 
+file (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-45-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[31]
+File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-46-1.pdf Graphic 
+file (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-46-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1042,44 +1056,127 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Capítulo 3.
 
-LaTeX Warning: Reference `tidyverse-package' on page 35 undefined on input line
- 1484.
+Underfull \hbox (badness 1014) in paragraph at lines 1521--1522
+\TU/lmr/m/n/10 posible, es decir, con la menor pérdida de información posible. 
+Con la
+ []
+
+[35]
+Overfull \hbox (13.58002pt too wide) in paragraph at lines 1563--1565
+[]\TU/lmr/m/n/10 library(readr) probability_distribution_functions_in_r <- read
+_csv(“probability-
+ []
+
+[36] [37] [38] [39]
+Underfull \hbox (badness 1226) in paragraph at lines 1806--1807
+\TU/lmr/m/n/10 donde los pacientes se miden dos veces, antes y después del
+ []
+
+[40]
+Underfull \hbox (badness 1014) in paragraph at lines 1811--1813
+[]\TU/lmr/m/n/10 Dos proporciones: suponga que a un médico le gustaría probar s
+i
+ []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 1484--1485
+Underfull \hbox (badness 1527) in paragraph at lines 1815--1816
+\TU/lmr/m/n/10 también se realiza una prueba de dos varianzas para verificar la
+
+ []
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 1815--1816
+\TU/lmr/m/n/10 -y-a-mano-cómo-comparar-dos-grupos-bajo-diferentes-escenarios /)
+ por
+ []
+
+
+Underfull \hbox (badness 1845) in paragraph at lines 1820--1821
+\TU/lmr/m/n/10 confirmatorios se refieren a análisis estadísticos donde las hip
+ótesis —
+ []
+
+[41] [42] [43]
+Underfull \hbox (badness 2189) in paragraph at lines 1960--1962
+[]\TU/lmr/m/n/10 prueba en una y dos medias con *varianza(s) de población
+ []
+
+[44]
+Missing character: There is no 𝜇 in font [lmroman10-regular]:mapping=tex-text;!
+[45]
+Missing character: There is no 𝜇 in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ≠ in font [lmroman10-regular]:mapping=tex-text;!
+File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-47-1.pdf Graphic 
+file (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-47-1.pdf>
+[46]
+Underfull \hbox (badness 1082) in paragraph at lines 2050--2051
+\TU/lmr/m/n/10 Cabe recordar que hay otras funciones que acompañan a las difere
+ntes
+ []
+
+File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-49-1.pdf Graphic 
+file (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-49-1.pdf>
+
+Underfull \vbox (badness 1337) has occurred while \output is active []
+
+[47]
+Underfull \hbox (badness 2799) in paragraph at lines 2123--2124
+[]\TU/lmr/m/n/10 “nosotros \TU/lmr/m/it/10 no rechazamos \TU/lmr/m/n/10 la hipó
+tesis nula” y “nosotros \TU/lmr/m/it/10 no
+ []
+
+[48] [49]
+File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf Graphic 
+file (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf>
+[50] [51]
+Underfull \hbox (badness 1527) in paragraph at lines 2282--2283
+[]\TU/lmr/m/n/10 Si desea disminuir este último porcentaje, puede disminuir el 
+nivel de
+ []
+
+Missing character: There is no 𝜇 in font [lmroman10-regular]:mapping=tex-text;!
+[52]
+
+LaTeX Warning: Reference `tidyverse-package' on page 53 undefined on input line
+ 2311.
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 2311--2312
 \TU/lmtt/m/n/10 tidyverse \TU/lmr/m/n/10 package by running \TU/lmtt/m/n/10 lib
 rary(tidyverse) \TU/lmr/m/n/10 loads the following
  []
 
 
-LaTeX Warning: Reference `packages' on page 35 undefined on input line 1500.
+LaTeX Warning: Reference `packages' on page 53 undefined on input line 2327.
 
-[35]
+[53]
 
-LaTeX Warning: Reference `two-categ-barplot' on page 36 undefined on input line
- 1553.
+LaTeX Warning: Reference `two-categ-barplot' on page 54 undefined on input line
+ 2380.
 
-[36]
 File: tecnicas-cuantitativas_files/figure-latex/promotions-barplot-1.pdf Graphi
 c file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/promotions-barplot-1.pdf>
-[37] [38]
+[54] [55] [56]
 
-LaTeX Warning: Reference `fig:deck-of-cards' on page 39 undefined on input line
- 1661.
-
-
-LaTeX Warning: Reference `fig:shuffling' on page 39 undefined on input line 166
-3.
+LaTeX Warning: Reference `fig:deck-of-cards' on page 57 undefined on input line
+ 2488.
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1681--1681
+LaTeX Warning: Reference `fig:shuffling' on page 57 undefined on input line 249
+0.
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2508--2508
 []\TU/lmtt/m/n/10 ## `summarise()` regrouping output by 'gender' (override with
  `.groups` argument)[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1681--1681
+Overfull \hbox (80.25pt too wide) in paragraph at lines 2508--2508
 []\TU/lmtt/m/n/10 ## `summarise()` regrouping output by 'gender' (override with
  `.groups` argument)[] 
  []
@@ -1088,169 +1185,168 @@ File: tecnicas-cuantitativas_files/figure-latex/promotions-barplot-permuted-1.p
 df Graphic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/promotions-barplot-permuted-1.pd
 f>
-[39] [40]
-Underfull \hbox (badness 3386) in paragraph at lines 1714--1715
+[57] [58]
+Underfull \hbox (badness 3386) in paragraph at lines 2541--2542
 []\TU/lmr/m/n/10 Let’s next compare these two values. It appears that résumés w
 ith
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 1714--1715
+Underfull \hbox (badness 1442) in paragraph at lines 2541--2542
 \TU/lmr/m/n/10 stereotypically male names were selected for promotion at a rate
  that
  []
 
 
-LaTeX Warning: Reference `fig:tactile-shuffling' on page 41 undefined on input 
-line 1721.
+LaTeX Warning: Reference `fig:tactile-shuffling' on page 59 undefined on input 
+line 2548.
 
 File: tecnicas-cuantitativas_files/figure-latex/null-distribution-1-1.pdf Graph
 ic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/null-distribution-1-1.pdf>
-[41] [42]
+[59]
 
-LaTeX Warning: Reference `confidence-intervals' on page 43 undefined on input l
-ine 1744.
-
-
-LaTeX Warning: Reference `resampling-tactile' on page 43 undefined on input lin
-e 1746.
+LaTeX Warning: Reference `confidence-intervals' on page 60 undefined on input l
+ine 2571.
 
 
-LaTeX Warning: Reference `case-study-two-prop-ci' on page 43 undefined on input
- line 1750.
+LaTeX Warning: Reference `resampling-tactile' on page 60 undefined on input lin
+e 2573.
 
-[43]
-Underfull \hbox (badness 1708) in paragraph at lines 1796--1797
+[60]
+
+LaTeX Warning: Reference `case-study-two-prop-ci' on page 61 undefined on input
+ line 2577.
+
+[61]
+Underfull \hbox (badness 1708) in paragraph at lines 2623--2624
 \TU/lmr/m/n/10 greater than 0?”. In other words, is that difference indicative 
 of true
  []
 
 
-LaTeX Warning: Reference `sampling-framework' on page 44 undefined on input lin
-e 1801.
+LaTeX Warning: Reference `sampling-framework' on page 62 undefined on input lin
+e 2628.
 
 
-LaTeX Warning: Reference `tab:table-ch8' on page 44 undefined on input line 180
-3.
+LaTeX Warning: Reference `tab:table-ch8' on page 62 undefined on input line 263
+0.
 
-[44]
+[62]
 
-LaTeX Warning: Reference `ht-case-study' on page 45 undefined on input line 182
-7.
-
-
-LaTeX Warning: Reference `summarize' on page 45 undefined on input line 1829.
+LaTeX Warning: Reference `ht-case-study' on page 63 undefined on input line 265
+4.
 
 
-LaTeX Warning: Reference `sampling-definitions' on page 45 undefined on input l
-ine 1833.
+LaTeX Warning: Reference `summarize' on page 63 undefined on input line 2656.
 
-[45]
+
+LaTeX Warning: Reference `sampling-definitions' on page 63 undefined on input l
+ine 2660.
+
+[63]
 File: tecnicas-cuantitativas_files/figure-latex/null-distribution-2-1.pdf Graph
 ic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/null-distribution-2-1.pdf>
-[46]
+[64]
 
-LaTeX Warning: Reference `bootstrap-process' on page 47 undefined on input line
- 1858.
-
-
-LaTeX Warning: Reference `shovel-1000-times' on page 47 undefined on input line
- 1858.
+LaTeX Warning: Reference `bootstrap-process' on page 65 undefined on input line
+ 2685.
 
 
-LaTeX Warning: Reference `fig:infer-ci' on page 47 undefined on input line 1860
+LaTeX Warning: Reference `shovel-1000-times' on page 65 undefined on input line
+ 2685.
+
+
+LaTeX Warning: Reference `fig:infer-ci' on page 65 undefined on input line 2687
 .
 
 
-LaTeX Warning: Reference `fig:inferht' on page 47 undefined on input line 1875.
+LaTeX Warning: Reference `fig:inferht' on page 65 undefined on input line 2702.
 
 
-[47]
+[65]
 
-LaTeX Warning: Reference `groupby' on page 48 undefined on input line 1916.
+LaTeX Warning: Reference `groupby' on page 66 undefined on input line 2743.
 
+[66]
 
-Underfull \vbox (badness 7981) has occurred while \output is active []
+LaTeX Warning: Reference `confidence-intervals' on page 67 undefined on input l
+ine 2800.
 
-[48]
-
-LaTeX Warning: Reference `confidence-intervals' on page 49 undefined on input l
-ine 1973.
-
-[49]
-Underfull \hbox (badness 1215) in paragraph at lines 1988--1989
+[67]
+Underfull \hbox (badness 1215) in paragraph at lines 2815--2816
 \TU/lmtt/m/n/10 generate() \TU/lmr/m/n/10 function. However, unlike for confide
 nce intervals where we
  []
 
-[50] [51]
+[68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[69]
 File: tecnicas-cuantitativas_files/figure-latex/null-distribution-infer-1.pdf G
 raphic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/null-distribution-infer-1.pdf>
-[52]
 File: tecnicas-cuantitativas_files/figure-latex/null-distribution-infer-2-1.pdf
  Graphic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/null-distribution-infer-2-1.pdf>
 
-[53]
+[70] [71]
 
-LaTeX Warning: Reference `bootstrap-process' on page 54 undefined on input line
- 2157.
+LaTeX Warning: Reference `bootstrap-process' on page 72 undefined on input line
+ 2984.
 
-[54]
+[72]
 
-LaTeX Warning: Reference `shorthand' on page 55 undefined on input line 2174.
+LaTeX Warning: Reference `shorthand' on page 73 undefined on input line 3001.
 
 File: tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop
 -percentile-1.pdf Graphic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop-
 percentile-1.pdf>
 
-LaTeX Warning: Reference `bootstrap-process' on page 55 undefined on input line
- 2191.
+LaTeX Warning: Reference `bootstrap-process' on page 73 undefined on input line
+ 3018.
 
-[55]
+[73]
 File: tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop
 -se-1.pdf Graphic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop-
 se-1.pdf>
 
-Underfull \hbox (badness 1033) in paragraph at lines 2227--2228
+Underfull \hbox (badness 1033) in paragraph at lines 3054--3055
 []\TU/lmr/m/n/10 Let’s recap the steps necessary to conduct a hypothesis test u
 sing the
  []
 
-[56]
 
-LaTeX Warning: Reference `fig:htdowney' on page 57 undefined on input line 2244
+LaTeX Warning: Reference `fig:htdowney' on page 74 undefined on input line 3071
 .
 
 
-LaTeX Warning: Reference `fig:inferht' on page 57 undefined on input line 2246.
+LaTeX Warning: Reference `fig:inferht' on page 74 undefined on input line 3073.
 
 
 
-LaTeX Warning: Reference `inference-for-regression' on page 57 undefined on inp
-ut line 2246.
+LaTeX Warning: Reference `inference-for-regression' on page 74 undefined on inp
+ut line 3073.
 
-[57] [58]
+[74] [75] [76]
 
-LaTeX Warning: Reference `fig:trial-errors-table' on page 59 undefined on input
- line 2313.
+LaTeX Warning: Reference `fig:trial-errors-table' on page 77 undefined on input
+ line 3140.
 
 
-LaTeX Warning: Reference `fig:trial-errors-table-ht' on page 59 undefined on in
-put line 2315.
+LaTeX Warning: Reference `fig:trial-errors-table-ht' on page 77 undefined on in
+put line 3142.
 
-[59]
+[77]
 
-LaTeX Warning: Reference `nycflights13' on page 60 undefined on input line 2350
+LaTeX Warning: Reference `nycflights13' on page 78 undefined on input line 3177
 .
 
-[60]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 2373--2373
+[78]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3200--3200
 []\TU/lmtt/m/n/10 ## Warning: Removed 5 rows containing non-finite values (stat
 _boxplot).[] 
  []
@@ -1258,31 +1354,31 @@ _boxplot).[]
 File: tecnicas-cuantitativas_files/figure-latex/ha-as-flights-boxplot-1.pdf Gra
 phic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/ha-as-flights-boxplot-1.pdf>
-[61]
-Overfull \hbox (85.5pt too wide) in paragraph at lines 2395--2395
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 3222--3222
 []\TU/lmtt/m/n/10 ## `summarise()` regrouping output by 'carrier' (override wit
 h `.groups` argument)[] 
  []
 
-
-Underfull \hbox (badness 1968) in paragraph at lines 2430--2431
+[79]
+Underfull \hbox (badness 1968) in paragraph at lines 3257--3258
 []\TU/lmr/m/n/10 Such issues were getting so problematic that the American Stat
 istical
  []
 
-[62] [63] [64
+[80] [81] [82
 
 ]
 Capítulo 4.
-[65] [66
+[83] [84
 
 ]
 Capítulo 5.
-[67] [68
+[85] [86
 
 ]
 Capítulo 6.
-(./tecnicas-cuantitativas.bbl [69] [70
+(./tecnicas-cuantitativas.bbl [87] [88
 
 ])
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -1320,7 +1416,7 @@ braces):
 >  {spanish/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/totalhyphenmin}  =>  {5}.
-[71] (./tecnicas-cuantitativas.aux
+[89] (./tecnicas-cuantitativas.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
@@ -1333,15 +1429,15 @@ LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `tecnicas-cuantitativas.out' has not changed.
 
-(rerunfilecheck)             Checksum: 11936384BF7BA9A0AF19ED83FA2231A3;4740.
+(rerunfilecheck)             Checksum: DD1B3421BD9D281B171B4DC467940217;5025.
  ) 
 Here is how much of TeX's memory you used:
- 17620 strings out of 478931
- 317169 string characters out of 5867171
- 818986 words of memory out of 5000000
- 37176 multiletter control sequences out of 15000+600000
- 409961 words of font info for 90 fonts, out of 8000000 for 9000
+ 17660 strings out of 478922
+ 319165 string characters out of 5866906
+ 803772 words of memory out of 5000000
+ 37221 multiletter control sequences out of 15000+600000
+ 409969 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,9n,122p,13045b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,9n,122p,1358b,511s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tecnicas-cuantitativas.pdf (71 pages).
+Output written on tecnicas-cuantitativas.pdf (89 pages).

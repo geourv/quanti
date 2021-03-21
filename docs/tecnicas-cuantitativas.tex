@@ -123,7 +123,7 @@
 
 \title{Técnicas cuantitativas}
 \author{Enric Aguilar y Benito Zaragozí}
-\date{20-Mar-2021}
+\date{21-Mar-2021}
 
 \begin{document}
 \maketitle
@@ -168,9 +168,9 @@ Para seguir las explicaciones de este curso será necesario instalar primero R y
 ## 
 ## other attached packages:
 ##  [1] ggrepel_0.8.2       viridis_0.5.1       viridisLite_0.3.0  
-##  [4] scales_1.1.1        patchwork_1.0.1     kableExtra_1.2.1   
-##  [7] ggplot2movies_0.0.1 nycflights13_1.0.1  moderndive_0.5.0   
-## [10] infer_0.5.3         corrplot_0.84       pander_0.6.3       
+##  [4] scales_1.1.1        patchwork_1.0.1     ggplot2movies_0.0.1
+##  [7] nycflights13_1.0.1  moderndive_0.5.0    infer_0.5.3        
+## [10] kableExtra_1.2.1    corrplot_0.84       pander_0.6.3       
 ## [13] DiagrammeR_1.0.6.1  forcats_0.5.0       stringr_1.4.0      
 ## [16] dplyr_1.0.2         purrr_0.3.4         readr_1.4.0        
 ## [19] tidyr_1.1.2         tibble_3.0.3        ggplot2_3.3.2      
@@ -1042,11 +1042,11 @@ Crea un \emph{script} para responder a cada pregunta. En las preguntas de la 4 a
 \hypertarget{estaduxedstica-descriptiva}{%
 \chapter{Estadística descriptiva}\label{estaduxedstica-descriptiva}}
 
-La estadística descriptiva es una rama de la estadística cuyo objetivo es resumir, describir y presentar una serie de valores o un conjunto de datos. Estas estadísticas pueden ser realmente útiles al analizar largas series de datos en las que resulte difícil reconocer algún patrón. En éste capítulo utilizaremos una muestra de datos sobre la altura (en metros) de una población de 100 picos de montañas:
+La estadística descriptiva es una rama de la estadística cuyo objetivo es resumir, describir y presentar una serie de valores o un conjunto de datos. Estas estadísticas pueden ser realmente útiles al analizar largas series de datos en las que resulte difícil reconocer algún patrón. En éste capítulo utilizaremos una muestra de datos sobre salarios (en euros) de una \emph{población} de 100 trabajadores:
 
-\emph{1887}, \emph{1694}, \emph{1786}, \emph{1813}, \emph{1790}, \emph{1739}, \emph{1901}, \emph{1740}, \emph{1952}, \emph{1744}, \emph{1880}, \emph{1979}, \emph{1611}, \emph{1722}, \emph{1737}, \emph{1814}, \emph{1722}, \emph{1484}, \emph{1506}, \emph{1882}, \emph{1719}, \emph{1572}, \emph{1733}, \emph{1872}, \emph{1940}, \emph{1707}, \emph{1724}, \emph{1574}, \emph{1796}, \emph{1686}, \emph{1796}, \emph{1820}, \emph{1854}, \emph{1689}, \emph{1800}, \emph{1578}, \emph{1672}, \emph{1665}, \emph{1509}, \emph{1754}, \emph{1771}, \emph{1714}, \emph{1826}, \emph{1677}, \emph{1613}, \emph{1793}, \emph{1669}, \emph{1894}, \emph{1707}, \emph{1816}, \emph{1782}, \emph{1672}, \emph{1908}, \emph{1814}, \emph{1759}, \emph{1778}, \emph{1818}, \emph{1759}, \emph{1451}, \emph{1778}, \emph{1713}, \emph{1768}, \emph{1808}, \emph{1890}, \emph{1677}, \emph{1880}, \emph{1784}, \emph{1854}, \emph{1842}, \emph{1822}, \emph{1646}, \emph{1741}, \emph{1812}, \emph{1655}, \emph{1696}, \emph{1808}, \emph{1827}, \emph{1796}, \emph{1661}, \emph{1640}, \emph{1901}, \emph{1776}, \emph{1759}, \emph{1738}, \emph{1631}, \emph{1811}, \emph{1728}, \emph{1732}, \emph{1843}, \emph{1832}, \emph{1889}, \emph{1702}, \emph{1815}, \emph{1889}, \emph{1639}, \emph{1664}, \emph{1637}, \emph{1604}, \emph{1758}, \emph{1815}, \emph{1870}, \emph{1854}, \emph{1650}, \emph{1935}, \emph{1683}, \emph{1761}, \emph{1708}, \emph{1738}, \emph{1769}, \emph{1762}, \emph{1748}, \emph{1761}, \emph{1702}, \emph{1700}, \emph{1584}, \emph{1712}, \emph{1699}, \emph{2020}, \emph{1614}, \emph{1764}, \emph{1601}, \emph{1603}, \emph{1762}, \emph{1650}, \emph{1750}, \emph{1707}, \emph{1689}, \emph{1548}, \emph{1628}, \emph{1768}, \emph{1807}, \emph{1701}, \emph{1750}, \emph{1862}, \emph{1894}, \emph{1640}, \emph{1738}, \emph{1870}, \emph{1703}, \emph{1745}, \emph{1741}, \emph{1661}, \emph{1706}, \emph{1747}, \emph{1709}, \emph{1861}, \emph{1702}, \emph{1707}, \emph{1820}, \emph{1644}, \emph{1746}, \emph{1595}, \emph{1867}, \emph{1723}, \emph{1703}, \emph{1626}, \emph{1749}, \emph{1670}, \emph{1697}, \emph{1879}, \emph{1732}, \emph{1643}, \emph{1766}, \emph{1714}, \emph{1809}, \emph{1893}, \emph{1651}, \emph{1796}, \emph{1758}, \emph{1840}, \emph{1727}, \emph{1834}, \emph{1576}, \emph{1919}, \emph{1836}, \emph{1735}, \emph{1605}, \emph{1814}, \emph{1798}, \emph{1749}, \emph{1765}, \emph{1692}, \emph{1787}, \emph{1780}, \emph{1722}, \emph{1616}, \emph{1820}, \emph{1805}, \emph{1666}, \emph{1590}, \emph{1770}, \emph{1716}, \emph{1775}, \emph{1621}, \emph{1654}, \emph{1859}, \emph{1790}, \emph{1809}, \emph{1932}, \emph{1763}, \emph{1550}, \emph{1783}, \emph{1867}, \emph{1956}, \emph{1612}, \emph{1635}, \emph{1679}, \emph{1645}, \emph{1685}, \emph{1732}, \emph{1630}, \emph{1954}, \emph{1761}, \emph{1742}, \emph{1800}, \emph{1754}, \emph{1737}, \emph{1898}, \emph{1728}, \emph{1622}, \emph{1789}, \emph{1715}, \emph{1698}, \emph{1643}, \emph{1793}, \emph{1733}, \emph{1802}, \emph{1727}, \emph{1684}, \emph{1875}, \emph{1723}, \emph{1845}, \emph{1630}, \emph{1703}, \emph{1723}, \emph{1711}, \emph{1885}, \emph{1748}, \emph{1774}, \emph{1656}, \emph{1677}, \emph{1850}, \emph{1876}, \emph{1875}, \emph{1612}, \emph{1955}, \emph{1852}, \emph{1747}, \emph{1820}, \emph{1653}, \emph{1640}, \emph{1755}, \emph{1630}, \emph{1769}, \emph{1880}, \emph{1647}, \emph{1676}, \emph{1755}, \emph{1648}, \emph{1712}, \emph{1837}, \emph{1847}, \emph{1788}, \emph{1565}, \emph{1745}, \emph{1856}, \emph{1831}, \emph{1731}, \emph{1480}, \emph{1756}, \emph{1807}, \emph{1755}, \emph{1766}, \emph{1793}, \emph{1710}, \emph{1881}, \emph{1797}, \emph{1626}, \emph{1888}, \emph{1870}, \emph{1832}, \emph{1584}, \emph{1693}, \emph{1814}, \emph{1754}, \emph{1785}, \emph{1996}, \emph{1668}, \emph{1539}, \emph{1777}, \emph{1681}, \emph{1795}, \emph{1669}, \emph{1971}, \emph{1738}, \emph{1702}, \emph{1733}, \emph{1836}, \emph{1760}, \emph{1587}, \emph{1750}, \emph{1826}, \emph{1754}, \emph{1824}, \emph{1735}, \emph{1744}, \emph{1798}, \emph{1849}, \emph{1625}, \emph{1747}, \emph{1743}, \emph{1674}, \emph{1647}, \emph{1687}, \emph{1809}, \emph{1708}, \emph{1672}, \emph{1766}, \emph{1626}, \emph{1855}, \emph{1702}, \emph{1769}, \emph{1755}, \emph{1750}, \emph{1931}, \emph{1668}, \emph{1864}, \emph{1753}, \emph{1666}, \emph{1743}, \emph{1825}, \emph{1707}, \emph{1673}, \emph{1765}, \emph{1849}, \emph{1743}, \emph{1611}, \emph{1619}, \emph{1673}, \emph{1697}, \emph{1748}, \emph{1817}, \emph{1706}, \emph{1639}, \emph{1811}, \emph{1778}, \emph{1866}, \emph{1582}, \emph{1759}, \emph{1885}, \emph{1822}, \emph{1667}, \emph{1823}, \emph{1663}, \emph{1705}, \emph{1869}, \emph{1721}, \emph{1833}, \emph{1721}, \emph{1592}, \emph{1665}, \emph{1641}, \emph{1702}, \emph{1716}, \emph{1735}, \emph{1726}, \emph{1939}, \emph{1611}, \emph{1708}, \emph{1785}, \emph{1913}, \emph{1759}, \emph{1874}, \emph{1586}, \emph{1895}, \emph{1681}, \emph{1722}, \emph{1639}, \emph{1763}, \emph{1928}, \emph{1992}, \emph{1642}, \emph{1799}, \emph{1889}, \emph{1730}, \emph{1728}, \emph{1720}, \emph{1810}, \emph{1890}, \emph{1819}, \emph{1782}, \emph{1720}, \emph{1800}, \emph{1695}, \emph{1722}, \emph{1860}, \emph{1794}, \emph{1774}, \emph{1724}, \emph{1843}, \emph{1884}, \emph{1663}, \emph{1756}, \emph{1755}, \emph{1692}, \emph{1650}, \emph{1750}, \emph{1816}, \emph{1898}, \emph{1559}, \emph{1680}, \emph{1719}, \emph{1584}, \emph{1675}, \emph{1672}, \emph{1678}, \emph{1531}, \emph{1771}, \emph{1687}, \emph{1902}, \emph{1830}, \emph{1605}, \emph{1760}, \emph{1691}, \emph{1839}, \emph{1755}, \emph{1694}, \emph{1794}, \emph{1765}, \emph{1734}, \emph{1952}, \emph{1697}, \emph{1703}, \emph{1595}, \emph{1746}, \emph{1839}, \emph{1543}, \emph{1725}, \emph{1632}, \emph{1894}, \emph{1886}, \emph{1784}, \emph{1893}, \emph{1663}, \emph{1845}, \emph{1692}, \emph{1782}, \emph{1720}, \emph{1722}, \emph{1805}, \emph{1620}, \emph{1725}, \emph{1767}, \emph{1710}, \emph{1760}, \emph{1718}, \emph{1912}, \emph{1821}, \emph{2047}, \emph{1670}, \emph{1831}, \emph{1960}, \emph{1780}, \emph{1642}, \emph{1649}, \emph{1746}, \emph{1881}, \emph{1825}, \emph{1536}, \emph{1680}, \emph{1749}, \emph{1604}, \emph{1820}, \emph{1504}, \emph{1764}, \emph{1711}, \emph{1701}, \emph{1722}, \emph{1782}, \emph{1790}, \emph{1727}, \emph{1558}, \emph{1606}, \emph{1603}, \emph{1826}, \emph{1726}, \emph{1777}, \emph{1594}, \emph{1696}, \emph{1806}, \emph{1732}, \emph{1738}, \emph{1743}, \emph{1871}, \emph{1688}, \emph{1818}, \emph{1840}, \emph{1631}, \emph{1762}, \emph{1749}, \emph{1853}, \emph{1842}, \emph{1750}, \emph{1764}, \emph{1678}, \emph{1730}, \emph{1647}, \emph{1653}, \emph{1628}, \emph{1834}, \emph{1862}, \emph{1709}, \emph{1637}, \emph{1741}, \emph{1974}, \emph{1954}, \emph{1578}, \emph{1714}, \emph{1903}, \emph{1746}, \emph{1910}, \emph{1717}, \emph{1810}, \emph{1772}, \emph{2073}, \emph{1842}, \emph{1629}, \emph{1690}, \emph{1787}, \emph{1560}, \emph{1570}, \emph{1638}, \emph{1715}, \emph{1874}, \emph{1723}, \emph{1766}, \emph{1744}, \emph{1680}, \emph{1886}, \emph{1640}, \emph{1727}, \emph{1715}, \emph{1803}, \emph{1911}, \emph{1801}, \emph{1888}, \emph{1826}, \emph{1688}, \emph{1758}, \emph{1888}, \emph{1594}, \emph{1782}, \emph{1734}, \emph{1838}, \emph{1825}, \emph{1780}, \emph{1899}, \emph{1598}, \emph{1841}, \emph{1592}, \emph{1809}, \emph{1759}, \emph{1847}, \emph{1758}, \emph{1593}, \emph{1549}, \emph{1804}, \emph{1743}, \emph{1693}, \emph{1719}, \emph{1683}, \emph{1734}, \emph{1657}, \emph{1552}, \emph{1728}, \emph{1854}, \emph{1938}, \emph{1750}, \emph{1742}, \emph{1846}, \emph{1755}, \emph{1706}, \emph{1576}, \emph{1624}, \emph{1791}, \emph{1604}, \emph{1855}, \emph{1615}, \emph{1731}, \emph{1750}, \emph{1749}, \emph{1765}, \emph{1810}, \emph{1737}, \emph{1725}, \emph{1766}, \emph{1707}, \emph{1904}, \emph{1533}, \emph{1853}, \emph{1725}, \emph{1792}, \emph{1849}, \emph{1834}, \emph{1684}, \emph{1906}, \emph{1588}, \emph{1836}, \emph{1699}, \emph{1558}, \emph{1563}, \emph{1774}, \emph{1972}, \emph{1777}, \emph{1863}, \emph{1834}, \emph{1684}, \emph{1845}, \emph{1785}, \emph{1771}, \emph{1850}, \emph{1825}, \emph{1687}, \emph{1790}, \emph{1661}, \emph{1813}, \emph{1707}, \emph{1795}, \emph{1787}, \emph{1723}, \emph{1797}, \emph{1807}, \emph{1727}, \emph{1867}, \emph{1889}, \emph{1684}, \emph{1672}, \emph{1801}, \emph{1659}, \emph{1705}, \emph{1830}, \emph{1693}, \emph{1557}, \emph{1816}, \emph{1590}, \emph{1614}, \emph{1448}, \emph{1833}, \emph{1775}, \emph{1796}, \emph{1834}, \emph{1746}, \emph{1639}, \emph{1806}, \emph{1880}, \emph{1600}, \emph{1689}, \emph{1721}, \emph{1621}, \emph{1819}, \emph{1690}, \emph{1876}, \emph{1755}, \emph{1823}, \emph{1906}, \emph{1777}, \emph{1858}, \emph{1771}, \emph{1599}, \emph{1752}, \emph{1822}, \emph{1799}, \emph{1733}, \emph{1628}, \emph{1815}, \emph{1658}, \emph{1625}, \emph{1810}, \emph{1627}, \emph{1774}, \emph{1750}, \emph{1617}, \emph{1868}, \emph{1691}, \emph{1870}, \emph{1702}, \emph{1692}, \emph{1747}, \emph{1714}, \emph{1714}, \emph{1662}, \emph{1629}, \emph{1811}, \emph{1669}, \emph{1612}, \emph{1699}, \emph{1670}, \emph{1531}, \emph{1721}, \emph{1767}, \emph{1780}, \emph{1789}, \emph{1650}, \emph{1717}, \emph{1649}, \emph{1686}, \emph{1629}, \emph{1638}, \emph{1813}, \emph{1723}, \emph{1724}, \emph{1923}, \emph{1744}, \emph{1696}, \emph{1825}, \emph{1701}, \emph{1887}, \emph{1712}, \emph{1688}, \emph{1633}, \emph{1783}, \emph{1897}, \emph{1714}, \emph{1776}, \emph{1783}, \emph{1892}, \emph{1816}, \emph{1643}, \emph{1680}, \emph{1675}, \emph{1764}, \emph{1750}, \emph{1787}, \emph{1684}, \emph{1712}, \emph{1824}, \emph{1740}, \emph{1685}, \emph{1847}, \emph{1751}, \emph{1658}, \emph{1921}, \emph{1633}, \emph{1572}, \emph{1525}, \emph{1815}, \emph{1697}, \emph{1722}, \emph{1779}, \emph{1703}, \emph{1589}, \emph{1555}, \emph{1716}, \emph{1768}, \emph{1522}, \emph{1779}, \emph{1792}, \emph{1880}, \emph{1766}, \emph{1770}, \emph{1810}, \emph{1748}, \emph{1742}, \emph{1762}, \emph{1824}, \emph{1707}, \emph{1700}, \emph{1664}, \emph{1654}, \emph{1783}, \emph{1905}, \emph{1653}, \emph{1731}, \emph{1647}, \emph{1841}, \emph{1718}, \emph{1768}, \emph{1785}, \emph{1645}, \emph{1740}, \emph{1727}, \emph{1818}, \emph{1627}, \emph{1630}, \emph{1827}, \emph{1691}, \emph{1684}, \emph{1761}, \emph{1718}, \emph{1937}, \emph{1776}, \emph{1766}, \emph{1843}, \emph{1744}, \emph{1755}, \emph{1643}, \emph{1521}, \emph{1629}, \emph{1761}, \emph{1647}, \emph{1819}, \emph{1822}, \emph{1772}, \emph{1730}, \emph{1613}, \emph{1719}, \emph{1705}, \emph{1816}, \emph{1881}, \emph{1800}, \emph{1637}, \emph{1917}, \emph{1851}, \emph{1772}, \emph{1529}, \emph{1654}, \emph{1743}, \emph{1826}, \emph{1632}, \emph{2071}, \emph{1495}, \emph{1726}, \emph{1724}, \emph{1684}, \emph{1718}, \emph{1824}, \emph{1663}, \emph{1542}, \emph{1759}, \emph{1750}, \emph{1749}, \emph{1817}, \emph{1749}, \emph{1828}, \emph{1549}, \emph{1637}, \emph{1785}, \emph{1715}, \emph{1844}, \emph{1650}, \emph{1822}, \emph{1683}, \emph{1639}, \emph{1716}, \emph{1755}, \emph{1627}, \emph{1674}, \emph{1625}, \emph{1852}, \emph{1822}, \emph{1647}, \emph{1806}, \emph{1724}, \emph{1639}, \emph{1792}, \emph{1718}, \emph{1838}, \emph{1730}, \emph{1869}, \emph{1699}, \emph{1772}, \emph{1787}, \emph{1778}, \emph{1770}, \emph{1749}, \emph{1741}, \emph{1886}, \emph{1841}, \emph{1689}, \emph{1890}, \emph{1764}, \emph{1686}, \emph{1767}, \emph{1734}, \emph{1760}, \emph{1653}, \emph{1668}, \emph{1886}, \emph{1846}, \emph{1662}, \emph{1660}, \emph{1922}, \emph{1941}, \emph{1672}, \emph{1620}, \emph{2012}, \emph{1773}, \emph{1769}, \emph{1758}, \emph{1890}, \emph{1731}, \emph{1896}, \emph{1728}, \emph{1800}, \emph{1647}, \emph{1767}, \emph{1870}, \emph{1734}, \emph{1878}, \emph{2023}, \emph{1844}, \emph{1725}, \emph{1760}, \emph{1707}, \emph{1968}, \emph{1454}, \emph{1758}, \emph{1761}, \emph{1771}, \emph{1594}, \emph{1772}, \emph{1769}, \emph{1876}, \emph{1802}, \emph{1862}, \emph{1654}, \emph{1738}, \emph{1769}, \emph{1777}, \emph{1681}, \emph{1898}, \emph{1689}, \emph{1589}, \emph{1790}, \emph{1816}, \emph{1844}, \emph{1655}, \emph{1725}, \emph{1617}, \emph{1834}, \emph{1785}, \emph{1841}, \emph{1811}, \emph{1689}, \emph{1768}, \emph{1559}, \emph{1800}, \emph{1847}, \emph{1662}, \emph{1536}, \emph{1598}, \emph{1639}, \emph{1874}, \emph{1750}, \emph{1626}, \emph{1806}, \emph{1532}, \emph{1725}, \emph{1861}, \emph{1716}, \emph{1880}, \emph{1930}, \emph{1633}, \emph{1635}, \emph{1659}, \emph{1803}, \emph{1834}, \emph{1871}, \emph{1880}, \emph{1858}, \emph{1844}, \emph{1766}, \emph{1661}, \emph{1677}, \emph{1791}, \emph{1918}, \emph{1921}, \emph{1557}, \emph{1667}, \emph{1892}, \emph{1644}, \emph{1589}, \emph{1810}, \emph{1923}, \emph{1944}, \emph{1803}, \emph{1822}, \emph{1806}, \emph{1748}, \emph{1413}, \emph{1826}, \emph{1711}, \emph{1851}, \emph{1687}, \emph{1586}, \emph{1874}, \emph{1768}, \emph{2100}, \emph{1842}, \emph{1855}, \emph{1826}, \emph{1690}, \emph{1713}, \emph{1856}, \emph{1856}, \emph{1808}, \emph{1651}, \emph{1918}, \emph{1613} and \emph{1707}
+\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702}, \emph{1447}, \emph{2256}, \emph{1453}, \emph{2509}, \emph{1469}, \emph{2152}, \emph{2643}, \emph{805.6}, \emph{1361}, \emph{1433}, \emph{1818}, \emph{1358}, \emph{171.8}, \emph{279.8}, \emph{2160}, \emph{1347}, \emph{609.3}, \emph{1414}, \emph{2107}, \emph{2448}, \emph{1285}, \emph{1371}, \emph{618.4}, \emph{1730}, \emph{1180}, \emph{1728}, \emph{1852}, \emph{2018}, \emph{1196}, \emph{1752}, \emph{641.5}, \emph{1108}, \emph{1074}, \emph{292.9}, \emph{1518}, \emph{1603}, \emph{1320}, \emph{1879}, \emph{1137}, \emph{815.9}, \emph{1716}, \emph{1094}, \emph{2222}, \emph{1284}, \emph{1828}, \emph{1661}, \emph{1108}, \emph{2288}, \emph{1821}, \emph{1545}, \emph{1638}, \emph{1840}, \emph{1545}, \emph{3.5}, \emph{1642}, \emph{1316}, \emph{1593}, \emph{1791}, \emph{2200}, \emph{1136}, \emph{2151}, \emph{1668}, \emph{2019}, \emph{1960}, \emph{1860}, \emph{978.4}, \emph{1455}, \emph{1812}, \emph{1023}, \emph{1229}, \emph{1790}, \emph{1884}, \emph{1732}, \emph{1057}, \emph{950.1}, \emph{2256}, \emph{1629}, \emph{1544}, \emph{1440}, \emph{902.8}, \emph{1806}, \emph{1391}, \emph{1409}, \emph{1967}, \emph{1911}, \emph{2196}, \emph{1262}, \emph{1825}, \emph{2196}, \emph{944.6}, \emph{1070}, \emph{934.1}, \emph{770.4}, \emph{1540} and \emph{1827}
 
-De un primer vistazo es difícil (por no decir imposible) que podamos comprender los datos y tener una visión clara de las altitudes de este conjunto de cumbres. Las estadísticas descriptivas permiten resumir y así tener una mejor visión general de los datos. Por supuesto, al resumir los datos a través de una o varias medidas, inevitablemente se perderá parte de la información. Sin embargo, en muchos casos es mejor perder algo de información pero, a cambio, obtener una visión general. Podriamos decir que se trata de \emph{ganar perspectiva}.
+De un primer vistazo es difícil (por no decir imposible) que podamos comprender los datos y tener una visión clara de los salarios de este grupo de personas. Las estadísticas descriptivas permiten resumir y así tener una mejor visión general de los datos. Por supuesto, al resumir los datos a través de una o varias medidas, inevitablemente se perderá parte de la información. Sin embargo, en muchos casos es mejor perder algo de información pero, a cambio, obtener una visión general. Podriamos decir que se trata de \emph{ganar perspectiva}.
 
 La estadística descriptiva es a menudo el primer paso y una parte importante en cualquier análisis estadístico. Permite comprobar la calidad de los datos detectando posibles valores atípicos (\emph{outliers}), es decir, datos que parecen ser significativamente distintos del resto. También se puede utilizar estadística descriptiva para detectar errores de recopilación o codificación, determinar si están bien presentados, entre otras posibles aplicaciones.
 
@@ -1076,30 +1076,30 @@ Las medidas de tendencia central permiten ver ``dónde'' se ubican los datos, al
 \hypertarget{muxednimo-y-muxe1ximo}{%
 \subsection{Mínimo y máximo}\label{muxednimo-y-muxe1ximo}}
 
-Mínimo (\(min\)) y máximo (\(max\)) son simplemente los valores más bajo y más alto de la muestra. Dada la altitud (en metros) de una muestra de 6 cumbres:
+Mínimo (\(min\)) y máximo (\(max\)) son simplemente los valores más bajo y más alto de la muestra. Dada una muestra de 6 de estos salarios:
 
-\emph{1887}, \emph{1694}, \emph{1786}, \emph{1813}, \emph{1790} and \emph{1739}
+\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702} and \emph{1447}
 
-El mínimo es 1693.5 m y el máximo es 1887.1 m. Estas dos estadísticas básicas dan una idea clara sobre el los extremos de la muestra y su cálculo con R es bastante sencillo:
+El mínimo es 1217.7 euros y el máximo es 2185.5 euros. Estas dos estadísticas básicas dan una idea clara sobre el los extremos de la muestra y su cálculo con R es bastante sencillo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{min}\NormalTok{(altitudes_sel)}
+\KeywordTok{min}\NormalTok{(salarios_sel)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1693.5
+## [1] 1217.7
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{max}\NormalTok{(altitudes_sel)}
+\KeywordTok{max}\NormalTok{(salarios_sel)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1887.1
+## [1] 2185.5
 \end{verbatim}
 
 \hypertarget{media}{%
@@ -1108,20 +1108,20 @@ El mínimo es 1693.5 m y el máximo es 1887.1 m. Estas dos estadísticas básica
 La media o promedio, es probablemente la estadística más habitual. Da una idea de cuál es el valor medio, es decir, el valor central de los datos o, en otras palabras, su centro de gravedad. La media se encuentra sumando todos los valores y dividiendo esta suma por el número de observaciones (\(n\)):
 
 \[Media =\overline{x}=\frac{\text{suma de todos los valores}}{\text{número de valores}} = \frac{1}{n}\sum^{n}_{i=1}x_i\]
-Dada nuestra muestra de 6 cumbres presentada anteriormente, la media es:
+Dada nuestra muestra de 6 salarios presentada anteriormente, la media es:
 
-\[\overline{x} = \frac{1887 + 1694 + 1786 + 1813 + 1790 + 1739}{6}= 1784,833\]
+\[\overline{x} = \frac{2186 + 1218 + 1682 + 1816 + 1702 + 1447}{6}= 1675,033\]
 
-En conclusión, el tamaño medio de nuestra muestra de 6 cumbres es 1785 m (redondeado a 2 decimales). El cálculo con R también resulta bastante sencillo:
+En conclusión, el tamaño medio de la nuestra muestra es 1675.03 euros (redondeado a 2 decimales). El cálculo con R también resulta bastante sencillo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(altitudes_sel)}
+\KeywordTok{mean}\NormalTok{(salarios_sel)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1785
+## [1] 1675.033
 \end{verbatim}
 
 \hypertarget{mediana}{%
@@ -1139,50 +1139,65 @@ La forma más fácil de calcular la mediana es primero ordenar los datos de meno
   si \(n\) es par: \[mediana(x) = \frac{1}{2}\big(x_{\frac{n}{2}} + x_{\frac{n}{2} + 1} \big)\]
 \end{itemize}
 
-donde el subíndice de \$ x \$ denota la numeración de los datos ordenados. El cálculo en R es de nuevo bastante sencillo:
+donde el subíndice de \(x\) denota la numeración de los datos ordenados. El cálculo en R es de nuevo bastante sencillo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{median}\NormalTok{(altitudes_sel)}
+\KeywordTok{median}\NormalTok{(salarios_sel)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1788.35
+## [1] 1691.85
 \end{verbatim}
 
 \hypertarget{primer-y-tercer-cuartil}{%
-\section{Primer y tercer cuartil}\label{primer-y-tercer-cuartil}}
+\subsection{Primer y tercer cuartil}\label{primer-y-tercer-cuartil}}
+
+El primer y tercer cuartil son similares a la mediana en el sentido de que también dividen las observaciones en dos partes, solo que estas partes no son iguales. Recordad que la mediana divide los datos en dos partes iguales (con el 50\% de las observaciones por debajo y el 50\% por encima de la mediana). El primer cuartil divide las observaciones de modo que haya un 25\% de las observaciones \emph{debajo de} este punto y un 75\% \textbf{por encima} del primer cuartil. El tercer cuartil se calcula del mismo modo pero representa el valor con el 75\% de las observaciones por debajo y el 25\% de las observaciones por encima. Existen varios métodos para calcular el primer y tercer cuartil, pero por ejemplo se puede calcular siguiendo los siguientes pasos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ordenar los datos en orden ascendente
+\item
+  Calcular \(0.25\cdot n\) y \(0.75\cdot n\) (es decir, 0.25 y 0.75 veces el número de observaciones)
+\item
+  Redondear estos dos números al siguiente número entero \texttt{ceil}
+\end{enumerate}
+
+Los pasos son los mismos para un número par e impar de observaciones. A continuación se muestra un ejemplo para el cálculo de estos valores sobre los salarios de nueve trabajadores:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{quantile}\NormalTok{(salarios_sel)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       0%      25%      50%      75%     100% 
+## 1217.700 1505.575 1691.850 1787.825 2185.500
+\end{verbatim}
+
+Dado que obtenemos un vector de resultados, podemos seleccionar por posición para obtener el que necesitemos en cada caso.
 
 \hypertarget{moda}{%
 \subsection{Moda}\label{moda}}
 
-La moda de una serie es el valor que aparece con mayor frecuencia. En otras palabras, es el valor que tiene el mayor número de ocurrencias. Dada la altitud de 9 cimas:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{pander}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1700}\NormalTok{, }\DecValTok{1680}\NormalTok{, }\DecValTok{1710}\NormalTok{, }\DecValTok{1700}\NormalTok{, }\DecValTok{1820}\NormalTok{, }\DecValTok{1650}\NormalTok{, }\DecValTok{1700}\NormalTok{, }\DecValTok{1890}\NormalTok{, }\DecValTok{1670}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
+La moda de una serie es el valor que aparece con mayor frecuencia. En otras palabras, es el valor que tiene el mayor número de ocurrencias. Dados los siguientes salarios:
 
 \emph{1700}, \emph{1680}, \emph{1710}, \emph{1700}, \emph{1820}, \emph{1650}, \emph{1700}, \emph{1890} and \emph{1670}
 
-La moda es 1700 porque es el valor más común con 3 apariciones. Todos los demás valores aparecen solo una vez. En conclusión, la mayoría de los adultos de esta muestra miden exactamente 1700 m de altitud.
+La moda es 1700 porque es el valor más común con 3 apariciones. Todos los demás valores aparecen solo una vez. En conclusión, la mayoría de los trabajadores de esta muestra perciben exactamente 1700 euros al mes.
 
 Hay que tener en cuenta que es posible que una serie no tenga moda (p.~Ej., \emph{4}, \emph{7}, \emph{2} and \emph{10}) o más de una moda (p.~Ej., \emph{4}, \emph{2}, \emph{2}, \emph{8}, \emph{11} and \emph{11}). Los datos con dos modas a menudo se denominan bimodales y los datos con más de dos modos a menudo se denominan multimodales, a diferencia de las series con una moda, que se denominan unimodales.
 
-A diferencia de las anteriores estadísticas (mínimo, máximo, media, mediana, primer y tercer cuartil) que solo se pueden calcular para variables cuantitativas, \textbf{la moda se puede calcular para variables cuantitativas y cualitativas}. Dado el uso del suelo de los 9 lugares presentados anteriormente:
+A diferencia de las anteriores estadísticas (mínimo, máximo, media, mediana, primer y tercer cuartil) que solo se pueden calcular para variables cuantitativas, \textbf{la moda se puede calcular para variables cuantitativas y cualitativas}. Atendiendo al tipo de empleo que desarrollan los 9 trabajadores presentados anteriormente:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{)}
-\KeywordTok{pander}\NormalTok{(}\KeywordTok{sample}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"forestal"}\NormalTok{, }\StringTok{"agrícola"}\NormalTok{, }\StringTok{"urbano"}\NormalTok{), }\DataTypeTok{size =} \DecValTok{9}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
+\emph{ingeniero}, \emph{ingeniero}, \emph{ingeniero}, \emph{ingeniero}, \emph{asistente}, \emph{asistente}, \emph{asistente}, \emph{ingeniero} and \emph{camarero}
 
-\emph{forestal}, \emph{forestal}, \emph{forestal}, \emph{forestal}, \emph{agrícola}, \emph{agrícola}, \emph{agrícola}, \emph{forestal} and \emph{urbano}
-
-La moda es ``forestal'', por lo que la mayoría de las lugares de esta muestra son de uso forestal (como es común a partir de ciertas altitudes).
+La moda es ``ingeniero'', por lo que la mayoría de los trabajadores de esta muestra son de uso ingenieros.
 
 \hypertarget{dispersiuxf3n}{%
 \section{Dispersión}\label{dispersiuxf3n}}
@@ -1194,26 +1209,48 @@ El rango es la diferencia entre el máximo y el mínimo:
 
 \[rango = max - min\]
 
-Dada nuestra muestra de altitudes de seis cumbres:
+Dada nuestra muestra de salarios:
 
-\emph{1887}, \emph{1694}, \emph{1786}, \emph{1813}, \emph{1790} and \emph{1739}
+\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702} and \emph{1447}
 
-El rango es 1887.1 \(-\) 1693.5 \(=\) 193.6 cm. El rango es muy sencillo de calcular y en algunos casos puede dar una buena idea de lo que podemos esperar de un conjunto de datos. En R se puede utilizar la función \texttt{range}
+El rango es 2185.5 \(-\) 1217.7 \(=\) 967.8 euros. El rango es muy sencillo de calcular y en algunos casos puede dar una buena idea de lo que podemos esperar de un conjunto de datos. En R se puede utilizar la función \texttt{range}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{range}\NormalTok{(altitudes_sel)}
+\KeywordTok{range}\NormalTok{(salarios_sel)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1693.5 1887.1
+## [1] 1217.7 2185.5
 \end{verbatim}
 
 No obstante, esta métrica no da ninguna información de la distribución interna del resto de medidas.
 
 \hypertarget{desviaciuxf3n-estuxe1ndard}{%
 \subsection{Desviación estándard}\label{desviaciuxf3n-estuxe1ndard}}
+
+La desviación estándar es la medida de dispersión más común en estadística. Si tenemos que presentar una estadística que resuma la distribución de los datos, suele ser la desviación estándar. Como sugiere su nombre, la desviación estándar indica cuál es la desviación \emph{normal} de los datos. De hecho, calcula la desviación promedio de la \textbf{media}. Cuanto mayor sea la desviación estándar, más dispersos estarán los datos. Por el contrario, cuanto menor es la desviación estándar, más se centran los datos alrededor de la media.
+
+Existen dos fórmulas para calcular la desviación estándard en función de si nos enfrentamos a una muestra o a una población. Una población incluye a todos los miembros de un grupo específico, mientras que una muestra contiene algunas observaciones extraídas de la población, es decir, una parte o un subconjunto de la población. Por ejemplo, la población puede ser ``\textbf{todas} personas que viven en España'' y la muestra puede ser ``\textbf{algunas} personas que viven en España''.
+
+La desviación estándar para una población, a partir de ahora \(\sigma\), es:
+
+\[\sigma = \sqrt{\frac{1}{n}\sum^n_{i = 1}(x_i - \mu)^2}\]
+Como se puede ver en la fórmula, la desviación estándar es en realidad la desviación promedio de los datos de su media \(\mu\). Hay calcular primero el cuadrado de la diferencia entre las observaciones y la media para evitar que las diferencias negativas se compensen con diferencias positivas.
+
+Por ejemplo, imagine una población de solo 3 trabajadores:
+
+\emph{770.4}, \emph{1540} and \emph{1827}
+
+La media es 1379 (redondeado a 1 decimal). La desviación estándar es entonces:
+
+\[\sigma = \sqrt{\frac{1}{3}\big[(770.4 - 1379)^2 + (1540 - 1379)^2 + (1827 - 1379)^2 \big]}\]
+\[\sigma = 546,2\]
+
+Por lo tanto, la desviación estándar para los salarios de estos trabajadores es de 546,2 euros. Esto significa que los salarios de los trabajadores de esta población se desvían de la media en 546,2 euros.
+
+\ldots{}
 
 \hypertarget{varianza}{%
 \subsection{Varianza}\label{varianza}}
@@ -1226,14 +1263,14 @@ No obstante, esta métrica no da ninguna información de la distribución intern
 
 Las correlaciones entre variables juegan un papel importante en un \textbf{análisis descriptivo}. Una correlación mide la \textbf{relación entre dos variables}, es decir, cómo están vinculadas entre sí. En este sentido, una correlación permite saber si dos variables evolucionan en la misma dirección, en sentido contrario y si son independientes.
 
-En este artículo, muestro cómo calcular \textbf{coeficientes de correlación}, cómo realizar \textbf{pruebas de correlación} y cómo \textbf{visualizar} correlaciones entre variables usando R.
+En este capítulo, se muestra cómo calcular \textbf{coeficientes de correlación}, cómo realizar \textbf{pruebas de correlación} y cómo \textbf{visualizar} correlaciones entre variables usando R.
 
 La correlación generalmente se calcula en dos variables \emph{cuantitativas}, pero también se puede calcular en dos variables \emph{cualitativas ordinales} (ver prueba de independencia de chi-cuadrado).
 
 \hypertarget{datos}{%
 \subsection{Datos}\label{datos}}
 
-En este artículo, usaremos el conjunto de datos \texttt{mtcars}. Este conjunto de datos viene cargado por defecto en R, de modo que se utiliza en numerosas demostraciones.
+Usaremos el conjunto de datos \texttt{mtcars}. Este conjunto de datos viene cargado por defecto en R, de modo que se utiliza en numerosas demostraciones.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1423,7 +1460,7 @@ Una buena forma de visualizar una correlación entre 2 variables es mediante un 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-41-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-43-1.pdf}
 
 Para visualizar la relación entre más de 2 variablesse puede usar la función \texttt{pair\ ()}. En este caso limitamos el ejemplo a tres variables:
 
@@ -1434,7 +1471,7 @@ Para visualizar la relación entre más de 2 variablesse puede usar la función 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-42-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf}
 
 Por otra parte, existen numerosas librerías de R que permiten generar este tipo de gráficos con distintas opciones. Por ejemplo con \texttt{ggplot2}:
 
@@ -1450,7 +1487,7 @@ Por otra parte, existen numerosas librerías de R que permiten generar este tipo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-43-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 O representaciones más modernas como con la librería \texttt{corrplot}:
 
@@ -1466,7 +1503,7 @@ O representaciones más modernas como con la librería \texttt{corrplot}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 \hypertarget{ejercicios}{%
 \section{Ejercicios}\label{ejercicios}}
@@ -1480,6 +1517,796 @@ O representaciones más modernas como con la librería \texttt{corrplot}:
 
 \hypertarget{estaduxedstica-inferencial}{%
 \chapter{Estadística inferencial}\label{estaduxedstica-inferencial}}
+
+La \textbf{estadísticas descriptiva} es la rama de las estadística que tiene como objetivo \textbf{describir y resumir un conjunto de datos} de la mejor manera posible, es decir, con la menor pérdida de información posible. Con la estadística descriptiva no hay incertidumbre, porque describimos solo el grupo de observaciones en las que decidimos trabajar y no se intenta generalizar las características observadas o estudiar un grupo más grande a partir de un conjunto de datos limitado.
+
+Por otro lado, \textbf{La estadística inferencial} es la rama de la estadística que utiliza una muestra aleatoria de datos tomados de una población para hacer inferencias, es decir, \textbf{sacar conclusiones sobre la \emph{población} de interés}. En otras palabras, la información de la muestra se utiliza para hacer generalizaciones sobre el \emph{parámetro} de interés en la población.
+
+Las dos herramientas más importantes utilizadas en estadística inferencial son los test de hipótesis y los intervalos de confianza.
+
+\hypertarget{distribuciones-de-probabilidad}{%
+\section{Distribuciones de probabilidad}\label{distribuciones-de-probabilidad}}
+
+Una distribución de probabilidad es una función que describe la probabilidad de obtener los posibles valores que puede asumir una variable aleatoria. En otras palabras, los valores de la variable varían según la distribución de probabilidad subyacente.
+
+Supongamos que seleccionamos una muestra aleatoria de personas y medimos la altura de los sujetos. A medida que vamos midiendo las alturas, podemos crear una distribución de alturas. Este tipo de distribución es útil cuando necesita saber qué resultados son más probables, la dispersión de los valores potenciales y la probabilidad de resultados diferentes. Por lo tanto se puede utilizar distribuciones de probabilidad para realizar inferencias.
+
+\hypertarget{funciones-de-r-para-distribuciones-de-probabilidad}{%
+\subsection{Funciones de R para distribuciones de probabilidad}\label{funciones-de-r-para-distribuciones-de-probabilidad}}
+
+R tiene varias funciones para trabajar con cada distribución de probabilidad. Hay un nombre de raíz, por ejemplo, el nombre de raíz para la distribución normal es \texttt{norm}. Esta raíz tiene como prefijo una de las letras:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{p} para ``probabilidad'', la función de distribución acumulativa.
+\item
+  \texttt{q} para ``cuantil'', el inverso de la función de distribución acumulativa.
+\item
+  \texttt{d} para ``densidad'', la función de densidad (p.~f.~o p.~d.~f.)
+\item
+  \texttt{r} para ``aleatorio'', una variable aleatoria que tiene la distribución especificada
+\end{itemize}
+
+Para la distribución normal, estas funciones son \texttt{pnorm}, \texttt{qnorm}, \texttt{dnorm} y \texttt{rnorm}, mientras que para la distribución binomial, estas funciones son \texttt{pbinom}, \texttt{qbinom}, \texttt{dbinom} y \texttt{rbinom}.
+
+Para una distribución continua (como la normal), las funciones más útiles para resolver problemas que involucran cálculos de probabilidad son las funciones \texttt{p} y \texttt{q}, porque la densidad por la función \texttt{d} solo se puede usar para calcular probabilidades a través de integrales.
+
+Para una distribución discreta (como la binomial), la función \texttt{d} calcula la densidad (p.~F.), Que en este caso es una probabilidad
+
+\(f(x) = P(X = x)\)
+
+y por lo tanto es útil para calcular probabilidades.
+
+R tiene funciones para manejar muchas distribuciones de probabilidad. La siguiente tabla proporciona los nombres de las funciones para cada distribución y un enlace a la documentación en línea que es la referencia autorizada sobre cómo se utilizan las funciones. Pero no lea la documentación en línea todavía. Primero, pruebe los ejemplos de las secciones que siguen a la tabla.
+
+library(readr)
+probability\_distribution\_functions\_in\_r \textless- read\_csv(``probability-distribution-functions-in-r.csv'')
+
+\label{tab:table-probability-functions}Funciones para distribución de probabilidades in R.
+
+Distribution
+
+p
+
+q
+
+d
+
+r
+
+Beta
+
+pbeta
+
+qbeta
+
+dbeta
+
+rbeta
+
+Binomial
+
+pbinom
+
+qbinom
+
+dbinom
+
+rbinom
+
+Cauchy
+
+pcauchy
+
+qcauchy
+
+dcauchy
+
+rcauchy
+
+Chi-Square
+
+pchisq
+
+qchisq
+
+dchisq
+
+rchisq
+
+Exponential
+
+pexp
+
+qexp
+
+dexp
+
+rexp
+
+F
+
+pf
+
+qf
+
+df
+
+rf
+
+Gamma
+
+pgamma
+
+qgamma
+
+dgamma
+
+rgamma
+
+Geometric
+
+pgeom
+
+qgeom
+
+dgeom
+
+rgeom
+
+Hypergeometric
+
+phyper
+
+qhyper
+
+dhyper
+
+rhyper
+
+Logistic
+
+plogis
+
+qlogis
+
+dlogis
+
+rlogis
+
+Log Normal
+
+plnorm
+
+qlnorm
+
+dlnorm
+
+rlnorm
+
+Negative Binomial
+
+pnbinom
+
+qnbinom
+
+dnbinom
+
+rnbinom
+
+Normal
+
+pnorm
+
+qnorm
+
+dnorm
+
+rnorm
+
+Poisson
+
+ppois
+
+qpois
+
+dpois
+
+rpois
+
+Student t
+
+pt
+
+qt
+
+dt
+
+rt
+
+Studentized Range
+
+ptukey
+
+qtukey
+
+dtukey
+
+rtukey
+
+Uniform
+
+punif
+
+qunif
+
+dunif
+
+runif
+
+Weibull
+
+pweibull
+
+qweibull
+
+dweibull
+
+rweibull
+
+Wilcoxon Rank Sum Statistic
+
+pwilcox
+
+qwilcox
+
+dwilcox
+
+rwilcox
+
+Wilcoxon Signed Rank Statistic
+
+psignrank
+
+qsignrank
+
+dsignrank
+
+rsignrank
+
+\hypertarget{la-distribuciuxf3n-binomial}{%
+\subsection{La distribución binomial}\label{la-distribuciuxf3n-binomial}}
+
+\hypertarget{la-distribuciuxf3n-normal}{%
+\subsection{La distribución normal}\label{la-distribuciuxf3n-normal}}
+
+\hypertarget{introduccion-a-los-test-de-hipuxf3tesis}{%
+\section{Introduccion a los test de hipótesis}\label{introduccion-a-los-test-de-hipuxf3tesis}}
+
+Primero cabe preguntarse por qué intentaríamos hacer inferencias sobre un parámetro de una población basada en una muestra, en lugar de simplemente recopilar datos para toda la población, calcular estadísticas que nos interesan y tomar decisiones basadas en eso. La principal razón por la que utilizamos una muestra en lugar de toda la población es porque recopilar datos sobre toda la población es más compicado o en ocasiones impracticable por varios motivos (complejidad, coste, limitación de tiempo, entre muchos otros motivos). \footnote{Por ejemplo, una investigación podría consistir en conocer si la población de la provincia de Tarragona está satisfecha con el nuevo plan de movilidad. Si pudiéramos preguntar a toda la población en un período de tiempo razonable, no haríamos ninguna estadística inferencial. No obstante, aún habria que decidir que preguntas se les hace para entender mejor el motivo de su grado de satisfacción, complicando y encareciendo aún más la encuesta.}
+
+El \textbf{objetivo general de una prueba de hipótesis es sacar conclusiones para confirmar o refutar una creencia sobre una población}, basándonos en un grupo más pequeño de observaciones.
+
+Las pruebas de hipótesis tienen muchas aplicaciones prácticas. Aquí ponemos algunos ejemplos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Una media: supongamos que a un político le gustaría le gustaría probar si el salario medio de los trabajadores españoles es diferente de 1200 euros.
+\item
+  Dos medias:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Muestras independientes: suponga que a un fisioterapeuta le gustaría probar la eficacia de un nuevo tratamiento midiendo el tiempo de respuesta medio (en segundos) para los pacientes de un grupo de control y los pacientes de un grupo de tratamiento, donde los pacientes de los dos grupos son diferentes.
+  \item
+    Muestras pareadas: suponga que a un fisioterapeuta le gustaría probar la eficacia de un nuevo tratamiento midiendo el tiempo de respuesta medio (en segundos) antes y después de un tratamiento, donde los pacientes se miden dos veces, antes y después del tratamiento, por lo que los pacientes son lo mismo en las 2 muestras.
+  \end{itemize}
+\item
+  Una proporción: supongamos que a un experto en política le gustaría comprobar si la proporción de ciudadanos que van a votar por un candidato específico es inferior al 30\%.
+\item
+  Dos proporciones: suponga que a un médico le gustaría probar si la proporción de fumadores es diferente entre atletas profesionales y aficionados.
+\item
+  Una variación: suponga que un ingeniero quisiera probar si un voltímetro tiene una variabilidad menor que la impuesta por las normas de seguridad.
+\item
+  Dos variaciones: suponga que, en una fábrica, dos líneas de producción funcionan independientemente una de la otra. El gerente financiero quisiera probar si los costos del mantenimiento semanal de estas dos máquinas tienen la misma variación. Tenga en cuenta que a menudo también se realiza una prueba de dos varianzas para verificar la suposición de varianzas iguales, que se requiere para varias otras pruebas estadísticas, como la {[}prueba t de Student{]} (/ blog / student-st-test-in-r -y-a-mano-cómo-comparar-dos-grupos-bajo-diferentes-escenarios /) por ejemplo.
+\end{enumerate}
+
+Por supuesto, hay muchísimas más aplicaciones potenciales y muchas preguntas de investigación pueden responderse gracias a una prueba de hipótesis.
+
+Por lo general, \textbf{las pruebas de hipótesis se utilizan para responder preguntas de investigación en análisis confirmatorios}. Los análisis confirmatorios se refieren a análisis estadísticos donde las hipótesis --- deducidas de la teoría --- se definen de antemano (preferiblemente antes de la recopilación de datos). En este enfoque, la investigadora tiene una idea específica sobre las variables en consideración y está tratando de ver si su idea, especificada como hipótesis, está respaldada por datos.
+
+Podemos utilizar al menos tres métodos diferentes para realizar una prueba de hipótesis comparando:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  la estadística de prueba con el \textbf{valor crítico}.
+\item
+  el \textbf{\emph{p}-valor} con el nivel de significancia \(\alpha\).
+\item
+  el parámetro objetivo con el \textbf{intervalo de confianza}.
+\end{enumerate}
+
+Estos enfoques puede diferir en algunos aspectos pero tienen muchos puntos en común. El uso de uno u otro método es a menudo una cuestión de elección personal o de contexto.
+
+Para los tres métodos, explicaré los pasos necesarios para realizar una prueba de hipótesis desde un punto de vista general y los ilustraré con la siguiente situación: \^{} {[}Puede ver más o menos pasos en otros artículos o libros de texto, dependiendo de si estos pasos son detallados o concisos. Sin embargo, la prueba de hipótesis debe seguir el mismo proceso independientemente del número de pasos{]}.
+
+\begin{quote}
+Supongamos que un político quisiera comprobar si el salario medio de los trabajadores españoles es diferente de 1.200 euros.
+En la mayoría de las pruebas de hipótesis, la prueba que vamos a utilizar como ejemplo a continuación requiere algunas condiciones. Dado que el objetivo del presente artículo es explicar una prueba de hipótesis, asumimos que se cumplen todos los supuestos.
+\end{quote}
+
+\hypertarget{comparando-la-estaduxedstica-de-prueba-con-el-valor-cruxedtico.}{%
+\subsection{\texorpdfstring{Comparando la estadística de prueba con el \textbf{valor crítico}.}{Comparando la estadística de prueba con el valor crítico.}}\label{comparando-la-estaduxedstica-de-prueba-con-el-valor-cruxedtico.}}
+
+Este metodo consiste en reproducir los siguientes 4 pasos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Establecer la \textbf{hipótesis nula y alternativa}
+\item
+  Calcular la \textbf{estadística de prueba}
+\item
+  Encontrar el \textbf{valor crítico}
+\item
+  \textbf{Concluir} e interpretar los resultados
+\end{enumerate}
+
+\hypertarget{estableciendo-la-hipuxf3tesis-nula-y-alternativa}{%
+\subsubsection{Estableciendo la hipótesis nula y alternativa}\label{estableciendo-la-hipuxf3tesis-nula-y-alternativa}}
+
+Una prueba de hipótesis primero requiere una suposición sobre un fenómeno o hipótesis, que se deriva de la teoría y la pregunta de investigación.
+
+Dado que una prueba de hipótesis se utiliza para confirmar o refutar una creencia previa, necesitamos \textbf{formular nuestra creencia de modo que haya una hipótesis nula y una alternativa}. Esas hipótesis deben ser \textbf{mútuamente excluyentes}, lo que significa que no pueden ser verdaderas al mismo tiempo. En el contexto, las hipótesis nula y alternativa son así:
+
+\begin{itemize}
+\tightlist
+\item
+  Hipótesis nula \(H_0:\mu=1200\)
+\item
+  Hipótesis alternativa \(H_1:\mu\ne 1200\)
+\end{itemize}
+
+Al plantear la hipótesis nula y alternativa, tenga en cuenta los siguientes tres puntos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{Siempre estamos interesados en la población y no en la muestra.} Esta es la razón por la que \(H_0\) y \(H_1\) siempre se escribirán en términos de población y no en términos de muestra (en este caso, \(\mu\) y no \(\overline{x}\)).
+\item
+  \emph{La suposición que nos gustaría probar es a menudo la hipótesis alternativa.} Si quisieramos probar si el salario medio de los trabajadores españoles es inferior a 1200 euros, habríamos establecido que \(H_0:\mu = 1200\) (o equivalentemente, \(H_0:\mu\ge 1200\)) y \(H_1:\mu<1200\). \textbf{\emph{No hay que confundir la hipótesis nula con la alternativa, o las conclusiones serán diametralmente opuestas}}.
+\item
+  \emph{La hipótesis nula es a menudo el status quo.} Por ejemplo, suponiendo que un empresario quiere probar si el nuevo logo de su marca es mejor valorado que el logo anterior. El \emph{status quo} es que los dos logos sean igualmente valorados. Suponiendo que un valor mayor es mejor, entonces se escribirá \(H_0:\mu_{nuevo}=\mu_{viejo}\) (o equivalentemente, \(H_0:\mu_{nuevo} - \mu_{viejo} = 0\)) y \(H_1:\mu_{nuevo}>\mu_{viejo}\) (o equivalentemente, \(H_0:\mu_{nuevo} - \mu_{viejo}> 0\)). Por el contrario, si cuanto más bajo mejor, habríamos escrito \(H_0: \mu_{nuevo} = \mu_{viejo}\) (o equivalentemente, \(H_0: \mu_{nuevo} - \mu_{viejo} = 0\)) y \(H_1:\mu_{nuevo} <\mu_{viejo}\) (o equivalentemente, \(H_0: \mu_{nuevo} - \mu_{viejo}<0\)).
+\end{enumerate}
+
+\hypertarget{calcular-la-estaduxedstica-de-prueba}{%
+\subsubsection{Calcular la estadística de prueba}\label{calcular-la-estaduxedstica-de-prueba}}
+
+La \textbf{estadística de prueba} (o \textbf{t-stat}) es una métrica que indica \textbf{qué tan extremas son las observaciones en comparación con la hipótesis nula}. Cuanto mayor sea el \emph{t}-stat (en valor absoluto), más extremas serán las observaciones.
+
+Hay varias fórmulas para calcular el t-stat, con una fórmula para cada tipo de prueba de hipótesis: una o dos medias, una o dos proporciones, una o dos varianzas. Esto significa que hay una fórmula para calcular el t-stat para una prueba de hipótesis en una media, otra fórmula para una prueba en dos medias, otra para una prueba en una proporción, etc. \footnote{Incluso hay diferentes fórmulas dentro de cada tipo de prueba, dependiendo de si se cumplen o no algunos supuestos.} La única dificultad en este segundo paso es elegir la fórmula adecuada. Tan pronto como se sepa qué fórmula utilizar según el tipo de prueba, simplemente debe aplicársele a los datos. Afortunadamente, las fórmulas para las pruebas de hipótesis en una y dos medias, y una y dos proporciones siguen la misma estructura.
+
+Calcular la estadística de prueba para estas pruebas es similar a \emph{escalar} una variable aleatoria (un proceso también conocido como ``estandarización'' o ``normalización'') que consiste en restar la media de esa variable aleatoria y dividir el resultado por la desviación estándar:
+
+\[Z = \frac{X - \mu}{\sigma}\]
+Para estas 4 pruebas de hipótesis (una/dos medias y una/dos proporciones), calcular el estadístico de prueba es como escalar el estimador (calculado a partir de la muestra) correspondiente al parámetro de interés (en la población). Así que básicamente restamos el parámetro objetivo del estimador puntual y luego dividimos el resultado por el error estándar (que es equivalente a la desviación estándar, pero para un estimador).
+
+Si esto no está claro, así es como se calcula la estadística de prueba (\(t_{obs}\)) en nuestro ejemplo (asumiendo que se desconoce la varianza de la población):
+
+\[t_{obs} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}\]
+
+dónde:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\overline{x}\) es la media de la muestra (es decir, el estimador)
+\item
+  \(\mu\) es la media bajo la hipótesis nula (es decir, el parámetro objetivo)
+\item
+  \(s\) es la desviación estándar de la muestra
+\item
+  \(n\) es el tamaño de la muestra
+\item
+  (\(\frac{s}{\sqrt{n}}\) es el error estándar)
+\end{itemize}
+
+Suponiendo que en nuestro caso tenemos una media muestral de 1150 euros (\(\overline{x} = 1150\)), una desviación estándar muestral de 200 euros (\(s=200\)) y un tamaño de muestra de 30 trabajadores (\(n=30\)) y, teniendo en cuenta que la media poblacional (la media bajo la hipótesis nula) es 1200 euros (\(\mu=1200\)), el t-stat quedaría así:
+
+\[t_{obs} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{1150 - 1200}{\frac{200}{\sqrt{30}}} = -1.369306\]
+
+Aunque las fórmulas son diferentes según el parámetro que esté probando, el valor encontrado para la estadística de prueba nos da una indicación de cuán extremas son nuestras observaciones.
+
+Recordemos este valor de \texttt{-1.369306} porque se volverá a utilizar al final de este test para compararlo con el valor crítico.
+
+\hypertarget{encontrando-el-valor-cruxedtico}{%
+\subsubsection{Encontrando el valor crítico}\label{encontrando-el-valor-cruxedtico}}
+
+Aunque el \texttt{t-stat} nos da una indicación como de extremas son nuestras observaciones, necesitamos comparar este valor con un umbral o \textbf{valor crítico}, que viene dado por una \textbf{\emph{distribución de probabilidad}}.
+
+De la misma manera que la fórmula para calcular el \texttt{t-stat} es diferente para cada parámetro de interés, la distribución de probabilidad subyacente en la que se basa el \emph{valor crítico} también es diferente para cada parámetro objetivo. Esto significa que, además de elegir la fórmula apropiada para calcular el \texttt{t-stat}, también necesitamos seleccionar la distribución de probabilidad apropiada dependiendo del parámetro que estemos probando.
+
+Afortunadamente, solo hay 4 distribuciones de probabilidad diferentes para las pruebas de hipótesis cubiertas aquí (recordemos que son una/dos medias, una/dos proporciones y una/dos varianzas):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Distribución normal estándar:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    prueba en una y dos medias con varianzas de población conocidas.
+  \item
+    prueba en dos muestras donde se conoce la varianza de la diferencia entre las 2 muestras \(\sigma^2_D\)
+  \item
+    prueba en una y dos proporciones (dado que se cumplen algunos supuestos).
+  \end{itemize}
+\item
+  Distribución de Student:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    prueba en una y dos medias con *varianza(s) de población desconocida(s).
+  \item
+    prueba en dos muestras donde la varianza de la diferencia entre las 2 muestras \(\sigma^2_D\) es \emph{desconocida}.
+  \end{itemize}
+\item
+  Distribución Chi-cuadrado:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    prueba en una varianza.
+  \end{itemize}
+\item
+  Distribution de fisher:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    prueba en dos varianzas.
+  \end{itemize}
+\end{enumerate}
+
+Cada distribución de probabilidad tiene sus propios parámetros, definiendo su forma y/o ubicación. Los parámetros de una distribución de probabilidad pueden verse como si fuesen marcadores de ADN; lo que significa que la distribución está completamente definida por su(s) parámetro(s).
+
+Volviendo a nuestra investigación, la distribución de probabilidad subyacente de una prueba en una media es la distribución Normal estándar o de Student, dependiendo de si la varianza de la \emph{población} (no la varianza de la muestra) es conocida o no:
+
+\begin{itemize}
+\tightlist
+\item
+  Si se conoce la varianza de la población \(\rightarrow\), se usa la distribución Normal estándar
+\item
+  Si la varianza de la población es \emph{desconocida} \(\rightarrow\), se utiliza la distribución de Student
+\end{itemize}
+
+Si no se proporciona explícitamente la varianza de la población, se puede suponer que es desconocida, ya que no se puede calcular basándonos en una muestra. Si pudiera calcularlo, eso significaría que tiene acceso a toda la población y, en este caso, no tiene sentido realizar una prueba de hipótesis (simplemente podría usar algunas estadísticas descriptivas para confirmar o refutar su creencia dicha hipótesis. En nuestro ejemplo, no se especifica la varianza de la población, por lo que se supone que es desconocida. Por lo tanto, usaremos la distribución de Student.
+
+La distribución Student tiene un parámetro que la define: el número de grados de libertad. El número de grados de libertad depende del tipo de prueba de hipótesis. Por ejemplo, el número de grados de libertad para una prueba en una media es igual al número de observaciones menos uno (\(n-1\)). Sin ir demasiado lejos en los detalles, el \(- 1\) proviene del hecho de que hay una cantidad que se estima (es decir, la media). Siendo el tamaño de la muestra igual a 30 en nuestro ejemplo, los grados de libertad son iguales a \(n -1 = 30-1=29\).
+
+Por último, para encontrar el valor crítico también es necesario conocer el \textbf{nivel de significancia} \(\alpha\), que es la \textbf{probabilidad de rechazar erróneamente la hipótesis nula aunque en realidad sea verdadera}. En este sentido, es un error de tipo I (en contraposición al error de tipo II) que aceptamos para poder sacar conclusiones sobre una población a partir de un subconjunto de ella.
+
+En muchas aplicaciones el nivel de significancia se suele establecer en el 5\%. En cambio, en algunos campos (como la medicina o la ingeniería, entre otros), el nivel de significancia también se establece a veces en el 1\% para disminuir la tasa de error. Es mejor especificar el nivel de significancia \emph{antes} de realizar una prueba de hipótesis para evitar la tentación de establecer el nivel de significancia de acuerdo con los resultados (la tentación es aún mayor cuando los resultados están al borde de ser significativos). En nuestro caso, tomamos \(\alpha = 5\% = 0.05\).
+
+Además, queremos probar si el salario medio de los trabajadores españoles es \textbf{diferente} de 1200 euros. Si quisiéramos probar que el salario medio fuera inferior a 1200 euros (\(H_1: \mu <1200\)) o superior a 1200 (\$ H\_1: \mu\textgreater1200\$), habríamos realizado una prueba unilateral. Asegúrese de realizar la prueba correcta (bilateral o unilateral) porque tiene un impacto en cómo encontrar el valor crítico.
+
+Ahora que conocemos la distribución apropiada (distribución de Student), su parámetro (grados de libertad (gl) = 29), el nivel de significancia (\(\alpha\) = 0.05) y la dirección (bilateral), tenemos todo lo que necesitamos para calcular el valor crítico. Podríamos localizar este valor en la tabla estadística correspondiente o directamente lo podríamos calcular con R.
+
+Al observar la fila df = 29 y la columna \(t_.025\) en la tabla de distribución de Student, encontramos un valor crítico de:
+
+\[t_{n-1;\alpha/2} = t_{29; 0.025} = 2.04523\]
+
+Tomamos \(t_{\alpha/2} = t_.025\) y no \(t_\alpha = t_.05\) ya que el nivel de significancia es 0.05 y estamos haciendo una prueba bilateral (de dos lados; \$ H\_1: \mu\ne 1200\$), por lo que la tasa de error de 0.05 debe dividirse en 2 para encontrar el valor crítico a la derecha de la distribución. Dado que la distribución de Student es simétrica, el valor crítico a la izquierda de la distribución es simplemente: -2.04523.
+
+Visualmente, la tasa de error de 0.05 se divide en dos partes:
+
+\begin{itemize}
+\tightlist
+\item
+  0,025 a la izquierda de -2,04523 y
+\item
+  0,025 a la derecha de 2,04523
+\end{itemize}
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-47-1.pdf}
+
+Al igual que en el apartado anterior, cabe recordar estos valores críticos de -2,045 y 2,045 el último paso.
+
+Las áreas sombreadas en rojo en el gráfico anterior también se conocen como regiones de rechazo.
+
+Estos valores críticos también se pueden encontrar en R, gracias a la función \texttt{qt\ ()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qt}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\DataTypeTok{df =} \DecValTok{29}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -2.04523
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qt}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\DataTypeTok{df =} \DecValTok{29}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.04523
+\end{verbatim}
+
+Como se ha visto en el tema sobre distribuciones de probabilidad, la función \texttt{qt\ ()} se usa para la distribución de Student (\texttt{q} significa cuantil y\texttt{t} para Student). Cabe recordar que hay otras funciones que acompañan a las diferentes distribuciones:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{qnorm\ ()} para la distribución Normal
+\item
+  \texttt{qchisq\ ()} para la distribución Chi-cuadrado
+\item
+  \texttt{qf\ ()} para la distribución de Fisher
+\end{itemize}
+
+\hypertarget{conclusiuxf3n-e-interpretaciuxf3n-de-los-resultados}{%
+\subsubsection{Conclusión e interpretación de los resultados}\label{conclusiuxf3n-e-interpretaciuxf3n-de-los-resultados}}
+
+Las únicas dos posibilidades al concluir una prueba de hipótesis son:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Rechazo de la hipótesis nula, o
+\item
+  No rechazo de la hipótesis nula
+\end{enumerate}
+
+En nuestro ejemplo sobre los salarios de los españoles, recordamos que hemos determinado que el:
+
+\begin{itemize}
+\tightlist
+\item
+  el \texttt{t-stat} es -1.369306, y
+\item
+  los valores críticos son -2.04523 y 2.04523
+\end{itemize}
+
+Recordemos que:
+
+\begin{itemize}
+\tightlist
+\item
+  el \textbf{t-stat da una indicación de cuán extrema es nuestra muestra} en comparación con la hipótesis nula
+\item
+  los \textbf{valores críticos son el umbral a partir del cual el t-stat se considera \emph{demasiado} extremo}
+\end{itemize}
+
+Para comparar el \texttt{t-stat} con los valores críticos de manera gráfica:
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-49-1.pdf}
+
+Los dos valores críticos forman las regiones de rechazo (las áreas sombreadas en rojo):
+
+\begin{itemize}
+\tightlist
+\item
+  de \(-\infty\) a -2.045, y
+\item
+  de 2.045 a \(\infty\)
+\end{itemize}
+
+Si el \textbf{\emph{t-stat} se encuentra dentro de una de estas regiones, rechazamos la hipótesis nula}. Por el contrario, si \textbf{t-stat \emph{no} se encuentra dentro de ninguna de las regiones, no rechazamos la hipótesis nula}.
+
+Como podemos ver en el gráfico anterior, el \emph{t-stat} es menos extremo que el valor crítico. En conclusión, no rechazamos la hipótesis nula de que \(\mu = 1200\).
+
+Esta es la conclusión en términos estadísticos, pero no tienen sentido sin una interpretación adecuada. Por tanto, es una buena práctica interpretar también el resultado en el contexto del problema:
+
+\begin{quote}
+Con un nivel de significancia del 5\%, no rechazamos la hipótesis de que el salario medio de los trabajadores españoles es de 1200 euros.
+\end{quote}
+
+¿Qué significa esto realmente? Dicho de otro modo:
+
+\begin{quote}
+``nosotros \emph{no rechazamos} la hipótesis nula'' y ``nosotros \emph{no rechazamos} la hipótesis de que el salario medio de los trabajadores españoles es igual a 1200 euros''. No escribimos ``\emph{aceptamos o estamos de acuerdo con} la hipótesis nula'' ni ``el salario medio de los trabajadores españoles es de 1200 euros''.
+\end{quote}
+
+En los test de hipótesis, llegamos a una conclusión sobre la población a partir de una muestra. Por tanto, siempre existe cierta incertidumbre y no podemos decir que estemos seguros al 100\% de que nuestra conclusión sea correcta.
+
+Quizás sea el caso de que el salario medio de los trabajadores españoles sea en realidad diferente a 1200 euros, pero \textbf{no lo pudimos demostrar} con los datos disponibles. Si tuviéramos más observaciones hubiéramos rechazado la hipótesis nula (dado que todo lo demás es igual, un tamaño de muestra más grande implica un \texttt{t-stat} más extremo). O puede darse el caso de que, incluso con más observaciones, no hubiéramos rechazado la hipótesis nula porque el salario de los trabajadores españoles en realidad se acerca a los 1200 euros. Con los datos disponibles no podemos distinguir entre estas dos posibilidades. Simplemente debemos admitir que no encontramos suficiente evidencia en contra de la hipótesis de partida, pero tampoco concluimos que la media sea igual a 1200 euros.
+
+\hypertarget{comparando-el-p-valor-con-el-nivel-de-significancia-alpha}{%
+\subsection{\texorpdfstring{Comparando el \emph{p}-valor con el nivel de significancia \(\alpha\)}{Comparando el p-valor con el nivel de significancia \textbackslash alpha}}\label{comparando-el-p-valor-con-el-nivel-de-significancia-alpha}}
+
+Este método consiste en los siguientes pasos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Enunciar las \textbf{hipótesis nula y alternativa}
+\item
+  Calcular la \textbf{estadística de prueba} (\texttt{t-stat}).
+\item
+  Calcular el \textbf{\emph{p}-valor}
+\item
+  \textbf{Concluir} e interpretar los resultados
+\end{enumerate}
+
+En este segundo método que utiliza el valor \emph{p}, los dos primeros pasos son similares a los del primer método, mientras que la interpretación de los resultados tiene algunos puntos en común.
+
+\hypertarget{establecer-las-hipuxf3tesis}{%
+\subsubsection{Establecer las hipótesis}\label{establecer-las-hipuxf3tesis}}
+
+Las hipótesis de investigación (nula y alternativa) siguen siendo las mismas:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_0:\mu= 1200\)
+\item
+  \(H_1:\mu\ne 1200\)
+\end{itemize}
+
+\hypertarget{calcular-la-estaduxedstica-de-prueba-1}{%
+\subsubsection{Calcular la estadística de prueba}\label{calcular-la-estaduxedstica-de-prueba-1}}
+
+Cabe recordar que la fórmula del estadístico t es diferente según el tipo de prueba de hipótesis (una o dos medias, una o dos proporciones, una o dos varianzas). En nuestro caso de una sola media con varianza desconocida, tenemos que:
+
+\[t_{obs} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{1150 - 1200}{\frac{200}{\sqrt{30}}} = -1.369306\]
+
+\hypertarget{calculo-del-valor-p}{%
+\subsubsection{\texorpdfstring{Calculo del valor \emph{p}}{Calculo del valor p}}\label{calculo-del-valor-p}}
+
+El \textbf{\emph{p}-valor} es la probabilidad (de 0 a 1) de observar una muestra al menos tan extrema como la que observamos si la hipótesis nula fuera cierta. Dicho de otro modo: \textbf{¿cómo de probable es la hipótesis nula?}. También se define como el nivel de significancia más pequeño para el cual los datos indican el rechazo de la hipótesis nula.
+
+Formalmente, el valor \emph{p} es el área más allá del estadístico de prueba. Como estamos haciendo una prueba bidireccional, el valor \emph{p} es, por lo tanto, la suma del área por encima de 1,369306 y por debajo de -1,369306.
+
+Visualmente, el valor \emph{p} es la suma de las dos áreas sombreadas en azul en la siguiente gráfica:
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf}
+
+El valor \emph{p} se puede obtener también con tablas estadísticas o es posible calcularlo con precisión en R con la función \texttt{pt()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p_val <-}\StringTok{ }\KeywordTok{pt}\NormalTok{(}\OperatorTok{-}\FloatTok{1.369306}\NormalTok{, }\DataTypeTok{df =} \DecValTok{29}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{pt}\NormalTok{(}\FloatTok{1.369306}\NormalTok{, }\DataTypeTok{df =} \DecValTok{29}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{p_val}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1814156
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Que es lo mismo que...}
+\NormalTok{p_val <-}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\KeywordTok{pt}\NormalTok{(}\FloatTok{1.369306}\NormalTok{, }\DataTypeTok{df =} \DecValTok{29}\NormalTok{, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{p_val}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1814156
+\end{verbatim}
+
+El valor \emph{p} es 0.1814, que indica que hay un 18.14\% de probabilidad de observar una muestra al menos tan extrema como la observada si el hipótesis nula eran verdaderas. Esto ya nos da una pista sobre si nuestro t-stat es demasiado extremo o no (y, por lo tanto, si nuestra hipótesis nula es probable o no).
+
+Como la función \texttt{qt()} para encontrar el valor crítico, usamos \texttt{pt()} para encontrar el valor \emph{p} porque la distribución subyacente es la distribución de Student. En otros casos se utilizarían las funciones \texttt{pnorm\ ()}, \texttt{pchisq\ ()} y \texttt{pf\ ()} para las otras distribuciones mencionadas anteriormente (Normal, Chi-cuadrado y Fisher).
+
+\hypertarget{concluir-e-interpretar-los-resultados}{%
+\subsubsection{Concluir e interpretar los resultados}\label{concluir-e-interpretar-los-resultados}}
+
+Finalmente, hay que comparar el valor \emph{p} que acabamos de calcular con el nivel de significancia \(\alpha\). Como para todas las pruebas estadísticas:
+
+\begin{itemize}
+\tightlist
+\item
+  Si el \textbf{\emph{p}-valor es menor} que \(\alpha\) (p-valor\(<0.05\)), entonces \(H_0\) es poco probable \(\rightarrow\) \textbf{rechazamos} la hipótesis nula.
+\item
+  Si el \textbf{\emph{p}-valor es mayor que o igual} a \(\alpha\) (\emph{p}-valor \(\ge 0.05\)), entonces \(H_0\) es probable \(\rightarrow\) \textbf{no podemos rechazar} la hipótesis nula.
+\end{itemize}
+
+No importa si tomamos en consideración el \emph{p}-valor exacto (es decir, 0.1814) o el acotado (0.05 \textless{}\emph{p}-valor \textless0.10), es mayor que 0.05, entonces no rechazamos la hipótesis nula. En el contexto del problema, no rechazamos la hipótesis nula de que el salario medio de los trabajadores españoles es igual a 1200 euros.
+
+El resultado obtenido ha sido el mismo que en el primer método. Evidentemente, debería dar lo mismo si se usan los mismos datos y con el mismo nivel de significancia.
+
+\hypertarget{comparaciuxf3n-del-paruxe1metro-objetivo-con-el-intervalo-de-confianza}{%
+\subsection{Comparación del parámetro objetivo con el intervalo de confianza}\label{comparaciuxf3n-del-paruxe1metro-objetivo-con-el-intervalo-de-confianza}}
+
+Este método consiste en calcular primero el intervalo de confianza y comparar sobre éste el parámetro objetivo (el parámetro bajo la hipótesis nula). Podemos distinguir tres pasos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Enunciar las \textbf{hipótesis nula y alternativa}
+\item
+  Calcular el \textbf{intervalo de confianza}
+\item
+  \textbf{Concluir} e interpretar los resultados
+\end{enumerate}
+
+También se pueden apreciar varias similitudes con los métodos anteriores.
+
+\hypertarget{enunciar-las-hipuxf3tesis}{%
+\subsubsection{Enunciar las hipótesis}\label{enunciar-las-hipuxf3tesis}}
+
+Nuevamente, las hipótesis nula y alternativa siguen siendo las mismas:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_0:\mu = 1200\)
+\item
+  \(H_1:\mu\ne 1200\)
+\end{itemize}
+
+\hypertarget{calcular-el-intervalo-de-confianza}{%
+\subsubsection{Calcular el intervalo de confianza}\label{calcular-el-intervalo-de-confianza}}
+
+Al igual que los test de hipótesis, los intervalos de confianza son una herramienta bien conocida en la estadística inferencial. El \textbf{intervalo de confianza} es un procedimiento de estimación que produce un \textbf{intervalo que contiene el parámetro verdadero con una cierta probabilidad}.
+
+De la misma manera que existe una fórmula para cada tipo de prueba de hipótesis al calcular las estadísticas de la prueba, existe una fórmula para cada tipo de intervalo de confianza. La fórmula para calcular un intervalo de confianza en una media \(\mu\) (con varianza poblacional desconocida):
+\[
+(1-\alpha)\text{\%IC para } \mu = \bar{x}\pm t_{\alpha/2, n - 1}\frac{s}{\sqrt{n}}
+\]
+donde \(t_{\alpha/2, n-1}\) se encuentra en la tabla de distribución de Student o se puede calcular con R (y es igual al valor crítico encontrado en el primer método).
+
+Dados nuestros datos y con \(\alpha= 0.05\), tenemos que:
+\[
+\begin{aligned}
+ 95\text{\% IC para } \mu &= \bar{x} \pm t_{\alpha/2, n - 1} \frac{s}{\sqrt{n}} \\
+ &= 1150 \pm 2.045 \frac{200}{\sqrt{30}} \\
+ &= [1075,33; 1224,67]
+\end{aligned}
+\]
+
+El intervalo de confianza del 95\% para \(\mu\) es {[}1075,33; 1224,67{]} euros. \textbf{¿Qué significa este intervalo de confianza del 95\%? }
+
+Sabemos que este procedimiento de estimación tiene una probabilidad del 95\% de producir un intervalo que contenga la media verdadera \(\mu\). En otras palabras, \textbf{si construimos muchos intervalos de confianza} (con diferentes muestras del mismo tamaño), \textbf{el 95\% de ellos incluirá la media de la población} (el verdadero parámetro). Del mismo modo el 5\% de estos intervalos de confianza no cubrirán la media real.
+
+Si desea disminuir este último porcentaje, puede disminuir el nivel de significancia (por ejemplo \(\alpha= 0.01\)). En igualdad de condiciones, esto disminuirá el rango del intervalo de confianza y, por lo tanto, aumentará la probabilidad de que incluya el parámetro verdadero.
+
+\hypertarget{conclusiuxf3n-e-interpretaciuxf3n-de-los-resultados-1}{%
+\subsubsection{Conclusión e interpretación de los resultados}\label{conclusiuxf3n-e-interpretaciuxf3n-de-los-resultados-1}}
+
+Finalmente, hay comparar el intervalo de confianza con el valor del parámetro objetivo (el valor cuestionado por la hipótesis nula):
+
+\begin{itemize}
+\tightlist
+\item
+  Si el \textbf{intervalo de confianza no incluye} el valor hipotético, \(H_0\) es poco probable \(\rightarrow\) \textbf{rechazamos} la hipótesis nula.
+\item
+  Si el \textbf{intervalo de confianza incluye} el valor hipotético, \(H_0\) es probable \(\rightarrow\), \textbf{no rechazamos} la hipótesis nula
+\end{itemize}
+
+En nuestro ejemplo:
+
+\begin{itemize}
+\tightlist
+\item
+  el valor hipotético es 1200 (desde \$ H\_0:\mu= 1200\$)
+\item
+  1200 se incluye en el intervalo de confianza del 95\%, ya que va de 1075,33 a 1224,67 euros
+\item
+  Entonces \textbf{no rechazamos} la hipótesis nula de que el salario medio de los trabajadores españoles sea de 1200 euros.
+\end{itemize}
+
+Por supuesto, la conclusión es equivalente a la que se había llegado por los otros dos métodos. Esto debe ser así, ya que usamos los mismos datos y el mismo nivel de significancia \(\alpha\) para los tres métodos.
 
 Let's load all the packages needed for this chapter (this assumes you've already installed them). Recall from our discussion in Section \ref{tidyverse-package} that loading the \texttt{tidyverse} package by running \texttt{library(tidyverse)} loads the following commonly used data science packages all at once:
 

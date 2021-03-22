@@ -123,7 +123,7 @@
 
 \title{Técnicas cuantitativas}
 \author{Enric Aguilar y Benito Zaragozí}
-\date{21-Mar-2021}
+\date{22-Mar-2021}
 
 \begin{document}
 \maketitle
@@ -167,37 +167,27 @@ Para seguir las explicaciones de este curso será necesario instalar primero R y
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] ggrepel_0.8.2       viridis_0.5.1       viridisLite_0.3.0  
-##  [4] scales_1.1.1        patchwork_1.0.1     ggplot2movies_0.0.1
-##  [7] nycflights13_1.0.1  moderndive_0.5.0    infer_0.5.3        
-## [10] kableExtra_1.2.1    corrplot_0.84       pander_0.6.3       
-## [13] DiagrammeR_1.0.6.1  forcats_0.5.0       stringr_1.4.0      
-## [16] dplyr_1.0.2         purrr_0.3.4         readr_1.4.0        
-## [19] tidyr_1.1.2         tibble_3.0.3        ggplot2_3.3.2      
-## [22] tidyverse_1.3.0    
+##  [1] nycflights13_1.0.1 kableExtra_1.2.1   corrplot_0.84      pander_0.6.3      
+##  [5] DiagrammeR_1.0.6.1 forcats_0.5.0      stringr_1.4.0      dplyr_1.0.2       
+##  [9] purrr_0.3.4        readr_1.4.0        tidyr_1.1.2        tibble_3.0.3      
+## [13] ggplot2_3.3.2      tidyverse_1.3.0   
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] httr_1.4.2           jsonlite_1.7.1       modelr_0.1.8        
-##  [4] assertthat_0.2.1     highr_0.8            blob_1.2.1          
-##  [7] cellranger_1.1.0     yaml_2.2.1           pillar_1.4.6        
-## [10] backports_1.1.10     glue_1.4.2           digest_0.6.25       
-## [13] RColorBrewer_1.1-2   rvest_0.3.6          snakecase_0.11.0    
-## [16] colorspace_1.4-1     htmltools_0.5.0      pkgconfig_2.0.3     
-## [19] broom_0.7.1          haven_2.3.1          bookdown_0.20       
-## [22] webshot_0.5.2        generics_0.0.2       farver_2.0.3        
-## [25] ellipsis_0.3.1       withr_2.3.0          janitor_2.0.1       
-## [28] formula.tools_1.7.1  cli_2.0.2            magrittr_1.5        
-## [31] crayon_1.3.4         readxl_1.3.1         evaluate_0.14       
-## [34] fs_1.5.0             fansi_0.4.1          operator.tools_1.6.3
-## [37] xml2_1.3.2           tools_4.0.2          hms_0.5.3           
-## [40] lifecycle_0.2.0      munsell_0.5.0        reprex_0.3.0        
-## [43] compiler_4.0.2       rlang_0.4.7          grid_4.0.2          
-## [46] rstudioapi_0.11      htmlwidgets_1.5.2    visNetwork_2.0.9    
-## [49] labeling_0.3         rmarkdown_2.4        gtable_0.3.0        
-## [52] DBI_1.1.0            R6_2.4.1             gridExtra_2.3       
-## [55] lubridate_1.7.9      knitr_1.30           utf8_1.1.4          
-## [58] stringi_1.5.3        Rcpp_1.0.5           vctrs_0.3.4         
-## [61] dbplyr_1.4.4         tidyselect_1.1.0     xfun_0.18
+##  [1] Rcpp_1.0.5         lubridate_1.7.9    visNetwork_2.0.9   utf8_1.1.4        
+##  [5] assertthat_0.2.1   digest_0.6.25      R6_2.4.1           cellranger_1.1.0  
+##  [9] backports_1.1.10   reprex_0.3.0       evaluate_0.14      highr_0.8         
+## [13] httr_1.4.2         pillar_1.4.6       rlang_0.4.7        readxl_1.3.1      
+## [17] rstudioapi_0.11    blob_1.2.1         rmarkdown_2.4      labeling_0.3      
+## [21] webshot_0.5.2      htmlwidgets_1.5.2  munsell_0.5.0      broom_0.7.1       
+## [25] compiler_4.0.2     modelr_0.1.8       xfun_0.18          pkgconfig_2.0.3   
+## [29] htmltools_0.5.0    tidyselect_1.1.0   bookdown_0.20      fansi_0.4.1       
+## [33] viridisLite_0.3.0  crayon_1.3.4       dbplyr_1.4.4       withr_2.3.0       
+## [37] grid_4.0.2         jsonlite_1.7.1     gtable_0.3.0       lifecycle_0.2.0   
+## [41] DBI_1.1.0          magrittr_1.5       scales_1.1.1       cli_2.0.2         
+## [45] stringi_1.5.3      farver_2.0.3       fs_1.5.0           xml2_1.3.2        
+## [49] ellipsis_0.3.1     generics_0.0.2     vctrs_0.3.4        RColorBrewer_1.1-2
+## [53] tools_4.0.2        glue_1.4.2         hms_0.5.3          yaml_2.2.1        
+## [57] colorspace_1.4-1   rvest_0.3.6        knitr_1.30         haven_2.3.1
 \end{verbatim}
 
 \hypertarget{tipos-de-ficheros}{%
@@ -813,6 +803,22 @@ Estos tipos de datos más básicos se gestiónan habitualmente dentro de estruct
 \hypertarget{factores}{%
 \subsection{Factores}\label{factores}}
 
+\hypertarget{funciones}{%
+\section{Funciones}\label{funciones}}
+
+Hasta este punto ya habéis visto y usado varias funciones. Por ejemplo, la función \texttt{c()} se puede usar para \textbf{c}ombinar objetos en un vector. En general, todas las llamadas a funciones tienen el mismo aspecto: el nombre de una función siempre va seguido de paréntesis. A veces, los paréntesis incluyen argumentos como sucede también en el siguiente ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Crea el vector `z` a partir de la función seq (secuenciar).}
+\NormalTok{z <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{1}\NormalTok{, }\DataTypeTok{to =} \DecValTok{5}\NormalTok{, }\DataTypeTok{by =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+En este ejemplo usamos una función llamada \texttt{seq()} para crear una secuencia que progresa por unidades, desde 1 a 5 (probad de modificar los parámetros para obtener otras secuencias distintas).
+
+Si no estáis seguros de qué argumentos acepta una función, siempre se puede consultar la documentación de dicha función (todas las librerías \emph{oficiales} suelen tener una buena documentación). Por ejemlo, supongamos que no estamos seguros de cómo funcionan los argumentos necesarios para \texttt{seq()}. Podemos escribir \texttt{?seq} en la consola y, al ejecutar este comando, la página de documentación para esa función aparece en el panel inferior derecho de RStudio. En la sección \emph{Argumentos} está toda la información que buscamos. En la parte inferior de casi todas las páginas de ayuda, suele haber ejemplos sobre cómo utilizar las funciones correspondientes.
+
 \hypertarget{tidyverse}{%
 \section{Tidyverse}\label{tidyverse}}
 
@@ -939,8 +945,8 @@ El primer paso de una secuencia de \emph{pipes} puede ser un valor, una variable
 
 \begin{figure}
 \centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-24-1.pdf}
-\caption{\label{fig:unnamed-chunk-24}Ejecución del código sin o con \texttt{\%\textgreater{}\%}. Sin \emph{pipes} los resultados intermedios tienen que guardarse en una variable en memoria.}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-25-1.pdf}
+\caption{\label{fig:unnamed-chunk-25}Ejecución del código sin o con \texttt{\%\textgreater{}\%}. Sin \emph{pipes} los resultados intermedios tienen que guardarse en una variable en memoria.}
 \end{figure}
 
 Una operación compleja creada mediante el uso de \texttt{\%\textgreater{}\%} se puede usar en el lado derecho de una asignación \texttt{\textless{}-}, de modo que se guarda resultado de toda la operación de la derecha.
@@ -1044,7 +1050,7 @@ Crea un \emph{script} para responder a cada pregunta. En las preguntas de la 4 a
 
 La estadística descriptiva es una rama de la estadística cuyo objetivo es resumir, describir y presentar una serie de valores o un conjunto de datos. Estas estadísticas pueden ser realmente útiles al analizar largas series de datos en las que resulte difícil reconocer algún patrón. En éste capítulo utilizaremos una muestra de datos sobre salarios (en euros) de una \emph{población} de 100 trabajadores:
 
-\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702}, \emph{1447}, \emph{2256}, \emph{1453}, \emph{2509}, \emph{1469}, \emph{2152}, \emph{2643}, \emph{805.6}, \emph{1361}, \emph{1433}, \emph{1818}, \emph{1358}, \emph{171.8}, \emph{279.8}, \emph{2160}, \emph{1347}, \emph{609.3}, \emph{1414}, \emph{2107}, \emph{2448}, \emph{1285}, \emph{1371}, \emph{618.4}, \emph{1730}, \emph{1180}, \emph{1728}, \emph{1852}, \emph{2018}, \emph{1196}, \emph{1752}, \emph{641.5}, \emph{1108}, \emph{1074}, \emph{292.9}, \emph{1518}, \emph{1603}, \emph{1320}, \emph{1879}, \emph{1137}, \emph{815.9}, \emph{1716}, \emph{1094}, \emph{2222}, \emph{1284}, \emph{1828}, \emph{1661}, \emph{1108}, \emph{2288}, \emph{1821}, \emph{1545}, \emph{1638}, \emph{1840}, \emph{1545}, \emph{3.5}, \emph{1642}, \emph{1316}, \emph{1593}, \emph{1791}, \emph{2200}, \emph{1136}, \emph{2151}, \emph{1668}, \emph{2019}, \emph{1960}, \emph{1860}, \emph{978.4}, \emph{1455}, \emph{1812}, \emph{1023}, \emph{1229}, \emph{1790}, \emph{1884}, \emph{1732}, \emph{1057}, \emph{950.1}, \emph{2256}, \emph{1629}, \emph{1544}, \emph{1440}, \emph{902.8}, \emph{1806}, \emph{1391}, \emph{1409}, \emph{1967}, \emph{1911}, \emph{2196}, \emph{1262}, \emph{1825}, \emph{2196}, \emph{944.6}, \emph{1070}, \emph{934.1}, \emph{770.4}, \emph{1540} and \emph{1827}
+\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702}, \emph{1447}, \emph{2256}, \emph{1453}, \emph{2509}, \emph{1469}, \emph{2152}, \emph{2643}, \emph{806}, \emph{1361}, \emph{1433}, \emph{1818}, \emph{1358}, \emph{172}, \emph{280}, \emph{2160}, \emph{1347}, \emph{609}, \emph{1414}, \emph{2107}, \emph{2448}, \emph{1285}, \emph{1371}, \emph{618}, \emph{1730}, \emph{1180}, \emph{1728}, \emph{1852}, \emph{2018}, \emph{1196}, \emph{1752}, \emph{642}, \emph{1108}, \emph{1074}, \emph{293}, \emph{1518}, \emph{1603}, \emph{1320}, \emph{1879}, \emph{1137}, \emph{816}, \emph{1716}, \emph{1094}, \emph{2222}, \emph{1284}, \emph{1828}, \emph{1661}, \emph{1108}, \emph{2288}, \emph{1821}, \emph{1545}, \emph{1638}, \emph{1840}, \emph{1545}, \emph{4}, \emph{1642}, \emph{1316}, \emph{1593}, \emph{1791}, \emph{2200}, \emph{1136}, \emph{2151}, \emph{1668}, \emph{2019}, \emph{1960}, \emph{1860}, \emph{978}, \emph{1455}, \emph{1812}, \emph{1023}, \emph{1229}, \emph{1790}, \emph{1884}, \emph{1732}, \emph{1057}, \emph{950}, \emph{2256}, \emph{1629}, \emph{1544}, \emph{1440}, \emph{903}, \emph{1806}, \emph{1391}, \emph{1409}, \emph{1967}, \emph{1911}, \emph{2196}, \emph{1262}, \emph{1825}, \emph{2196}, \emph{945}, \emph{1070}, \emph{934}, \emph{770}, \emph{1540} y \emph{1827}
 
 De un primer vistazo es difícil (por no decir imposible) que podamos comprender los datos y tener una visión clara de los salarios de este grupo de personas. Las estadísticas descriptivas permiten resumir y así tener una mejor visión general de los datos. Por supuesto, al resumir los datos a través de una o varias medidas, inevitablemente se perderá parte de la información. Sin embargo, en muchos casos es mejor perder algo de información pero, a cambio, obtener una visión general. Podriamos decir que se trata de \emph{ganar perspectiva}.
 
@@ -1066,9 +1072,7 @@ Las medidas de tendencia central permiten ver ``dónde'' se ubican los datos, al
 \item
   Mediana
 \item
-  Primer cuartil
-\item
-  Tercer cuartil
+  Primer y tercer cuartil
 \item
   Moda
 \end{itemize}
@@ -1078,7 +1082,7 @@ Las medidas de tendencia central permiten ver ``dónde'' se ubican los datos, al
 
 Mínimo (\(min\)) y máximo (\(max\)) son simplemente los valores más bajo y más alto de la muestra. Dada una muestra de 6 de estos salarios:
 
-\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702} and \emph{1447}
+\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702} y \emph{1447}
 
 El mínimo es 1217.7 euros y el máximo es 2185.5 euros. Estas dos estadísticas básicas dan una idea clara sobre el los extremos de la muestra y su cálculo con R es bastante sencillo:
 
@@ -1187,15 +1191,15 @@ Dado que obtenemos un vector de resultados, podemos seleccionar por posición pa
 
 La moda de una serie es el valor que aparece con mayor frecuencia. En otras palabras, es el valor que tiene el mayor número de ocurrencias. Dados los siguientes salarios:
 
-\emph{1700}, \emph{1680}, \emph{1710}, \emph{1700}, \emph{1820}, \emph{1650}, \emph{1700}, \emph{1890} and \emph{1670}
+\emph{1700}, \emph{1680}, \emph{1710}, \emph{1700}, \emph{1820}, \emph{1650}, \emph{1700}, \emph{1890} y \emph{1670}
 
 La moda es 1700 porque es el valor más común con 3 apariciones. Todos los demás valores aparecen solo una vez. En conclusión, la mayoría de los trabajadores de esta muestra perciben exactamente 1700 euros al mes.
 
-Hay que tener en cuenta que es posible que una serie no tenga moda (p.~Ej., \emph{4}, \emph{7}, \emph{2} and \emph{10}) o más de una moda (p.~Ej., \emph{4}, \emph{2}, \emph{2}, \emph{8}, \emph{11} and \emph{11}). Los datos con dos modas a menudo se denominan bimodales y los datos con más de dos modos a menudo se denominan multimodales, a diferencia de las series con una moda, que se denominan unimodales.
+Hay que tener en cuenta que es posible que una serie no tenga moda (p.~Ej., \emph{4}, \emph{7}, \emph{2} y \emph{10}) o más de una moda (p.~Ej., \emph{4}, \emph{2}, \emph{2}, \emph{8}, \emph{11} y \emph{11}). Los datos con dos modas a menudo se denominan bimodales y los datos con más de dos modos a menudo se denominan multimodales, a diferencia de las series con una moda, que se denominan unimodales.
 
 A diferencia de las anteriores estadísticas (mínimo, máximo, media, mediana, primer y tercer cuartil) que solo se pueden calcular para variables cuantitativas, \textbf{la moda se puede calcular para variables cuantitativas y cualitativas}. Atendiendo al tipo de empleo que desarrollan los 9 trabajadores presentados anteriormente:
 
-\emph{ingeniero}, \emph{ingeniero}, \emph{ingeniero}, \emph{ingeniero}, \emph{asistente}, \emph{asistente}, \emph{asistente}, \emph{ingeniero} and \emph{camarero}
+\emph{ingeniero}, \emph{ingeniero}, \emph{ingeniero}, \emph{ingeniero}, \emph{asistente}, \emph{asistente}, \emph{asistente}, \emph{ingeniero} y \emph{camarero}
 
 La moda es ``ingeniero'', por lo que la mayoría de los trabajadores de esta muestra son de uso ingenieros.
 
@@ -1211,7 +1215,7 @@ El rango es la diferencia entre el máximo y el mínimo:
 
 Dada nuestra muestra de salarios:
 
-\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702} and \emph{1447}
+\emph{2186}, \emph{1218}, \emph{1682}, \emph{1816}, \emph{1702} y \emph{1447}
 
 El rango es 2185.5 \(-\) 1217.7 \(=\) 967.8 euros. El rango es muy sencillo de calcular y en algunos casos puede dar una buena idea de lo que podemos esperar de un conjunto de datos. En R se puede utilizar la función \texttt{range}
 
@@ -1241,7 +1245,7 @@ Como se puede ver en la fórmula, la desviación estándar es en realidad la des
 
 Por ejemplo, imagine una población de solo 3 trabajadores:
 
-\emph{770.4}, \emph{1540} and \emph{1827}
+\emph{770}, \emph{1540} y \emph{1827}
 
 La media es 1379 (redondeado a 1 decimal). La desviación estándar es entonces:
 
@@ -1460,7 +1464,7 @@ Una buena forma de visualizar una correlación entre 2 variables es mediante un 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-43-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf}
 
 Para visualizar la relación entre más de 2 variablesse puede usar la función \texttt{pair\ ()}. En este caso limitamos el ejemplo a tres variables:
 
@@ -1471,7 +1475,7 @@ Para visualizar la relación entre más de 2 variablesse puede usar la función 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 Por otra parte, existen numerosas librerías de R que permiten generar este tipo de gráficos con distintas opciones. Por ejemplo con \texttt{ggplot2}:
 
@@ -1487,7 +1491,7 @@ Por otra parte, existen numerosas librerías de R que permiten generar este tipo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-45-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 O representaciones más modernas como con la librería \texttt{corrplot}:
 
@@ -1503,7 +1507,7 @@ O representaciones más modernas como con la librería \texttt{corrplot}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-46-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-47-1.pdf}
 
 \hypertarget{ejercicios}{%
 \section{Ejercicios}\label{ejercicios}}
@@ -1784,9 +1788,11 @@ rsignrank
 \hypertarget{introduccion-a-los-test-de-hipuxf3tesis}{%
 \section{Introduccion a los test de hipótesis}\label{introduccion-a-los-test-de-hipuxf3tesis}}
 
-Primero cabe preguntarse por qué intentaríamos hacer inferencias sobre un parámetro de una población basada en una muestra, en lugar de simplemente recopilar datos para toda la población, calcular estadísticas que nos interesan y tomar decisiones basadas en eso. La principal razón por la que utilizamos una muestra en lugar de toda la población es porque recopilar datos sobre toda la población es más compicado o en ocasiones impracticable por varios motivos (complejidad, coste, limitación de tiempo, entre muchos otros motivos). \footnote{Por ejemplo, una investigación podría consistir en conocer si la población de la provincia de Tarragona está satisfecha con el nuevo plan de movilidad. Si pudiéramos preguntar a toda la población en un período de tiempo razonable, no haríamos ninguna estadística inferencial. No obstante, aún habria que decidir que preguntas se les hace para entender mejor el motivo de su grado de satisfacción, complicando y encareciendo aún más la encuesta.}
+Primero cabe preguntarse por qué intentaríamos hacer inferencias sobre un parámetro de una población basadonos en una muestra, en lugar de simplemente recopilar datos para toda la población, calcular estadísticas que nos interesan y tomar decisiones basadas en eso. La principal razón por la que utilizamos una muestra en lugar de toda la población es porque recopilar datos sobre toda la población es más compicado o en ocasiones impracticable por varios motivos (complejidad, coste, limitación de tiempo, entre muchos otros motivos). \footnote{Por ejemplo, una investigación podría consistir en conocer si la población de la provincia de Tarragona está satisfecha con el nuevo plan de movilidad. Si pudiéramos preguntar a toda la población en un período de tiempo razonable, no haríamos ninguna estadística inferencial. No obstante, aún habria que decidir que preguntas se les hace para entender mejor el motivo de su grado de satisfacción, complicando y encareciendo aún más la encuesta.}
 
-El \textbf{objetivo general de una prueba de hipótesis es sacar conclusiones para confirmar o refutar una creencia sobre una población}, basándonos en un grupo más pequeño de observaciones.
+\begin{quote}
+El objetivo general de una prueba de hipótesis es sacar conclusiones para confirmar o refutar una creencia sobre una población basándonos en un grupo más pequeño de observaciones.
+\end{quote}
 
 Las pruebas de hipótesis tienen muchas aplicaciones prácticas. Aquí ponemos algunos ejemplos:
 
@@ -1801,18 +1807,18 @@ Las pruebas de hipótesis tienen muchas aplicaciones prácticas. Aquí ponemos a
   \begin{itemize}
   \tightlist
   \item
-    Muestras independientes: suponga que a un fisioterapeuta le gustaría probar la eficacia de un nuevo tratamiento midiendo el tiempo de respuesta medio (en segundos) para los pacientes de un grupo de control y los pacientes de un grupo de tratamiento, donde los pacientes de los dos grupos son diferentes.
+    Muestras independientes: supongamos que a un profesor le gustaría probar la idoneidad de un nuevo método docente midiendo la nota media para los alumnos de un grupo de control y los del grupo en el que se ha introducido la novedad.
   \item
-    Muestras pareadas: suponga que a un fisioterapeuta le gustaría probar la eficacia de un nuevo tratamiento midiendo el tiempo de respuesta medio (en segundos) antes y después de un tratamiento, donde los pacientes se miden dos veces, antes y después del tratamiento, por lo que los pacientes son lo mismo en las 2 muestras.
+    Muestras pareadas o relacionadas: supongamos que el mismo profesor quisiera probar la idoneidad de este nuevo método de enseñanza pero lo hiciera midiendo los conocimientos de los alumnos antes y después de la explicación.
   \end{itemize}
 \item
-  Una proporción: supongamos que a un experto en política le gustaría comprobar si la proporción de ciudadanos que van a votar por un candidato específico es inferior al 30\%.
+  Una proporción: supongamos que a un analísta político quisiera comprobar si la proporción de ciudadanos que van a votar por un candidato específico es inferior al 25\%.
 \item
-  Dos proporciones: suponga que a un médico le gustaría probar si la proporción de fumadores es diferente entre atletas profesionales y aficionados.
+  Dos proporciones: supongamos que a un geógrafo le gustaría probar si la proporción de visitantes a una playa es diferente entre jóvenes y personas mayores.
 \item
-  Una variación: suponga que un ingeniero quisiera probar si un voltímetro tiene una variabilidad menor que la impuesta por las normas de seguridad.
+  Una variación: supongamos que un ingeniero quisiera probar si una batería tiene una variabilidad en el timpo de carga menor que la indicada en la descripción técnica.
 \item
-  Dos variaciones: suponga que, en una fábrica, dos líneas de producción funcionan independientemente una de la otra. El gerente financiero quisiera probar si los costos del mantenimiento semanal de estas dos máquinas tienen la misma variación. Tenga en cuenta que a menudo también se realiza una prueba de dos varianzas para verificar la suposición de varianzas iguales, que se requiere para varias otras pruebas estadísticas, como la {[}prueba t de Student{]} (/ blog / student-st-test-in-r -y-a-mano-cómo-comparar-dos-grupos-bajo-diferentes-escenarios /) por ejemplo.
+  Dos variaciones: supongamos que, en una fábrica, dos líneas de producción funcionan independientemente una de la otra. El gerente querría probar si los costes del mantenimiento semanal de estas dos cadenas de producción tienen la misma variación.
 \end{enumerate}
 
 Por supuesto, hay muchísimas más aplicaciones potenciales y muchas preguntas de investigación pueden responderse gracias a una prueba de hipótesis.
@@ -1834,12 +1840,13 @@ Podemos utilizar al menos tres métodos diferentes para realizar una prueba de h
 
 Estos enfoques puede diferir en algunos aspectos pero tienen muchos puntos en común. El uso de uno u otro método es a menudo una cuestión de elección personal o de contexto.
 
-Para los tres métodos, explicaré los pasos necesarios para realizar una prueba de hipótesis desde un punto de vista general y los ilustraré con la siguiente situación: \^{} {[}Puede ver más o menos pasos en otros artículos o libros de texto, dependiendo de si estos pasos son detallados o concisos. Sin embargo, la prueba de hipótesis debe seguir el mismo proceso independientemente del número de pasos{]}.
+Para los tres métodos, explicaré los pasos necesarios para realizar una prueba de hipótesis desde un punto de vista general y los ilustraré con la siguiente situación: \footnote{Puede ver más o menos pasos en otros artículos o libros de texto, dependiendo de si estos pasos son detallados o concisos. Sin embargo, la prueba de hipótesis debe seguir el mismo proceso independientemente del número de pasos}.
 
 \begin{quote}
 Supongamos que un político quisiera comprobar si el salario medio de los trabajadores españoles es diferente de 1.200 euros.
-En la mayoría de las pruebas de hipótesis, la prueba que vamos a utilizar como ejemplo a continuación requiere algunas condiciones. Dado que el objetivo del presente artículo es explicar una prueba de hipótesis, asumimos que se cumplen todos los supuestos.
 \end{quote}
+
+En la mayoría de las pruebas de hipótesis, la prueba que vamos a utilizar como ejemplo a continuación requiere algunas condiciones. En esta sección asumimos que se cumplen todos los supuestos pero más adelante hablaremos de esto.
 
 \hypertarget{comparando-la-estaduxedstica-de-prueba-con-el-valor-cruxedtico.}{%
 \subsection{\texorpdfstring{Comparando la estadística de prueba con el \textbf{valor crítico}.}{Comparando la estadística de prueba con el valor crítico.}}\label{comparando-la-estaduxedstica-de-prueba-con-el-valor-cruxedtico.}}
@@ -2019,7 +2026,7 @@ Visualmente, la tasa de error de 0.05 se divide en dos partes:
   0,025 a la derecha de 2,04523
 \end{itemize}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-47-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-48-1.pdf}
 
 Al igual que en el apartado anterior, cabe recordar estos valores críticos de -2,045 y 2,045 el último paso.
 
@@ -2095,7 +2102,7 @@ Recordemos que:
 
 Para comparar el \texttt{t-stat} con los valores críticos de manera gráfica:
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-49-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf}
 
 Los dos valores críticos forman las regiones de rechazo (las áreas sombreadas en rojo):
 
@@ -2176,7 +2183,7 @@ Formalmente, el valor \emph{p} es el área más allá del estadístico de prueba
 
 Visualmente, el valor \emph{p} es la suma de las dos áreas sombreadas en azul en la siguiente gráfica:
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-51-1.pdf}
 
 El valor \emph{p} se puede obtener también con tablas estadísticas o es posible calcularlo con precisión en R con la función \texttt{pt()}:
 
@@ -2262,16 +2269,17 @@ Al igual que los test de hipótesis, los intervalos de confianza son una herrami
 
 De la misma manera que existe una fórmula para cada tipo de prueba de hipótesis al calcular las estadísticas de la prueba, existe una fórmula para cada tipo de intervalo de confianza. La fórmula para calcular un intervalo de confianza en una media \(\mu\) (con varianza poblacional desconocida):
 \[
-(1-\alpha)\text{\%IC para } \mu = \bar{x}\pm t_{\alpha/2, n - 1}\frac{s}{\sqrt{n}}
+(1-\alpha)\% \text{ IC para } \mu=\overline{x}\pm t_{\alpha/2, n - 1}\frac{s}{\sqrt{n}}
 \]
-donde \(t_{\alpha/2, n-1}\) se encuentra en la tabla de distribución de Student o se puede calcular con R (y es igual al valor crítico encontrado en el primer método).
+donde \(t_{\alpha/2, n-1}\) se encuentra en la tabla de distribución de Student o se puede calcular con R (y es similar al valor crítico encontrado en el primer método).
 
 Dados nuestros datos y con \(\alpha= 0.05\), tenemos que:
 \[
 \begin{aligned}
- 95\text{\% IC para } \mu &= \bar{x} \pm t_{\alpha/2, n - 1} \frac{s}{\sqrt{n}} \\
- &= 1150 \pm 2.045 \frac{200}{\sqrt{30}} \\
- &= [1075,33; 1224,67]
+ 95\%\text{ IC para } \mu 
+    &= \bar{x} \pm t_{\alpha/2, n - 1} \frac{s}{\sqrt{n}} \\
+    &= 1150 \pm 2.045 \frac{200}{\sqrt{30}} \\
+    &= [1075,33; 1224,67]
 \end{aligned}
 \]
 
@@ -2308,884 +2316,37 @@ En nuestro ejemplo:
 
 Por supuesto, la conclusión es equivalente a la que se había llegado por los otros dos métodos. Esto debe ser así, ya que usamos los mismos datos y el mismo nivel de significancia \(\alpha\) para los tres métodos.
 
-Let's load all the packages needed for this chapter (this assumes you've already installed them). Recall from our discussion in Section \ref{tidyverse-package} that loading the \texttt{tidyverse} package by running \texttt{library(tidyverse)} loads the following commonly used data science packages all at once:
+\hypertarget{test-de-hipuxf3tesis-en-r-cuxe1lculo-e-informes}{%
+\section{Test de hipótesis en R: cálculo e informes}\label{test-de-hipuxf3tesis-en-r-cuxe1lculo-e-informes}}
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{ggplot2} for data visualization
-\item
-  \texttt{dplyr} for data wrangling
-\item
-  \texttt{tidyr} for converting data to ``tidy'' format
-\item
-  \texttt{readr} for importing spreadsheet data into R
-\item
-  As well as the more advanced \texttt{purrr}, \texttt{tibble}, \texttt{stringr}, and \texttt{forcats} packages
-\end{itemize}
+\hypertarget{un-ejemplo-sobre-brecha-salarial-entre-guxe9neros}{%
+\section{Un ejemplo sobre brecha salarial entre géneros}\label{un-ejemplo-sobre-brecha-salarial-entre-guxe9neros}}
 
-If needed, read Section \ref{packages} for information on how to install and load R packages.
+\hypertarget{anova}{%
+\section{ANOVA}\label{anova}}
+
+\hypertarget{algunas-consideraciones-finales}{%
+\section{Algunas consideraciones finales}\label{algunas-consideraciones-finales}}
+
+\hypertarget{cuando-no-se-necesita-inferencia}{%
+\subsection{¿Cuando no se necesita inferencia?}\label{cuando-no-se-necesita-inferencia}}
+
+Hemos analizado varios ejemplos sobre cómo realizar inferencias estadísticas: realización de test de hipótesis y construcción de intervalos de confianza. Antes de empezar a realizar un experimento, siempre es necesario realizar un análisis exploratorio de los datos. Este primer vistazo siempre puede ayudar a intuir sobre lo que los métodos estadísticos como los intervalos de confianza y las pruebas de hipótesis pueden decirnos (y lo que no pueden). En los apartados anteriores hemos querido explicar cómo funciona la inferencia pero no nos hemos preguntado si era realmente necesaria.
+
+Consideremos un ejemplo. Supongamos que estamos interesados en la siguiente pregunta: De \emph{todos} los vuelos que salen de un aeropuerto de la ciudad de Nueva York, ¿los vuelos de Hawaiian Airlines están en el aire por más tiempo que los vuelos de Alaska Airlines? Además, supongamos que los vuelos de 2013 son una muestra representativa de todos esos vuelos. Entonces podemos usar el dataframe \texttt{flights} disponible en el paquete \texttt{nycflights13} para responder nuestra pregunta. Filtremos este dataframe para incluir solo a Hawaiian y Alaska Airlines usando sus códigos de ``operador'' ``HA'' y ``AS'':
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(tidyverse)}
-\KeywordTok{library}\NormalTok{(readr)}
-\KeywordTok{library}\NormalTok{(infer)}
-\KeywordTok{library}\NormalTok{(moderndive)}
 \KeywordTok{library}\NormalTok{(nycflights13)}
-\KeywordTok{library}\NormalTok{(ggplot2movies)}
-\end{Highlighting}
-\end{Shaded}
-
-\hypertarget{ht-activity}{%
-\section{Promotions activity}\label{ht-activity}}
-
-Let's start with an activity studying the effect of gender on promotions at a bank.
-
-\hypertarget{does-gender-affect-promotions-at-a-bank}{%
-\subsection{Does gender affect promotions at a bank?}\label{does-gender-affect-promotions-at-a-bank}}
-
-Say you are working at a bank in the 1970s and you are submitting your résumé to apply for a promotion. Will your gender affect your chances of getting promoted? To answer this question, we'll focus on data from a study published in the \emph{Journal of Applied Psychology} in 1974. This data is also used in the \href{https://www.openintro.org/}{\emph{OpenIntro}} series of statistics textbooks.
-
-To begin the study, 48 bank supervisors were asked to assume the role of a hypothetical director of a bank with multiple branches. Every one of the bank supervisors was given a résumé and asked whether or not the candidate on the résumé was fit to be promoted to a new position in one of their branches.
-
-However, each of these 48 résumés were identical in all respects except one: the name of the applicant at the top of the résumé. Of the supervisors, 24 were randomly given résumés with stereotypically ``male'' names, while 24 of the supervisors were randomly given résumés with stereotypically ``female'' names. Since only (binary) gender varied from résumé to résumé, researchers could isolate the effect of this variable in promotion rates.
-
-While many people today (including us, the authors) disagree with such binary views of gender, it is important to remember that this study was conducted at a time where more nuanced views of gender were not as prevalent. Despite this imperfection, we decided to still use this example as we feel it presents ideas still relevant today about how we could study discrimination in the workplace.
-
-The \texttt{moderndive} package contains the data on the 48 applicants in the \texttt{promotions} data frame. Let's explore this data by looking at six randomly selected rows:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{sample_n}\NormalTok{(}\DataTypeTok{size =} \DecValTok{6}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{arrange}\NormalTok{(id)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 6 x 3
-##      id decision gender
-##   <int> <fct>    <fct> 
-## 1    11 promoted male  
-## 2    26 promoted female
-## 3    28 promoted female
-## 4    36 not      male  
-## 5    37 not      male  
-## 6    46 not      female
-\end{verbatim}
-
-The variable \texttt{id} acts as an identification variable for all 48 rows, the \texttt{decision} variable indicates whether the applicant was selected for promotion or not, while the \texttt{gender} variable indicates the gender of the name used on the résumé. Recall that this data does not pertain to 24 actual men and 24 actual women, but rather 48 identical résumés of which 24 were assigned stereotypically ``male'' names and 24 were assigned stereotypically ``female'' names.
-
-Let's perform an exploratory data analysis of the relationship between the two categorical variables \texttt{decision} and \texttt{gender}. Recall that we saw in Subsection \ref{two-categ-barplot} that one way we can visualize such a relationship is by using a stacked barplot.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(promotions, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ gender, }\DataTypeTok{fill =}\NormalTok{ decision)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_bar}\NormalTok{() }\OperatorTok{+}
-\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"Gender of name on résumé"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/promotions-barplot-1.pdf}
-\caption{\label{fig:promotions-barplot}Barplot relating gender to promotion decision.}
-\end{figure}
-
-Observe in Figure \ref{fig:promotions-barplot} that it appears that résumés with female names were much less likely to be accepted for promotion. Let's quantify these promotion rates by computing the proportion of résumés accepted for promotion for each group using the \texttt{dplyr} package for data wrangling. Note the use of the \texttt{tally()} function here which is a shortcut for \texttt{summarize(n\ =\ n())} to get counts.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{group_by}\NormalTok{(gender, decision) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{tally}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 4 x 3
-## # Groups:   gender [2]
-##   gender decision     n
-##   <fct>  <fct>    <int>
-## 1 male   not          3
-## 2 male   promoted    21
-## 3 female not         10
-## 4 female promoted    14
-\end{verbatim}
-
-So of the 24 résumés with male names, 21 were selected for promotion, for a proportion of 21/24 = 0.875 = 87.5\%. On the other hand, of the 24 résumés with female names, 14 were selected for promotion, for a proportion of 14/24 = 0.583 = 58.3\%. Comparing these two rates of promotion, it appears that résumés with male names were selected for promotion at a rate 0.875 - 0.583 = 0.292 = 29.2\% higher than résumés with female names. This is suggestive of an advantage for résumés with a male name on it.
-
-The question is, however, does this provide \emph{conclusive} evidence that there is gender discrimination in promotions at banks? Could a difference in promotion rates of 29.2\% still occur by chance, even in a hypothetical world where no gender-based discrimination existed? In other words, what is the role of \emph{sampling variation} in this hypothesized world? To answer this question, we'll again rely on a computer to run \emph{simulations}.
-
-\hypertarget{shuffling-once}{%
-\subsection{Shuffling once}\label{shuffling-once}}
-
-First, try to imagine a hypothetical universe where no gender discrimination in promotions existed. In such a hypothetical universe, the gender of an applicant would have no bearing on their chances of promotion. Bringing things back to our \texttt{promotions} data frame, the \texttt{gender} variable would thus be an irrelevant label. If these \texttt{gender} labels were irrelevant, then we could randomly reassign them by ``shuffling'' them to no consequence!
-
-To illustrate this idea, let's narrow our focus to 6 arbitrarily chosen résumés of the 48 in Table \ref{tab:compare-six}. The \texttt{decision} column shows that 3 résumés resulted in promotion while 3 didn't. The \texttt{gender} column shows what the original gender of the résumé name was.
-
-However, in our hypothesized universe of no gender discrimination, gender is irrelevant and thus it is of no consequence to randomly ``shuffle'' the values of \texttt{gender}. The \texttt{shuffled\_gender} column shows one such possible random shuffling. Observe in the fourth column how the number of male and female names remains the same at 3 each, but they are now listed in a different order.
-
-\label{tab:compare-six}One example of shuffling gender variable
-
-résumé number
-
-decision
-
-gender
-
-shuffled gender
-
-1
-
-not
-
-male
-
-male
-
-2
-
-not
-
-female
-
-male
-
-3
-
-not
-
-female
-
-female
-
-4
-
-promoted
-
-male
-
-female
-
-5
-
-promoted
-
-male
-
-female
-
-6
-
-promoted
-
-female
-
-male
-
-Again, such random shuffling of the gender label only makes sense in our hypothesized universe of no gender discrimination. How could we extend this shuffling of the gender variable to all 48 résumés by hand? One way would be by using standard deck of 52 playing cards, which we display in Figure \ref{fig:deck-of-cards}.
-
-Since half the cards are red (diamonds and hearts) and the other half are black (spades and clubs), by removing two red cards and two black cards, we would end up with 24 red cards and 24 black cards. After shuffling these 48 cards as seen in Figure \ref{fig:shuffling}, we can flip the cards over one-by-one, assigning ``male'' for each red card and ``female'' for each black card.
-
-We've saved one such shuffling in the \texttt{promotions\_shuffled} data frame of the \texttt{moderndive} package. If you compare the original \texttt{promotions} and the shuffled \texttt{promotions\_shuffled} data frames, you'll see that while the \texttt{decision} variable is identical, the \texttt{gender} variable has changed.
-
-Let's repeat the same exploratory data analysis we did for the original \texttt{promotions} data on our \texttt{promotions\_shuffled} data frame. Let's create a barplot visualizing the relationship between \texttt{decision} and the new shuffled \texttt{gender} variable and compare this to the original unshuffled version in Figure \ref{fig:promotions-barplot-permuted}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{ggplot}\NormalTok{(promotions_shuffled, }
-       \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ gender, }\DataTypeTok{fill =}\NormalTok{ decision)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_bar}\NormalTok{() }\OperatorTok{+}\StringTok{ }
-\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x =} \StringTok{"Gender of résumé name"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## `summarise()` regrouping output by 'gender' (override with `.groups` argument)
-## `summarise()` regrouping output by 'gender' (override with `.groups` argument)
-\end{verbatim}
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/promotions-barplot-permuted-1.pdf}
-\caption{\label{fig:promotions-barplot-permuted}Barplots of relationship of promotion with gender (left) and shuffled gender (right).}
-\end{figure}
-
-It appears the difference in ``male names'' versus ``female names'' promotion rates is now different. Compared to the original data in the left barplot, the new ``shuffled'' data in the right barplot has promotion rates that are much more similar.
-
-Let's also compute the proportion of résumés accepted for promotion for each group:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{promotions_shuffled }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{group_by}\NormalTok{(gender, decision) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{tally}\NormalTok{() }\CommentTok{# Same as summarize(n = n())}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 4 x 3
-## # Groups:   gender [2]
-##   gender decision     n
-##   <fct>  <fct>    <int>
-## 1 male   not          6
-## 2 male   promoted    18
-## 3 female not          7
-## 4 female promoted    17
-\end{verbatim}
-
-So in this hypothetical universe of no discrimination, \(18/24 = 0.75 = 75\%\) of ``male'' résumés were selected for promotion. On the other hand, \(17/24 = 0.708 = 70.8\%\) of ``female'' résumés were selected for promotion.
-
-Let's next compare these two values. It appears that résumés with stereotypically male names were selected for promotion at a rate that was \(0.75 - 0.708 = 0.042 = 4.2\%\) different than résumés with stereotypically female names.
-
-Observe how this difference in rates is not the same as the difference in rates of 0.292 = 29.2\% we originally observed. This is once again due to \emph{sampling variation}. How can we better understand the effect of this sampling variation? By repeating this shuffling several times!
-
-\hypertarget{shuffling-16-times}{%
-\subsection{Shuffling 16 times}\label{shuffling-16-times}}
-
-We recruited 16 groups of our friends to repeat this shuffling exercise. They recorded these values in a \href{https://docs.google.com/spreadsheets/d/1Q-ENy3o5IrpJshJ7gn3hJ5A0TOWV2AZrKNHMsshQtiE/}{shared spreadsheet}; we display a snapshot of the first 10 rows and 5 columns in Figure \ref{fig:tactile-shuffling}.
-
-For each of these 16 columns of \emph{shuffles}, we computed the difference in promotion rates, and in Figure \ref{fig:null-distribution-1} we display their distribution in a histogram. We also mark the observed difference in promotion rate that occurred in real life of 0.292 = 29.2\% with a dark line.
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/null-distribution-1-1.pdf}
-\caption{\label{fig:null-distribution-1}Distribution of shuffled differences in promotions.}
-\end{figure}
-
-Before we discuss the distribution of the histogram, we emphasize the key thing to remember: this histogram represents differences in promotion rates that one would observe in our \emph{hypothesized universe} of no gender discrimination.
-
-Observe first that the histogram is roughly centered at 0. Saying that the difference in promotion rates is 0 is equivalent to saying that both genders had the same promotion rate. In other words, the center of these 16 values is consistent with what we would expect in our hypothesized universe of no gender discrimination.
-
-However, while the values are centered at 0, there is variation about 0. This is because even in a hypothesized universe of no gender discrimination, you will still likely observe small differences in promotion rates because of chance \emph{sampling variation}. Looking at the histogram in Figure \ref{fig:null-distribution-1}, such differences could even be as extreme as -0.292 or 0.208.
-
-Turning our attention to what we observed in real life: the difference of 0.292 = 29.2\% is marked with a vertical dark line. Ask yourself: in a hypothesized world of no gender discrimination, how likely would it be that we observe this difference? While opinions here may differ, in our opinion not often! Now ask yourself: what do these results say about our hypothesized universe of no gender discrimination?
-
-\hypertarget{ht-what-did-we-just-do}{%
-\subsection{What did we just do?}\label{ht-what-did-we-just-do}}
-
-What we just demonstrated in this activity is the statistical procedure known as \emph{hypothesis testing} using a \emph{permutation test}. The term ``permutation'' \index{permutation} is the mathematical term for ``shuffling'': taking a series of values and reordering them randomly, as you did with the playing cards.
-
-In fact, permutations are another form of \emph{resampling}, like the bootstrap method you performed in Chapter \ref{confidence-intervals}. While the bootstrap method involves resampling \emph{with} replacement, permutation methods involve resampling \emph{without} replacement.
-
-Think of our exercise involving the slips of paper representing pennies and the hat in Section \ref{resampling-tactile}: after sampling a penny, you put it back in the hat. Now think of our deck of cards. After drawing a card, you laid it out in front of you, recorded the color, and then you \emph{did not} put it back in the deck.
-
-In our previous example, we tested the validity of the hypothesized universe of no gender discrimination. The evidence contained in our observed sample of 48 résumés was somewhat inconsistent with our hypothesized universe. Thus, we would be inclined to \emph{reject} this hypothesized universe and declare that the evidence suggests there is gender discrimination.
-
-Recall our case study on whether yawning is contagious from Section \ref{case-study-two-prop-ci}. The previous example involves inference about an unknown difference of population proportions as well. This time, it will be \(p_{m} - p_{f}\), where \(p_{m}\) is the population proportion of résumés with male names being recommended for promotion and \(p_{f}\) is the equivalent for résumés with female names. Recall that this is one of the scenarios for inference we've seen so far in Table \ref{tab:table-diff-prop}.
-
-\label{tab:table-diff-prop}Scenarios of sampling for inference
-
-Scenario
-
-Population parameter
-
-Notation
-
-Point estimate
-
-Symbol(s)
-
-1
-
-Population proportion
-
-\(p\)
-
-Sample proportion
-
-\(\widehat{p}\)
-
-2
-
-Population mean
-
-\(\mu\)
-
-Sample mean
-
-\(\overline{x}\) or \(\widehat{\mu}\)
-
-3
-
-Difference in population proportions
-
-\(p_1 - p_2\)
-
-Difference in sample proportions
-
-\(\widehat{p}_1 - \widehat{p}_2\)
-
-So, based on our sample of \(n_m\) = 24 ``male'' applicants and \(n_w\) = 24 ``female'' applicants, the \emph{point estimate} for \(p_{m} - p_{f}\) is the \emph{difference in sample proportions} \(\widehat{p}_{m} -\widehat{p}_{f}\) = 0.875 - 0.583 = 0.292 = 29.2\%. This difference in favor of ``male'' résumés of 0.292 is greater than 0, suggesting discrimination in favor of men.
-
-However, the question we asked ourselves was ``is this difference meaningfully greater than 0?''. In other words, is that difference indicative of true discrimination, or can we just attribute it to \emph{sampling variation}? Hypothesis testing allows us to make such distinctions.
-
-\hypertarget{understanding-ht}{%
-\section{Understanding hypothesis tests}\label{understanding-ht}}
-
-Much like the terminology, notation, and definitions relating to sampling you saw in Section \ref{sampling-framework}, there are a lot of terminology, notation, and definitions related to hypothesis testing as well. Learning these may seem like a very daunting task at first. However, with practice, practice, and more practice, anyone can master them.
-
-First, a \textbf{hypothesis} \index{hypothesis testing!hypothesis} is a statement about the value of an unknown population parameter. In our résumé activity, our population parameter of interest is the difference in population proportions \(p_{m} - p_{f}\). Hypothesis tests can involve any of the population parameters in Table \ref{tab:table-ch8} of the five inference scenarios we'll cover in this book and also more advanced types we won't cover here.
-
-Second, a \textbf{hypothesis test} \index{hypothesis testing} consists of a test between two competing hypotheses: (1) a \textbf{null hypothesis} \(H_0\) (pronounced ``H-naught'') versus (2) an \textbf{alternative hypothesis} \(H_A\) (also denoted \(H_1\)).
-
-Generally the null hypothesis \index{hypothesis testing!null hypothesis} is a claim that there is ``no effect'' or ``no difference of interest.'' In many cases, the null hypothesis represents the status quo or a situation that nothing interesting is happening. Furthermore, generally the alternative hypothesis \index{hypothesis testing!alternative hypothesis} is the claim the experimenter or researcher wants to establish or find evidence to support. It is viewed as a ``challenger'' hypothesis to the null hypothesis \(H_0\). In our résumé activity, an appropriate hypothesis test would be:
-
-\[
-\begin{aligned}
-H_0 &: \text{men and women are promoted at the same rate}\\
-\text{vs } H_A &: \text{men are promoted at a higher rate than women}
-\end{aligned}
-\]
-
-Note some of the choices we have made. First, we set the null hypothesis \(H_0\) to be that there is no difference in promotion rate and the ``challenger'' alternative hypothesis \(H_A\) to be that there is a difference. While it would not be wrong in principle to reverse the two, it is a convention in statistical inference that the null hypothesis is set to reflect a ``null'' situation where ``nothing is going on.'' As we discussed earlier, in this case, \(H_0\) corresponds to there being no difference in promotion rates. Furthermore, we set \(H_A\) to be that men are promoted at a \emph{higher} rate, a subjective choice reflecting a prior suspicion we have that this is the case. We call such alternative hypotheses \index{hypothesis testing!one-sided alternative} \emph{one-sided alternatives}. If someone else however does not share such suspicions and only wants to investigate that there is a difference, whether higher or lower, they would set what is known as a \index{hypothesis testing!two-sided alternative} \emph{two-sided alternative}.
-
-We can re-express the formulation of our hypothesis test using the mathematical notation for our population parameter of interest, the difference in population proportions \(p_{m} - p_{f}\):
-
-\[
-\begin{aligned}
-H_0 &: p_{m} - p_{f} = 0\\
-\text{vs } H_A&: p_{m} - p_{f} > 0
-\end{aligned}
-\]
-
-Observe how the alternative hypothesis \(H_A\) is one-sided with \(p_{m} - p_{f} > 0\). Had we opted for a two-sided alternative, we would have set \(p_{m} - p_{f} \neq 0\). To keep things simple for now, we'll stick with the simpler one-sided alternative. We'll present an example of a two-sided alternative in Section \ref{ht-case-study}.
-
-Third, a \textbf{test statistic} \index{hypothesis testing!test statistic} is a \emph{point estimate/sample statistic} formula used for hypothesis testing. Note that a sample statistic is merely a summary statistic based on a sample of observations. Recall we saw in Section \ref{summarize} that a summary statistic takes in many values and returns only one. Here, the samples would be the \(n_m\) = 24 résumés with male names and the \(n_f\) = 24 résumés with female names. Hence, the point estimate of interest is the difference in sample proportions \(\widehat{p}_{m} - \widehat{p}_{f}\).
-
-Fourth, the \textbf{observed test statistic} \index{hypothesis testing!observed test statistic} is the value of the test statistic that we observed in real life. In our case, we computed this value using the data saved in the \texttt{promotions} data frame. It was the observed difference of \(\widehat{p}_{m} -\widehat{p}_{f} = 0.875 - 0.583 = 0.292 = 29.2\%\) in favor of résumés with male names.
-
-Fifth, the \textbf{null distribution} \index{hypothesis testing!null distribution} is the sampling distribution of the test statistic \emph{assuming the null hypothesis \(H_0\) is true}. Ooof! That's a long one! Let's unpack it slowly. The key to understanding the null distribution is that the null hypothesis \(H_0\) is \emph{assumed} to be true. We're not saying that \(H_0\) is true at this point, we're only assuming it to be true for hypothesis testing purposes. In our case, this corresponds to our hypothesized universe of no gender discrimination in promotion rates. Assuming the null hypothesis \(H_0\), also stated as ``Under \(H_0\),'' how does the test statistic vary due to sampling variation? In our case, how will the difference in sample proportions \(\widehat{p}_{m} - \widehat{p}_{f}\) vary due to sampling under \(H_0\)? Recall from Subsection \ref{sampling-definitions} that distributions displaying how point estimates vary due to sampling variation are called \emph{sampling distributions}. The only additional thing to keep in mind about null distributions is that they are sampling distributions \emph{assuming the null hypothesis \(H_0\) is true}.
-
-In our case, we previously visualized a null distribution in Figure \ref{fig:null-distribution-1}, which we re-display in Figure \ref{fig:null-distribution-2} using our new notation and terminology. It is the distribution of the 16 differences in sample proportions our friends computed \emph{assuming} a hypothetical universe of no gender discrimination. We also mark the value of the observed test statistic of 0.292 with a vertical line.
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/null-distribution-2-1.pdf}
-\caption{\label{fig:null-distribution-2}Null distribution and observed test statistic.}
-\end{figure}
-
-Sixth, the \textbf{\(p\)-value} \index{hypothesis testing!p-value} is the probability of obtaining a test statistic just as extreme or more extreme than the observed test statistic \emph{assuming the null hypothesis \(H_0\) is true}. Double ooof! Let's unpack this slowly as well. You can think of the \(p\)-value as a quantification of ``surprise'': assuming \(H_0\) is true, how surprised are we with what we observed? Or in our case, in our hypothesized universe of no gender discrimination, how surprised are we that we observed a difference in promotion rates of 0.292 from our collected samples assuming \(H_0\) is true? Very surprised? Somewhat surprised?
-
-The \(p\)-value quantifies this probability, or in the case of our 16 differences in sample proportions in Figure \ref{fig:null-distribution-2}, what proportion had a more ``extreme'' result? Here, extreme is defined in terms of the alternative hypothesis \(H_A\) that ``male'' applicants are promoted at a higher rate than ``female'' applicants. In other words, how often was the discrimination in favor of men \emph{even more} pronounced than \(0.875 - 0.583 = 0.292 = 29.2\%\)?
-
-In this case, 0 times out of 16, we obtained a difference in proportion greater than or equal to the observed difference of 0.292 = 29.2\%. A very rare (in fact, not occurring) outcome! Given the rarity of such a pronounced difference in promotion rates in our hypothesized universe of no gender discrimination, we're inclined to \emph{reject} \index{hypothesis testing!reject the null hypothesis} our hypothesized universe. Instead, we favor the hypothesis stating there is discrimination in favor of the ``male'' applicants. In other words, we reject \(H_0\) in favor of \(H_A\).
-
-Seventh and lastly, in many hypothesis testing procedures, it is commonly recommended to set the \textbf{significance level} \index{hypothesis testing!significance level} of the test beforehand. It is denoted by the Greek letter \(\alpha\) (pronounced ``alpha''). This value acts as a cutoff on the \(p\)-value, where if the \(p\)-value falls below \(\alpha\), we would ``reject the null hypothesis \(H_0\).''
-
-Alternatively, if the \(p\)-value does not fall below \(\alpha\), we would ``fail to reject \(H_0\).'' Note the latter statement is not quite the same as saying we ``accept \(H_0\).'' This distinction is rather subtle and not immediately obvious. So we'll revisit it later in Section \ref{ht-interpretation}.
-
-While different fields tend to use different values of \(\alpha\), some commonly used values for \(\alpha\) are 0.1, 0.01, and 0.05; with 0.05 being the choice people often make without putting much thought into it. We'll talk more about \(\alpha\) significance levels in Section \ref{ht-interpretation}, but first let's fully conduct the hypothesis test corresponding to our promotions activity using the \texttt{infer} package.
-
-\hypertarget{ht-infer}{%
-\section{Conducting hypothesis tests}\label{ht-infer}}
-
-In Section \ref{bootstrap-process}, we showed you how to construct confidence intervals. We first illustrated how to do this using \texttt{dplyr} data wrangling verbs and the \texttt{rep\_sample\_n()} function from Subsection \ref{shovel-1000-times} which we used as a virtual shovel. In particular, we constructed confidence intervals by resampling with replacement by setting the \texttt{replace\ =\ TRUE} argument to the \texttt{rep\_sample\_n()} function.
-
-We then showed you how to perform the same task using the \texttt{infer} package workflow. While both workflows resulted in the same bootstrap distribution from which we can construct confidence intervals, the \texttt{infer} package workflow emphasizes each of the steps in the overall process in Figure \ref{fig:infer-ci}. It does so using function names that are intuitively named with verbs:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \texttt{specify()} the variables of interest in your data frame.
-\item
-  \texttt{generate()} replicates of bootstrap resamples with replacement.
-\item
-  \texttt{calculate()} the summary statistic of interest.
-\item
-  \texttt{visualize()} the resulting bootstrap distribution and confidence interval.
-\end{enumerate}
-
-In this section, we'll now show you how to seamlessly modify the previously seen \texttt{infer} code for constructing confidence intervals to conduct hypothesis tests. You'll notice that the basic outline of the workflow is almost identical, except for an additional \texttt{hypothesize()} step between the \texttt{specify()} and \texttt{generate()} steps, as can be seen in Figure \ref{fig:inferht}.
-
-Furthermore, we'll use a pre-specified significance level \(\alpha\) = 0.05 for this hypothesis test. Let's leave discussion on the choice of this \(\alpha\) value until later on in Section \ref{ht-interpretation}.
-
-\hypertarget{infer-workflow-ht}{%
-\subsection{\texorpdfstring{\texttt{infer} package workflow}{infer package workflow}}\label{infer-workflow-ht}}
-
-\hypertarget{specify-variables}{%
-\subsubsection*{\texorpdfstring{1. \texttt{specify} variables}{1. specify variables}}\label{specify-variables}}
-\addcontentsline{toc}{subsubsection}{1. \texttt{specify} variables}
-
-Recall that we use the \texttt{specify()} \index{infer!specify()} verb to specify the response variable and, if needed, any explanatory variables for our study. In this case, since we are interested in any potential effects of gender on promotion decisions, we set \texttt{decision} as the response variable and \texttt{gender} as the explanatory variable. We do so using \texttt{formula\ =\ response\ \textasciitilde{}\ explanatory} where \texttt{response} is the name of the response variable in the data frame and \texttt{explanatory} is the name of the explanatory variable. So in our case it is \texttt{decision\ \textasciitilde{}\ gender}.
-
-Furthermore, since we are interested in the proportion of résumés \texttt{"promoted"}, and not the proportion of résumés \texttt{not} promoted, we set the argument \texttt{success} to \texttt{"promoted"}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{specify}\NormalTok{(}\DataTypeTok{formula =}\NormalTok{ decision }\OperatorTok{~}\StringTok{ }\NormalTok{gender, }\DataTypeTok{success =} \StringTok{"promoted"}\NormalTok{) }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Response: decision (factor)
-## Explanatory: gender (factor)
-## # A tibble: 48 x 2
-##    decision gender
-##    <fct>    <fct> 
-##  1 promoted male  
-##  2 promoted male  
-##  3 promoted male  
-##  4 promoted male  
-##  5 promoted male  
-##  6 promoted male  
-##  7 promoted male  
-##  8 promoted male  
-##  9 promoted male  
-## 10 promoted male  
-## # ... with 38 more rows
-\end{verbatim}
-
-Again, notice how the \texttt{promotions} data itself doesn't change, but the \texttt{Response:\ decision\ (factor)} and \texttt{Explanatory:\ gender\ (factor)} \emph{meta-data} do. This is similar to how the \texttt{group\_by()} verb from \texttt{dplyr} doesn't change the data, but only adds ``grouping'' meta-data, as we saw in Section \ref{groupby}.
-
-\hypertarget{hypothesize-the-null}{%
-\subsubsection*{\texorpdfstring{2. \texttt{hypothesize} the null}{2. hypothesize the null}}\label{hypothesize-the-null}}
-\addcontentsline{toc}{subsubsection}{2. \texttt{hypothesize} the null}
-
-In order to conduct hypothesis tests using the \texttt{infer} workflow, we need a new step not present for confidence intervals: \index{infer!hypothesize()} \texttt{hypothesize()}. Recall from Section \ref{understanding-ht} that our hypothesis test was
-
-\[
-\begin{aligned}
-H_0 &: p_{m} - p_{f} = 0\\
-\text{vs. } H_A&: p_{m} - p_{f} > 0
-\end{aligned}
-\]
-
-In other words, the null hypothesis \(H_0\) corresponding to our ``hypothesized universe'' stated that there was no difference in gender-based discrimination rates. We set this null hypothesis \(H_0\) in our \texttt{infer} workflow using the \texttt{null} argument of the \texttt{hypothesize()} function to either:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{"point"} for hypotheses involving a single sample or
-\item
-  \texttt{"independence"} for hypotheses involving two samples.
-\end{itemize}
-
-In our case, since we have two samples (the résumés with ``male'' and ``female'' names), we set \texttt{null\ =\ "independence"}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{specify}\NormalTok{(}\DataTypeTok{formula =}\NormalTok{ decision }\OperatorTok{~}\StringTok{ }\NormalTok{gender, }\DataTypeTok{success =} \StringTok{"promoted"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{hypothesize}\NormalTok{(}\DataTypeTok{null =} \StringTok{"independence"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Response: decision (factor)
-## Explanatory: gender (factor)
-## Null Hypothesis: independence
-## # A tibble: 48 x 2
-##    decision gender
-##    <fct>    <fct> 
-##  1 promoted male  
-##  2 promoted male  
-##  3 promoted male  
-##  4 promoted male  
-##  5 promoted male  
-##  6 promoted male  
-##  7 promoted male  
-##  8 promoted male  
-##  9 promoted male  
-## 10 promoted male  
-## # ... with 38 more rows
-\end{verbatim}
-
-Again, the data has not changed yet. This will occur at the upcoming \texttt{generate()} step; we're merely setting meta-data for now.
-
-Where do the terms \texttt{"point"} and \texttt{"independence"} come from? These are two technical statistical terms. The term ``point'' relates from the fact that for a single group of observations, you will test the value of a single point. Going back to the pennies example from Chapter \ref{confidence-intervals}, say we wanted to test if the mean year of all US pennies was equal to 1993 or not. We would be testing the value of a ``point'' \(\mu\), the mean year of \emph{all} US pennies, as follows
-
-\[
-\begin{aligned}
-H_0 &: \mu = 1993\\
-\text{vs } H_A&: \mu \neq 1993
-\end{aligned}
-\]
-
-The term ``independence'' relates to the fact that for two groups of observations, you are testing whether or not the response variable is \emph{independent} of the explanatory variable that assigns the groups. In our case, we are testing whether the \texttt{decision} response variable is ``independent'' of the explanatory variable \texttt{gender} that assigns each résumé to either of the two groups.
-
-\hypertarget{generate-replicates}{%
-\subsubsection*{\texorpdfstring{3. \texttt{generate} replicates}{3. generate replicates}}\label{generate-replicates}}
-\addcontentsline{toc}{subsubsection}{3. \texttt{generate} replicates}
-
-After we \texttt{hypothesize()} the null hypothesis, we \texttt{generate()} replicates of ``shuffled'' datasets assuming the null hypothesis is true. We do this by repeating the shuffling exercise you performed in Section \ref{ht-activity} several times. Instead of merely doing it 16 times as our groups of friends did, let's use the computer to repeat this 1000 times by setting \texttt{reps\ =\ 1000} in the \texttt{generate()} \index{infer!generate()} function. However, unlike for confidence intervals where we generated replicates using \texttt{type\ =\ "bootstrap"} resampling with replacement, we'll now perform shuffles/permutations by setting \texttt{type\ =\ "permute"}. Recall that shuffles/permutations are a kind of resampling, but unlike the bootstrap method, they involve resampling \emph{without} replacement.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{promotions_generate <-}\StringTok{ }\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{specify}\NormalTok{(}\DataTypeTok{formula =}\NormalTok{ decision }\OperatorTok{~}\StringTok{ }\NormalTok{gender, }\DataTypeTok{success =} \StringTok{"promoted"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{hypothesize}\NormalTok{(}\DataTypeTok{null =} \StringTok{"independence"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{generate}\NormalTok{(}\DataTypeTok{reps =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{type =} \StringTok{"permute"}\NormalTok{)}
-\KeywordTok{nrow}\NormalTok{(promotions_generate)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 48000
-\end{verbatim}
-
-Observe that the resulting data frame has 48,000 rows. This is because we performed shuffles/permutations for each of the 48 rows 1000 times and \(48,000 = 1000 \cdot 48\). If you explore the \texttt{promotions\_generate} data frame with \texttt{View()}, you'll notice that the variable \texttt{replicate} indicates which resample each row belongs to. So it has the value \texttt{1} 48 times, the value \texttt{2} 48 times, all the way through to the value \texttt{1000} 48 times.
-
-\hypertarget{calculate-summary-statistics}{%
-\subsubsection*{\texorpdfstring{4. \texttt{calculate} summary statistics}{4. calculate summary statistics}}\label{calculate-summary-statistics}}
-\addcontentsline{toc}{subsubsection}{4. \texttt{calculate} summary statistics}
-
-Now that we have generated 1000 replicates of ``shuffles'' assuming the null hypothesis is true, let's \texttt{calculate()} \index{infer!calculate()} the appropriate summary statistic for each of our 1000 shuffles. From Section \ref{understanding-ht}, point estimates related to hypothesis testing have a specific name: \emph{test statistics}. Since the unknown population parameter of interest is the difference in population proportions \(p_{m} - p_{f}\), the test statistic here is the difference in sample proportions \(\widehat{p}_{m} - \widehat{p}_{f}\).
-
-For each of our 1000 shuffles, we can calculate this test statistic by setting \texttt{stat\ =\ "diff\ in\ props"}. Furthermore, since we are interested in \(\widehat{p}_{m} - \widehat{p}_{f}\) we set \texttt{order\ =\ c("male",\ "female")}. As we stated earlier, the order of the subtraction does not matter, so long as you stay consistent throughout your analysis and tailor your interpretations accordingly.
-
-Let's save the result in a data frame called \texttt{null\_distribution}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{null_distribution <-}\StringTok{ }\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{specify}\NormalTok{(}\DataTypeTok{formula =}\NormalTok{ decision }\OperatorTok{~}\StringTok{ }\NormalTok{gender, }\DataTypeTok{success =} \StringTok{"promoted"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{hypothesize}\NormalTok{(}\DataTypeTok{null =} \StringTok{"independence"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{generate}\NormalTok{(}\DataTypeTok{reps =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{type =} \StringTok{"permute"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{calculate}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"diff in props"}\NormalTok{, }\DataTypeTok{order =} \KeywordTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{))}
-\NormalTok{null_distribution}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 1,000 x 2
-##    replicate    stat
-##        <int>   <dbl>
-##  1         1 -0.0417
-##  2         2 -0.125 
-##  3         3 -0.125 
-##  4         4 -0.0417
-##  5         5 -0.0417
-##  6         6 -0.125 
-##  7         7 -0.125 
-##  8         8 -0.125 
-##  9         9 -0.0417
-## 10        10 -0.0417
-## # ... with 990 more rows
-\end{verbatim}
-
-Observe that we have 1000 values of \texttt{stat}, each representing one instance of \(\widehat{p}_{m} - \widehat{p}_{f}\) in a hypothesized world of no gender discrimination. Observe as well that we chose the name of this data frame carefully: \texttt{null\_distribution}. Recall once again from Section \ref{understanding-ht} that sampling distributions when the null hypothesis \(H_0\) is assumed to be true have a special name: the \emph{null distribution}.
-
-What was the \emph{observed} difference in promotion rates? In other words, what was the \emph{observed test statistic} \(\widehat{p}_{m} - \widehat{p}_{f}\)? Recall from Section \ref{ht-activity} that we computed this observed difference by hand to be 0.875 - 0.583 = 0.292 = 29.2\%. We can also compute this value using the previous \texttt{infer} code but with the \texttt{hypothesize()} and \texttt{generate()} steps removed. Let's save this in \texttt{obs\_diff\_prop}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{obs_diff_prop <-}\StringTok{ }\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{specify}\NormalTok{(decision }\OperatorTok{~}\StringTok{ }\NormalTok{gender, }\DataTypeTok{success =} \StringTok{"promoted"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{calculate}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"diff in props"}\NormalTok{, }\DataTypeTok{order =} \KeywordTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{))}
-\NormalTok{obs_diff_prop}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 1 x 1
-##    stat
-##   <dbl>
-## 1 0.292
-\end{verbatim}
-
-\hypertarget{visualize-the-p-value}{%
-\subsubsection*{\texorpdfstring{5. \texttt{visualize} the p-value}{5. visualize the p-value}}\label{visualize-the-p-value}}
-\addcontentsline{toc}{subsubsection}{5. \texttt{visualize} the p-value}
-
-The final step is to measure how surprised we are by a promotion difference of 29.2\% in a hypothesized universe of no gender discrimination. If the observed difference of 0.292 is highly unlikely, then we would be inclined to reject the validity of our hypothesized universe.
-
-We start by visualizing the \emph{null distribution} of our 1000 values of \(\widehat{p}_{m} - \widehat{p}_{f}\) using \texttt{visualize()} \index{infer!visualize()} in Figure \ref{fig:null-distribution-infer}. Recall that these are values of the difference in promotion rates assuming \(H_0\) is true. This corresponds to being in our hypothesized universe of no gender discrimination.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{visualize}\NormalTok{(null_distribution, }\DataTypeTok{bins =} \DecValTok{10}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/null-distribution-infer-1.pdf}
-\caption{\label{fig:null-distribution-infer}Null distribution.}
-\end{figure}
-
-Let's now add what happened in real life to Figure \ref{fig:null-distribution-infer}, the observed difference in promotion rates of 0.875 - 0.583 = 0.292 = 29.2\%. However, instead of merely adding a vertical line using \texttt{geom\_vline()}, let's use the \index{infer!shade\_p\_value()} \texttt{shade\_p\_value()} function with \texttt{obs\_stat} set to the observed test statistic value we saved in \texttt{obs\_diff\_prop}.
-
-Furthermore, we'll set the \texttt{direction\ =\ "right"} reflecting our alternative hypothesis \(H_A: p_{m} - p_{f} > 0\). Recall our alternative hypothesis \(H_A\) is that \(p_{m} - p_{f} > 0\), stating that there is a difference in promotion rates in favor of résumés with male names. ``More extreme'' here corresponds to differences that are ``bigger'' or ``more positive'' or ``more to the right.'' Hence we set the \texttt{direction} argument of \texttt{shade\_p\_value()} to be \texttt{"right"}.
-
-On the other hand, had our alternative hypothesis \(H_A\) been the other possible one-sided alternative \(p_{m} - p_{f} < 0\), suggesting discrimination in favor of résumés with female names, we would've set \texttt{direction\ =\ "left"}. Had our alternative hypothesis \(H_A\) been two-sided \(p_{m} - p_{f} \neq 0\), suggesting discrimination in either direction, we would've set \texttt{direction\ =\ "both"}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{visualize}\NormalTok{(null_distribution, }\DataTypeTok{bins =} \DecValTok{10}\NormalTok{) }\OperatorTok{+}\StringTok{ }
-\StringTok{  }\KeywordTok{shade_p_value}\NormalTok{(}\DataTypeTok{obs_stat =}\NormalTok{ obs_diff_prop, }\DataTypeTok{direction =} \StringTok{"right"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/null-distribution-infer-2-1.pdf}
-\caption{\label{fig:null-distribution-infer-2}Shaded histogram to show \(p\)-value.}
-\end{figure}
-
-In the resulting Figure \ref{fig:null-distribution-infer-2}, the solid dark line marks 0.292 = 29.2\%. However, what does the shaded-region correspond to? This is the \emph{\(p\)-value}. Recall the definition of the \(p\)-value from Section \ref{understanding-ht}:
-
-\begin{quote}
-A \(p\)-value is the probability of obtaining a test statistic just as or more extreme than the observed test statistic \emph{assuming the null hypothesis \(H_0\) is true}.
-So judging by the shaded region in Figure \ref{fig:null-distribution-infer-2}, it seems we would somewhat rarely observe differences in promotion rates of 0.292 = 29.2\% or more in a hypothesized universe of no gender discrimination. In other words, the \(p\)-value is somewhat small. Hence, we would be inclined to reject this hypothesized universe, or using statistical language we would ``reject \(H_0\).''
-\end{quote}
-
-What fraction of the null distribution is shaded? In other words, what is the exact value of the \(p\)-value? We can compute it using the \texttt{get\_p\_value()} \index{infer!get\_p\_value()} function with the same arguments as the previous \texttt{shade\_p\_value()} code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{null_distribution }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{get_p_value}\NormalTok{(}\DataTypeTok{obs_stat =}\NormalTok{ obs_diff_prop, }\DataTypeTok{direction =} \StringTok{"right"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 1 x 1
-##   p_value
-##     <dbl>
-## 1   0.027
-\end{verbatim}
-
-Keeping the definition of a \(p\)-value in mind, the probability of observing a difference in promotion rates as large as 0.292 = 29.2\% due to sampling variation alone in the null distribution is 0.027 = 2.7\%. Since this \(p\)-value is smaller than our pre-specified significance level \(\alpha\) = 0.05, we reject the null hypothesis \(H_0: p_{m} - p_{f} = 0\). In other words, this \(p\)-value is sufficiently small to reject our hypothesized universe of no gender discrimination. We instead have enough evidence to change our mind in favor of gender discrimination being a likely culprit here. Observe that whether we reject the null hypothesis \(H_0\) or not depends in large part on our choice of significance level \(\alpha\). We'll discuss this more in Subsection \ref{choosing-alpha}.
-
-\hypertarget{comparing-infer-workflows}{%
-\subsection{Comparison with confidence intervals}\label{comparing-infer-workflows}}
-
-One of the great things about the \texttt{infer} package is that we can jump seamlessly between conducting hypothesis tests and constructing confidence intervals with minimal changes! Recall the code from the previous section that creates the null distribution, which in turn is needed to compute the \(p\)-value:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{null_distribution <-}\StringTok{ }\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{specify}\NormalTok{(}\DataTypeTok{formula =}\NormalTok{ decision }\OperatorTok{~}\StringTok{ }\NormalTok{gender, }\DataTypeTok{success =} \StringTok{"promoted"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{hypothesize}\NormalTok{(}\DataTypeTok{null =} \StringTok{"independence"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{generate}\NormalTok{(}\DataTypeTok{reps =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{type =} \StringTok{"permute"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{calculate}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"diff in props"}\NormalTok{, }\DataTypeTok{order =} \KeywordTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-To create the corresponding bootstrap distribution needed to construct a 95\% confidence interval for \(p_{m} - p_{f}\), we only need to make two changes. \index{infer!switching between tests and confidence intervals} First, we remove the \texttt{hypothesize()} step since we are no longer assuming a null hypothesis \(H_0\) is true. We can do this by deleting or commenting out the \texttt{hypothesize()} line of code. Second, we switch the \texttt{type} of resampling in the \texttt{generate()} step to be \texttt{"bootstrap"} instead of \texttt{"permute"}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bootstrap_distribution <-}\StringTok{ }\NormalTok{promotions }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{specify}\NormalTok{(}\DataTypeTok{formula =}\NormalTok{ decision }\OperatorTok{~}\StringTok{ }\NormalTok{gender, }\DataTypeTok{success =} \StringTok{"promoted"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\CommentTok{# Change 1 - Remove hypothesize():}
-\StringTok{  }\CommentTok{# hypothesize(null = "independence") %>% }
-\StringTok{  }\CommentTok{# Change 2 - Switch type from "permute" to "bootstrap":}
-\StringTok{  }\KeywordTok{generate}\NormalTok{(}\DataTypeTok{reps =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{type =} \StringTok{"bootstrap"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{calculate}\NormalTok{(}\DataTypeTok{stat =} \StringTok{"diff in props"}\NormalTok{, }\DataTypeTok{order =} \KeywordTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-Using this \texttt{bootstrap\_distribution}, let's first compute the percentile-based confidence intervals, as we did in Section \ref{bootstrap-process}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{percentile_ci <-}\StringTok{ }\NormalTok{bootstrap_distribution }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{get_confidence_interval}\NormalTok{(}\DataTypeTok{level =} \FloatTok{0.95}\NormalTok{, }\DataTypeTok{type =} \StringTok{"percentile"}\NormalTok{)}
-\NormalTok{percentile_ci}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 1 x 2
-##   lower_ci upper_ci
-##      <dbl>    <dbl>
-## 1   0.0635    0.525
-\end{verbatim}
-
-Using our shorthand interpretation for 95\% confidence intervals from Subsection \ref{shorthand}, we are 95\% ``confident'' that the true difference in population proportions \(p_{m} - p_{f}\) is between (0.063, 0.525). Let's visualize \texttt{bootstrap\_distribution} and this percentile-based 95\% confidence interval for \(p_{m} - p_{f}\) in Figure \ref{fig:bootstrap-distribution-two-prop-percentile}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{visualize}\NormalTok{(bootstrap_distribution) }\OperatorTok{+}\StringTok{ }
-\StringTok{  }\KeywordTok{shade_confidence_interval}\NormalTok{(}\DataTypeTok{endpoints =}\NormalTok{ percentile_ci)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop-percentile-1.pdf}
-\caption{\label{fig:bootstrap-distribution-two-prop-percentile}Percentile-based 95\% confidence interval.}
-\end{figure}
-
-Notice a key value that is not included in the 95\% confidence interval for \(p_{m} - p_{f}\): the value 0. In other words, a difference of 0 is not included in our net, suggesting that \(p_{m}\) and \(p_{f}\) are truly different! Furthermore, observe how the entirety of the 95\% confidence interval for \(p_{m} - p_{f}\) lies above 0, suggesting that this difference is in favor of men.
-
-Since the bootstrap distribution appears to be roughly normally shaped, we can also use the standard error method as we did in Section \ref{bootstrap-process}. In this case, we must specify the \texttt{point\_estimate} argument as the observed difference in promotion rates 0.292 = 29.2\% saved in \texttt{obs\_diff\_prop}. This value acts as the center of the confidence interval.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{se_ci <-}\StringTok{ }\NormalTok{bootstrap_distribution }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{get_confidence_interval}\NormalTok{(}\DataTypeTok{level =} \FloatTok{0.95}\NormalTok{, }\DataTypeTok{type =} \StringTok{"se"}\NormalTok{, }
-                          \DataTypeTok{point_estimate =}\NormalTok{ obs_diff_prop)}
-\NormalTok{se_ci}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 1 x 2
-##   lower_ci upper_ci
-##      <dbl>    <dbl>
-## 1   0.0587    0.525
-\end{verbatim}
-
-Let's visualize \texttt{bootstrap\_distribution} again, but now the standard error based 95\% confidence interval for \(p_{m} - p_{f}\) in Figure \ref{fig:bootstrap-distribution-two-prop-se}. Again, notice how the value 0 is not included in our confidence interval, again suggesting that \(p_{m}\) and \(p_{f}\) are truly different!
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{visualize}\NormalTok{(bootstrap_distribution) }\OperatorTok{+}\StringTok{ }
-\StringTok{  }\KeywordTok{shade_confidence_interval}\NormalTok{(}\DataTypeTok{endpoints =}\NormalTok{ se_ci)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/bootstrap-distribution-two-prop-se-1.pdf}
-\caption{\label{fig:bootstrap-distribution-two-prop-se}Standard error-based 95\% confidence interval.}
-\end{figure}
-
-\hypertarget{only-one-test}{%
-\subsection{``There is only one test''}\label{only-one-test}}
-
-Let's recap the steps necessary to conduct a hypothesis test using the terminology, notation, and definitions related to sampling you saw in Section \ref{understanding-ht} and the \texttt{infer} workflow from Subsection \ref{infer-workflow-ht}:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \texttt{specify()} the variables of interest in your data frame.
-\item
-  \texttt{hypothesize()} the null hypothesis \(H_0\). In other words, set a ``model for the universe'' assuming \(H_0\) is true.
-\item
-  \texttt{generate()} shuffles assuming \(H_0\) is true. In other words, \emph{simulate} data assuming \(H_0\) is true.
-\item
-  \texttt{calculate()} the \emph{test statistic} of interest, both for the observed data and your \emph{simulated} data.
-\item
-  \texttt{visualize()} the resulting \emph{null distribution} and compute the \emph{\(p\)-value} by comparing the null distribution to the observed test statistic.
-\end{enumerate}
-
-While this is a lot to digest, especially the first time you encounter hypothesis testing, the nice thing is that once you understand this general framework, then you can understand \emph{any} hypothesis test. In a famous blog post, computer scientist Allen Downey called this the \href{http://allendowney.blogspot.com/2016/06/there-is-still-only-one-test.html}{``There is only one test''} framework, for which he created the flowchart displayed in Figure \ref{fig:htdowney}.
-
-Notice its similarity with the ``hypothesis testing with \texttt{infer}'' diagram you saw in Figure \ref{fig:inferht}. That's because the \texttt{infer} package was explicitly designed to match the ``There is only one test'' framework. So if you can understand the framework, you can easily generalize these ideas for all hypothesis testing scenarios. Whether for population proportions \(p\), population means \(\mu\), differences in population proportions \(p_1 - p_2\), differences in population means \(\mu_1 - \mu_2\), and as you'll see in Chapter \ref{inference-for-regression} on inference for regression, population regression slopes \(\beta_1\) as well. In fact, it applies more generally even than just these examples to more complicated hypothesis tests and test statistics as well.
-
-\hypertarget{ht-interpretation}{%
-\section{Interpreting hypothesis tests}\label{ht-interpretation}}
-
-Interpreting the results of hypothesis tests is one of the more challenging aspects of this method for statistical inference. In this section, we'll focus on ways to help with deciphering the process and address some common misconceptions.
-
-\hypertarget{trial}{%
-\subsection{Two possible outcomes}\label{trial}}
-
-In Section \ref{understanding-ht}, we mentioned that given a pre-specified significance level \(\alpha\) there are two possible outcomes of a hypothesis test:
-
-\begin{itemize}
-\tightlist
-\item
-  If the \(p\)-value is less than \(\alpha\), then we \emph{reject} the null hypothesis \(H_0\) in favor of \(H_A\).
-\item
-  If the \(p\)-value is greater than or equal to \(\alpha\), we \emph{fail to reject} the null hypothesis \(H_0\).
-\end{itemize}
-
-Unfortunately, the latter result is often misinterpreted as ``accepting the null hypothesis \(H_0\).'' While at first glance it may seem that the statements ``failing to reject \(H_0\)'' and ``accepting \(H_0\)'' are equivalent, there actually is a subtle difference. Saying that we ``accept the null hypothesis \(H_0\)'' is equivalent to stating that ``we think the null hypothesis \(H_0\) is true.'' However, saying that we ``fail to reject the null hypothesis \(H_0\)'' is saying something else: ``While \(H_0\) might still be false, we don't have enough evidence to say so.'' In other words, there is an absence of enough proof. However, the absence of proof is not proof of absence.
-
-To further shed light on this distinction, \index{hypothesis testing!US criminal trial analogy} let's use the United States criminal justice system as an analogy. A criminal trial in the United States is a similar situation to hypothesis tests whereby a choice between two contradictory claims must be made about a defendant who is on trial:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  The defendant is truly either ``innocent'' or ``guilty.''
-\item
-  The defendant is presumed ``innocent until proven guilty.''
-\item
-  The defendant is found guilty only if there is \emph{strong evidence} that the defendant is guilty. The phrase ``beyond a reasonable doubt'' is often used as a guideline for determining a cutoff for when enough evidence exists to find the defendant guilty.
-\item
-  The defendant is found to be either ``not guilty'' or ``guilty'' in the ultimate verdict.
-\end{enumerate}
-
-In other words, \emph{not guilty} verdicts are not suggesting the defendant is \emph{innocent}, but instead that ``while the defendant may still actually be guilty, there wasn't enough evidence to prove this fact.'' Now let's make the connection with hypothesis tests:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Either the null hypothesis \(H_0\) or the alternative hypothesis \(H_A\) is true.
-\item
-  Hypothesis tests are conducted assuming the null hypothesis \(H_0\) is true.
-\item
-  We reject the null hypothesis \(H_0\) in favor of \(H_A\) only if the evidence found in the sample suggests that \(H_A\) is true. The significance level \(\alpha\) is used as a guideline to set the threshold on just how strong of evidence we require.
-\item
-  We ultimately decide to either ``fail to reject \(H_0\)'' or ``reject \(H_0\).''
-\end{enumerate}
-
-So while gut instinct may suggest ``failing to reject \(H_0\)'' and ``accepting \(H_0\)'' are equivalent statements, they are not. ``Accepting \(H_0\)'' is equivalent to finding a defendant innocent. However, courts do not find defendants ``innocent,'' but rather they find them ``not guilty.'' Putting things differently, defense attorneys do not need to prove that their clients are innocent, rather they only need to prove that clients are not ``guilty beyond a reasonable doubt''.
-
-So going back to our résumés activity in Section \ref{ht-infer}, recall that our hypothesis test was \(H_0: p_{m} - p_{f} = 0\) versus \(H_A: p_{m} - p_{f} > 0\) and that we used a pre-specified significance level of \(\alpha\) = 0.05. We found a \(p\)-value of 0.027. Since the \(p\)-value was smaller than \(\alpha\) = 0.05, we rejected \(H_0\). In other words, we found needed levels of evidence in this particular sample to say that \(H_0\) is false at the \(\alpha\) = 0.05 significance level. We also state this conclusion using non-statistical language: we found enough evidence in this data to suggest that there was gender discrimination at play.
-
-\hypertarget{types-of-errors}{%
-\subsection{Types of errors}\label{types-of-errors}}
-
-Unfortunately, there is some chance a jury or a judge can make an incorrect decision in a criminal trial by reaching the wrong verdict. For example, finding a truly innocent defendant ``guilty''. Or on the other hand, finding a truly guilty defendant ``not guilty.'' This can often stem from the fact that prosecutors don't have access to all the relevant evidence, but instead are limited to whatever evidence the police can find.
-
-The same holds for hypothesis tests. We can make incorrect decisions about a population parameter because we only have a sample of data from the population and thus sampling variation can lead us to incorrect conclusions.
-
-There are two possible erroneous conclusions in a criminal trial: either (1) a truly innocent person is found guilty or (2) a truly guilty person is found not guilty. Similarly, there are two possible errors in a hypothesis test: either (1) rejecting \(H_0\) when in fact \(H_0\) is true, called a \textbf{Type I error} \index{hypothesis testing!Type I error} or (2) failing to reject \(H_0\) when in fact \(H_0\) is false, called a \index{hypothesis testing!Type II error} \textbf{Type II error}. Another term used for ``Type I error'' is ``false positive,'' while another term for ``Type II error'' is ``false negative.''
-
-This risk of error is the price researchers pay for basing inference on a sample instead of performing a census on the entire population. But as we've seen in our numerous examples and activities so far, censuses are often very expensive and other times impossible, and thus researchers have no choice but to use a sample. Thus in any hypothesis test based on a sample, we have no choice but to tolerate some chance that a Type I error will be made and some chance that a Type II error will occur.
-
-To help understand the concepts of Type I error and Type II errors, we apply these terms to our criminal justice analogy in Figure \ref{fig:trial-errors-table}.
-
-Thus a Type I error corresponds to incorrectly putting a truly innocent person in jail, whereas a Type II error corresponds to letting a truly guilty person go free. Let's show the corresponding table in Figure \ref{fig:trial-errors-table-ht} for hypothesis tests.
-
-\hypertarget{choosing-alpha}{%
-\subsection{How do we choose alpha?}\label{choosing-alpha}}
-
-If we are using a sample to make inferences about a population, we run the risk of making errors. For confidence intervals, a corresponding ``error'' would be constructing a confidence interval that does not contain the true value of the population parameter. For hypothesis tests, this would be making either a Type I or Type II error. Obviously, we want to minimize the probability of either error; we want a small probability of making an incorrect conclusion:
-
-\begin{itemize}
-\tightlist
-\item
-  The probability of a Type I Error occurring is denoted by \(\alpha\). The value of \(\alpha\) is called the \emph{significance level} of the hypothesis test, which we defined in Section \ref{understanding-ht}.
-\item
-  The probability of a Type II Error is denoted by \(\beta\). The value of \(1-\beta\) is known as the \emph{power} of the hypothesis test.
-\end{itemize}
-
-In other words, \(\alpha\) corresponds to the probability of incorrectly rejecting \(H_0\) when in fact \(H_0\) is true. On the other hand, \(\beta\) corresponds to the probability of incorrectly failing to reject \(H_0\) when in fact \(H_0\) is false.
-
-Ideally, we want \(\alpha = 0\) and \(\beta = 0\), meaning that the chance of making either error is 0. However, this can never be the case in any situation where we are sampling for inference. There will always be the possibility of making either error when we use sample data. Furthermore, these two error probabilities are inversely related. As the probability of a Type I error goes down, the probability of a Type II error goes up.
-
-What is typically done in practice is to fix the probability of a Type I error by pre-specifying a significance level \(\alpha\) and then try to minimize \(\beta\). In other words, we will tolerate a certain fraction of incorrect rejections of the null hypothesis \(H_0\), and then try to minimize the fraction of incorrect non-rejections of \(H_0\).
-
-So for example if we used \(\alpha\) = 0.01, we would be using a hypothesis testing procedure that in the long run would incorrectly reject the null hypothesis \(H_0\) one percent of the time. This is analogous to setting the confidence level of a confidence interval.
-
-So what value should you use for \(\alpha\)? \index{hypothesis testing!tradeoff between alpha and beta} Different fields have different conventions, but some commonly used values include 0.10, 0.05, 0.01, and 0.001. However, it is important to keep in mind that if you use a relatively small value of \(\alpha\), then all things being equal, \(p\)-values will have a harder time being less than \(\alpha\). Thus we would reject the null hypothesis less often. In other words, we would reject the null hypothesis \(H_0\) only if we have \emph{very strong} evidence to do so. This is known as a ``conservative'' test.
-
-On the other hand, if we used a relatively large value of \(\alpha\), then all things being equal, \(p\)-values will have an easier time being less than \(\alpha\). Thus we would reject the null hypothesis more often. In other words, we would reject the null hypothesis \(H_0\) even if we only have \emph{mild} evidence to do so. This is known as a ``liberal'' test.
-
-\hypertarget{conclusions}{%
-\section{Conclusions}\label{conclusions}}
-
-\hypertarget{when-inference-is-not-needed}{%
-\subsection{When inference is not needed}\label{when-inference-is-not-needed}}
-
-We've now walked through several different examples of how to use the \texttt{infer} package to perform statistical inference: constructing confidence intervals and conducting hypothesis tests. For each of these examples, we made it a point to always perform an exploratory data analysis (EDA) first; specifically, by looking at the raw data values, by using data visualization with \texttt{ggplot2}, and by data wrangling with \texttt{dplyr} beforehand. We \emph{highly} encourage you to always do the same. As a beginner to statistics, EDA helps you develop intuition as to what statistical methods like confidence intervals and hypothesis tests can tell us. Even as a seasoned practitioner of statistics, EDA helps guide your statistical investigations. In particular, is statistical inference even needed?
-
-Let's consider an example. Say we're interested in the following question: Of \emph{all} flights leaving a New York City airport, are Hawaiian Airlines flights in the air for longer than Alaska Airlines flights? Furthermore, let's assume that 2013 flights are a representative sample of all such flights. Then we can use the \texttt{flights} data frame in the \texttt{nycflights13} \index{R packages!nycflights13} package we introduced in Section \ref{nycflights13} to answer our question. Let's filter this data frame to only include Hawaiian and Alaska Airlines using their \texttt{carrier} codes \texttt{HA} and \texttt{AS}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \NormalTok{flights_sample <-}\StringTok{ }\NormalTok{flights }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{filter}\NormalTok{(carrier }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"HA"}\NormalTok{, }\StringTok{"AS"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-There are two possible statistical inference methods we could use to answer such questions. First, we could construct a 95\% confidence interval for the difference in population means \(\mu_{HA} - \mu_{AS}\), where \(\mu_{HA}\) is the mean air time of all Hawaiian Airlines flights and \(\mu_{AS}\) is the mean air time of all Alaska Airlines flights. We could then check if the entirety of the interval is greater than 0, suggesting that \(\mu_{HA} - \mu_{AS} > 0\), or, in other words suggesting that \(\mu_{HA} > \mu_{AS}\). Second, we could perform a hypothesis test of the null hypothesis \(H_0: \mu_{HA} - \mu_{AS} = 0\) versus the alternative hypothesis \(H_A: \mu_{HA} - \mu_{AS} > 0\).
+Hay dos posibles métodos de inferencia estadística que podríamos utilizar para responder a estas preguntas. Primero, podríamos construir un intervalo de confianza del 95\% para la diferencia en las medias poblacionales \(\mu_{HA}-\mu_{AS}\), donde \(\mu_{HA}\) es el tiempo de vuelo medio de todos los vuelos de Hawaiian Airlines y \(\mu_{AS}\) es el tiempo medio de vuelo de los vuelos de Alaska Airlines. Luego podríamos verificar si la totalidad del intervalo es mayor que 0, sugiriendo que \(\mu_{HA} - \mu_{AS}> 0\), o, en otras palabras, sugiriendo que \(\mu_{HA}> \mu_{AS}\). En segundo lugar, podríamos realizar una prueba de hipótesis de la hipótesis nula \(H_0:\mu_{HA} - \mu_{AS} = 0\) frente a la hipótesis alternativa \(H_A:\mu_{HA}-\mu_{AS}>0\).
 
-However, let's first construct an exploratory visualization as we suggested earlier. Since \texttt{air\_time} is numerical and \texttt{carrier} is categorical, a boxplot can display the relationship between these two variables, which we display in Figure \ref{fig:ha-as-flights-boxplot}.
+Construyamos primero una visualización exploratoria como acabamos de sugerir. Dado que \texttt{air\_time} es numérico y \texttt{carrier} es categórico, un diagrama de caja (\emph{boxplot}) puede mostrar la relación entre estas dos variables (ver la Figura \ref{fig:ha-as-flights-boxplot}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3195,19 +2356,15 @@ However, let's first construct an exploratory visualization as we suggested earl
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## Warning: Removed 5 rows containing non-finite values (stat_boxplot).
-\end{verbatim}
-
 \begin{figure}
 \centering
 \includegraphics{tecnicas-cuantitativas_files/figure-latex/ha-as-flights-boxplot-1.pdf}
 \caption{\label{fig:ha-as-flights-boxplot}Air time for Hawaiian and Alaska Airlines flights departing NYC in 2013.}
 \end{figure}
 
-This is what we like to call ``no PhD in Statistics needed'' moments. You don't have to be an expert in statistics to know that Alaska Airlines and Hawaiian Airlines have \emph{significantly} different air times. The two boxplots don't even overlap! Constructing a confidence interval or conducting a hypothesis test would frankly not provide much more insight than Figure \ref{fig:ha-as-flights-boxplot}.
+Esto es lo que nos gusta llamar momentos en los que ``no se necesita un doctorado en estadística''. No es necesario ser un experto en estadísticas para saber que Alaska Airlines y Hawaiian Airlines tienen horarios aéreos \emph{significativamente} diferentes. ¡Los dos diagramas de caja ni siquiera se superponen! La construcción de un intervalo de confianza o la realización de una prueba de hipótesis, francamente, no proporcionaría mucha más información que la Figura \ref{fig:ha-as-flights-boxplot}.
 
-Let's investigate why we observe such a clear cut difference between these two airlines using data wrangling. Let's first group by the rows of \texttt{flights\_sample} not only by \texttt{carrier} but also by destination \texttt{dest}. Subsequently, we'll compute two summary statistics: the number of observations using \texttt{n()} and the mean airtime:
+Investiguemos por qué observamos una diferencia tan clara entre estas dos aerolíneas que utilizan la manipulación de datos. Primero agrupemos por las filas de \texttt{vuelos\_muestra} no solo por\texttt{transportista} sino también por destino \texttt{dest}. Posteriormente, calcularemos dos estadísticas resumidas: el número de observaciones usando \texttt{n\ ()} y el tiempo medio de transmisión:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3218,10 +2375,6 @@ Let's investigate why we observe such a clear cut difference between these two a
 \end{Shaded}
 
 \begin{verbatim}
-## `summarise()` regrouping output by 'carrier' (override with `.groups` argument)
-\end{verbatim}
-
-\begin{verbatim}
 ## # A tibble: 2 x 4
 ## # Groups:   carrier [2]
 ##   carrier dest      n mean_time
@@ -3230,33 +2383,36 @@ Let's investigate why we observe such a clear cut difference between these two a
 ## 2 HA      HNL     342      623.
 \end{verbatim}
 
-It turns out that from New York City in 2013, Alaska only flew to \texttt{SEA} (Seattle) from New York City (NYC) while Hawaiian only flew to \texttt{HNL} (Honolulu) from NYC. Given the clear difference in distance from New York City to Seattle versus New York City to Honolulu, it is not surprising that we observe such different (\emph{statistically significantly different}, in fact) air times in flights.
+Resulta que desde la ciudad de Nueva York en 2013, Alaska solo voló a ``SEA'' (Seattle) desde la ciudad de Nueva York (NYC) mientras que Hawaiian solo voló a ``HNL'' (Honolulu) desde Nueva York. Dada la clara diferencia en la distancia entre la ciudad de Nueva York y Seattle y la ciudad de Nueva York a Honolulu, no es sorprendente que observemos tiempos de vuelo tan diferentes (\_ estadísticamente significativamente diferentes\_, de hecho) en los vuelos.
 
-This is a clear example of not needing to do anything more than a simple exploratory data analysis using data visualization and descriptive statistics to get an appropriate conclusion. This is why we highly recommend you perform an EDA of any sample data before running statistical inference methods like confidence intervals and hypothesis tests.
+Este es un claro ejemplo de que no es necesario hacer nada más que un simple análisis exploratorio de datos utilizando visualización de datos y estadísticas descriptivas para llegar a una conclusión adecuada. Por lo tanto, es recomendable empezar siempre por realizar un análisis exploratorio con estadísticas descriptivas antes de aplicar inferencia estadística.
 
-\hypertarget{problems-with-p-values}{%
-\subsection{Problems with p-values}\label{problems-with-p-values}}
+\hypertarget{problemas-con-los-p-valores}{%
+\subsection{Problemas con los p-valores}\label{problemas-con-los-p-valores}}
 
-On top of the many common misunderstandings about hypothesis testing and \(p\)-values we listed in Section \ref{ht-interpretation}, another unfortunate consequence of the expanded use of \(p\)-values and hypothesis testing is a phenomenon known as ``p-hacking.'' \index{p-hacking} p-hacking is the act of ``cherry-picking'' only results that are ``statistically significant'' while dismissing those that aren't, even if at the expense of the scientific ideas. There are lots of articles written recently about misunderstandings and the problems with \(p\)-values. We encourage you to check some of them out:
+Además de los muchos malentendidos comunes sobre las pruebas de hipótesis y los valores de \(p\) que hemos comentado al explicar la interpretación de las pruebas de hipótesis, otra consecuencia desafortunada del uso ampliado de los valores de \(p\) y las pruebas de hipótesis es un fenómeno conocido como ``p-hacking'', que es es el acto de ``seleccionar'' sólo los resultados que son ``estadísticamente significativos'' y descartar los que no lo son, aunque sea a expensas de las ideas científicas. Hay muchos artículos escritos recientemente sobre malentendidos y problemas con los valores de \(p\). Le recomendamos que consulte algunos de ellos:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \href{https://en.wikipedia.org/wiki/Misunderstandings_of_p-values}{Misunderstandings of \(p\)-values}
+  \href{https://en.wikipedia.org/wiki/Misunderstandings_of_p-values}{Malentendidos de los valores de \(p\)}
 \item
-  \href{https://www.vox.com/science-and-health/2017/7/31/16021654/p-values-statistical-significance-redefine-0005}{What a nerdy debate about \(p\)-values shows about science - and how to fix it}
+  \href{https://www.vox.com/science-and-health/2017/7/31/16021654/p-\%20valores-significación-estadística-redefinir-0005}{Qué debate más nerd sobre los valores de \(p\) sobre la ciencia y cómo solucionarlo}
 \item
-  \href{https://www.nature.com/news/statisticians-issue-warning-over-misuse-of-p-values-1.19503}{Statisticians issue warning over misuse of \(P\) values}
+  \href{https://www.nature.com/news/statisticians-issue-warning-over-misuse-of-p-values-1.19503}{Los estadísticos emiten una advertencia sobre el uso indebido de los valores de \(p\)}
 \item
-  \href{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}{You Can't Trust What You Read About Nutrition}
+  \href{https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/}{No puede confiar en lo que lee sobre nutrición}
 \item
-  \href{http://www.fharrell.com/post/pval-litany/}{A Litany of Problems with p-values}
+  \href{http://www.fharrell.com/post/pval-litany/}{Una letanía de problemas con valores p}
 \end{enumerate}
 
-Such issues were getting so problematic that the American Statistical Association (ASA) put out a statement in 2016 titled, \href{https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf}{``The ASA Statement on Statistical Significance and \(P\)-Values,''} with six principles underlying the proper use and interpretation of \(p\)-values. The ASA released this guidance on \(p\)-values to improve the conduct and interpretation of quantitative science and to inform the growing emphasis on reproducibility of science research.
+Tales problemas se estaban volviendo tan recurrentes que la Asociación Estadounidense de Estadística (ASA) emitió una declaración en 2016 titulada, \href{https://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf}{``Declaración de la ASA sobre la importancia estadística y los valores de \(p\)''} con seis principios subyacentes al uso e interpretación adecuados de los valores de \(p\). La ASA publicó esta guía sobre los valores de \(p\) para mejorar la conducta y la interpretación de la ciencia cuantitativa y para informar el creciente énfasis en la reproducibilidad de la investigación científica.
 
-We as authors much prefer the use of confidence intervals for statistical inference, since in our opinion they are much less prone to large misinterpretation. However, many fields still exclusively use \(p\)-values for statistical inference and this is one reason for including them in this text. We encourage you to learn more about ``p-hacking'' as well and its implication for science.
+Quizás el uso de intervalos de confianza para la inferencia estadística permita evitar ciertos malentendidos. Sin embargo, en muchos campos todavía se usan exclusivamente valores de \(p\) para la inferencia estadística y esta es una razón para incluirlos en este texto.
+
+\hypertarget{ejercicios}{%
+\section{Ejercicios}\label{ejercicios}}
 
 \hypertarget{el-muestreo-estaduxedstico}{%
 \chapter{El muestreo estadístico}\label{el-muestreo-estaduxedstico}}

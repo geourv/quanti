@@ -242,6 +242,19 @@ Estos tipos de datos más básicos se gestiónan habitualmente dentro de estruct
 ### Factores
 
 
+## Funciones
+Hasta este punto ya habéis visto y usado varias funciones. Por ejemplo, la función `c()` se puede usar para **c**ombinar objetos en un vector. En general, todas las llamadas a funciones tienen el mismo aspecto: el nombre de una función siempre va seguido de paréntesis. A veces, los paréntesis incluyen argumentos como sucede también en el siguiente ejemplo:
+
+```{r}
+# Crea el vector `z` a partir de la función seq (secuenciar).
+z <- seq(from = 1, to = 5, by = 1)
+```
+
+En este ejemplo usamos una función llamada `seq()` para crear una secuencia que progresa por unidades, desde 1 a 5 (probad de modificar los parámetros para obtener otras secuencias distintas).
+
+Si no estáis seguros de qué argumentos acepta una función, siempre se puede consultar la documentación de dicha función (todas las librerías *oficiales* suelen tener una buena documentación). Por ejemlo, supongamos que no estamos seguros de cómo funcionan los argumentos necesarios para `seq()`. Podemos escribir `?seq` en la consola y, al ejecutar este comando, la página de documentación para esa función aparece en el panel inferior derecho de RStudio. En la sección *Argumentos* está toda la información que buscamos. En la parte inferior de casi todas las páginas de ayuda, suele haber ejemplos sobre cómo utilizar las funciones correspondientes.
+
+
 ## Tidyverse
 
 Como se ha mencionado anteriormente, las librerias o *paquetes* son colecciones de funciones y/o conjuntos de datos. Las librerias se pueden instalar en R usando la función `install.packages()` o usando el menú `Herramientas> Instalar Librerias ... `en RStudio. 

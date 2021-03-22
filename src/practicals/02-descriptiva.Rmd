@@ -4,6 +4,13 @@ La estadística descriptiva es una rama de la estadística cuyo objetivo es resu
 
 ```{r, echo = FALSE, message = FALSE}
 library(pander)
+panderOptions("p.sep", ", ")
+panderOptions("decimal.mark", ",")
+panderOptions("big.mark", ".")
+panderOptions("p.copula", " y ")
+panderOptions("p.sep", ", ")
+panderOptions("round", 0)
+
 set.seed(42)
 salarios <- round(rnorm(100, mean = 1500, sd = 500), 1)
 pander(salarios)
@@ -22,8 +29,7 @@ Las medidas de tendencia central permiten ver "dónde" se ubican los datos, alre
 - Mínimo y máximo
 - Media
 - Mediana
-- Primer cuartil
-- Tercer cuartil
+- Primer y tercer cuartil
 - Moda 
 
 ### Mínimo y máximo

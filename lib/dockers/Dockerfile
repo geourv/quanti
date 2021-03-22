@@ -4,8 +4,6 @@ FROM rocker/geospatial:4.0.2
 COPY ./requirements.R /tmp/requirements.R
 RUN Rscript /tmp/requirements.R
 
-ENV LANG=C.UTF-8
-ENV DEBIAN_FRONTEND=noninteractive
 
 # Install all TeX and LaTeX dependences
 # verify latex version
@@ -56,5 +54,9 @@ RUN tlmgr install \
   polyglossia \
   natbib
 
-# verify 
-#RUN texlive-xetex --version
+
+#Set locales to spanish so the book gets the correct formatting.
+RUN apt-get install -y locales locales-all
+ENV LC_ALL es_ES.UTF-8
+ENV LANG es_ES.UTF-8
+ENV LANGUAGE es_ES.UTF-8

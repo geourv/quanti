@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.3)  22 MAR 2021 21:34
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.23)  23 MAR 2021 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -130,7 +130,7 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 local/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2021-02-18 L3 programming layer (loader) 
 (/usr/local/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2021-03-02 L3 backend support: XeTeX
+File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 (|extractbb --version)
 \c__kernel_sys_dvipdfmx_version_int=\count196
 \l__color_backend_stack_int=\count197
@@ -148,7 +148,7 @@ TeX
 (/usr/local/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-01.st
 y (/usr/local/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex
 ))) (/usr/local/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2021-02-02 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 ) (/usr/local/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/usr/local/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
@@ -183,7 +183,7 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 \g__um_primekern_muskip=\muskip17
 (/usr/local/texlive/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
 (/usr/local/texlive/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2021-03-02 v2.0g non-zero parskip adjustments
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 (/usr/local/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 (/usr/local/texlive/texmf-dist/tex/latex/graphics/keyval.sty
@@ -477,59 +477,151 @@ Package polyglossia Info: Option: spanish, variant=spanish.
 Package polyglossia Info: Option: Spanish, spanishoperators=none.
 )
 Package polyglossia Info: Default language is spanish.
-(/usr/local/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+(/usr/local/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen176
+\ar@mcellbox=\box57
+\extrarowheight=\dimen177
+\NC@list=\toks25
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box58
+) (/usr/local/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count308
+\multirow@dima=\skip61
+\bigstrutjot=\dimen178
+) (/usr/local/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen179
+\WF@size=\dimen180
+\c@WF@wrappedlines=\count309
+\WF@box=\box59
+\WF@everypar=\toks26
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count310
+\float@exts=\toks27
+\float@box=\box60
+\@float@everytoks=\toks28
+\@floatcapt=\box61
+) (/usr/local/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks29
+\minrowclearance=\skip62
+) (/usr/local/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(/usr/local/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+
+) (/usr/local/texlive/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(/usr/local/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box62
+\sift@deathcycles=\count311
+\@vwid@loff=\dimen181
+\@vwid@roff=\dimen182
+)
+\c@taburow=\count312
+\tabu@nbcols=\count313
+\tabu@cnt=\count314
+\tabu@Xcol=\count315
+\tabu@alloc=\count316
+\tabu@nested=\count317
+\tabu@target=\dimen183
+\tabu@spreadtarget=\dimen184
+\tabu@naturalX=\dimen185
+\tabucolX=\dimen186
+\tabu@Xsum=\dimen187
+\extrarowdepth=\dimen188
+\abovetabulinesep=\dimen189
+\belowtabulinesep=\dimen190
+\tabustrutrule=\dimen191
+\tabu@thebody=\toks30
+\tabu@footnotes=\toks31
+\tabu@box=\box63
+\tabu@arstrutbox=\box64
+\tabu@hleads=\box65
+\tabu@vleads=\box66
+\tabu@cellskip=\skip63
+) (/usr/local/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box67
+) (/usr/local/texlive/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(/usr/local/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/usr/local/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip64
+) (/usr/local/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box68
+\UL@hyphenbox=\box69
+\UL@skip=\skip65
+\UL@hook=\toks32
+\UL@height=\dimen192
+\UL@pe=\count318
+\UL@pixel=\dimen193
+\ULC@box=\box70
+Package: ulem 2019/11/18
+\ULdepth=\dimen194
+) (/usr/local/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen195
+\c@nlinenum=\count319
+\TeXr@lab=\toks33
+) (/usr/local/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip58
-\bibsep=\skip59
+\bibhang=\skip66
+\bibsep=\skip67
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count308
+\c@NAT@ctr=\count320
 ) (./tecnicas-cuantitativas.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
-
-LaTeX Warning: Label `ejercicios' multiply defined.
-
-
-LaTeX Warning: Label `ejercicios' multiply defined.
-
 )
 \openout1 = `tecnicas-cuantitativas.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 128.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 142.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 128.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 142.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 128.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 142.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 128.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 142.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 128.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 142.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 128.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 142.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 128.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 142.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -558,7 +650,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 128.
+(Font)              scaled to size 10.0pt on input line 142.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -597,18 +689,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 128.
+(Font)              scaled to size 10.0pt on input line 142.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 128.
+(Font)              `operators' in the math version `normal' on input line 142.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 128.
+ line 142.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 128.
+(Font)              `operators' in the math version `bold' on input line 142.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 128.
+t line 142.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -695,15 +787,15 @@ t=math;language=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 128.
+(Font)              `symbols' in the math version `normal' on input line 142.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 128.
+t line 142.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 128.
+(Font)              `symbols' in the math version `bold' on input line 142.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 128.
+t line 142.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -773,17 +865,17 @@ pt=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-28.
+42.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 128.
+t line 142.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 128
+(Font)              `largesymbols' in the math version `bold' on input line 142
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 128.
-Package hyperref Info: Link coloring OFF on input line 128.
+t line 142.
+Package hyperref Info: Link coloring OFF on input line 142.
 (/usr/local/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -791,47 +883,47 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count309
+\c@section@level=\count321
 )
-LaTeX Info: Redefining \ref on input line 128.
-LaTeX Info: Redefining \pageref on input line 128.
-LaTeX Info: Redefining \nameref on input line 128.
+LaTeX Info: Redefining \ref on input line 142.
+LaTeX Info: Redefining \pageref on input line 142.
+LaTeX Info: Redefining \nameref on input line 142.
 (./tecnicas-cuantitativas.out) (./tecnicas-cuantitativas.out)
 \@outlinefile=\write4
 \openout4 = `tecnicas-cuantitativas.out'.
 
-LaTeX Info: Redefining \rmfamily on input line 128.
-LaTeX Info: Redefining \sffamily on input line 128.
-LaTeX Info: Redefining \ttfamily on input line 128.
+LaTeX Info: Redefining \rmfamily on input line 142.
+LaTeX Info: Redefining \sffamily on input line 142.
+LaTeX Info: Redefining \ttfamily on input line 142.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 130.
+(Font)              scaled to size 12.0pt on input line 144.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 130.
+(Font)              scaled to size 8.0pt on input line 144.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 130.
+(Font)              scaled to size 6.0pt on input line 144.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-30.
+44.
 (/usr/local/texlive/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 130.
+(Font)              scaled to size 12.0011pt on input line 144.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 130.
+(Font)              scaled to size 8.00073pt on input line 144.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 130.
+(Font)              scaled to size 6.00055pt on input line 144.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 130.
+(Font)              scaled to size 11.99872pt on input line 144.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 130.
+(Font)              scaled to size 7.99915pt on input line 144.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 130.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 130
+(Font)              scaled to size 5.99936pt on input line 144.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 144
 .
 (/usr/local/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 130
+LaTeX Font Info:    Trying to load font information for U+msb on input line 144
 .
 (/usr/local/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -866,195 +958,81 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 [4]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 148.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 162.
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 191--191
+Overfull \hbox (80.25pt too wide) in paragraph at lines 190--190
 []\TU/lmtt/m/n/10 ## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/li
 bopenblasp-r0.3.8.so[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME
-=C.UTF-8[] 
- []
-
-
-Overfull \hbox (6.75pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESS
-AGES=C[] 
- []
-
-
-Overfull \hbox (1.5pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDR
-ESS=C[] 
- []
-
-
-Overfull \hbox (38.25pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDEN
-TIFICATION=C[] 
- []
-
-
-Overfull \hbox (27.75pt too wide) in paragraph at lines 191--191
+Overfull \hbox (27.75pt too wide) in paragraph at lines 190--190
 []\TU/lmtt/m/n/10 ## [1] stats     graphics  grDevices utils     datasets  meth
 ods   base[] 
  []
 
 
-Overfull \hbox (59.25pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [1] nycflights13_1.0.1 kableExtra_1.2.1   corrplot_0.84  
-    pander_0.6.3[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [5] DiagrammeR_1.0.6.1 forcats_0.5.0      stringr_1.4.0  
-    dplyr_1.0.2[] 
- []
-
-
-Overfull \hbox (59.25pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [9] purrr_0.3.4        readr_1.4.0        tidyr_1.1.2    
-    tibble_3.0.3[] 
+Overfull \hbox (27.75pt too wide) in paragraph at lines 190--190
+[]\TU/lmtt/m/n/10 ##  [1] compiler_4.0.2  magrittr_1.5    bookdown_0.21   htmlt
+ools_0.5.0[] 
  []
 
 [5
 
 ]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [1] Rcpp_1.0.5         lubridate_1.7.9    visNetwork_2.0.
-9   utf8_1.1.4[] 
+Overfull \hbox (17.25pt too wide) in paragraph at lines 190--190
+[]\TU/lmtt/m/n/10 ##  [5] tools_4.0.2     rstudioapi_0.11 yaml_2.2.1      strin
+gi_1.5.3[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [5] assertthat_0.2.1   digest_0.6.25      R6_2.4.1       
-    cellranger_1.1.0[] 
+Overfull \hbox (17.25pt too wide) in paragraph at lines 190--190
+[]\TU/lmtt/m/n/10 ##  [9] rmarkdown_2.4   knitr_1.30      stringr_1.4.0   diges
+t_0.6.25[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ##  [9] backports_1.1.10   reprex_0.3.0       evaluate_0.14  
-    highr_0.8[] 
- []
-
-
-Overfull \hbox (59.25pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [13] httr_1.4.2         pillar_1.4.6       rlang_0.4.7    
-    readxl_1.3.1[] 
- []
-
-
-Overfull \hbox (59.25pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [17] rstudioapi_0.11    blob_1.2.1         rmarkdown_2.4  
-    labeling_0.3[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [21] webshot_0.5.2      htmlwidgets_1.5.2  munsell_0.5.0  
-    broom_0.7.1[] 
- []
-
-
-Overfull \hbox (75.0pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [25] compiler_4.0.2     modelr_0.1.8       xfun_0.18      
-    pkgconfig_2.0.3[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [29] htmltools_0.5.0    tidyselect_1.1.0   bookdown_0.20  
-    fansi_0.4.1[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [33] viridisLite_0.3.0  crayon_1.3.4       dbplyr_1.4.4   
-    withr_2.3.0[] 
- []
-
-
-Overfull \hbox (75.0pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [37] grid_4.0.2         jsonlite_1.7.1     gtable_0.3.0   
-    lifecycle_0.2.0[] 
- []
-
-
-Overfull \hbox (43.5pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [41] DBI_1.1.0          magrittr_1.5       scales_1.1.1   
-    cli_2.0.2[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [45] stringi_1.5.3      farver_2.0.3       fs_1.5.0       
-    xml2_1.3.2[] 
- []
-
-
-Overfull \hbox (90.75pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [49] ellipsis_0.3.1     generics_0.0.2     vctrs_0.3.4    
-    RColorBrewer_1.1-2[] 
- []
-
-
-Overfull \hbox (48.75pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [53] tools_4.0.2        glue_1.4.2         hms_0.5.3      
-    yaml_2.2.1[] 
- []
-
-
-Overfull \hbox (54.0pt too wide) in paragraph at lines 191--191
-[]\TU/lmtt/m/n/10 ## [57] colorspace_1.4-1   rvest_0.3.6        knitr_1.30     
-    haven_2.3.1[] 
- []
-
-
-Overfull \hbox (14.7263pt too wide) in paragraph at lines 220--220
+Overfull \hbox (14.7263pt too wide) in paragraph at lines 219--219
 []\TU/lmr/bx/n/14.4 Estructura básica de un documento Markdown 
  []
 
-[6] [7] [8]
-Capítulo 1.
-[9
+[6] [7] [8
 
-] [10]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 354--354
+]
+Capítulo 1.
+[9] [10]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 353--353
 []\TU/lmtt/m/n/10 ##  [1]   1   4   9  16  25  36  49  64  81 100 121 144 169 1
 96 225 256 289 324 361[] 
  []
 
 [11]
-Underfull \hbox (badness 2150) in paragraph at lines 426--427
+Underfull \hbox (badness 2150) in paragraph at lines 425--426
 []\TU/lmr/m/n/10 Una variable se puede definir usando un \TU/lmr/bx/n/10 identi
 ficador \TU/lmr/m/n/10 (por ejemplo,
  []
 
 [12]
-Underfull \hbox (badness 1708) in paragraph at lines 439--440
+Underfull \hbox (badness 1708) in paragraph at lines 438--439
 []\TU/lmr/m/n/10 Si escribes \TU/lmtt/m/n/10 una_variable <- 1 \TU/lmr/m/n/10 e
 n la \TU/lmr/m/it/10 Consola \TU/lmr/m/n/10 de RStudio, aparece un
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 454--455
+Underfull \hbox (badness 1052) in paragraph at lines 453--454
 []\TU/lmr/m/n/10 Observa cómo, al escribir \TU/lmtt/m/n/10 una_variable <- sqrt
  (4) \TU/lmr/m/n/10 en la \TU/lmr/m/it/10 Consola \TU/lmr/m/n/10 de
  []
 
 [13]
-Underfull \hbox (badness 1028) in paragraph at lines 600--601
+Underfull \hbox (badness 1028) in paragraph at lines 599--600
 []\TU/lmr/m/n/10 Como en cualquier otro entorno, podéis utilizar paréntesis sim
 ples para
  []
 
 [14] [15] [16] [17]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 892.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 891.
 [18]
 File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-25-1.pdf Graphic 
 file (type pdf)
@@ -1067,7 +1045,7 @@ Underfull \vbox (badness 2970) has occurred while \output is active []
 ]
 Capítulo 2.
 [23] [24] [25]
-Underfull \hbox (badness 3302) in paragraph at lines 1202--1203
+Underfull \hbox (badness 3302) in paragraph at lines 1201--1202
 []\TU/lmr/m/it/10 ingeniero\TU/lmr/m/n/10 , \TU/lmr/m/it/10 ingeniero\TU/lmr/m/
 n/10 , \TU/lmr/m/it/10 ingeniero\TU/lmr/m/n/10 , \TU/lmr/m/it/10 ingeniero\TU/l
 mr/m/n/10 , \TU/lmr/m/it/10 asistente\TU/lmr/m/n/10 , \TU/lmr/m/it/10 asistente
@@ -1075,43 +1053,43 @@ mr/m/n/10 , \TU/lmr/m/it/10 asistente\TU/lmr/m/n/10 , \TU/lmr/m/it/10 asistente
  []
 
 [26] [27]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1293--1293
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1292--1292
 []\TU/lmtt/m/n/10 ##                    mpg cyl disp  hp drat    wt  qsec vs am
  gear carb[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1293--1293
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1292--1292
 []\TU/lmtt/m/n/10 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1
     4    4[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1293--1293
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1292--1292
 []\TU/lmtt/m/n/10 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1
     4    4[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1293--1293
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1292--1292
 []\TU/lmtt/m/n/10 ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1
     4    1[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1293--1293
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1292--1292
 []\TU/lmtt/m/n/10 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0
     3    1[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1293--1293
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1292--1292
 []\TU/lmtt/m/n/10 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0
     3    2[] 
  []
 
 [28] [29]
-Underfull \hbox (badness 1314) in paragraph at lines 1359--1360
+Underfull \hbox (badness 1314) in paragraph at lines 1358--1359
 []\TU/lmr/bx/n/10 Kendall \TU/lmr/m/n/10 se calcula a partir del número de pare
 s concordantes y
  []
@@ -1142,83 +1120,188 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Capítulo 3.
 
-Underfull \hbox (badness 1014) in paragraph at lines 1525--1526
+Underfull \hbox (badness 1014) in paragraph at lines 1524--1525
 \TU/lmr/m/n/10 posible, es decir, con la menor pérdida de información posible. 
 Con la
  []
 
 [37]
-Overfull \hbox (13.58002pt too wide) in paragraph at lines 1567--1569
+Overfull \hbox (13.58002pt too wide) in paragraph at lines 1566--1568
 []\TU/lmr/m/n/10 library(readr) probability_distribution_functions_in_r <- read
 _csv(“probability-
  []
 
-[38] [39] [40] [41]
-Underfull \hbox (badness 2762) in paragraph at lines 1794--1795
+
+Overfull \hbox (26.445pt too wide) in paragraph at lines 1576--1576
+[]|\TU/lmr/m/n/12 Distribution|  
+ []
+
+
+Overfull \hbox (10.05301pt too wide) in paragraph at lines 1579--1579
+[]|\TU/lmr/m/n/12 Binomial|  
+ []
+
+
+Overfull \hbox (2.061pt too wide) in paragraph at lines 1580--1580
+[]|\TU/lmr/m/n/12 Cauchy|  
+ []
+
+
+Overfull \hbox (25.725pt too wide) in paragraph at lines 1582--1582
+[]|\TU/lmr/m/n/12 Exponential|  
+ []
+
+
+Overfull \hbox (4.425pt too wide) in paragraph at lines 1584--1584
+[]|\TU/lmr/m/n/12 Gamma|  
+ []
+
+
+Overfull \hbox (16.82101pt too wide) in paragraph at lines 1585--1585
+[]|\TU/lmr/m/n/12 Geometric|  
+ []
+
+
+Overfull \hbox (45.141pt too wide) in paragraph at lines 1586--1586
+[]|\TU/lmr/m/n/12 Hypergeometric|  
+ []
+
+
+Overfull \hbox (3.921pt too wide) in paragraph at lines 1587--1587
+[]|\TU/lmr/m/n/12 Logistic|  
+ []
+
+
+Overfull \hbox (2.061pt too wide) in paragraph at lines 1588--1588
+\TU/lmr/m/n/12 Normal|  
+ []
+
+
+Overfull \hbox (8.589pt too wide) in paragraph at lines 1589--1589
+[]|\TU/lmr/m/n/12 Negative 
+ []
+
+
+Overfull \hbox (10.05301pt too wide) in paragraph at lines 1589--1589
+\TU/lmr/m/n/12 Binomial|  
+ []
+
+
+Overfull \hbox (2.061pt too wide) in paragraph at lines 1590--1590
+[]|\TU/lmr/m/n/12 Normal|  
+ []
+
+
+Overfull \hbox (2.34901pt too wide) in paragraph at lines 1591--1591
+[]|\TU/lmr/m/n/12 Poisson|  
+ []
+
+
+Overfull \hbox (4.01701pt too wide) in paragraph at lines 1592--1592
+[]|\TU/lmr/m/n/12 Student 
+ []
+
+
+Overfull \hbox (24.24901pt too wide) in paragraph at lines 1593--1593
+[]|\TU/lmr/m/n/12 Studentized 
+ []
+
+
+Overfull \hbox (6.29701pt too wide) in paragraph at lines 1594--1594
+[]|\TU/lmr/m/n/12 Uniform|  
+ []
+
+
+Overfull \hbox (3.02101pt too wide) in paragraph at lines 1595--1595
+[]|\TU/lmr/m/n/12 Weibull|  
+ []
+
+
+Overfull \hbox (11.85301pt too wide) in paragraph at lines 1596--1596
+[]|\TU/lmr/m/n/12 Wilcoxon 
+ []
+
+
+Overfull \hbox (6.369pt too wide) in paragraph at lines 1596--1596
+\TU/lmr/m/n/12 Statistic|  
+ []
+
+
+Overfull \hbox (11.85301pt too wide) in paragraph at lines 1597--1597
+[]|\TU/lmr/m/n/12 Wilcoxon 
+ []
+
+
+Overfull \hbox (6.369pt too wide) in paragraph at lines 1597--1597
+\TU/lmr/m/n/12 Statistic|  
+ []
+
+
+Overfull \hbox (25.76118pt too wide) in paragraph at lines 1574--1600
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[38]
+Underfull \hbox (badness 2762) in paragraph at lines 1614--1615
 \TU/lmr/m/n/10 para confirmar o refutar una creencia sobre una población
  []
 
-[42]
-Underfull \hbox (badness 1845) in paragraph at lines 1826--1827
+[39]
+Underfull \hbox (badness 1845) in paragraph at lines 1646--1647
 \TU/lmr/m/n/10 confirmatorios se refieren a análisis estadísticos donde las hip
 ótesis —
  []
 
-
-Underfull \vbox (badness 1308) has occurred while \output is active []
-
-[43]
-Underfull \vbox (badness 2229) has occurred while \output is active []
-
-[44] [45]
-Underfull \hbox (badness 2189) in paragraph at lines 1967--1969
+[40] [41] [42] [43]
+Underfull \hbox (badness 2189) in paragraph at lines 1787--1789
 []\TU/lmr/m/n/10 prueba en una y dos medias con *varianza(s) de población
  []
 
-[46]
+[44]
 Missing character: There is no 𝜇 in font [lmroman10-regular]:mapping=tex-text;!
-[47]
 Missing character: There is no 𝜇 in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ≠ in font [lmroman10-regular]:mapping=tex-text;!
 File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-48-1.pdf Graphic 
 file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-48-1.pdf>
-[48]
-Underfull \hbox (badness 1082) in paragraph at lines 2057--2058
+[45]
+Underfull \hbox (badness 1082) in paragraph at lines 1877--1878
 \TU/lmr/m/n/10 Cabe recordar que hay otras funciones que acompañan a las difere
 ntes
  []
 
+[46]
 File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf Graphic 
 file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf>
-
-Underfull \vbox (badness 4872) has occurred while \output is active []
-
-[49]
-Underfull \hbox (badness 2799) in paragraph at lines 2130--2131
+[47]
+Underfull \hbox (badness 2799) in paragraph at lines 1950--1951
 []\TU/lmr/m/n/10 “nosotros \TU/lmr/m/it/10 no rechazamos \TU/lmr/m/n/10 la hipó
 tesis nula” y “nosotros \TU/lmr/m/it/10 no
  []
 
-[50] [51]
+[48]
 File: tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-51-1.pdf Graphic 
 file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-51-1.pdf>
-[52] [53]
-Underfull \hbox (badness 1527) in paragraph at lines 2290--2291
+[49] [50]
+Underfull \hbox (badness 1527) in paragraph at lines 2110--2111
 []\TU/lmr/m/n/10 Si desea disminuir este último porcentaje, puede disminuir el 
 nivel de
  []
 
+[51]
 Missing character: There is no 𝜇 in font [lmroman10-regular]:mapping=tex-text;!
-[54]
-Underfull \hbox (badness 1888) in paragraph at lines 2323--2323
+
+Underfull \hbox (badness 1888) in paragraph at lines 2143--2143
 []\TU/lmr/bx/n/14.4 Un ejemplo sobre brecha salarial entre
  []
 
-[55]
-Underfull \hbox (badness 1147) in paragraph at lines 2349--2350
+[52]
+Underfull \hbox (badness 1147) in paragraph at lines 2169--2170
 []\TU/lmr/m/n/10 Construyamos primero una visualización exploratoria como acaba
 mos de
  []
@@ -1227,30 +1310,30 @@ File: tecnicas-cuantitativas_files/figure-latex/ha-as-flights-boxplot-1.pdf Gra
 phic file (type pdf)
 <use tecnicas-cuantitativas_files/figure-latex/ha-as-flights-boxplot-1.pdf>
 
-Underfull \hbox (badness 1565) in paragraph at lines 2365--2366
+Underfull \hbox (badness 1565) in paragraph at lines 2185--2186
 \TU/lmr/m/it/10 significativamente \TU/lmr/m/n/10 diferentes. ¡Los dos diagrama
 s de caja ni siquiera se
  []
 
-[56]
-Underfull \hbox (badness 1005) in paragraph at lines 2410--2411
+[53] [54]
+Underfull \hbox (badness 1005) in paragraph at lines 2230--2231
 []\TU/lmr/m/n/10 Tales problemas se estaban volviendo tan recurrentes que la As
 ociación
  []
 
-[57] [58]
-Capítulo 4.
-[59
+[55] [56
 
-] [60
+]
+Capítulo 4.
+[57] [58
 
 ]
 Capítulo 5.
-[61] [62
+[59] [60
 
 ]
 Capítulo 6.
-(./tecnicas-cuantitativas.bbl [63] [64
+(./tecnicas-cuantitativas.bbl [61] [62
 
 ])
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -1288,25 +1371,22 @@ braces):
 >  {spanish/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/totalhyphenmin}  =>  {5}.
-[65] (./tecnicas-cuantitativas.aux
+[63] (./tecnicas-cuantitativas.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
 )
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `tecnicas-cuantitativas.out' has not changed.
 
 (rerunfilecheck)             Checksum: 0B9336623958D3D7CDA2D0584D48177F;5248.
  ) 
 Here is how much of TeX's memory you used:
- 17562 strings out of 478931
- 314764 string characters out of 5867171
- 800976 words of memory out of 5000000
- 37122 multiletter control sequences out of 15000+600000
- 409969 words of font info for 91 fonts, out of 8000000 for 9000
+ 18948 strings out of 478922
+ 334442 string characters out of 5866906
+ 838395 words of memory out of 5000000
+ 38459 multiletter control sequences out of 15000+600000
+ 410075 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,9n,122p,1326b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,11n,122p,1326b,526s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tecnicas-cuantitativas.pdf (65 pages).
+Output written on tecnicas-cuantitativas.pdf (63 pages).

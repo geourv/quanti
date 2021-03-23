@@ -6,6 +6,7 @@ services:
     build:
       context: ./lib/dockers
       dockerfile: Dockerfile
+    image: geourv/quanti:latest
     environment:
       USER: rstudio
       PASSWORD: rstudio1

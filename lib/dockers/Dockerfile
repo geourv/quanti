@@ -70,5 +70,19 @@ RUN tlmgr install \
   filehook \
   makecmds \
   polyglossia \
-  natbib
+  natbib \
+  multirow \
+  wrapfig \
+  float \
+  colortbl \
+  pdflscape \
+  tabu \
+  varwidth \
+  threeparttable \
+  threeparttablex \
+  environ \
+  trimspaces \
+  ulem \
+  makecell
+  
 

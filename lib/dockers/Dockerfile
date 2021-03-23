@@ -1,8 +1,26 @@
 FROM rocker/geospatial:4.0.2
 
-# Install additional required R libraries
-COPY ./requirements.R /tmp/requirements.R
-RUN Rscript /tmp/requirements.R
+# Bookdown
+RUN install2.r --error --repos 'https://cran.rstudio.com/' \
+	bookdown \
+	tinytex \
+	pander \
+	kableExtra
+	
+# Better plots
+RUN install2.r --error --repos 'https://cran.rstudio.com/' \
+	cowplot \
+	patchwork \
+	ggrepel
+	
+# Diagrams
+RUN install2.r --error --repos 'https://cran.rstudio.com/' \
+	DiagrammeR \
+	webshot
+	
+# Stats
+RUN install2.r --error --repos 'https://cran.rstudio.com/' \
+	corrplot
 
 
 # Install all TeX and LaTeX dependences
@@ -54,9 +72,3 @@ RUN tlmgr install \
   polyglossia \
   natbib
 
-
-#Set locales to spanish so the book gets the correct formatting.
-RUN apt-get install -y locales locales-all
-ENV LC_ALL es_ES.UTF-8
-ENV LANG es_ES.UTF-8
-ENV LANGUAGE es_ES.UTF-8

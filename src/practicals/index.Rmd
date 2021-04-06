@@ -11,6 +11,16 @@ description: "Este documento forma parte de los materiales para la asignatura 'T
 always_allow_html: true
 ---
 
+```{r, echo = FALSE, message = FALSE}
+library(pander)
+panderOptions("p.sep", ", ")
+panderOptions("decimal.mark", ",")
+panderOptions("big.mark", ".")
+panderOptions("p.copula", " y ")
+panderOptions("p.sep", ", ")
+panderOptions("round", 0)
+```
+
 # Antes de empezar {-}
 En este breve capítulo explicamos los aspectos básicos para que podáis reproducir los ejercicios y entregar las actividades utilizando R, Markdown y Rstudio. Aquí planteamos los conceptos básicos para preparar un documento que incluye explicaciónes, código y los resultados de análisis R. Se trata de una estratégia de ***programación literaria*** que en los últimos años está siendo cada vez más utilizada en el análisis de datos [@knuth1984literate; @xie2015knitr].
 

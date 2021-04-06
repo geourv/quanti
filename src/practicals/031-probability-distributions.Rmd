@@ -1,0 +1,353 @@
+## Introducción a las distribuciones de probabilidad
+
+Una distribución de probabilidad es una función que describe la probabilidad de obtener los posibles valores que puede asumir una variable aleatoria. En otras palabras, los valores de la variable varían según la distribución de probabilidad subyacente.
+
+Supongamos que seleccionamos una muestra aleatoria de personas y medimos la altura de los sujetos. A medida que vamos midiendo las alturas, podemos crear una distribución de alturas. Este tipo de distribución es útil cuando necesita saber qué resultados son más probables, la dispersión de los valores potenciales y la probabilidad de resultados diferentes. Por lo tanto se puede utilizar distribuciones de probabilidad para realizar inferencias.
+
+> Ejemplo a partir de la película "El sargento de hierro" de Clint Eastwood.
+
+Supongamos que el profesor solo tiene 5 jerseis ($X_1$, $X_2$, $X_3$, $X_4$ y $X_5$. Cada prenda (es decir, cada $X$) sería un **_evento elemental_**. La característica clave de los eventos elementales es que cada vez que hacemos una observación (por ejemplo, cada vez que me pongo un jersey), el resultado será uno y solo uno de estos eventos. De manera similar, el conjunto de todos los eventos posibles se denomina **_espacio muestral_**.
+
+Definido el espacio muestral, que se construye a partir de muchos posibles eventos elementales (jerseys), lo que queremos hacer es asignar una **_probabilidad_** de uno de estos eventos elementales. Para un evento $X$, la probabilidad de ese evento $P(X)$ es un número que se encuentra entre 0 y 1. Cuanto mayor sea el valor de $P(X)$, es más probable que ocurra el evento. Entonces, por ejemplo, si $P(X)=0$, significa que el evento $X$ es imposible (es decir, nunca uso ese jersey). Por otro lado, si $P(X)=1$ significa que el evento $X$ seguramente ocurrirá (es decir, siempre uso ese jersey). Todos los demas valores, entre 0 y 1, significarían que unas veces uso un jersey y otras veces otros. Por ejemplo, si $P(X)=0.5$ significa que uso ese jersey la mitad del tiempo. 
+
+Las probabilidades de los todos los eventos elementales deben sumar 1. Esto se conoce como la **_ley de la probabilidad total_**. Si se satisfacen estos requisitos, entonces lo que tenemos es una **_distribución de probabilidad_**. Por ejemplo, este es un ejemplo de distribución de probabilidad 
+
+```{r echo=FALSE}
+knitr::kable(data.frame(stringsAsFactors=FALSE,
+`Jersey` = c("Etiqueta" , "Probabildad" ), 
+`Azul` = c("$X_1$" , "$P(X_1) = .5$" ),
+`Gris` = c("$X_2$ ", "$P(X_2) = .3$ "),
+`Naranja` = c("$X_3$ ", "$P(X_3) = .1$" ),
+`Amarillo` = c("$X_4$" , "$P(X_4) = 0$ "),
+`Marrón` = c("$X_5$ ", "$P(X_5) = .1$")))
+```
+Cada uno de los eventos tiene una probabilidad que se encuentra entre 0 y 1, y si sumamos la probabilidad de todos los eventos, suman 1. Impresionante. Incluso podemos dibujar un bonito gráfico de barras para visualizar esta distribución, como se muestra en la Figura \@ref(pantsprob).
+
+```{r pantsprob, fig.cap="Representación visual de la distribución de probabilidad de jerseys del profesor. Hay cinco eventos elementales, correspondientes a los cinco jerseys. Cada evento tiene alguna probabilidad de ocurrir: esta probabilidad es un número entre 0 y 1. La suma de estas probabilidades es 1.", echo=FALSE}
+probabilities <- c( .5, .3, .1, 0, .1)
+	eventNames <- c( "Azul", "Gris", "Naranja", 
+					 "Amarillo", "Gris claro" )
+	
+	# draw the plot
+	barplot( 
+		height= probabilities, 
+		xlab = "Evento",
+		ylab = "Probabilidad del evento",
+		names.arg = eventNames,
+		density = 10,
+		col = ifelse(colour,emphCol,emphGrey)
+	)
+```
+
+Cabe ser señalado es que la teoría de la probabilidad permite hablar de eventos elementales y también de **_eventos no elementales_**. En el ejemplo de los jerseys, es perfectamente legítimo referirse a la probabilidad de que vista un color claro. En términos matemáticos, definimos el evento "jersey de color claro" $E$ para que corresponda al conjunto de eventos elementales $(X_1, X_2, X_3)$. Si ocurre alguno de estos eventos elementales, también se dice que ha ocurrido $E$. Habiendo decidido escribir la definición de $E$ de esta manera, es bastante sencillo establecer cuál es la probabilidad $P(E)$: simplemente sumamos todo. En este caso particular 
+$$
+P(E) = P(X_1) + P(X_2) + P(X_3)
+$$ 
+y, dado que las probabilidades de los jerseys amarillo, naranja y gris claro, respectivamente, son .1, 0 y .1, la probabilidad de que use un jersey de color claro es igual a .2.
+
+A partir de estos principios tan simples es posible construir algunas herramientas matemáticas extremadamente poderosas. En la Tabla \@ref(tab:probrules) aparecen algunas de las otras reglas que satisfacen las probabilidades.
+
+```{r probrules, echo=FALSE}
+knitr::kable(data.frame(stringsAsFactors=FALSE,
+Expresión = c("No $A$", "$A$ o $B$", "$A$ y $B$"),
+Notación = c("$P(\\neg A)$", "$P(A \\cup B)$", "$P(A \\cap B)$"),
+NANA = c("=", "=", "="),
+Formula = c("$1-P(A)$", "$P(A) + P(B) - P(A \\cap B)$", "$P(A|B) P(B)$")),caption = "Algunas reglas básicas que deben cumplir las probabilidades.")
+```
+
+Las distribuciones de probabilidad varían enormemente. Sin embargo, no todas son igualmente importantes. Las más utilizadas serían: la distribución binomial, la distribución normal, la distribución $t$, la distribución $\ chi^2$ ("chi-cuadrado") y la distribución distribución de $F$. Aquí prestaremos especial atención a la binomial y a la normal.
+
+
+### La distribución binomial
+La teoría de la probabilidad se originó en el intento de describir cómo funcionan los juegos de azar, por lo que parece apropiado que nuestra discusión sobre la **_distribución binomial_** incluya una discusión sobre el lanzamiento de dados y monedas. Imaginemos un "experimento" simple: en un cubilete hay 20 dados idénticos de seis caras. En una cara de cada dado hay una imagen de un bufón (*joker*) y las otras cinco caras están todas en blanco. Si lanzamos los 20 dados, ¿cuál es la probabilidad de que obtenga exactamente 4 *jokers*? Suponiendo que los dados no estén trucados, sabemos que la probabilidad de que se obtenga un *joker* es de 1 en 6; Para decir esto de otra manera, la probabilidad de *joker* para un solo dado es aproximadamente $.167$.
+
+Si $N$ es el número de tiradas de dados en nuestro experimento; que a menudo se denomina **_parámetro de tamaño_** de nuestra distribución binomial. Mientras que $\theta$ es la probabilidad de que un solo dado produzca un *joker*, una cantidad que generalmente se llama **_probabilidad de éxito_** del binomio. Finalmente, $X$ serán resultados de nuestro experimento, es decir, el número de *jokers* obtenido al tirar los dados. Dado que el valor real de $X$ se debe al azar, nos referimos a él como **_variable aleatoria_**. La cantidad que queremos calcular es la probabilidad de que $X=4$ dado que sabemos que $\theta=.167$ y $N=20$. La "forma" general de lo que me interesa calcular podría escribirse como 
+
+$$
+P(X \ | \ \theta, N)
+$$
+y estamos interesados en el caso especial donde $X=4$, $\theta=.167$ y $N=20$. Si quiero decir que $X$ se genera aleatoriamente a partir de una distribución binomial con los parámetros $\theta$ y $N$, la notación que usaría es la siguiente:
+$$
+X \sim \mbox{Binomial}(\theta, N)
+$$ 
+La distribución binomial tiene el aspecto que muestar en la Figura \@ref(fig:binomial1) y traza las probabilidades binomiales para todos los valores posibles de $X$. Si se lanzan los dados, desde $X=0$ (sin *jokers*) hasta $X=20$ (todos los jokers). Esto es básicamente un gráfico de barras, y no es diferente del gráfico de "probabilidad de jerseys"de la Figura \@ref(fig:pantsprob). En el eje horizontal tenemos todos los eventos posibles y en el eje vertical podemos leer la probabilidad de cada uno de esos eventos. Entonces, la probabilidad de sacar 4 *jokers* de 20 veces es de aproximadamente 0.20. En otras palabras, esperaría que eso sucediera aproximadamente el 20% de las veces que se lancen los dados.
+
+
+```{r binomial1, fig.cap="La distribución binomial con parámetro de tamaño de $N=20$ y una probabilidad de éxito subyacente de $theta=1/6$. Cada barra vertical representa la probabilidad de un resultado específico (es decir, un valor posible de $X$). Debido a que esta es una distribución de probabilidad, cada una de las probabilidades debe ser un número entre 0 y 1, y las alturas de las barras también deben sumar 1.", echo=FALSE}
+# plots the three examples of a binomial distribution
+	
+	# needed for printing
+	width <- 8
+	height <- 6
+	
+	# function to produce a styled binomial plot
+	binomPlot <- function( n,p, ... ) {
+		
+		# probabilities of each outcome
+		out <- 0:n
+		prob <- dbinom( x=out, size=n, prob=p )
+		
+		# plot
+		plot( 
+			out, prob, type="h", lwd=3, ylab="Probabilidad", 
+			frame.plot=FALSE, col=ifelse(colour,emphCol,"black"), ...
+		)
+		
+	}
+	
+	# jokers image...
+	binomPlot( n=20, p=1/6, xlab="Numero de jokers observado" )
+```
+
+Como se ha visto en la tabla \@ref(tab:probability-functions), R tiene una función llamada `dbinom ()` que calcula probabilidades binomiales. Los principales argumentos de la función son:
+
+- `x`. Éste es un número o vector, que especifica los resultados cuya probabilidad se está tratando de calcular.
+- `size`. Este es un número que le dice a R el tamaño del experimento.
+- `prob`. Ésta es la *probabilidad de éxito* de cualquier ensayo del experimento.
+
+Entonces, para calcular la probabilidad de obtener `x = 4` *jokers*, a partir de un experimento de `size = 20` ensayos, en el que la probabilidad de obtener un *joker* en cualquier ensayo es `prob = 1/6`, el comando que usaríamos es: 
+
+```{r}
+dbinom( x = 4, size = 20, prob = 1/6 )
+``` 
+Para ver cómo cambia la distribución binomial cuando modificamos los valores de $\theta$ y $N$, cambiemos los dados por monedas. De este modo, la probabilidad de éxito ahora es $\theta=1/2$. Suponiendo que se lanzara la moneda $N=20$ veces. Es decir que estamos cambiando la probabilidad de éxito, pero manteniendo el tamaño del experimento. Como muestra la Figura \@ref(fig:binomial2a), el efecto principal de esto es cambiar toda la distribución. ¿Y si lanzamos una moneda $N=100$ veces? Bueno, en ese caso, se obtiene la distribución que aparece en la Figura \@ref(fig:binomial2b). La distribución se mantiene aproximadamente en el medio, pero hay un poco más de variabilidad en los posibles resultados.
+
+```{r binomial2a, fig.cap="Dos distribuciones binomiales, que involucran un escenario en el que estoy lanzando una moneda, por lo que la probabilidad de éxito subyacente es $theta=1/2$. Aquí asumimos que estoy lanzando la moneda $N=20$ veces.", echo=FALSE}
+# plots the three examples of a binomial distribution
+	
+	# needed for printing
+	width <- 8
+	height <- 6
+	
+	# function to produce a styled binomial plot
+	binomPlot <- function( n,p, ... ) {
+		
+		# probabilities of each outcome
+		out <- 0:n
+		prob <- dbinom( x=out, size=n, prob=p )
+		
+		# plot
+		plot( 
+			out, prob, type="h", lwd=3, ylab="Probabilidad", 
+			frame.plot=FALSE, col=ifelse(colour,emphCol,"black"), ...
+		)
+		
+	}
+	# coins image #1...
+	binomPlot( n=20, p=1/2, xlab="Número de caras observado" )
+```
+
+```{r binomial2b, fig.cap="Dos distribuciones binomiales, que involucran un escenario en el que se lanza una moneda, por lo que la probabilidad de éxito subyacente es $theta=1/2$. Aquí asumimos que la moneda se lanza $N=100$ veces.", echo=FALSE}
+# plots the three examples of a binomial distribution
+	
+	# needed for printing
+	width <- 8
+	height <- 6
+	
+	# function to produce a styled binomial plot
+	binomPlot <- function( n,p, ... ) {
+		
+		# probabilities of each outcome
+		out <- 0:n
+		prob <- dbinom( x=out, size=n, prob=p )
+		
+		# plot
+		plot( 
+			out, prob, type="h", lwd=3, ylab="Probabilidad", 
+			frame.plot=FALSE, col=ifelse(colour,emphCol,"black"), ...
+		)
+		
+	}
+	# coins image #2...
+	binomPlot( n=100, p=1/2, xlab="Número de caras observado" )
+```
+
+La fórmula de la distribución binomial que calcula R es la siguiente:
+$P(X | \theta, N) = \displaystyle\frac{N!}{X! (N-X)!} \theta^X (1-\theta)^{N-X}$
+
+
+
+
+### La distribución normal
+
+
+La fórmula de la distribución normal que calcula R es la siguiente:
+$p(X | \mu, \sigma) = \displaystyle\frac{1}{\sqrt{2\pi}\sigma} \exp \left( -\frac{(X - \mu)^2}{2\sigma^2} \right)$
+
+```{r normdist, fig.cap="{La distribución normal con media $mu=0$ y desviación estándar $sigma = 1$. El eje $x$ corresponde al valor de alguna variable, y el eje $y$ nos dice algo sobre la probabilidad de que observemos ese valor. Sin embargo, observe que el eje $y$ está etiquetado como \"Densidad de probabilidad\" y no como \"Probabilidad\". Existe una característica sutil y algo frustrante de las distribuciones continuas que hace que el eje $y$ se comporte un poco extraño: la altura de la curva aquí no es en realidad la probabilidad de observar un valor particular de $x$. Por otro lado, *es* cierto que las alturas de la curva indican qué valores de $x$ son más probables.", echo=FALSE}
+# plots the standard normal
+	
+	# needed for printing
+	width <- 8
+	height <- 6
+	fileName <- "standardNormal.eps"	
+	
+	# draw the plot
+	xval <- seq(-3,3,.01)
+	yval <- dnorm( xval, 0, 1)
+	plot( 	xval, yval, lwd=3, ylab="Densidad de probabilidad", xlab="Valor observado",
+			frame.plot = FALSE, col=ifelse(colour,emphCol,"black"), type="l"
+	)
+```
+
+La **_distribución normal_**, que también se conoce como "de campana" o una "distribución gaussiana" es la distribución más utilizada. Una distribución normal se describe usando dos parámetros, la media de la distribución $\mu$ y la desviación estándar de la distribución $\sigma$. La notación que a veces usamos para decir que una variable $X$ se distribuye normalmente es la siguiente: 
+
+$$
+X \sim \mbox{Normal}(\mu,\sigma)
+$$
+
+
+### Funciones de R para distribuciones de probabilidad
+
+R tiene varias funciones para trabajar con cada distribución de probabilidad. Hay un nombre de raíz, por ejemplo, el nombre de raíz para la distribución normal es `norm`. Esta raíz tiene como prefijo una de las letras:
+
+- `p` para "probabilidad", la función de distribución acumulativa.
+- `q` para "cuantil", el inverso de la función de distribución acumulativa.
+- `d` para "densidad", la función de densidad.
+- `r` para "aleatorio", una variable aleatoria que tiene la distribución especificada.
+
+Las cuatro versiones de la cada función requieren que especifiquen los argumentos `size` y` prob`. Sin embargo, difieren en términos de cuál es el otro argumento y cuál es el resultado:
+
+- La forma `d` requiere un resultado particular`x`, y el devuelve la probabilidad de obtener exactamente ese resultado.
+- La forma `p` calcula la **_probabilidad acumulada_**. Se le da un cuantil particular `q`, y se le dice la probabilidad de obtener un resultado *menor o igual que* `q`.
+- La forma `q` calcula los **_cuantiles_** de la distribución. Se especifica un valor de probabilidad `p` y devuelve el percentil correspondiente. Es decir, el valor de la variable para el que existe una probabilidad `p` de obtener un resultado menor que ese valor.
+- La forma `r` es un **_generador de números aleatorios_**: específicamente, genera `n` resultados aleatorios de la distribución. 
+
+Para la distribución normal, estas funciones son `pnorm`, `qnorm`, `dnorm` y `rnorm`, mientras que para la distribución binomial, estas funciones son `pbinom`, `qbinom`, `dbinom` y `rbinom`.
+
+Para una distribución continua (como la normal), las funciones más útiles para resolver problemas que involucran cálculos de probabilidad son las funciones `p` y `q`, porque la densidad por la función `d`  solo se puede usar para calcular probabilidades a través de integrales.
+
+Para una distribución discreta (como la binomial), la función `d` calcula la densidad, Que en este caso es una probabilidad 
+
+$f(x) = P(X = x)$
+
+y por lo tanto es útil para calcular probabilidades.
+
+R tiene funciones para manejar muchas distribuciones de probabilidad. La siguiente tabla proporciona los nombres de las funciones para cada distribución y un enlace a la documentación en línea que es la referencia autorizada sobre cómo se utilizan las funciones. Pero no lea la documentación en línea todavía. Primero, pruebe los ejemplos de las secciones que siguen a la tabla.
+
+
+```{r table:probability-functions, echo=FALSE, message=FALSE, purl=FALSE}
+require(tidyr)
+require(kableExtra)
+# The following Google Doc is published to CSV and loaded using read_csv():
+# https://docs.google.com/spreadsheets/d/1QkOpnBGqOXGyJjwqx1T2O5G5D72wWGfWlPyufOgtkk4/edit#gid=0
+if (!file.exists("../../data/rds/distribution-functions.rds")) {
+  probability_distribution_functions_in_r <- read_csv("../../data/csv/probability-distribution-functions-in-r.csv")
+  write_rds(probability_distribution_functions_in_r, "../../data/rds/probability_distribution_functions_in_r.rds")
+} else {
+  probability_distribution_functions_in_r <- read_rds("../../data/rds/probability_distribution_functions_in_r.rds")
+}
+probability_distribution_functions_in_r %>%
+  kable(
+    caption = "Funciones para distribución de probabilidades in R.",
+    booktabs = TRUE,
+    escape = FALSE,
+    linesep = ""
+  ) %>%
+  kable_styling(
+    font_size = 12,
+    latex_options = c("hold_position")
+  ) %>%
+  column_spec(1, width = "0.5in") %>%
+  column_spec(2, width = "0.7in") %>%
+  column_spec(3, width = "1in") %>%
+  column_spec(4, width = "1.1in") %>%
+  column_spec(5, width = "1in")
+```
+
+### Ejemplos con la distribución Binomial
+De nuevo, si lanzamos dados, y cada dado tiene una probabilidad de 1 en 6 de obtener *jokers*, supongamos, que queremos saber la probabilidad de sacar 4 *o menos* jockers. Podríamos usar la función `dbinom ()` para calcular la probabilidad exacta de obtener 0 *jokers*, 1 *joker*, 2 *jokers*, 3 *jokers* y 4 *jokers* y luego sumarlas, pero hay una manera más rápida. En su lugar, se puede usar la función `pbinom ()`:
+
+```{r}
+pbinom(q= 4, size = 20, prob = 1/6)
+```
+En otras palabras, hay un 76,9% de posibilidades de que saque 4 *jokers* o menos. R dice que un valor de 4 es en realidad el percentil 76,9 de esta distribución binomial.
+
+A continuación, consideremos la función `qbinom ()`. Digamos que queremos calcular el percentil 75 de la distribución binomial. Siguiendo con el ejemplo de los dados:
+```{r}
+qbinom( p = 0.75, size = 20, prob = 1/6)
+```
+
+Lo que la función `qbinom ()` parece estar diciendo es que el percentil 75 de la distribución binomial es 4, aunque según en la función `pbinom ()` se sabe que 4 es *en realidad* el percentil 76,9. La rareza aquí proviene del hecho de que nuestra distribución binomial realmente no *tiene* un percentil 75. Hay un 56,7% de posibilidades de sacar 3 *jokers* o menos (ver `pbinom (3, 20, 1/6)`) y un 76,9% de posibilidades de sacar 4 calaveras o menos. Entonces, en cierto sentido el percentil 75 debería estar "entre" 3 y 4 *jockers*. Pero aquí los decimales no tienen sentido. Este problema se puede manejar de diferentes maneras: 
+
+1. Se puede informar un valor intermedio (o un valor *interpolado*) como 3.9, 
+2. Se puede redondear a la baja (a 3) o hacia arriba (a 4). 
+
+La función `qbinom ()` redondea hacia arriba si se solicita un percentil que en realidad no existe (como el 75 en este ejemplo), R encuentra el valor más pequeño para el cual el rango percentil es *al menos* lo que se pidió. En este caso, dado que el percentil 75 "verdadero" se encuentra entre 3 y 4 *jokers*, R redondea y devuelve un valor de 4. Esto solo es un problema para distribuciones discretas como la binomial.
+
+Finalmente, tenemos el generador de números aleatorios (`rbinom ()`). Hay que especificar cuántas veces R debe "simular" el experimento usando el argumento `n`, y generará resultados aleatorios a partir de la distribución binomial. Entonces, por ejemplo, supongamos que se tuviera que repetir el experimento de lanzamiento de dados 100 veces. Podría hacer que R simule los resultados de estos experimentos usando el siguiente comando: 
+
+```{r}
+rbinom( n = 100, size = 20, prob = 1/6 )
+```
+Como puede ver, estos números son más o menos los que se puede ver en la Figura \@ref(fig: binomial1). La mayoría de las veces se obtienen entre 1 y 5 *jokers*.
+
+### Ejemplos con la distribución normal
+
+Como ya se ha dicho, las funciones R para la distribución normal son `dnorm ()`, `pnorm ()`, `qnorm ()` y `rnorm ()`. Sin embargo, se comportan prácticamente de la misma manera que las funciones correspondientes para la distribución binomial, por lo que no hay mucho que deba saber. Únicamente, cabe mencionar, que los nombres de los argumentos para los parámetros son `mean` y` sd`.
+
+```{r normmean, fig.cap="Ilustración de lo que sucede cuando cambia la media de una distribución normal. La línea continua representa una distribución normal con una media de $mu=4$. La línea discontinua muestra una distribución normal con una media de $mu=7$. En ambos casos, la desviación estándar es $sigma=1$. Las dos distribuciones tienen la misma forma, pero la línea discontinua se desplaza hacia la derecha.", echo=FALSE}
+	# draw the plot
+	xval <- seq(0,11,.01)
+	yval.1 <- dnorm( xval, 4, 1)
+	yval.2 <- dnorm( xval, 7, 1)
+	plot( 	xval, yval.1, lwd=3, ylab="Densidad de probabilidad", xlab="Valor observado",
+			frame.plot = FALSE, col=ifelse(colour,emphCol,"black"), type="l"
+	)
+	lines(	xval, yval.2, lwd=3, col=ifelse(colour,emphCol,"black"), lty=2 )
+```
+```{r normsd, fig.cap="Ilustración de lo que sucede cuando cambia la desviación estándar de una distribución normal. Ambas distribuciones trazadas en esta figura tienen una media de $mu=5$, pero tienen diferentes desviaciones estándar. La línea continua traza una distribución con desviación estándar $sigma=1$, y la línea discontinua muestra una distribución con desviación estándar $sigma=2$. Como consecuencia, ambas distribuciones están \"centradas\" en el mismo lugar, pero la línea discontinua es más ancha que la sólida.", echo=FALSE}
+# draw the plot
+	xval <- seq(0,10,.01)
+	yval.1 <- dnorm( xval, 5, 1)
+	yval.2 <- dnorm( xval, 5, 2)
+	plot( 	xval, yval.1, lwd=3, ylab="Densidad de probabilidad", xlab="Valor observado",
+			frame.plot = FALSE, col=ifelse(colour,emphCol,"black"), type="l"
+	)
+	lines(	xval, yval.2, lwd=3, col=ifelse(colour,emphCol,"black"), lty=2 )
+```
+
+En la Figura \@ref(fig:normdist), se traza una distribución normal con media $\mu=0$ y desviación estándar $\sigma=1$. En vez de un histograma, la imagen de la distribución normal en la Figura \@ref(fig:normdist) muestra una curva suave. Esta no es una elección arbitraria: la distribución normal es continua, mientras que la binomial es discreta. Las escalas continuas no tienen esta restricción. Por ejemplo, la temperatura de un día de primavera podría ser de 23 grados, 24 grados, 23,9 grados o cualquier punto intermedio, ya que la temperatura es una variable continua, por lo que una distribución normal podría ser muy apropiada para describir las temperaturas de primavera.
+
+> Mencionar el caso de las escalas Likert
+
+La Figura \@ref(fig:normmean) traza distribuciones normales que tienen diferentes medias, pero tienen la misma desviación estándar. Como era de esperar, todas estas distribuciones tienen el mismo "ancho". La única diferencia entre ellos es que se han desplazado hacia la izquierda o hacia la derecha. En todos los demás aspectos, son idénticos. Por el contrario, si aumentamos la desviación estándar mientras mantenemos la media constante, el pico de la distribución permanece en el mismo lugar, pero la distribución se ensancha, como puede ver en la Figura \@ref(fig:normsd). Sin embargo, cuando ampliamos la distribución, la altura del pico se reduce. Esto tiene que suceder: de la misma manera que las alturas de las barras que usamos para dibujar una distribución binomial discreta tienen que *suma * 1, el área total *bajo la curva* para la distribución normal debe ser igual a 1. No obstante, independientemente de cuál sea la media real y la desviación estándar, el 68,3% del área se encuentra dentro de 1 desviación estándar de la media. Del mismo modo, el 95,4% de la distribución se encuentra dentro de 2 desviaciones estándar de la media y el 99,7% de la distribución está dentro de 3 desviaciones estándar. Esta idea se ilustra en la Figura \@ref(fig:sdnorm). 
+
+```{r sdnorm1a, fig.cap="El área debajo de la curva indica la probabilidad de que una observación se encuentre dentro de un rango particular. Las líneas continuas trazan distribuciones normales con media $mu=0$ y desviación estándar $sigma=1$. Las áreas sombreadas ilustran \"áreas bajo la curva\" para dos casos importantes. Aquí podemos ver que hay un 68,3% de probabilidad de que una observación caiga dentro de una desviación estándar de la media.", echo=FALSE}
+	plotOne <- function( a,b ) {
+		plot.new()
+		w<-4
+		plot.window( xlim = c(-w,w), ylim = c(0,.4))
+		xval <- seq( max(a,-w),min(b,w),.01)
+		yval <- dnorm(xval,0,1)
+		end <- length(xval)
+		polygon( c(xval[1],xval,xval[end]), 
+				 c(0,yval,0),
+				 col=ifelse(colour,emphCol,"black"),
+				 density = 10 
+				)
+		xval <- seq(-w,w,.01)
+		yval <- dnorm( xval, 0, 1)				
+		lines( xval,yval, lwd=2, col="black" )
+		axis( side=1, at=-w:w )
+		area <- abs(pnorm(b,0,1)-pnorm(a,0,1))
+		title( main= paste("Área sombreada = ",round(area*100,1),"%", sep=""), font.main=1 )
+		
+	}
+	
+	# plot the 1 standard deviation figure
+	fileName <- "normArea1SD.eps"
+	plotOne(-1,1)
+```
+
+```{r sdnorm1b, fig.cap="El área debajo de la curva indica la probabilidad de que una observación se encuentre dentro de un rango particular. Las líneas continuas trazan distribuciones normales con media $mu = 0$ y desviación estándar $sigma = 1$. Las áreas sombreadas ilustran \"áreas bajo la curva\" para dos casos importantes. Aquí vemos que hay un 95,4% de probabilidad de que una observación caiga dentro de dos desviaciones estándar de la media.", echo=FALSE}
+plotOne(-2,2)
+```
+
+```{r sdnorm2a, fig.cap="Dos ejemplos más de la \"idea del área bajo la curva\". Hay un 15.9% de probabilidad de que una observación esté una desviación estándar por debajo de la media o menor.", echo=FALSE}
+plotOne(-50,-1)
+```
+
+```{r sdnorm2b, fig.cap="Existe una probabilidad del 34,1% de que la observación sea mayor que una desviación estándar por debajo de la media pero aún por debajo de la media. Si suma estos dos números, se obtiene $15.9 + 34.1 = 50$. Para datos distribuidos normalmente, existe un 50% de probabilidad de que una observación caiga por debajo de la media. Y, por supuesto, eso también implica que hay un 50% de probabilidad de que esté por encima de la media.", echo=FALSE}
+plotOne(-1,0)
+```

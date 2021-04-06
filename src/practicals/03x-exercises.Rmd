@@ -1,0 +1,16 @@
+## Ejercicios
+
+### Distribución Binomial
+
+En nuestro municipio hay 500 hombres de la misma edad y con buena salud. Según las estadísticas actuales, la probabilidad de que estas personas vivan 30 años o más es de 2/3. Hay que hallar las probabilidades de que dentro de esos 30 años vivan
+
+1. Los 500 hombres.
+2. Al menos 300 de ellos.
+3. 200 hombres
+
+### Distribución Normal
+El ayuntamiento consume una media de 80 $kWh/hab/a$, con una desviación estándard de 14$kWh/hab/a$. Hay que calcular:
+
+1. La probabilidad de que este año hagan falta entre 75 y 90 ($p(75 \leqslant x  \leqslant 90)$).
+2. La probabilidad de que hagan falta 75 o menos ($p(75 \leqslant x$).
+3. Describid en un párrafo alguna variable municipal que se pueda ajustar a una distribución normal y haced la comprobación.

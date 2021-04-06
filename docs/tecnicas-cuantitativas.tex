@@ -137,7 +137,7 @@
 
 \title{Técnicas cuantitativas}
 \author{Enric Aguilar y Benito Zaragozí}
-\date{23-Mar-2021}
+\date{06-Apr-2021}
 
 \begin{document}
 \maketitle
@@ -182,11 +182,14 @@ Para seguir las explicaciones de este curso será necesario instalar primero R y
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
+## other attached packages:
+## [1] pander_0.6.3
+## 
 ## loaded via a namespace (and not attached):
 ##  [1] compiler_4.0.2  magrittr_1.5    bookdown_0.21   htmltools_0.5.0
-##  [5] tools_4.0.2     rstudioapi_0.11 yaml_2.2.1      stringi_1.5.3  
-##  [9] rmarkdown_2.4   knitr_1.30      stringr_1.4.0   digest_0.6.25  
-## [13] xfun_0.22       rlang_0.4.7     evaluate_0.14
+##  [5] tools_4.0.2     rstudioapi_0.11 yaml_2.2.1      Rcpp_1.0.5     
+##  [9] stringi_1.5.3   rmarkdown_2.4   knitr_1.30      stringr_1.4.0  
+## [13] digest_0.6.25   xfun_0.22       rlang_0.4.7     evaluate_0.14
 \end{verbatim}
 
 \hypertarget{tipos-de-ficheros}{%
@@ -944,8 +947,8 @@ El primer paso de una secuencia de \emph{pipes} puede ser un valor, una variable
 
 \begin{figure}
 \centering
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-25-1.pdf}
-\caption{\label{fig:unnamed-chunk-25}Ejecución del código sin o con \texttt{\%\textgreater{}\%}. Sin \emph{pipes} los resultados intermedios tienen que guardarse en una variable en memoria.}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-26-1.pdf}
+\caption{\label{fig:unnamed-chunk-26}Ejecución del código sin o con \texttt{\%\textgreater{}\%}. Sin \emph{pipes} los resultados intermedios tienen que guardarse en una variable en memoria.}
 \end{figure}
 
 Una operación compleja creada mediante el uso de \texttt{\%\textgreater{}\%} se puede usar en el lado derecho de una asignación \texttt{\textless{}-}, de modo que se guarda resultado de toda la operación de la derecha.
@@ -1463,7 +1466,7 @@ Una buena forma de visualizar una correlación entre 2 variables es mediante un 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 Para visualizar la relación entre más de 2 variablesse puede usar la función \texttt{pair\ ()}. En este caso limitamos el ejemplo a tres variables:
 
@@ -1474,7 +1477,7 @@ Para visualizar la relación entre más de 2 variablesse puede usar la función 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-45-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-46-1.pdf}
 
 Por otra parte, existen numerosas librerías de R que permiten generar este tipo de gráficos con distintas opciones. Por ejemplo con \texttt{ggplot2}:
 
@@ -1490,7 +1493,7 @@ Por otra parte, existen numerosas librerías de R que permiten generar este tipo
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-46-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-47-1.pdf}
 
 O representaciones más modernas como con la librería \texttt{corrplot}:
 
@@ -1506,7 +1509,7 @@ O representaciones más modernas como con la librería \texttt{corrplot}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-47-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-48-1.pdf}
 
 \hypertarget{ejercicios-1}{%
 \section{Ejercicios}\label{ejercicios-1}}
@@ -1527,12 +1530,287 @@ Por otro lado, \textbf{La estadística inferencial} es la rama de la estadístic
 
 Las dos herramientas más importantes utilizadas en estadística inferencial son los test de hipótesis y los intervalos de confianza.
 
-\hypertarget{distribuciones-de-probabilidad}{%
-\section{Distribuciones de probabilidad}\label{distribuciones-de-probabilidad}}
+\begin{quote}
+Ver caso de bulos o noticias \emph{fake}
+\end{quote}
+
+La estadística inferencial proporciona las herramientas que necesitamos para responder a este tipo de preguntas, y dado que este tipo de preguntas y es una pieza fundamental de lo que podriamos denominar \textbf{lenguaje científico}. Sin embargo, la inferencia estadística se basa en la teoría de la probabilidad. Aquí no vamos a hablar de probabilidad pero, ya que la teoría de la probabilidad sustenta gran parte de las estadísticas, vale la pena cubrir algunos de los conceptos básicos.
+
+\hypertarget{diferencia-entre-probabilidad-y-estaduxedstica}{%
+\section{Diferencia entre probabilidad y estadística}\label{diferencia-entre-probabilidad-y-estaduxedstica}}
+
+Probabilidad y estadística son dos disciplinas que están estrechamente relacionadas pero no son idénticas. La teoría de la probabilidad es \emph{``la doctrina de las posibilidades''}. Es una rama de las matemáticas que estiaud con qué frecuencia ocurrirán diferentes tipos de eventos. Por ejemplo, todas estas preguntas son cosas que puede responder usando la teoría de la probabilidad:
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Cuáles son las posibilidades de que una moneda corriente salga cara 10 veces seguidas?
+\item
+  Si tiro dos dados de seis caras, ¿qué probabilidad hay de que saque dos seises?
+\item
+  ¿Qué posibilidades hay de que cinco cartas extraídas de una baraja perfectamente mezclada sean corazones?
+\item
+  ¿Cuáles son las posibilidades de que me toque la lotería?
+\end{itemize}
+
+Todas estas preguntas tienen algo en común. En cada caso, la \emph{``verdad''} se conoce de antemano, y cada pregunta se relaciona con ``qué tipo de eventos'' sucederán. En la primera pregunta, sabiendo que no se trata de una moneda trucada, hay un 50\% de posibilidades de que cualquier lanzamiento de moneda individual salga cara. En la segunda pregunta, sabemos que la posibilidad de sacar un 6 en un solo dado es de 1 entre 6. En la tercera pregunta, conocemos también el número de cartas y que han sido barajadas \emph{perfectamente}. En la cuarta pregunta, también se conocen las reglas específicas de cada juego (Euromillones, Primitiva, Loteria de Navidad, etc). El punto crítico es que las preguntas probabilísticas comienzan con un modelo conocido del mundo, y usamos ese modelo para hacer algunos cálculos. El modelo subyacente puede ser bastante simple. Por ejemplo, en el ejemplo del lanzamiento de una moneda, podemos escribir el modelo de esta manera:
+
+\[
+P(\mbox{caras}) = 0.5
+\]
+que se puede leer como ``la probabilidad de que salga cara es 0,5 sobre 1'' (las probabilidades son solo números que van del 0 al 1). Utilizamos este modelo pero, no se sabe exactamente lo que va a pasar. Todo es posible. Tal vez salgan diez caras, como dice la pregunta, pero tal vez consiga tres caras. Dicho de otro modo, en la teoría de la probabilidad, el modelo es conocido, pero los datos no.
+
+En cambio, las preguntas estadísticas funcionan al revés. En estadística, no conocemos la ``verdad'' pero tenemos algunos datos, y es a partir de los datos que queremos aprender la ``verdad''. Las preguntas estadísticas tienden a parecerse más a estas:
+
+\begin{itemize}
+\tightlist
+\item
+  Si alguien lanza una moneda 10 veces y obtiene 10 caras, ¿me están haciendo trampas?
+\item
+  Si cinco cartas de la parte superior de la baraja son todos corazones, ¿qué probabilidad hay de que la baraja se haya barajado?
+\item
+  Si un político gana \emph{n} veces seguidas a la lotería, ¿qué probabilidades hay de que nos ensté engañando?
+\end{itemize}
+
+Esta vez, lo único que tenemos son datos. Se sabe lo que ha sucedido y se infiere si todo ha sucedido de un modo \emph{normal} o si hay alguna regla que no se ha respetado. Los datos que tenemos se ven así:
+
+\begin{verbatim}
+Cara Cara Cara Cara Cara Cara Cara Cara Cara Cara
+\end{verbatim}
+
+y lo que tratamos de averiguar es si debemos confiar en que esto sea ``verdad''. Si la moneda es una moneda común, entonces el modelo que debo adoptar es uno que diga que la probabilidad de que salga cara es 0.5; es decir, \(P(\mbox{caras}) = 0.5\). Si la moneda está trucada, entonces debería concluir que la probabilidad de que salga cara es \emph{no} 0.5, que escribiríamos como \(P(\mbox{caras})\neq0.5\). En otras palabras, el problema de la inferencia estadística es averiguar cuál de estos dos modelos de la realidad es el correcto. Así pues, la pregunta estadística no es la misma que la pregunta de probabilidad, pero están profundamente conectadas entre sí. Debido a esto, una buena introducción a la teoría estadística comenzará con una discusión sobre qué es la probabilidad y cómo funciona.
+
+\hypertarget{probabilidad-frecuentista-vs-bayesiana}{%
+\section{Probabilidad frecuentista vs Bayesiana}\label{probabilidad-frecuentista-vs-bayesiana}}
+
+\hypertarget{enfoque-frecuentista}{%
+\subsection{Enfoque frecuentista}\label{enfoque-frecuentista}}
+
+El enfoque predominante para el estudio de la probabilidad en estadística, se conoce como \textbf{\emph{punto de vista frecuentista}}, y define la probabilidad como una \textbf{\emph{frecuencia a largo plazo}}. Lanzando una moneda que tiene \(P(caras) = 0.5\) podría suceder lo siguiente:
+
+\begin{verbatim}
+Cruz,Cara,Cara,Cara,Cara,Cruz,Cruz,Cara,Cara,Cara,Cara,Cruz,Cara,Cara,Cruz,Cruz,Cruz,Cruz,Cruz,Cara
+\end{verbatim}
+
+En este caso, 11 de estas 20 monedas (55\%) salieron cara. Ahora supongamos que he estado llevando un recuento continuo del número de caras (que llamaré \(N_{caras}\)) que he visto, en los primeros \(N\) volteos, y calculo la proporción de caras \(N_{caras}/N\) cada vez. Esto es lo que obtendría (¡literalmente lancé monedas para producir esto!):
+
+\begin{tabular}{r|r|r}
+\hline
+Lanzamientos & Caras & Proporción\\
+\hline
+1 & 0 & 0.00\\
+\hline
+2 & 1 & 0.50\\
+\hline
+3 & 2 & 0.67\\
+\hline
+4 & 3 & 0.75\\
+\hline
+5 & 4 & 0.80\\
+\hline
+6 & 4 & 0.67\\
+\hline
+7 & 4 & 0.57\\
+\hline
+8 & 5 & 0.63\\
+\hline
+9 & 6 & 0.67\\
+\hline
+10 & 7 & 0.70\\
+\hline
+11 & 8 & 0.73\\
+\hline
+12 & 8 & 0.67\\
+\hline
+13 & 9 & 0.69\\
+\hline
+14 & 10 & 0.71\\
+\hline
+15 & 10 & 0.67\\
+\hline
+16 & 10 & 0.63\\
+\hline
+17 & 10 & 0.59\\
+\hline
+18 & 10 & 0.56\\
+\hline
+19 & 10 & 0.53\\
+\hline
+20 & 11 & 0.55\\
+\hline
+\end{tabular}
+
+Al comienzo de la secuencia, la \emph{proporción} de caras fluctúa mucho, comenzando en .00 y subiendo hasta .80. Después de un cierto número de lanzamientos, da la impresión de que se la proporción disminuye un poco, y que cada vez más valores se acercan bastante a la respuesta que sabemo que es la ``correcta'' (.50). Esta es la definición \textbf{frecuentista} de probabilidad.
+
+\begin{quote}
+Lanza una moneda común una y otra vez, y a medida que \(N\) crece (se acerca al infinito, denotado \(N\rightarrow\infty\)), la proporción de caras se acercará al 50\%.
+\end{quote}
+
+Simulando con un ordenador es posible lanzar una moneda virtual 1000 veces para ver lo que sucede con la proporción \(N_{caras}/N\) a medida que aumenta \(N\). Los resultados se muestran en la Figura \ref{fig:frequentistprobability}. La \emph{proporción de caras observadas} finalmente deja de fluctuar y se estabiliza; cuando lo hace, el número en el que finalmente se asienta es la verdadera probabilidad de que salga cara.
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/frequentistprobability-1.pdf}
+\caption{\label{fig:frequentistprobability}Una ilustración de cómo funciona la probabilidad frecuentista. Si lanzamos una moneda una y otra vez, la proporción de caras que ha visto finalmente se estabiliza y converge a la probabilidad real de 0.5. Cada panel muestra cuatro experimentos simulados diferentes: en cada caso, simulamos que lanzamos una moneda 1000 veces y seguimos la pista de la proporción de lanzamientos que fueron caras a medida que avanzamos. Aunque ninguna de estas secuencias en realidad terminó con un valor exacto de .5, si hubiéramos extendido el experimento para un número infinito de lanzamientos de monedas, lo hubieran hecho.}
+\end{figure}
+
+La definición frecuentista de probabilidad resulta bastante interesante puesto que:
+1. Es objetiva. La probabilidad de un evento está \emph{necesariamente} basada en el la realidad. Los enunciados de probabilidad pueden tener sentido si se refieren a (una secuencia de) eventos que ocurren en el universo físico.
+2. Es inequívoca. Dos personas cualesquiera que observen el desarrollo de la misma secuencia de eventos, tratando de calcular la probabilidad de un evento, inevitablemente deben llegar a la misma respuesta.
+
+Sin embargo, también hay que tener ciertas precauciones ya que:
+1. Las secuencias infinitas no existen en el mundo físico. Por ejemplo, si se toma una moneda y se comienza a lanzar al suelo infinitas veces, cada vez que aterriza, impacta contra el suelo. Cada impacto desgasta un poco la moneda; eventualmente, la moneda quedará modificada y ya no volverá a ser la misma.
+2. La definición frecuentista tiene un alcance limitado. Por ejemplo, si un meteorólogo aparece en la televisión y dice: ``la probabilidad de que llueva en Adelaida el 2 de noviembre de 2022 es del 60\%'', no está claro cómo definir esto en términos frecuentistas. Solo hay una ciudad de Adelaide, y solo habrà un 2 de noviembre de 2022. No hay una secuencia infinita de eventos aquí, solo una vez. La probabilidad frecuentista no contempla hacer enunciados de probabilidad sobre un solo evento. Desde la perspectiva frecuentista, mañana lloverá o no; no hay ``probabilidad'' que se adhiera a un solo evento no repetible.
+
+\hypertarget{enfoque-bayesiano}{%
+\subsection{Enfoque Bayesiano}\label{enfoque-bayesiano}}
+
+El enfoque bayesiana de la probabilidad a menudo se denomina visión subjetivista, y es una visión minoritaria entre los estadísticos, pero que ha ido ganando terreno de manera constante durante las últimas décadas. La forma más común de pensar sobre la probabilidad subjetiva es definir la probabilidad de un evento como el grado de creencia que alguien inteligente y racional asigna a la probabilidad de ese evento. Según esto, las probabilidades no existen en el mundo, sino en los pensamientos y suposiciones de las personas. Sin embargo, para que este enfoque funcione, necesitamos alguna forma de operacionalizar ``grado de creencia''. Supongamos que creo que hay un 60\% de probabilidad de que llueva mañana. Si alguien me ofrece una apuesta: si mañana llueve, gano 5 euros, pero si no llueve, pierdo 5 euros. Claramente, desde mi perspectiva, esta es una apuesta bastante buena. Por otro lado, si creo que la probabilidad de lluvia es solo del 40\%, entonces es una mala apuesta. Por lo tanto, podemos operacionalizar la noción de una ``probabilidad subjetiva'' en términos de las apuestas que estoy dispuesto a aceptar.
+
+¿Cuáles son las ventajas y desventajas del enfoque bayesiano? La principal ventaja es que te permite asignar probabilidades a cualquier evento. No es necesario que se limite a los eventos que se pueden repetir. La principal desventaja es que no podemos ser puramente objetivos: especificar una probabilidad requiere que especifiquemos una entidad que tenga el grado de creencia relevante. Esta entidad puede ser un humano, un extraterrestre, un robot o incluso un estadístico, pero tiene que haber un agente inteligente que crea en las cosas. Para mucha gente esto es incómodo: parece hacer que la probabilidad sea arbitraria. Si bien el enfoque bayesiano requiere que el agente en cuestión sea racional (es decir, obedezca las reglas de probabilidad), sí permite que todos tengan sus propias creencias; Puedo creer que la moneda es común y tú no tienes que hacerlo, aunque ambos seamos racionales. La visión frecuentista no permite que dos observadores atribuyan diferentes probabilidades al mismo evento: cuando eso sucede, al menos uno de ellos debe estar equivocado. La visión bayesiana no evita que esto ocurra. Dos observadores con conocimientos previos diferentes pueden tener legítimamente creencias diferentes sobre el mismo evento. En resumen, donde la visión frecuentista a veces se considera demasiado estrecha (prohíbe muchas cosas a las que queremos asignar probabilidades), la visión bayesiana a veces se piensa que es demasiado amplia (permite demasiadas diferencias entre observadores).
+
+\hypertarget{introducciuxf3n-a-las-distribuciones-de-probabilidad}{%
+\section{Introducción a las distribuciones de probabilidad}\label{introducciuxf3n-a-las-distribuciones-de-probabilidad}}
 
 Una distribución de probabilidad es una función que describe la probabilidad de obtener los posibles valores que puede asumir una variable aleatoria. En otras palabras, los valores de la variable varían según la distribución de probabilidad subyacente.
 
 Supongamos que seleccionamos una muestra aleatoria de personas y medimos la altura de los sujetos. A medida que vamos midiendo las alturas, podemos crear una distribución de alturas. Este tipo de distribución es útil cuando necesita saber qué resultados son más probables, la dispersión de los valores potenciales y la probabilidad de resultados diferentes. Por lo tanto se puede utilizar distribuciones de probabilidad para realizar inferencias.
+
+\begin{quote}
+Ejemplo a partir de la película ``El sargento de hierro'' de Clint Eastwood.
+\end{quote}
+
+Supongamos que el profesor solo tiene 5 jerseis (\(X_1\), \(X_2\), \(X_3\), \(X_4\) y \(X_5\). Cada prenda (es decir, cada \(X\)) sería un \textbf{\emph{evento elemental}}. La característica clave de los eventos elementales es que cada vez que hacemos una observación (por ejemplo, cada vez que me pongo un jersey), el resultado será uno y solo uno de estos eventos. De manera similar, el conjunto de todos los eventos posibles se denomina \textbf{\emph{espacio muestral}}.
+
+Definido el espacio muestral, que se construye a partir de muchos posibles eventos elementales (jerseys), lo que queremos hacer es asignar una \textbf{\emph{probabilidad}} de uno de estos eventos elementales. Para un evento \(X\), la probabilidad de ese evento \(P(X)\) es un número que se encuentra entre 0 y 1. Cuanto mayor sea el valor de \(P(X)\), es más probable que ocurra el evento. Entonces, por ejemplo, si \(P(X)=0\), significa que el evento \(X\) es imposible (es decir, nunca uso ese jersey). Por otro lado, si \(P(X)=1\) significa que el evento \(X\) seguramente ocurrirá (es decir, siempre uso ese jersey). Todos los demas valores, entre 0 y 1, significarían que unas veces uso un jersey y otras veces otros. Por ejemplo, si \(P(X)=0.5\) significa que uso ese jersey la mitad del tiempo.
+
+Las probabilidades de los todos los eventos elementales deben sumar 1. Esto se conoce como la \textbf{\emph{ley de la probabilidad total}}. Si se satisfacen estos requisitos, entonces lo que tenemos es una \textbf{\emph{distribución de probabilidad}}. Por ejemplo, este es un ejemplo de distribución de probabilidad
+
+\begin{tabular}{l|l|l|l|l|l}
+\hline
+Jersey & Azul & Gris & Naranja & Amarillo & Marrón\\
+\hline
+Etiqueta & \$X\_1\$ & \$X\_2\$ & \$X\_3\$ & \$X\_4\$ & \$X\_5\$\\
+\hline
+Probabildad & \$P(X\_1) = .5\$ & \$P(X\_2) = .3\$ & \$P(X\_3) = .1\$ & \$P(X\_4) = 0\$ & \$P(X\_5) = .1\$\\
+\hline
+\end{tabular}
+
+Cada uno de los eventos tiene una probabilidad que se encuentra entre 0 y 1, y si sumamos la probabilidad de todos los eventos, suman 1. Impresionante. Incluso podemos dibujar un bonito gráfico de barras para visualizar esta distribución, como se muestra en la Figura \ref{pantsprob}.
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/pantsprob-1.pdf}
+\caption{\label{fig:pantsprob}Representación visual de la distribución de probabilidad de jerseys del profesor. Hay cinco eventos elementales, correspondientes a los cinco jerseys. Cada evento tiene alguna probabilidad de ocurrir: esta probabilidad es un número entre 0 y 1. La suma de estas probabilidades es 1.}
+\end{figure}
+
+Cabe ser señalado es que la teoría de la probabilidad permite hablar de eventos elementales y también de \textbf{\emph{eventos no elementales}}. En el ejemplo de los jerseys, es perfectamente legítimo referirse a la probabilidad de que vista un color claro. En términos matemáticos, definimos el evento ``jersey de color claro'' \(E\) para que corresponda al conjunto de eventos elementales \((X_1, X_2, X_3)\). Si ocurre alguno de estos eventos elementales, también se dice que ha ocurrido \(E\). Habiendo decidido escribir la definición de \(E\) de esta manera, es bastante sencillo establecer cuál es la probabilidad \(P(E)\): simplemente sumamos todo. En este caso particular
+\[
+P(E) = P(X_1) + P(X_2) + P(X_3)
+\]
+y, dado que las probabilidades de los jerseys amarillo, naranja y gris claro, respectivamente, son .1, 0 y .1, la probabilidad de que use un jersey de color claro es igual a .2.
+
+A partir de estos principios tan simples es posible construir algunas herramientas matemáticas extremadamente poderosas. En la Tabla \ref{tab:probrules} aparecen algunas de las otras reglas que satisfacen las probabilidades.
+
+\begin{table}
+
+\caption{\label{tab:probrules}Algunas reglas básicas que deben cumplir las probabilidades.}
+\centering
+\begin{tabular}[t]{l|l|l|l}
+\hline
+Expresión & Notación & NANA & Formula\\
+\hline
+No \$A\$ & \$P(\textbackslash{}neg A)\$ & = & \$1-P(A)\$\\
+\hline
+\$A\$ o \$B\$ & \$P(A \textbackslash{}cup B)\$ & = & \$P(A) + P(B) - P(A \textbackslash{}cap B)\$\\
+\hline
+\$A\$ y \$B\$ & \$P(A \textbackslash{}cap B)\$ & = & \$P(A|B) P(B)\$\\
+\hline
+\end{tabular}
+\end{table}
+
+Las distribuciones de probabilidad varían enormemente. Sin embargo, no todas son igualmente importantes. Las más utilizadas serían: la distribución binomial, la distribución normal, la distribución \(t\), la distribución \(\ chi^2\) (``chi-cuadrado'') y la distribución distribución de \(F\). Aquí prestaremos especial atención a la binomial y a la normal.
+
+\hypertarget{la-distribuciuxf3n-binomial}{%
+\subsection{La distribución binomial}\label{la-distribuciuxf3n-binomial}}
+
+La teoría de la probabilidad se originó en el intento de describir cómo funcionan los juegos de azar, por lo que parece apropiado que nuestra discusión sobre la \textbf{\emph{distribución binomial}} incluya una discusión sobre el lanzamiento de dados y monedas. Imaginemos un ``experimento'' simple: en un cubilete hay 20 dados idénticos de seis caras. En una cara de cada dado hay una imagen de un bufón (\emph{joker}) y las otras cinco caras están todas en blanco. Si lanzamos los 20 dados, ¿cuál es la probabilidad de que obtenga exactamente 4 \emph{jokers}? Suponiendo que los dados no estén trucados, sabemos que la probabilidad de que se obtenga un \emph{joker} es de 1 en 6; Para decir esto de otra manera, la probabilidad de \emph{joker} para un solo dado es aproximadamente \(.167\).
+
+Si \(N\) es el número de tiradas de dados en nuestro experimento; que a menudo se denomina \textbf{\emph{parámetro de tamaño}} de nuestra distribución binomial. Mientras que \(\theta\) es la probabilidad de que un solo dado produzca un \emph{joker}, una cantidad que generalmente se llama \textbf{\emph{probabilidad de éxito}} del binomio. Finalmente, \(X\) serán resultados de nuestro experimento, es decir, el número de \emph{jokers} obtenido al tirar los dados. Dado que el valor real de \(X\) se debe al azar, nos referimos a él como \textbf{\emph{variable aleatoria}}. La cantidad que queremos calcular es la probabilidad de que \(X=4\) dado que sabemos que \(\theta=.167\) y \(N=20\). La ``forma'' general de lo que me interesa calcular podría escribirse como
+
+\[
+P(X \ | \ \theta, N)
+\]
+y estamos interesados en el caso especial donde \(X=4\), \(\theta=.167\) y \(N=20\). Si quiero decir que \(X\) se genera aleatoriamente a partir de una distribución binomial con los parámetros \(\theta\) y \(N\), la notación que usaría es la siguiente:
+\[
+X \sim \mbox{Binomial}(\theta, N)
+\]
+La distribución binomial tiene el aspecto que muestar en la Figura \ref{fig:binomial1} y traza las probabilidades binomiales para todos los valores posibles de \(X\). Si se lanzan los dados, desde \(X=0\) (sin \emph{jokers}) hasta \(X=20\) (todos los jokers). Esto es básicamente un gráfico de barras, y no es diferente del gráfico de ``probabilidad de jerseys''de la Figura \ref{fig:pantsprob}. En el eje horizontal tenemos todos los eventos posibles y en el eje vertical podemos leer la probabilidad de cada uno de esos eventos. Entonces, la probabilidad de sacar 4 \emph{jokers} de 20 veces es de aproximadamente 0.20. En otras palabras, esperaría que eso sucediera aproximadamente el 20\% de las veces que se lancen los dados.
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/binomial1-1.pdf}
+\caption{\label{fig:binomial1}La distribución binomial con parámetro de tamaño de \(N=20\) y una probabilidad de éxito subyacente de \(theta=1/6\). Cada barra vertical representa la probabilidad de un resultado específico (es decir, un valor posible de \(X\)). Debido a que esta es una distribución de probabilidad, cada una de las probabilidades debe ser un número entre 0 y 1, y las alturas de las barras también deben sumar 1.}
+\end{figure}
+
+Como se ha visto en la tabla \ref{tab:probability-functions}, R tiene una función llamada \texttt{dbinom\ ()} que calcula probabilidades binomiales. Los principales argumentos de la función son:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{x}. Éste es un número o vector, que especifica los resultados cuya probabilidad se está tratando de calcular.
+\item
+  \texttt{size}. Este es un número que le dice a R el tamaño del experimento.
+\item
+  \texttt{prob}. Ésta es la \emph{probabilidad de éxito} de cualquier ensayo del experimento.
+\end{itemize}
+
+Entonces, para calcular la probabilidad de obtener \texttt{x\ =\ 4} \emph{jokers}, a partir de un experimento de \texttt{size\ =\ 20} ensayos, en el que la probabilidad de obtener un \emph{joker} en cualquier ensayo es \texttt{prob\ =\ 1/6}, el comando que usaríamos es:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dbinom}\NormalTok{( }\DataTypeTok{x =} \DecValTok{4}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{prob =} \DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2022036
+\end{verbatim}
+
+Para ver cómo cambia la distribución binomial cuando modificamos los valores de \(\theta\) y \(N\), cambiemos los dados por monedas. De este modo, la probabilidad de éxito ahora es \(\theta=1/2\). Suponiendo que se lanzara la moneda \(N=20\) veces. Es decir que estamos cambiando la probabilidad de éxito, pero manteniendo el tamaño del experimento. Como muestra la Figura \ref{fig:binomial2a}, el efecto principal de esto es cambiar toda la distribución. ¿Y si lanzamos una moneda \(N=100\) veces? Bueno, en ese caso, se obtiene la distribución que aparece en la Figura \ref{fig:binomial2b}. La distribución se mantiene aproximadamente en el medio, pero hay un poco más de variabilidad en los posibles resultados.
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/binomial2a-1.pdf}
+\caption{\label{fig:binomial2a}Dos distribuciones binomiales, que involucran un escenario en el que estoy lanzando una moneda, por lo que la probabilidad de éxito subyacente es \(theta=1/2\). Aquí asumimos que estoy lanzando la moneda \(N=20\) veces.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/binomial2b-1.pdf}
+\caption{\label{fig:binomial2b}Dos distribuciones binomiales, que involucran un escenario en el que se lanza una moneda, por lo que la probabilidad de éxito subyacente es \(theta=1/2\). Aquí asumimos que la moneda se lanza \(N=100\) veces.}
+\end{figure}
+
+La fórmula de la distribución binomial que calcula R es la siguiente:
+\(P(X | \theta, N) = \displaystyle\frac{N!}{X! (N-X)!} \theta^X (1-\theta)^{N-X}\)
+
+\hypertarget{la-distribuciuxf3n-normal}{%
+\subsection{La distribución normal}\label{la-distribuciuxf3n-normal}}
+
+La fórmula de la distribución normal que calcula R es la siguiente:
+\(p(X | \mu, \sigma) = \displaystyle\frac{1}{\sqrt{2\pi}\sigma} \exp \left( -\frac{(X - \mu)^2}{2\sigma^2} \right)\)
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/normdist-1.pdf}
+\caption{\label{fig:normdist}\{La distribución normal con media \(mu=0\) y desviación estándar \(sigma = 1\). El eje \(x\) corresponde al valor de alguna variable, y el eje \(y\) nos dice algo sobre la probabilidad de que observemos ese valor. Sin embargo, observe que el eje \(y\) está etiquetado como ``Densidad de probabilidad'' y no como ``Probabilidad''. Existe una característica sutil y algo frustrante de las distribuciones continuas que hace que el eje \(y\) se comporte un poco extraño: la altura de la curva aquí no es en realidad la probabilidad de observar un valor particular de \(x\). Por otro lado, \emph{es} cierto que las alturas de la curva indican qué valores de \(x\) son más probables.}
+\end{figure}
+
+La \textbf{\emph{distribución normal}}, que también se conoce como ``de campana'' o una ``distribución gaussiana'' es la distribución más utilizada. Una distribución normal se describe usando dos parámetros, la media de la distribución \(\mu\) y la desviación estándar de la distribución \(\sigma\). La notación que a veces usamos para decir que una variable \(X\) se distribuye normalmente es la siguiente:
+
+\[
+X \sim \mbox{Normal}(\mu,\sigma)
+\]
 
 \hypertarget{funciones-de-r-para-distribuciones-de-probabilidad}{%
 \subsection{Funciones de R para distribuciones de probabilidad}\label{funciones-de-r-para-distribuciones-de-probabilidad}}
@@ -1546,16 +1824,30 @@ R tiene varias funciones para trabajar con cada distribución de probabilidad. H
 \item
   \texttt{q} para ``cuantil'', el inverso de la función de distribución acumulativa.
 \item
-  \texttt{d} para ``densidad'', la función de densidad (p.~f.~o p.~d.~f.)
+  \texttt{d} para ``densidad'', la función de densidad.
 \item
-  \texttt{r} para ``aleatorio'', una variable aleatoria que tiene la distribución especificada
+  \texttt{r} para ``aleatorio'', una variable aleatoria que tiene la distribución especificada.
+\end{itemize}
+
+Las cuatro versiones de la cada función requieren que especifiquen los argumentos \texttt{size} y\texttt{prob}. Sin embargo, difieren en términos de cuál es el otro argumento y cuál es el resultado:
+
+\begin{itemize}
+\tightlist
+\item
+  La forma \texttt{d} requiere un resultado particular\texttt{x}, y el devuelve la probabilidad de obtener exactamente ese resultado.
+\item
+  La forma \texttt{p} calcula la \textbf{\emph{probabilidad acumulada}}. Se le da un cuantil particular \texttt{q}, y se le dice la probabilidad de obtener un resultado \emph{menor o igual que} \texttt{q}.
+\item
+  La forma \texttt{q} calcula los \textbf{\emph{cuantiles}} de la distribución. Se especifica un valor de probabilidad \texttt{p} y devuelve el percentil correspondiente. Es decir, el valor de la variable para el que existe una probabilidad \texttt{p} de obtener un resultado menor que ese valor.
+\item
+  La forma \texttt{r} es un \textbf{\emph{generador de números aleatorios}}: específicamente, genera \texttt{n} resultados aleatorios de la distribución.
 \end{itemize}
 
 Para la distribución normal, estas funciones son \texttt{pnorm}, \texttt{qnorm}, \texttt{dnorm} y \texttt{rnorm}, mientras que para la distribución binomial, estas funciones son \texttt{pbinom}, \texttt{qbinom}, \texttt{dbinom} y \texttt{rbinom}.
 
 Para una distribución continua (como la normal), las funciones más útiles para resolver problemas que involucran cálculos de probabilidad son las funciones \texttt{p} y \texttt{q}, porque la densidad por la función \texttt{d} solo se puede usar para calcular probabilidades a través de integrales.
 
-Para una distribución discreta (como la binomial), la función \texttt{d} calcula la densidad (p.~F.), Que en este caso es una probabilidad
+Para una distribución discreta (como la binomial), la función \texttt{d} calcula la densidad, Que en este caso es una probabilidad
 
 \(f(x) = P(X = x)\)
 
@@ -1563,12 +1855,9 @@ y por lo tanto es útil para calcular probabilidades.
 
 R tiene funciones para manejar muchas distribuciones de probabilidad. La siguiente tabla proporciona los nombres de las funciones para cada distribución y un enlace a la documentación en línea que es la referencia autorizada sobre cómo se utilizan las funciones. Pero no lea la documentación en línea todavía. Primero, pruebe los ejemplos de las secciones que siguen a la tabla.
 
-library(readr)
-probability\_distribution\_functions\_in\_r \textless- read\_csv(``probability-distribution-functions-in-r.csv'')
-
 \begin{table}[!h]
 
-\caption{\label{tab:table-probability-functions}Funciones para distribución de probabilidades in R.}
+\caption{(\#tab:table:probability-functions)Funciones para distribución de probabilidades in R.}
 \centering
 \fontsize{12}{14}\selectfont
 \begin{tabular}[t]{>{\raggedright\arraybackslash}p{0.5in}>{\raggedright\arraybackslash}p{0.7in}>{\raggedright\arraybackslash}p{1in}>{\raggedright\arraybackslash}p{1.1in}>{\raggedright\arraybackslash}p{1in}}
@@ -1599,11 +1888,103 @@ Wilcoxon Signed Rank Statistic & psignrank & qsignrank & dsignrank & rsignrank\\
 \end{tabular}
 \end{table}
 
-\hypertarget{la-distribuciuxf3n-binomial}{%
-\subsection{La distribución binomial}\label{la-distribuciuxf3n-binomial}}
+\hypertarget{ejemplos-con-la-distribuciuxf3n-binomial}{%
+\subsection{Ejemplos con la distribución Binomial}\label{ejemplos-con-la-distribuciuxf3n-binomial}}
 
-\hypertarget{la-distribuciuxf3n-normal}{%
-\subsection{La distribución normal}\label{la-distribuciuxf3n-normal}}
+De nuevo, si lanzamos dados, y cada dado tiene una probabilidad de 1 en 6 de obtener \emph{jokers}, supongamos, que queremos saber la probabilidad de sacar 4 \emph{o menos} jockers. Podríamos usar la función \texttt{dbinom\ ()} para calcular la probabilidad exacta de obtener 0 \emph{jokers}, 1 \emph{joker}, 2 \emph{jokers}, 3 \emph{jokers} y 4 \emph{jokers} y luego sumarlas, pero hay una manera más rápida. En su lugar, se puede usar la función \texttt{pbinom\ ()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{pbinom}\NormalTok{(}\DataTypeTok{q=} \DecValTok{4}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{prob =} \DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7687492
+\end{verbatim}
+
+En otras palabras, hay un 76,9\% de posibilidades de que saque 4 \emph{jokers} o menos. R dice que un valor de 4 es en realidad el percentil 76,9 de esta distribución binomial.
+
+A continuación, consideremos la función \texttt{qbinom\ ()}. Digamos que queremos calcular el percentil 75 de la distribución binomial. Siguiendo con el ejemplo de los dados:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qbinom}\NormalTok{( }\DataTypeTok{p =} \FloatTok{0.75}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{prob =} \DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+Lo que la función \texttt{qbinom\ ()} parece estar diciendo es que el percentil 75 de la distribución binomial es 4, aunque según en la función \texttt{pbinom\ ()} se sabe que 4 es \emph{en realidad} el percentil 76,9. La rareza aquí proviene del hecho de que nuestra distribución binomial realmente no \emph{tiene} un percentil 75. Hay un 56,7\% de posibilidades de sacar 3 \emph{jokers} o menos (ver \texttt{pbinom\ (3,\ 20,\ 1/6)}) y un 76,9\% de posibilidades de sacar 4 calaveras o menos. Entonces, en cierto sentido el percentil 75 debería estar ``entre'' 3 y 4 \emph{jockers}. Pero aquí los decimales no tienen sentido. Este problema se puede manejar de diferentes maneras:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Se puede informar un valor intermedio (o un valor \emph{interpolado}) como 3.9,
+\item
+  Se puede redondear a la baja (a 3) o hacia arriba (a 4).
+\end{enumerate}
+
+La función \texttt{qbinom\ ()} redondea hacia arriba si se solicita un percentil que en realidad no existe (como el 75 en este ejemplo), R encuentra el valor más pequeño para el cual el rango percentil es \emph{al menos} lo que se pidió. En este caso, dado que el percentil 75 ``verdadero'' se encuentra entre 3 y 4 \emph{jokers}, R redondea y devuelve un valor de 4. Esto solo es un problema para distribuciones discretas como la binomial.
+
+Finalmente, tenemos el generador de números aleatorios (\texttt{rbinom\ ()}). Hay que especificar cuántas veces R debe ``simular'' el experimento usando el argumento \texttt{n}, y generará resultados aleatorios a partir de la distribución binomial. Entonces, por ejemplo, supongamos que se tuviera que repetir el experimento de lanzamiento de dados 100 veces. Podría hacer que R simule los resultados de estos experimentos usando el siguiente comando:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rbinom}\NormalTok{( }\DataTypeTok{n =} \DecValTok{100}\NormalTok{, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{prob =} \DecValTok{1}\OperatorTok{/}\DecValTok{6}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] 3 1 4 5 3 4 1 2 4 3 3 5 6 6 6 6 3 4 1 3 3 4 3 3 2 2 3 5 3 4 4 5 3 6 4 6 3
+##  [38] 5 2 3 4 3 6 3 0 2 1 3 1 4 4 4 5 1 2 5 7 6 4 6 4 1 3 3 4 3 4 2 2 2 2 2 2 2
+##  [75] 2 2 3 3 6 4 3 4 2 5 4 2 3 3 6 8 2 2 4 5 2 2 2 5 1 4
+\end{verbatim}
+
+Como puede ver, estos números son más o menos los que se puede ver en la Figura @ref(fig: binomial1). La mayoría de las veces se obtienen entre 1 y 5 \emph{jokers}.
+
+\hypertarget{ejemplos-con-la-distribuciuxf3n-normal}{%
+\subsection{Ejemplos con la distribución normal}\label{ejemplos-con-la-distribuciuxf3n-normal}}
+
+Como ya se ha dicho, las funciones R para la distribución normal son \texttt{dnorm\ ()}, \texttt{pnorm\ ()}, \texttt{qnorm\ ()} y \texttt{rnorm\ ()}. Sin embargo, se comportan prácticamente de la misma manera que las funciones correspondientes para la distribución binomial, por lo que no hay mucho que deba saber. Únicamente, cabe mencionar, que los nombres de los argumentos para los parámetros son \texttt{mean} y\texttt{sd}.
+
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/normmean-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/normsd-1.pdf}
+
+En la Figura \ref{fig:normdist}, se traza una distribución normal con media \(\mu=0\) y desviación estándar \(\sigma=1\). En vez de un histograma, la imagen de la distribución normal en la Figura \ref{fig:normdist} muestra una curva suave. Esta no es una elección arbitraria: la distribución normal es continua, mientras que la binomial es discreta. Las escalas continuas no tienen esta restricción. Por ejemplo, la temperatura de un día de primavera podría ser de 23 grados, 24 grados, 23,9 grados o cualquier punto intermedio, ya que la temperatura es una variable continua, por lo que una distribución normal podría ser muy apropiada para describir las temperaturas de primavera.
+
+\begin{quote}
+Mencionar el caso de las escalas Likert
+\end{quote}
+
+La Figura \ref{fig:normmean} traza distribuciones normales que tienen diferentes medias, pero tienen la misma desviación estándar. Como era de esperar, todas estas distribuciones tienen el mismo ``ancho''. La única diferencia entre ellos es que se han desplazado hacia la izquierda o hacia la derecha. En todos los demás aspectos, son idénticos. Por el contrario, si aumentamos la desviación estándar mientras mantenemos la media constante, el pico de la distribución permanece en el mismo lugar, pero la distribución se ensancha, como puede ver en la Figura \ref{fig:normsd}. Sin embargo, cuando ampliamos la distribución, la altura del pico se reduce. Esto tiene que suceder: de la misma manera que las alturas de las barras que usamos para dibujar una distribución binomial discreta tienen que \emph{suma } 1, el área total \emph{bajo la curva} para la distribución normal debe ser igual a 1. No obstante, independientemente de cuál sea la media real y la desviación estándar, el 68,3\% del área se encuentra dentro de 1 desviación estándar de la media. Del mismo modo, el 95,4\% de la distribución se encuentra dentro de 2 desviaciones estándar de la media y el 99,7\% de la distribución está dentro de 3 desviaciones estándar. Esta idea se ilustra en la Figura \ref{fig:sdnorm}.
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/sdnorm1a-1.pdf}
+\caption{\label{fig:sdnorm1a}El área debajo de la curva indica la probabilidad de que una observación se encuentre dentro de un rango particular. Las líneas continuas trazan distribuciones normales con media \(mu=0\) y desviación estándar \(sigma=1\). Las áreas sombreadas ilustran ``áreas bajo la curva'' para dos casos importantes. Aquí podemos ver que hay un 68,3\% de probabilidad de que una observación caiga dentro de una desviación estándar de la media.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/sdnorm1b-1.pdf}
+\caption{\label{fig:sdnorm1b}El área debajo de la curva indica la probabilidad de que una observación se encuentre dentro de un rango particular. Las líneas continuas trazan distribuciones normales con media \(mu = 0\) y desviación estándar \(sigma = 1\). Las áreas sombreadas ilustran ``áreas bajo la curva'' para dos casos importantes. Aquí vemos que hay un 95,4\% de probabilidad de que una observación caiga dentro de dos desviaciones estándar de la media.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/sdnorm2a-1.pdf}
+\caption{\label{fig:sdnorm2a}Dos ejemplos más de la ``idea del área bajo la curva''. Hay un 15.9\% de probabilidad de que una observación esté una desviación estándar por debajo de la media o menor.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/sdnorm2b-1.pdf}
+\caption{\label{fig:sdnorm2b}Existe una probabilidad del 34,1\% de que la observación sea mayor que una desviación estándar por debajo de la media pero aún por debajo de la media. Si suma estos dos números, se obtiene \(15.9 + 34.1 = 50\). Para datos distribuidos normalmente, existe un 50\% de probabilidad de que una observación caiga por debajo de la media. Y, por supuesto, eso también implica que hay un 50\% de probabilidad de que esté por encima de la media.}
+\end{figure}
 
 \hypertarget{introduccion-a-los-test-de-hipuxf3tesis}{%
 \section{Introduccion a los test de hipótesis}\label{introduccion-a-los-test-de-hipuxf3tesis}}
@@ -1728,7 +2109,7 @@ Para estas 4 pruebas de hipótesis (una/dos medias y una/dos proporciones), calc
 
 Si esto no está claro, así es como se calcula la estadística de prueba (\(t_{obs}\)) en nuestro ejemplo (asumiendo que se desconoce la varianza de la población):
 
-\[t_{obs} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}\]
+\[t_{obs} = \frac{\overline{x} - \mu}{\frac{s}{\sqrt{n}}}\]
 
 dónde:
 
@@ -1748,7 +2129,7 @@ dónde:
 
 Suponiendo que en nuestro caso tenemos una media muestral de 1150 euros (\(\overline{x} = 1150\)), una desviación estándar muestral de 200 euros (\(s=200\)) y un tamaño de muestra de 30 trabajadores (\(n=30\)) y, teniendo en cuenta que la media poblacional (la media bajo la hipótesis nula) es 1200 euros (\(\mu=1200\)), el t-stat quedaría así:
 
-\[t_{obs} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{1150 - 1200}{\frac{200}{\sqrt{30}}} = -1.369306\]
+\[t_{obs} = \frac{\overline{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{1150 - 1200}{\frac{200}{\sqrt{30}}} = -1.369306\]
 
 Aunque las fórmulas son diferentes según el parámetro que esté probando, el valor encontrado para la estadística de prueba nos da una indicación de cuán extremas son nuestras observaciones.
 
@@ -1826,7 +2207,7 @@ Por último, para encontrar el valor crítico también es necesario conocer el \
 
 En muchas aplicaciones el nivel de significancia se suele establecer en el 5\%. En cambio, en algunos campos (como la medicina o la ingeniería, entre otros), el nivel de significancia también se establece a veces en el 1\% para disminuir la tasa de error. Es mejor especificar el nivel de significancia \emph{antes} de realizar una prueba de hipótesis para evitar la tentación de establecer el nivel de significancia de acuerdo con los resultados (la tentación es aún mayor cuando los resultados están al borde de ser significativos). En nuestro caso, tomamos \(\alpha = 5\% = 0.05\).
 
-Además, queremos probar si el salario medio de los trabajadores españoles es \textbf{diferente} de 1200 euros. Si quisiéramos probar que el salario medio fuera inferior a 1200 euros (\(H_1: \mu <1200\)) o superior a 1200 (\$ H\_1: \mu\textgreater1200\$), habríamos realizado una prueba unilateral. Asegúrese de realizar la prueba correcta (bilateral o unilateral) porque tiene un impacto en cómo encontrar el valor crítico.
+Además, queremos probar si el salario medio de los trabajadores españoles es \textbf{diferente} de 1200 euros. Si quisiéramos probar que el salario medio fuera inferior a 1200 euros (\(H_1: \mu <1200\)) o superior a 1200 (\(H_1: \mu>1200\)), habríamos realizado una prueba unilateral. Asegúrese de realizar la prueba correcta (bilateral o unilateral) porque tiene un impacto en cómo encontrar el valor crítico.
 
 Ahora que conocemos la distribución apropiada (distribución de Student), su parámetro (grados de libertad (gl) = 29), el nivel de significancia (\(\alpha\) = 0.05) y la dirección (bilateral), tenemos todo lo que necesitamos para calcular el valor crítico. Podríamos localizar este valor en la tabla estadística correspondiente o directamente lo podríamos calcular con R.
 
@@ -1834,7 +2215,7 @@ Al observar la fila df = 29 y la columna \(t_.025\) en la tabla de distribución
 
 \[t_{n-1;\alpha/2} = t_{29; 0.025} = 2.04523\]
 
-Tomamos \(t_{\alpha/2} = t_.025\) y no \(t_\alpha = t_.05\) ya que el nivel de significancia es 0.05 y estamos haciendo una prueba bilateral (de dos lados; \$ H\_1: \mu\ne 1200\$), por lo que la tasa de error de 0.05 debe dividirse en 2 para encontrar el valor crítico a la derecha de la distribución. Dado que la distribución de Student es simétrica, el valor crítico a la izquierda de la distribución es simplemente: -2.04523.
+Tomamos \(t_{\alpha/2} = t_.025\) y no \(t_\alpha = t_.05\) ya que el nivel de significancia es 0.05 y estamos haciendo una prueba bilateral (de dos lados; \(H_1:\mu\ne 1200\)), por lo que la tasa de error de 0.05 debe dividirse en 2 para encontrar el valor crítico a la derecha de la distribución. Dado que la distribución de Student es simétrica, el valor crítico a la izquierda de la distribución es simplemente: -2.04523.
 
 Visualmente, la tasa de error de 0.05 se divide en dos partes:
 
@@ -1846,7 +2227,7 @@ Visualmente, la tasa de error de 0.05 se divide en dos partes:
   0,025 a la derecha de 2,04523
 \end{itemize}
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-48-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-55-1.pdf}
 
 Al igual que en el apartado anterior, cabe recordar estos valores críticos de -2,045 y 2,045 el último paso.
 
@@ -1922,7 +2303,7 @@ Recordemos que:
 
 Para comparar el \texttt{t-stat} con los valores críticos de manera gráfica:
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-50-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-57-1.pdf}
 
 Los dos valores críticos forman las regiones de rechazo (las áreas sombreadas en rojo):
 
@@ -1992,7 +2373,7 @@ Las hipótesis de investigación (nula y alternativa) siguen siendo las mismas:
 
 Cabe recordar que la fórmula del estadístico t es diferente según el tipo de prueba de hipótesis (una o dos medias, una o dos proporciones, una o dos varianzas). En nuestro caso de una sola media con varianza desconocida, tenemos que:
 
-\[t_{obs} = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{1150 - 1200}{\frac{200}{\sqrt{30}}} = -1.369306\]
+\[t_{obs} = \frac{\overline{x} - \mu}{\frac{s}{\sqrt{n}}} = \frac{1150 - 1200}{\frac{200}{\sqrt{30}}} = -1.369306\]
 
 \hypertarget{calculo-del-valor-p}{%
 \subsubsection{\texorpdfstring{Calculo del valor \emph{p}}{Calculo del valor p}}\label{calculo-del-valor-p}}
@@ -2003,7 +2384,7 @@ Formalmente, el valor \emph{p} es el área más allá del estadístico de prueba
 
 Visualmente, el valor \emph{p} es la suma de las dos áreas sombreadas en azul en la siguiente gráfica:
 
-\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-51-1.pdf}
+\includegraphics{tecnicas-cuantitativas_files/figure-latex/unnamed-chunk-58-1.pdf}
 
 El valor \emph{p} se puede obtener también con tablas estadísticas o es posible calcularlo con precisión en R con la función \texttt{pt()}:
 
@@ -2097,7 +2478,7 @@ Dados nuestros datos y con \(\alpha= 0.05\), tenemos que:
 \[
 \begin{aligned}
  95\%\text{ IC para } \mu 
-    &= \bar{x} \pm t_{\alpha/2, n - 1} \frac{s}{\sqrt{n}} \\
+    &= \overline{x} \pm t_{\alpha/2, n - 1} \frac{s}{\sqrt{n}} \\
     &= 1150 \pm 2.045 \frac{200}{\sqrt{30}} \\
     &= [1075,33; 1224,67]
 \end{aligned}
@@ -2127,7 +2508,7 @@ En nuestro ejemplo:
 \begin{itemize}
 \tightlist
 \item
-  el valor hipotético es 1200 (desde \$ H\_0:\mu= 1200\$)
+  el valor hipotético es 1200 (desde \(H_0:\mu= 1200\))
 \item
   1200 se incluye en el intervalo de confianza del 95\%, ya que va de 1075,33 a 1224,67 euros
 \item
@@ -2233,6 +2614,38 @@ Quizás el uso de intervalos de confianza para la inferencia estadística permit
 
 \hypertarget{ejercicios-2}{%
 \section{Ejercicios}\label{ejercicios-2}}
+
+\hypertarget{distribuciuxf3n-binomial}{%
+\subsection{Distribución Binomial}\label{distribuciuxf3n-binomial}}
+
+En nuestro municipio hay 500 hombres de la misma edad y con buena salud. Según las estadísticas actuales, la probabilidad de que estas personas vivan 30 años o más es de 2/3. Hay que hallar las probabilidades de que dentro de esos 30 años vivan
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Los 500 hombres.
+\item
+  Al menos 300 de ellos.
+\item
+  200 hombres
+\end{enumerate}
+
+\hypertarget{distribuciuxf3n-normal}{%
+\subsection{Distribución Normal}\label{distribuciuxf3n-normal}}
+
+El ayuntamiento consume una media de 80 \(kWh/hab/a\), con una desviación estándard de 14\(kWh/hab/a\). Hay que calcular:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  La probabilidad de que este año hagan falta entre 75 y 90 (\(p(75 \leqslant x \leqslant 90)\)).
+\item
+  La probabilidad de que hagan falta 75 o menos (\(p(75 \leqslant x\)).
+\item
+  Describid en un párrafo alguna variable municipal que se pueda ajustar a una distribución normal y haced la comprobación.
+\end{enumerate}
 
 \hypertarget{el-muestreo-estaduxedstico}{%
 \chapter{El muestreo estadístico}\label{el-muestreo-estaduxedstico}}

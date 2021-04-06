@@ -3,14 +3,6 @@
 La estadística descriptiva es una rama de la estadística cuyo objetivo es resumir, describir y presentar una serie de valores o un conjunto de datos. Estas estadísticas pueden ser realmente útiles al analizar largas series de datos en las que resulte difícil reconocer algún patrón. En éste capítulo utilizaremos una muestra de datos sobre salarios (en euros) de una *población* de 100 trabajadores:
 
 ```{r, echo = FALSE, message = FALSE}
-library(pander)
-panderOptions("p.sep", ", ")
-panderOptions("decimal.mark", ",")
-panderOptions("big.mark", ".")
-panderOptions("p.copula", " y ")
-panderOptions("p.sep", ", ")
-panderOptions("round", 0)
-
 set.seed(42)
 salarios <- round(rnorm(100, mean = 1500, sd = 500), 1)
 pander(salarios)

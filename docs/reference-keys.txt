@@ -86,6 +86,7 @@ comparación-del-parámetro-objetivo-con-el-intervalo-de-confianza
 enunciar-las-hipótesis
 calcular-el-intervalo-de-confianza
 conclusión-e-interpretación-de-los-resultados-1
+errortypes
 test-de-hipótesis-en-r-cálculo-e-informes
 un-ejemplo-sobre-brecha-salarial-entre-géneros
 anova

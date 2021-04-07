@@ -137,7 +137,7 @@
 
 \title{Técnicas cuantitativas}
 \author{Enric Aguilar y Benito Zaragozí}
-\date{06-Apr-2021}
+\date{07-Apr-2021}
 
 \begin{document}
 \maketitle
@@ -2517,6 +2517,39 @@ En nuestro ejemplo:
 
 Por supuesto, la conclusión es equivalente a la que se había llegado por los otros dos métodos. Esto debe ser así, ya que usamos los mismos datos y el mismo nivel de significancia \(\alpha\) para los tres métodos.
 
+\hypertarget{errortypes}{%
+\subsection{Dos tipos de errores}\label{errortypes}}
+
+Antes de entrar en detalles sobre cómo se construye una prueba estadística, es útil comprender la filosofía detrás de ella. Idealmente, nos gustaría construir nuestra prueba de modo que nunca cometamos errores. Desafortunadamente, dado que el mundo es caótico, esto no es posible. A veces simplemente tienes mala suerte: por ejemplo, supongamos que lanzas una moneda 10 veces seguidas y sale cara las 10 veces. Eso se parece una evidencia muy fuerte de que la moneda está trucada, pero, por supuesto, hay una probabilidad de 1 entre 1024 de que esto suceda incluso si la moneda fuera completamente normal. En otras palabras, en la vida real \emph{siempre} tenemos que aceptar que existe la posibilidad\ldots{} Como consecuencia, el objetivo detrás de las pruebas de hipótesis estadísticas no es \emph{eliminar} errores, sino \emph{minimizarlos}.
+
+Debemos ser un poco más precisos sobre lo que entendemos por ``errores''. En primer lugar se da el caso de que la hipótesis nula es verdadera o es falsa; y nuestra prueba rechazará la hipótesis nula o la retendrá. \^{}{[}Un comentario aparte con respecto al lenguaje que usa para hablar sobre la prueba de hipótesis. En primer lugar, una cosa que realmente desea evitar es la palabra ``probar'': una prueba estadística realmente no \emph{prueba} que una hipótesis sea verdadera o falsa. La prueba implica certeza pero las estadísticas significan nunca tener que decir que estás seguro. Pueden pasar una de cuatro cosas:
+
+\begin{tabular}{l|l|l}
+\hline
+ & Mantener \$H\_0\$ & Mantener \$H\_0\$\\
+\hline
+\$H\_0\$ es verdadero & Decisión correcta & Error (Tipo I)\\
+\hline
+\$H\_0\$ es falso & Error (tipo II) & Decisión correcta\\
+\hline
+\end{tabular}
+
+Como consecuencia, en realidad hay \emph{dos} tipos diferentes de error. Si rechazamos una hipótesis nula que sea realmente cierta, entonces hemos cometido un \textbf{\emph{error de tipo I}}. Por otro lado, si mantenemos la hipótesis nula cuando en realidad es falsa, entonces hemos cometido un \textbf{\emph{error tipo II}}. En juicio penal donde se busca establecer ``más allá de toda duda razonable'' que el acusado es culpable. Todas las reglas probatorias están (en teoría, al menos) diseñadas para garantizar que (casi) no haya posibilidad de condenar injustamente a un acusado inocente. El juicio está diseñado para proteger los derechos de un acusado: como dijo el famoso jurista inglés William Blackstone, es ``mejor que escapen diez culpables que sufra un inocente''. En otras palabras, un juicio penal no trata los dos tipos de error de la misma manera \textasciitilde{} \ldots{} castigar al inocente se considera mucho peor que dejar en libertad al culpable. Una prueba estadística es prácticamente lo mismo: el principio de diseño más importante de la prueba es \emph{controlar} la probabilidad de un error de tipo I, para mantenerla por debajo de una probabilidad fija. Esta probabilidad, que se denota \(\alpha\), se denomina \textbf{\emph{nivel de significancia}} de la prueba (o, a veces, el \emph{tamaño} de la prueba). Y lo diré de nuevo, porque es tan fundamental para toda la configuración \textasciitilde{} \ldots{} se dice que una prueba de hipótesis tiene un nivel de significancia \(\alpha\) si la tasa de error de tipo I no es mayor que \(\alpha\) .
+
+Entonces, ¿qué pasa con la tasa de error de tipo II? Bueno, también nos gustaría mantenerlos bajo control, y denotamos esta probabilidad por \(\beta\). Sin embargo, es mucho más común referirse a la \textbf{\emph{potencia}} de la prueba, que es la probabilidad con la que rechazamos una hipótesis nula cuando realmente es falsa, que es \(1-\beta\). Para ayudar a mantener esto claro, aquí está la misma tabla nuevamente, pero con los números relevantes agregados:
+
+\begin{tabular}{l|l|l}
+\hline
+ & no descartar \$H\_0\$ & descartar \$H\_0\$\\
+\hline
+\$H\_0\$ es verdadera & \$1-\textbackslash{}alpha\$ (probabilidad de mantener) & \$\textbackslash{}alpha\$ (tasa de error tipo I)\\
+\hline
+\$H\_0\$ es falsa & \$\textbackslash{}beta\$ (tasa de error tipo II) & \$1-\textbackslash{}beta\$  (potencia del test)\\
+\hline
+\end{tabular}
+
+Una prueba de hipótesis ``potente'' es aquella que tiene un valor pequeño de \(\beta\), mientras mantiene \(\alpha\) fijo en algún (pequeño) nivel deseado. Por convención, los científicos utilizan tres niveles \(\alpha\) diferentes: \(.05\), \(.01\) y \(.001\). Observad la asimetría aquí \textasciitilde{} \ldots{} las pruebas están diseñadas para \emph{asegurar} que el nivel \(\alpha\) se mantenga pequeño, pero no hay garantía correspondiente con respecto a \(\beta\). Ciertamente nos gustaría que la tasa de error de tipo II fuera pequeña, y tratamos de diseñar pruebas que la mantengan pequeña, pero esto es muy secundario a la abrumadora necesidad de controlar la tasa de error de tipo I.
+
 \hypertarget{test-de-hipuxf3tesis-en-r-cuxe1lculo-e-informes}{%
 \section{Test de hipótesis en R: cálculo e informes}\label{test-de-hipuxf3tesis-en-r-cuxe1lculo-e-informes}}
 
@@ -2563,7 +2596,7 @@ Construyamos primero una visualización exploratoria como acabamos de sugerir. D
 \caption{\label{fig:ha-as-flights-boxplot}Air time for Hawaiian and Alaska Airlines flights departing NYC in 2013.}
 \end{figure}
 
-Esto es lo que nos gusta llamar momentos en los que ``no se necesita un doctorado en estadística''. No es necesario ser un experto en estadísticas para saber que Alaska Airlines y Hawaiian Airlines tienen horarios aéreos \emph{significativamente} diferentes. ¡Los dos diagramas de caja ni siquiera se superponen! La construcción de un intervalo de confianza o la realización de una prueba de hipótesis, francamente, no proporcionaría mucha más información que la Figura \ref{fig:ha-as-flights-boxplot}.
+No es necesario ser un experto en estadísticas para saber que Alaska Airlines y Hawaiian Airlines tienen horarios aéreos \emph{significativamente} diferentes. ¡Los dos diagramas de caja ni siquiera se superponen! La construcción de un intervalo de confianza o la realización de una prueba de hipótesis, francamente, no proporcionaría mucha más información que la Figura \ref{fig:ha-as-flights-boxplot}.
 
 Investiguemos por qué observamos una diferencia tan clara entre estas dos aerolíneas que utilizan la manipulación de datos. Primero agrupemos por las filas de \texttt{vuelos\_muestra} no solo por\texttt{transportista} sino también por destino \texttt{dest}. Posteriormente, calcularemos dos estadísticas resumidas: el número de observaciones usando \texttt{n\ ()} y el tiempo medio de transmisión:
 

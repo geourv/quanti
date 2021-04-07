@@ -218,6 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4.1" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#comparando-la-estadística-de-prueba-con-el-valor-crítico."><i class="fa fa-check"></i><b>3.4.1</b> Comparando la estadística de prueba con el <strong>valor crítico</strong>.</a></li>
 <li class="chapter" data-level="3.4.2" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#comparando-el-p-valor-con-el-nivel-de-significancia-alpha"><i class="fa fa-check"></i><b>3.4.2</b> Comparando el <em>p</em>-valor con el nivel de significancia <span class="math inline">\(\alpha\)</span></a></li>
 <li class="chapter" data-level="3.4.3" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#comparación-del-parámetro-objetivo-con-el-intervalo-de-confianza"><i class="fa fa-check"></i><b>3.4.3</b> Comparación del parámetro objetivo con el intervalo de confianza</a></li>
+<li class="chapter" data-level="3.4.4" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#errortypes"><i class="fa fa-check"></i><b>3.4.4</b> Dos tipos de errores</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#test-de-hipótesis-en-r-cálculo-e-informes"><i class="fa fa-check"></i><b>3.5</b> Test de hipótesis en R: cálculo e informes</a></li>
 <li class="chapter" data-level="3.6" data-path="estadística-inferencial.html"><a href="estadística-inferencial.html#un-ejemplo-sobre-brecha-salarial-entre-géneros"><i class="fa fa-check"></i><b>3.6</b> Un ejemplo sobre brecha salarial entre géneros</a></li>
@@ -1318,16 +1319,103 @@ donde <span class="math inline">\(t_{\alpha/2, n-1}\)</span> se encuentra en la 
 <p>Por supuesto, la conclusión es equivalente a la que se había llegado por los otros dos métodos. Esto debe ser así, ya que usamos los mismos datos y el mismo nivel de significancia <span class="math inline">\(\alpha\)</span> para los tres métodos.</p>
 </div>
 </div>
+<div id="errortypes" class="section level3">
+<h3><span class="header-section-number">3.4.4</span> Dos tipos de errores</h3>
+<p>Antes de entrar en detalles sobre cómo se construye una prueba estadística, es útil comprender la filosofía detrás de ella. Idealmente, nos gustaría construir nuestra prueba de modo que nunca cometamos errores. Desafortunadamente, dado que el mundo es caótico, esto no es posible. A veces simplemente tienes mala suerte: por ejemplo, supongamos que lanzas una moneda 10 veces seguidas y sale cara las 10 veces. Eso se parece una evidencia muy fuerte de que la moneda está trucada, pero, por supuesto, hay una probabilidad de 1 entre 1024 de que esto suceda incluso si la moneda fuera completamente normal. En otras palabras, en la vida real <em>siempre</em> tenemos que aceptar que existe la posibilidad… Como consecuencia, el objetivo detrás de las pruebas de hipótesis estadísticas no es <em>eliminar</em> errores, sino <em>minimizarlos</em>.</p>
+<p>Debemos ser un poco más precisos sobre lo que entendemos por “errores”. En primer lugar se da el caso de que la hipótesis nula es verdadera o es falsa; y nuestra prueba rechazará la hipótesis nula o la retendrá. ^[Un comentario aparte con respecto al lenguaje que usa para hablar sobre la prueba de hipótesis. En primer lugar, una cosa que realmente desea evitar es la palabra “probar”: una prueba estadística realmente no <em>prueba</em> que una hipótesis sea verdadera o falsa. La prueba implica certeza pero las estadísticas significan nunca tener que decir que estás seguro. Pueden pasar una de cuatro cosas:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Mantener <span class="math inline">\(H_0\)</span>
+</th>
+<th style="text-align:left;">
+Mantener <span class="math inline">\(H_0\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_0\)</span> es verdadero
+</td>
+<td style="text-align:left;">
+Decisión correcta
+</td>
+<td style="text-align:left;">
+Error (Tipo I)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_0\)</span> es falso
+</td>
+<td style="text-align:left;">
+Error (tipo II)
+</td>
+<td style="text-align:left;">
+Decisión correcta
+</td>
+</tr>
+</tbody>
+</table>
+<p>Como consecuencia, en realidad hay <em>dos</em> tipos diferentes de error. Si rechazamos una hipótesis nula que sea realmente cierta, entonces hemos cometido un <strong><em>error de tipo I</em></strong>. Por otro lado, si mantenemos la hipótesis nula cuando en realidad es falsa, entonces hemos cometido un <strong><em>error tipo II</em></strong>. En juicio penal donde se busca establecer “más allá de toda duda razonable” que el acusado es culpable. Todas las reglas probatorias están (en teoría, al menos) diseñadas para garantizar que (casi) no haya posibilidad de condenar injustamente a un acusado inocente. El juicio está diseñado para proteger los derechos de un acusado: como dijo el famoso jurista inglés William Blackstone, es “mejor que escapen diez culpables que sufra un inocente”. En otras palabras, un juicio penal no trata los dos tipos de error de la misma manera ~ … castigar al inocente se considera mucho peor que dejar en libertad al culpable. Una prueba estadística es prácticamente lo mismo: el principio de diseño más importante de la prueba es <em>controlar</em> la probabilidad de un error de tipo I, para mantenerla por debajo de una probabilidad fija. Esta probabilidad, que se denota <span class="math inline">\(\alpha\)</span>, se denomina <strong><em>nivel de significancia</em></strong> de la prueba (o, a veces, el <em>tamaño</em> de la prueba). Y lo diré de nuevo, porque es tan fundamental para toda la configuración ~ … se dice que una prueba de hipótesis tiene un nivel de significancia <span class="math inline">\(\alpha\)</span> si la tasa de error de tipo I no es mayor que <span class="math inline">\(\alpha\)</span> .</p>
+<p>Entonces, ¿qué pasa con la tasa de error de tipo II? Bueno, también nos gustaría mantenerlos bajo control, y denotamos esta probabilidad por <span class="math inline">\(\beta\)</span>. Sin embargo, es mucho más común referirse a la <strong><em>potencia</em></strong> de la prueba, que es la probabilidad con la que rechazamos una hipótesis nula cuando realmente es falsa, que es <span class="math inline">\(1-\beta\)</span>. Para ayudar a mantener esto claro, aquí está la misma tabla nuevamente, pero con los números relevantes agregados:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+no descartar <span class="math inline">\(H_0\)</span>
+</th>
+<th style="text-align:left;">
+descartar <span class="math inline">\(H_0\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_0\)</span> es verdadera
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(1-\alpha\)</span> (probabilidad de mantener)
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\alpha\)</span> (tasa de error tipo I)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(H_0\)</span> es falsa
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\beta\)</span> (tasa de error tipo II)
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(1-\beta\)</span> (potencia del test)
+</td>
+</tr>
+</tbody>
+</table>
+<p>Una prueba de hipótesis “potente” es aquella que tiene un valor pequeño de <span class="math inline">\(\beta\)</span>, mientras mantiene <span class="math inline">\(\alpha\)</span> fijo en algún (pequeño) nivel deseado. Por convención, los científicos utilizan tres niveles <span class="math inline">\(\alpha\)</span> diferentes: <span class="math inline">\(.05\)</span>, <span class="math inline">\(.01\)</span> y <span class="math inline">\(.001\)</span>. Observad la asimetría aquí ~ … las pruebas están diseñadas para <em>asegurar</em> que el nivel <span class="math inline">\(\alpha\)</span> se mantenga pequeño, pero no hay garantía correspondiente con respecto a <span class="math inline">\(\beta\)</span>. Ciertamente nos gustaría que la tasa de error de tipo II fuera pequeña, y tratamos de diseñar pruebas que la mantengan pequeña, pero esto es muy secundario a la abrumadora necesidad de controlar la tasa de error de tipo I.</p>
+</div>
 </div>
 <div id="test-de-hipótesis-en-r-cálculo-e-informes" class="section level2">
 <h2><span class="header-section-number">3.5</span> Test de hipótesis en R: cálculo e informes</h2>
-<p><El ejemplo anterior pero en el mínimo número de pasos></p>
+<!-- El ejemplo anterior pero en el mínimo número de pasos -->
 </div>
 <div id="un-ejemplo-sobre-brecha-salarial-entre-géneros" class="section level2">
 <h2><span class="header-section-number">3.6</span> Un ejemplo sobre brecha salarial entre géneros</h2>
 </div>
 <div id="anova" class="section level2">
 <h2><span class="header-section-number">3.7</span> ANOVA</h2>
+<!-- El ejemplo con datos de pinguinos -->
+<!-- https://statsandr.com/blog/anova-in-r/ -->
+<!-- https://www.scribbr.com/statistics/anova-in-r/ -->
 </div>
 <div id="algunas-consideraciones-finales" class="section level2">
 <h2><span class="header-section-number">3.8</span> Algunas consideraciones finales</h2>
@@ -1350,7 +1438,7 @@ donde <span class="math inline">\(t_{\alpha/2, n-1}\)</span> se encuentra en la 
 Figura 3.13: Air time for Hawaiian and Alaska Airlines flights departing NYC in 2013.
 </p>
 </div>
-<p>Esto es lo que nos gusta llamar momentos en los que “no se necesita un doctorado en estadística”. No es necesario ser un experto en estadísticas para saber que Alaska Airlines y Hawaiian Airlines tienen horarios aéreos <em>significativamente</em> diferentes. ¡Los dos diagramas de caja ni siquiera se superponen! La construcción de un intervalo de confianza o la realización de una prueba de hipótesis, francamente, no proporcionaría mucha más información que la Figura <a href="estadística-inferencial.html#fig:ha-as-flights-boxplot">3.13</a>.</p>
+<p>No es necesario ser un experto en estadísticas para saber que Alaska Airlines y Hawaiian Airlines tienen horarios aéreos <em>significativamente</em> diferentes. ¡Los dos diagramas de caja ni siquiera se superponen! La construcción de un intervalo de confianza o la realización de una prueba de hipótesis, francamente, no proporcionaría mucha más información que la Figura <a href="estadística-inferencial.html#fig:ha-as-flights-boxplot">3.13</a>.</p>
 <p>Investiguemos por qué observamos una diferencia tan clara entre estas dos aerolíneas que utilizan la manipulación de datos. Primero agrupemos por las filas de <code>vuelos_muestra</code> no solo por<code>transportista</code> sino también por destino <code>dest</code>. Posteriormente, calcularemos dos estadísticas resumidas: el número de observaciones usando <code>n ()</code> y el tiempo medio de transmisión:</p>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="estadística-inferencial.html#cb132-1"></a>flights_sample <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb132-2"><a href="estadística-inferencial.html#cb132-2"></a><span class="st">  </span><span class="kw">group_by</span>(carrier, dest) <span class="op">%&gt;%</span><span class="st"> </span></span>

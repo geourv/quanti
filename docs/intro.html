@@ -236,7 +236,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="el-muestreo-estadístico.html"><a href="el-muestreo-estadístico.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
 <li class="chapter" data-level="4.2" data-path="el-muestreo-estadístico.html"><a href="el-muestreo-estadístico.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="regresiones.html"><a href="regresiones.html"><i class="fa fa-check"></i><b>5</b> Regresiones</a></li>
+<li class="chapter" data-level="5" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>5</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="5.1" data-path="regression.html"><a href="regression.html#intro-regression"><i class="fa fa-check"></i><b>5.1</b> ¿Qué es un modelo de regresión lineal?</a></li>
+<li class="chapter" data-level="5.2" data-path="regression.html"><a href="regression.html#regressionestimation"><i class="fa fa-check"></i><b>5.2</b> Estimación de un modelo de regresión lineal</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="regression.html"><a href="regression.html#lm"><i class="fa fa-check"></i><b>5.2.1</b> Usando la función <code>lm ()</code></a></li>
+<li class="chapter" data-level="5.2.2" data-path="regression.html"><a href="regression.html#interpretación-del-modelo-estimado"><i class="fa fa-check"></i><b>5.2.2</b> Interpretación del modelo estimado</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="regression.html"><a href="regression.html#multipleregression"><i class="fa fa-check"></i><b>5.3</b> Regresión lineal múltiple</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="regression.html"><a href="regression.html#haciéndolo-en-r"><i class="fa fa-check"></i><b>5.3.1</b> Haciéndolo en R</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="estadística-multivariante.html"><a href="estadística-multivariante.html"><i class="fa fa-check"></i><b>6</b> Estadística multivariante</a></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
@@ -618,8 +627,8 @@ Algunas librerias de R están relacionadas entre sí o forman parte de flujos de
 <span id="cb82-21"><a href="intro.html#cb82-21"></a><span class="kw">sqrt</span>(<span class="dv">2</span>) <span class="op">%&gt;%</span></span>
 <span id="cb82-22"><a href="intro.html#cb82-22"></a><span class="st"> </span><span class="kw">round</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-26"></span>
-<div id="htmlwidget-3307339e1c1821d956d2" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3307339e1c1821d956d2">{"x":{"diagram":"\ngraph LR\n  %% Set edges to be curved (try monotoneX for a nice alternative)\n  linkStyle default interpolate basis\n  classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\n  classDef style_temp_node fill:gray,stroke:#333,stroke-width:0px;\n  classDef style_func_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n  input_1(2) --> sqrt_1[sqrt]\n  sqrt_1 --> tmp_1[tmp_variable=1,41]\n  tmp_1 --> trunc_1[trunc]\n  trunc_1 --> output_1(1)\n\n  input_2(2) -->|%>%| sqrt_2[sqrt]\n  sqrt_2 -->|%>%| trunc_2[trunc]\n  trunc_2 -->|%>%| output_2(1)\n \n  class input_1,output_1,input_2,output_2 style_main_node;\n  class tmp_1 style_temp_node;\n  class sqrt_1,trunc_1,sqrt_2,trunc_2 style_func_node;\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-41e67639dc22de363b1c" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-41e67639dc22de363b1c">{"x":{"diagram":"\ngraph LR\n  %% Set edges to be curved (try monotoneX for a nice alternative)\n  linkStyle default interpolate basis\n  classDef style_main_node fill:orange,stroke:#333,stroke-width:0px;\n  classDef style_temp_node fill:gray,stroke:#333,stroke-width:0px;\n  classDef style_func_node fill:lightgray,stroke:#333,stroke-width:0px;\n\n  input_1(2) --> sqrt_1[sqrt]\n  sqrt_1 --> tmp_1[tmp_variable=1,41]\n  tmp_1 --> trunc_1[trunc]\n  trunc_1 --> output_1(1)\n\n  input_2(2) -->|%>%| sqrt_2[sqrt]\n  sqrt_2 -->|%>%| trunc_2[trunc]\n  trunc_2 -->|%>%| output_2(1)\n \n  class input_1,output_1,input_2,output_2 style_main_node;\n  class tmp_1 style_temp_node;\n  class sqrt_1,trunc_1,sqrt_2,trunc_2 style_func_node;\n"},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figura 1.1: Ejecución del código sin o con <code>%&gt;%</code>. Sin <em>pipes</em> los resultados intermedios tienen que guardarse en una variable en memoria.
 </p>

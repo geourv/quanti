@@ -13,6 +13,11 @@ fig:sdnorm1b
 fig:sdnorm2a
 fig:sdnorm2b
 fig:ha-as-flights-boxplot
+fig:regression0
+fig:regression1a
+fig:regression1b
+fig:regression3a
+fig:regression3b
 prerrequisitos
 tipos-de-ficheros
 un-ejemplo-muy-sencillo
@@ -99,5 +104,11 @@ distribución-normal
 el-muestreo-estadístico
 example-one
 example-two
-regresiones
+regression
+intro-regression
+regressionestimation
+lm
+interpretación-del-modelo-estimado
+multipleregression
+haciéndolo-en-r
 estadística-multivariante

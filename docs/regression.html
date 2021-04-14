@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Referencias | Técnicas cuantitativas</title>
+  <title>Capítulo 5 Regresión lineal | Técnicas cuantitativas</title>
   <meta name="description" content="Este documento forma parte de los materiales para la asignatura ‘Técnicas cuantitativas’ del Máster universitario en planificación, gobernanza y liderazgo territorial" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Referencias | Técnicas cuantitativas" />
+  <meta property="og:title" content="Capítulo 5 Regresión lineal | Técnicas cuantitativas" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Referencias | Técnicas cuantitativas" />
+  <meta name="twitter:title" content="Capítulo 5 Regresión lineal | Técnicas cuantitativas" />
   
   <meta name="twitter:description" content="Este documento forma parte de los materiales para la asignatura ‘Técnicas cuantitativas’ del Máster universitario en planificación, gobernanza y liderazgo territorial" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="estadística-multivariante.html"/>
-
+<link rel="prev" href="el-muestreo-estadístico.html"/>
+<link rel="next" href="estadística-multivariante.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -268,42 +268,141 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="referencias" class="section level1 unnumbered">
-<h1>Referencias</h1>
-
-<div id="refs" class="references">
-<div>
-<p>Knuth, D. E. 1984. “Literate Programming.” <em>The Computer Journal</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.</p>
+<div id="regression" class="section level1">
+<h1><span class="header-section-number">Capítulo 5</span> Regresión lineal</h1>
+<p>El objetivo de este capítulo es presentar la <strong><em>regresión lineal</em></strong>, la herramienta estándar en la que confían los estadísticos al analizar la relación entre los predictores y los resultados. Los modelos de regresión lineal son básicamente una versión un poco más elegante de la correlación de Pearson (Sección @ref (correlation)) aunque, como veremos, los modelos de regresión son herramientas mucho más poderosas.</p>
+<div id="intro-regression" class="section level2">
+<h2><span class="header-section-number">5.1</span> ¿Qué es un modelo de regresión lineal?</h2>
+<div class="figure"><span id="fig:regression0"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/regression0-1.png" alt="Diagrama de dispersión que muestra el mal humor en función de las horas de sueño." width="672" />
+<p class="caption">
+Figura 5.1: Diagrama de dispersión que muestra el mal humor en función de las horas de sueño.
+</p>
 </div>
-<div>
-<p>Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the Tidyverse.” <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.</p>
+<div class="figure"><span id="fig:regression1a"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/regression1a-1.png" alt="El panel a muestra el diagrama de dispersión del mal humor del sueño desde arriba con la línea de regresión que mejor se ajusta dibujada en la parte superior. No es sorprendente que la línea pase por el medio de los datos. " width="672" />
+<p class="caption">
+Figura 5.2: El panel a muestra el diagrama de dispersión del mal humor del sueño desde arriba con la línea de regresión que mejor se ajusta dibujada en la parte superior. No es sorprendente que la línea pase por el medio de los datos.
+</p>
 </div>
-<div>
-<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
+<div class="figure"><span id="fig:regression1b"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/regression1b-1.png" alt="Por el contrario, este gráfico muestra los mismos datos, pero con una elección muy pobre de la línea de regresión dibujada en la parte superior." width="672" />
+<p class="caption">
+Figura 5.3: Por el contrario, este gráfico muestra los mismos datos, pero con una elección muy pobre de la línea de regresión dibujada en la parte superior.
+</p>
 </div>
-<div>
-<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.</p>
+<p>El diagrama de dispersión real que dibujamos es el que se muestra en la Figura @ref(fig: regression0), y como vimos anteriormente, esto corresponde a una correlación de <span class="math inline">\(r=-.90\)</span>, pero lo que nos encontramos imaginando en secreto es algo que se ve más cerca de la Figura  <span class="citation">(<span class="citeproc-not-found" data-reference-id="ref"><strong>???</strong></span>)</span> (fig: regression1a). Es decir, dibujamos mentalmente una línea recta a través del medio de los datos. En estadística, esta línea que estamos dibujando se llama <strong><em>línea de regresión</em></strong>. Tened en cuenta que la línea de regresión pasa por el centro de los datos. No hay nada parecido en la gráfica que se muestra en la Figura @ref(fig: regression1b). La línea dibujada en la Figura <a href="regression.html#fig:regression1b">5.3</a> no “se ajusta” muy bien a los datos, por lo que no tiene mucho sentido proponela como una forma de resumir los datos, ¿verdad? Esta es una observación muy simple de hacer, pero resulta ser muy poderosa.</p>
+<p>La fórmula para una línea recta generalmente se escribe así:
+<span class="math display">\[
+y = mx + c
+\]</span>
+Las dos <em>variables</em> son <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span>, y tenemos dos <em>coeficientes</em>, <span class="math inline">\(m\)</span> y <span class="math inline">\(c\)</span>. El coeficiente <span class="math inline">\(m\)</span> representa la <em>pendiente</em> de la línea y el coeficiente <span class="math inline">\(c\)</span> representa la intersección <span class="math inline">\(y\)</span> de la línea. Profundizando, la intersección se interpreta como “el valor de <span class="math inline">\(y\)</span> que obtienes cuando <span class="math inline">\(x=0\)</span>”. De manera similar, una pendiente de <span class="math inline">\(m\)</span> significa que si aumenta el valor <span class="math inline">\(x\)</span> en 1 unidad, entonces el valor <span class="math inline">\(y\)</span> aumenta en <span class="math inline">\(m\)</span> unidades; una pendiente negativa significa que el valor <span class="math inline">\(y\)</span> bajaría en lugar de subir.</p>
+<p>Usamos exactamente la misma fórmula para describir una línea de regresión. Si <span class="math inline">\(Y\)</span> es la variable de resultado (variable dependiente) y <span class="math inline">\(X\)</span> es la variable predictora (variable independiente), entonces la fórmula que describe nuestra regresión se escribe así:
+<span class="math display">\[
+\hat{Y_i} = b_1 X_i + b_0
+\]</span></p>
+<p>Parece la misma fórmula, pero hay algunos detalles extra en esta versión. En primer lugar, observad que tenemos <span class="math inline">\(X_i\)</span> y <span class="math inline">\(Y_i\)</span> en lugar de simplemente los viejos <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span>. Esto se debe a que queremos recordar que estamos tratando con datos reales. En esta ecuación, <span class="math inline">\(X_i\)</span> es el valor de la variable predictora para la <span class="math inline">\(i\)</span> ésima observación (es decir, el número de horas de sueño que obtuve el día <span class="math inline">\(i\)</span> de este pequeño estudio), y <span class="math inline">\(Y_i\)</span> es el correspondiente valor de la variable de resultado (es decir, el mal humor de ese día). Asumimos es que esta fórmula funciona para todas las observaciones en el conjunto de datos (es decir, para todos los <span class="math inline">\(i\)</span>). En segundo lugar, observad se escribe <span class="math inline">\(\hat{Y}_i\)</span> y no <span class="math inline">\(Y_i\)</span>. Esto se debe a que queremos hacer la distinción entre los <em>datos reales</em> <span class="math inline">\(Y_i\)</span> y la <em>estimación</em> <span class="math inline">\(\hat{Y}_i\)</span> (es decir, la predicción que hace nuestra línea de regresión). En tercer lugar, las letras utilizadas para describir los coeficientes de <span class="math inline">\(m\)</span> y <span class="math inline">\(c\)</span> cambian a <span class="math inline">\(b_1\)</span> y <span class="math inline">\(b_0\)</span>. Esa es la forma en que a los estadísticos les gusta referirse a los coeficientes en un modelo de regresión. En cualquier caso, <span class="math inline">\(b_0\)</span> siempre se refiere al término de intersección y <span class="math inline">\(b_1\)</span> se refiere a la pendiente.</p>
+<p>Independientemente de si estamos hablando de una línea de regresión <em>buena o mala</em>, los datos no encajan perfectamente en la línea. O, para decirlo de otra manera, los datos <span class="math inline">\(Y_i\)</span> no son idénticos a las predicciones del modelo de regresión <span class="math inline">\(\hat{Y_i}\)</span>. Dado que a los estadísticos les encanta adjuntar letras, nombres y números a todo, hagamos referencia a la diferencia entre la predicción del modelo y ese punto de datos real como un <em>residual</em> o residuos, y lo denominaremos <span class="math inline">\(\epsilon_i\)</span>.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> Escritos usando matemáticas, los residuos se definen como:</p>
+<p><span class="math display">\[
+\epsilon_i = Y_i - \hat{Y}_i
+\]</span></p>
+<p>lo que a su vez significa que podemos escribir el modelo de regresión lineal completo como:</p>
+<p><span class="math display">\[
+Y_i = b_1 X_i + b_0 + \epsilon_i
+\]</span></p>
+</div>
+<div id="regressionestimation" class="section level2">
+<h2><span class="header-section-number">5.2</span> Estimación de un modelo de regresión lineal</h2>
+<div class="figure"><span id="fig:regression3a"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/regression3a-1.png" alt="Una descripción de los residuos asociados con la línea de regresión que mejor se ajusta" width="672" />
+<p class="caption">
+Figura 5.4: Una descripción de los residuos asociados con la línea de regresión que mejor se ajusta
+</p>
+</div>
+<div class="figure"><span id="fig:regression3b"></span>
+<img src="tecnicas-cuantitativas_files/figure-html/regression3b-1.png" alt="Los residuos asociados con una línea de regresión pobre" width="672" />
+<p class="caption">
+Figura 5.5: Los residuos asociados con una línea de regresión pobre
+</p>
+</div>
+<p>Bien, ahora redibujemos nuestras imágenes, pero esta vez agregaré algunas líneas para mostrar el tamaño del residual para todas las observaciones. Cuando la línea de regresión es buena, nuestros residuos (las longitudes de las líneas negras continuas) se ven bastante pequeños, como se muestra en la Figura <a href="regression.html#fig:regression3a">5.4</a>, pero cuando la línea de regresión es mala, los residuos son un mucho más grandes, como puede ver al mirar la Figura <a href="regression.html#fig:regression3b">5.5</a>. Lo que buscamos en un modelo de regresión son residuos <em>pequeños</em>. La línea de regresión de “mejor ajuste” es la que tiene los residuos más pequeños.</p>
+<blockquote>
+<p>Los coeficientes de regresión estimados, <span class="math inline">\(\hat{b}_0\)</span> y <span class="math inline">\(\hat{b}_1\)</span> son los que minimizan la suma de los residuos al cuadrado, que podríamos escribir como <span class="math inline">\(\sum_i(Y_i-\hat{Y}_i)^2\)</span> o como <span class="math inline">\(\sum_i{\epsilon_i}^2\)</span>.</p>
+</blockquote>
+<p>Los coeficientes de regresión son <em>estimaciones</em> (estamos tratando de adivinar los parámetros que describen una población), razón por la cual hay unos pequeños sombreros sobre la fórmula, de modo que obtenemos <span class="math inline">\(\hat{b}_0\)</span> y <span class="math inline">\(\hat{b}_1\)</span> en lugar de <span class="math inline">\(b_0\)</span> y <span class="math inline">\(b_1\)</span>. Finalmente, dado que en realidad hay más de una forma de estimar un modelo de regresión, el nombre más técnico para este proceso de estimación es <strong><em>regresión de mínimos cuadrados ordinarios (MCO)</em></strong>.</p>
+<p>En este punto, ahora tenemos una definición concreta de lo que cuenta como nuestra “mejor” elección de coeficientes de regresión, <span class="math inline">\(\hat{b}_0\)</span> y <span class="math inline">\(\hat{b}_1\)</span>. Si los coeficientes de regresión óptimos son aquellos que minimizan los residuos de la suma al cuadrado, ¿cómo <em>encontramos</em> estos números? La respuesta real a esta pregunta es complicada y no le ayuda a entender la lógica de la regresión..<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> R proporciona una manera más simple de calcular la regresión, utilizando la función <code>lm ()</code> (abreviatura de “modelo lineal”).</p>
+<div id="lm" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Usando la función <code>lm ()</code></h3>
+<p>La función <code>lm()</code> es bastante complicada: si escribe <code>?Lm</code>, los archivos de ayuda revelarán que hay muchos argumentos que puede especificar. Sin embargo, en este momento, solo hay dos de ellos que nos interesan, y resulta que los hemos visto antes:</p>
+<ul>
+<li><code>fórmula</code>. Una fórmula que especifica el modelo de regresión. Para los modelos de regresión lineal simple de los que hemos hablado hasta ahora, en los que tiene una única variable predictora, así como un término de intersección, esta fórmula tiene la forma <code>resultado ~ predictor</code>. Sin embargo, se permiten fórmulas más complicadas y las discutiremos más adelante.</li>
+<li><code>datos</code>. El dataframe que contiene las variables.</li>
+</ul>
+<p>La salida de la función <code>lm()</code> es un objeto bastante complicado, con bastante información técnica. Debido a que otras funciones utilizan esta información técnica, generalmente es una buena idea crear una variable que almacene los resultados de una regresión. Con esto en mente, para ejecutar la regresión lineal, hacemos:</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="regression.html#cb134-1"></a>regression<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( <span class="dt">formula =</span> dan.grump <span class="op">~</span><span class="st"> </span>dan.sleep,  </span>
+<span id="cb134-2"><a href="regression.html#cb134-2"></a>                    <span class="dt">data =</span> parenthood )  </span></code></pre></div>
+<p>La fórmula utilizada es <code>dan.grump ~ dan.sleep</code>: en el modelo que estoy tratando de estimar,<code>dan.grump</code> es la variable <em>resultado</em> y <code>dan.sleep</code> es la variable predictora. De todos modos, lo que esto hace es crear un “objeto <code>lm</code>” (es decir, una variable cuya clase es <code>"lm"</code>) llamada <code>regression.1</code>. Echemos un vistazo a lo que sucede cuando lo <code>print()</code>:</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="regression.html#cb135-1"></a><span class="kw">print</span>( regression<span class="fl">.1</span> )</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dan.grump ~ dan.sleep, data = parenthood)
+## 
+## Coefficients:
+## (Intercept)    dan.sleep  
+##     125.956       -8.937</code></pre>
+<p>Hay dos piezas de información separadas. En primer lugar, R nos recuerda cuál fue el comando que usamos para especificar el modelo, lo que puede ser útil. Más importante desde nuestra perspectiva, sin embargo, es la segunda parte, en la que R nos da la intersección <span class="math inline">\(\hat{b}_0=125.96\)</span> y la pendiente <span class="math inline">\(\hat{b}_1=-8.94\)</span>. En otras palabras, la línea de regresión que mejor se ajusta (ver la Figura <a href="regression.html#fig:regression1a">5.2</a> tiene esta fórmula:</p>
+<p><span class="math display">\[
+\hat{Y}_i = -8.94 \ X_i + 125.96
+\]</span></p>
+</div>
+<div id="interpretación-del-modelo-estimado" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Interpretación del modelo estimado</h3>
+<p>Lo más importante para poder entender es cómo interpretar estos coeficientes. Comencemos con <span class="math inline">\(\hat{b}_1\)</span>, la pendiente. Si recordamos la definición de la pendiente, un coeficiente de regresión de <span class="math inline">\(\hat{b}_1=-8.94\)</span> significa que si aumento <span class="math inline">\(X_i\)</span> en 1, entonces estoy disminuyendo <span class="math inline">\(Y_i\)</span> en 8.94. Es decir, cada hora adicional de sueño que gano mejorará mi estado de ánimo, reduciendo mi mal humor en 8,94 puntos de mal humor. ¿Qué pasa con la intersección? Bueno, dado que <span class="math inline">\(\hat{b}_0\)</span> corresponde al “valor esperado de <span class="math inline">\(Y_i\)</span> cuando <span class="math inline">\(X_i\)</span> es igual a 0”, es bastante sencillo. Implica que si duermo cero horas (<span class="math inline">\(X_i=0\)</span>) entonces mi mal humor se saldrá de la escala, a un valor insano de (<span class="math inline">\(Y_i=125.96\)</span>).</p>
+</div>
+</div>
+<div id="multipleregression" class="section level2">
+<h2><span class="header-section-number">5.3</span> Regresión lineal múltiple</h2>
+<p>El modelo de regresión lineal simple que hemos discutido hasta este punto supone que hay una única variable predictora que le interesa, en este caso, <code>dan.sleep</code>. De hecho, hasta este punto, <em>todas</em> las herramientas estadísticas de las que hemos hablado han asumido que su análisis utiliza una variable predictora y una variable de resultado. Sin embargo, en muchos (quizás la mayoría) de los proyectos de investigación, en realidad tiene varios predictores que desea examinar. Si es así, sería bueno poder extender el marco de regresión lineal para poder incluir múltiples predictores.</p>
+<p>La regresión múltiple es conceptualmente muy simple. Todo lo que hacemos es agregar más términos a nuestra ecuación de regresión. Supongamos que tenemos dos variables que nos interesan; tal vez queramos usar tanto <code>dan.sleep</code> como<code>baby.sleep</code> para predecir la variable <code>dan.grump</code>. Como antes, dejamos que <span class="math inline">\(Y_i\)</span> se refiera a mi mal humor el día <span class="math inline">\(i\)</span>-th. Pero ahora tenemos dos variables <span class="math inline">\(X\)</span>: la primera corresponde a la cantidad de horas que dormí y la segunda que corresponde a la cantidad de horas que durmió un bebé. Así que dejaremos que <span class="math inline">\(X_{i1}\)</span> se refiera a las horas que durmió Dan el día <span class="math inline">\(i\)</span>-ésimo, y <span class="math inline">\(X_{i2}\)</span> se refiere a las horas que durmió su bebé ese día. Si es así, entonces podemos escribir nuestro modelo de regresión así:
+<span class="math display">\[
+Y_i = b_2 X_{i2} + b_1 X_{i1} + b_0 + \epsilon_i
+\]</span></p>
+<p>Como antes, <span class="math inline">\(\epsilon_i\)</span> es el residuo asociado con la <span class="math inline">\(i\)</span>-ésima observación, <span class="math inline">\(\epsilon_i={Y}_i-\hat{Y}_i\)</span>. En este modelo, ahora tenemos tres coeficientes que deben estimarse: <span class="math inline">\(b_0\)</span> es la intersección, <span class="math inline">\(b_1\)</span> es el coeficiente asociado con el sueño de Dan y <span class="math inline">\(b_2\)</span> es el coeficiente asociado con el sueño de su hijo. Sin embargo, aunque ha cambiado el número de coeficientes que deben estimarse, la idea básica de cómo funciona la estimación no ha cambiado: los coeficientes estimados <span class="math inline">\(\hat{b}_0\)</span>, <span class="math inline">\(\hat{b}_1\)</span> y <span class="math inline">\(\hat{b}_2\)</span> son los que minimizan la suma de los residuos al cuadrado.</p>
+<div id="haciéndolo-en-r" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Haciéndolo en R</h3>
+<p>La regresión múltiple en R no es diferente de la regresión simple: todo lo que tenemos que hacer es especificar una “fórmula” más complicada cuando usamos la función “lm ()”. Por ejemplo, si queremos usar tanto <code>dan.sleep</code> como<code>baby.sleep</code> como predictores en nuestro intento de explicar por qué estoy tan malhumorado, entonces la fórmula que necesitamos es la siguiente:</p>
+<pre><code>                    dan.grump ~ dan.sleep + baby.sleep</code></pre>
+<p>Observe que, al igual que la última vez, no he incluido explícitamente ninguna referencia al término de intersección en esta fórmula; sólo las dos variables predictoras y el resultado. Por defecto, la función <code>lm ()</code> asume que el modelo debe incluir una intersección (aunque puede deshacerse de ella si lo desea). En cualquier caso, puedo crear un nuevo modelo de regresión, al que llamaré <code>regression.2</code>, usando el siguiente comando:</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="regression.html#cb138-1"></a>regression<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">lm</span>( <span class="dt">formula =</span> dan.grump <span class="op">~</span><span class="st"> </span>dan.sleep <span class="op">+</span><span class="st"> </span>baby.sleep,  </span>
+<span id="cb138-2"><a href="regression.html#cb138-2"></a>                     <span class="dt">data =</span> parenthood )</span></code></pre></div>
+<p>Y al igual que la última vez, si <code>print()</code> este modelo de regresión, podemos ver cuáles son los coeficientes de regresión estimados:</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="regression.html#cb139-1"></a><span class="kw">print</span>( regression<span class="fl">.2</span> )</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dan.grump ~ dan.sleep + baby.sleep, data = parenthood)
+## 
+## Coefficients:
+## (Intercept)    dan.sleep   baby.sleep  
+##   125.96557     -8.95025      0.01052</code></pre>
+<p>El coeficiente asociado con <code>dan.sleep</code> es bastante grande, lo que sugiere que cada hora de sueño que pierde le pone mucho más gruñón. Sin embargo, el coeficiente de <code>baby.sleep</code> es muy pequeño, lo que sugiere que realmente no importa cuánto duerma su hijo. Para tener una idea de cómo se ve este modelo de regresión múltiple, la Figura @ref(fig:regresión múltiple) muestra un gráfico 3D que traza las tres variables, junto con el modelo de regresión en sí.</p>
+
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>El símbolo <span class="math inline">\(\epsilon\)</span> es la letra griega epsilon. Es tradicional usar <span class="math inline">\(\epsilon_i\)</span> o <span class="math inline">\(e_i\)</span> para denotar un residual.<a href="regression.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>O al menos, asumo que no ayuda a la mayoría de la gente. Pero en la remota posibilidad de que alguien que lea esto, <em>ayudará</em> a *saber eso la solución al problema de estimación resulta ser <span class="math inline">\(\hat{b}=(X^TX)^{-1}X^T y\)</span>, donde <span class="math inline">\(\hat{b}\)</span> es un vector que contiene los coeficientes de regresión estimados, <span class="math inline">\(X\)</span> es la “matriz de diseño” que contiene las variables predictoras (más una columna adicional que contiene todas unas; estrictamente <span class="math inline">\(X\)</span> es una matriz de los regresores, pero aún no he discutido la distinción), y <span class="math inline">\(y\)</span> es un vector que contiene la variable de resultado.<a href="regression.html#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="estadística-multivariante.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="el-muestreo-estadístico.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="estadística-multivariante.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

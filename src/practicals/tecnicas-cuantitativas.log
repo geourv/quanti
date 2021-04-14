@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.3)  7 APR 2021 13:45
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.3)  14 APR 2021 16:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1465,11 +1465,37 @@ Capítulo 4.
 
 ]
 Capítulo 5.
-[79] [80
+File: tecnicas-cuantitativas_files/figure-latex/regression0-1.pdf Graphic file 
+(type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/regression0-1.pdf>
+File: tecnicas-cuantitativas_files/figure-latex/regression1a-1.pdf Graphic file
+ (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/regression1a-1.pdf>
+File: tecnicas-cuantitativas_files/figure-latex/regression1b-1.pdf Graphic file
+ (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/regression1b-1.pdf>
 
-]
+Package natbib Warning: Citation `ref' on page 79 undefined on input line 2720.
+
+
+[79] [80] [81]
+File: tecnicas-cuantitativas_files/figure-latex/regression3a-1.pdf Graphic file
+ (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/regression3a-1.pdf>
+File: tecnicas-cuantitativas_files/figure-latex/regression3b-1.pdf Graphic file
+ (type pdf)
+<use tecnicas-cuantitativas_files/figure-latex/regression3b-1.pdf>
+[82] [83] [84] [85]
+Overfull \hbox (22.5pt too wide) in paragraph at lines 2869--2869
+[]\TU/lmtt/m/n/10 ## lm(formula = dan.grump ~ dan.sleep + baby.sleep, data = pa
+renthood)[] 
+ []
+
+[86]
 Capítulo 6.
-(./tecnicas-cuantitativas.bbl [81] [82
+(./tecnicas-cuantitativas.bbl [87
+
+] [88
 
 ])
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -1507,7 +1533,10 @@ braces):
 >  {spanish/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/totalhyphenmin}  =>  {5}.
-[83] (./tecnicas-cuantitativas.aux
+
+Package natbib Warning: There were undefined citations.
+
+[89] (./tecnicas-cuantitativas.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
@@ -1517,15 +1546,15 @@ LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `tecnicas-cuantitativas.out' has not changed.
 
-(rerunfilecheck)             Checksum: 1D12BB0CA51BFC95474898DFA0D133CC;5894.
+(rerunfilecheck)             Checksum: A29CEAB6CE53C3A3A9E0F842FA8F8C90;6683.
  ) 
 Here is how much of TeX's memory you used:
- 19044 strings out of 478931
- 338927 string characters out of 5867171
- 842945 words of memory out of 5000000
- 38534 multiletter control sequences out of 15000+600000
+ 19086 strings out of 478931
+ 340873 string characters out of 5867171
+ 844069 words of memory out of 5000000
+ 38571 multiletter control sequences out of 15000+600000
  410075 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,11n,122p,1641b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tecnicas-cuantitativas.pdf (83 pages).
+Output written on tecnicas-cuantitativas.pdf (89 pages).
